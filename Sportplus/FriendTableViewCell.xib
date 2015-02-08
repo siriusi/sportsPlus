@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="FriendTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="同济大学" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-Ml-ex2">
+                        <rect key="frame" x="100" y="8" width="70" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="软件学院" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8t-hr-hJs">
+                        <rect key="frame" x="166" y="8" width="70" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12级" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkf-ly-LQx">
+                        <rect key="frame" x="230" y="8" width="70" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="基佬" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Eg-Lt-iXI">
+                        <rect key="frame" x="280" y="8" width="70" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="JLk-Iy-NPe">
+                        <rect key="frame" x="80" y="25" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="qSv-zJ-mX7">
+                        <rect key="frame" x="110" y="25" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="SW5-Iz-8yj">
+                        <rect key="frame" x="140" y="25" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="eLY-pK-KWb">
+                        <rect key="frame" x="170" y="25" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="qqG-Jp-LOP">
+                        <rect key="frame" x="200" y="25" width="25" height="25"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="TLA-Qt-5D2">
+                        <rect key="frame" x="229" y="25" width="25" height="25"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张睿" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jm5-xK-jAF">
+                        <rect key="frame" x="70" y="8" width="30" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-bn-pS7">
+                        <rect key="frame" x="12" y="5" width="49" height="49"/>
+                        <state key="normal" title="Button" image="head">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                </subviews>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="head" destination="SCQ-bn-pS7" id="EmE-no-5kN"/>
+                <outlet property="img1" destination="JLk-Iy-NPe" id="eUa-gC-kic"/>
+                <outlet property="img2" destination="qSv-zJ-mX7" id="V3V-aX-Lyk"/>
+                <outlet property="img3" destination="SW5-Iz-8yj" id="3hz-2b-WVZ"/>
+                <outlet property="img4" destination="eLY-pK-KWb" id="qbO-EO-X7D"/>
+                <outlet property="img5" destination="qqG-Jp-LOP" id="tId-Z0-lGg"/>
+                <outlet property="img6" destination="TLA-Qt-5D2" id="xbE-Fb-spn"/>
+                <outlet property="name" destination="Jm5-xK-jAF" id="a5l-je-ER4"/>
+                <outlet property="profession" destination="H8t-hr-hJs" id="thG-cs-OuP"/>
+                <outlet property="school" destination="R4D-Ml-ex2" id="DBT-me-0l8"/>
+                <outlet property="student" destination="1Eg-Lt-iXI" id="Xzc-rk-0C4"/>
+                <outlet property="year" destination="Wkf-ly-LQx" id="XEO-I5-8ia"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="head" width="339" height="339"/>
+        <image name="tenniseCell" width="258" height="257"/>
+    </resources>
+</document>

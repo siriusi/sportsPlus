@@ -1,0 +1,761 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 781608BB1A53C8BD001B50F5 /* RegisteData.m */; };
+		781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */; };
+		78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BF69A91A4D58070085A867 /* TestViewController.m */; };
+		78C6C8651A2B411100D8425E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C6C8641A2B411100D8425E /* main.m */; };
+		78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C6C8671A2B411100D8425E /* AppDelegate.m */; };
+		78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78C6C8691A2B411100D8425E /* Sportplus.xcdatamodeld */; };
+		78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C6C86F1A2B411100D8425E /* Registe.storyboard */; };
+		78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78C6C8741A2B411100D8425E /* LaunchScreen.xib */; };
+		78C6C8821A2B411200D8425E /* SportplusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C6C8811A2B411200D8425E /* SportplusTests.m */; };
+		78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA8AE61A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m */; };
+		78F792D11A45515100D14861 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F792D01A45515100D14861 /* MainTabBarController.m */; };
+		78F792D31A45657F00D14861 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F792D21A45657F00D14861 /* Images.xcassets */; };
+		D7EDA3A7252F7A37ADCA65F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D722640D16A2035FDB4981 /* libPods.a */; };
+		F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F105E9E51A55B8A500DDE19C /* RegistFinshViewController.m */; };
+		F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F10D93031A57C91C006770DE /* SVProgressHUD.bundle */; };
+		F10D93071A57C91C006770DE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F10D93031A57C91C006770DE /* SVProgressHUD.bundle */; };
+		F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F10D93051A57C91C006770DE /* SVProgressHUD.m */; };
+		F10D93091A57C91C006770DE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F10D93051A57C91C006770DE /* SVProgressHUD.m */; };
+		F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F10D93111A57FAE1006770DE /* SportsCollectionViewCell.m */; };
+		F10D93141A57FAE1006770DE /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */; };
+		F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11581E51A31861D00420CC3 /* testgitViewController.m */; };
+		F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DB81A32D4810056A568 /* RegisterMainViewController.m */; };
+		F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBB1A32F6E80056A568 /* ChooseSchoolViewController.m */; };
+		F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBE1A3329D30056A568 /* ChooseProfessionViewController.m */; };
+		F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DC11A332B2D0056A568 /* ChooseTimeViewController.m */; };
+		F1887DC51A332CDE0056A568 /* ReigisterNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DC41A332CDE0056A568 /* ReigisterNameViewController.m */; };
+		F1887DC81A336D020056A568 /* RigisterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DC71A336D020056A568 /* RigisterDetailViewController.m */; };
+		F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DCA1A3372700056A568 /* levelTableViewCell.m */; };
+		F1887DCD1A3372700056A568 /* levelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1887DCB1A3372700056A568 /* levelTableViewCell.xib */; };
+		F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B875EF1A34B08F003AA3ED /* TagTableViewCell.m */; };
+		F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */; };
+		F1B88C291A45AAE2005D601D /* FriendsManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B88C281A45AAE2005D601D /* FriendsManagementViewController.m */; };
+		F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B88C2B1A45B47C005D601D /* FriendTableViewCell.m */; };
+		F1B88C2E1A45B47C005D601D /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B88C2C1A45B47C005D601D /* FriendTableViewCell.xib */; };
+		F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B88C301A45DE61005D601D /* AddFriendsViewController.m */; };
+		F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B88C331A45E18F005D601D /* searchFriendTableViewCell.m */; };
+		F1B88C361A45E18F005D601D /* searchFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B88C341A45E18F005D601D /* searchFriendTableViewCell.xib */; };
+		F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B88C3C1A45E95B005D601D /* SettingViewController.m */; };
+		F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1B88C3F1A45EB09005D601D /* accountTableViewCell.m */; };
+		F1B88C421A45EB09005D601D /* accountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B88C401A45EB09005D601D /* accountTableViewCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		78C6C87C1A2B411200D8425E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78C6C8571A2B411000D8425E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78C6C85E1A2B411000D8425E;
+			remoteInfo = Sportplus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		781608BA1A53C8BD001B50F5 /* RegisteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteData.h; sourceTree = "<group>"; };
+		781608BB1A53C8BD001B50F5 /* RegisteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteData.m; sourceTree = "<group>"; };
+		781ECBD31A2EF37C00B14CAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainLogic.Storyboard; sourceTree = "<group>"; };
+		78BF69A81A4D58070085A867 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		78BF69A91A4D58070085A867 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		78C6C85F1A2B411100D8425E /* Sportplus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sportplus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C6C8631A2B411100D8425E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78C6C8641A2B411100D8425E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		78C6C8661A2B411100D8425E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		78C6C8671A2B411100D8425E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		78C6C86A1A2B411100D8425E /* Sportplus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sportplus.xcdatamodel; sourceTree = "<group>"; };
+		78C6C8701A2B411100D8425E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Registe.storyboard; sourceTree = "<group>"; };
+		78C6C8751A2B411100D8425E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		78C6C87B1A2B411200D8425E /* SportplusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportplusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		78C6C8801A2B411200D8425E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78C6C8811A2B411200D8425E /* SportplusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportplusTests.m; sourceTree = "<group>"; };
+		78CA8AE51A4C0649000C9AEA /* AvosCloudNetNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AvosCloudNetNetWorkManager.h; sourceTree = "<group>"; };
+		78CA8AE61A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvosCloudNetNetWorkManager.m; sourceTree = "<group>"; };
+		78F792CF1A45515100D14861 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		78F792D01A45515100D14861 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		78F792D21A45657F00D14861 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A6D722640D16A2035FDB4981 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A6B0A91962E9C6FD0C4158 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F105E9E41A55B8A500DDE19C /* RegistFinshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistFinshViewController.h; sourceTree = "<group>"; };
+		F105E9E51A55B8A500DDE19C /* RegistFinshViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistFinshViewController.m; sourceTree = "<group>"; };
+		F10D93021A57C91C006770DE /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		F10D93031A57C91C006770DE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		F10D93041A57C91C006770DE /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		F10D93051A57C91C006770DE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		F10D93101A57FAE1006770DE /* SportsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SportsCollectionViewCell.h; sourceTree = "<group>"; };
+		F10D93111A57FAE1006770DE /* SportsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SportsCollectionViewCell.m; sourceTree = "<group>"; };
+		F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportsCollectionViewCell.xib; sourceTree = "<group>"; };
+		F11581E41A31861D00420CC3 /* testgitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testgitViewController.h; sourceTree = "<group>"; };
+		F11581E51A31861D00420CC3 /* testgitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testgitViewController.m; sourceTree = "<group>"; };
+		F1887DB71A32D4810056A568 /* RegisterMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterMainViewController.h; sourceTree = "<group>"; };
+		F1887DB81A32D4810056A568 /* RegisterMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterMainViewController.m; sourceTree = "<group>"; };
+		F1887DBA1A32F6E80056A568 /* ChooseSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSchoolViewController.h; sourceTree = "<group>"; };
+		F1887DBB1A32F6E80056A568 /* ChooseSchoolViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSchoolViewController.m; sourceTree = "<group>"; };
+		F1887DBD1A3329D30056A568 /* ChooseProfessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseProfessionViewController.h; sourceTree = "<group>"; };
+		F1887DBE1A3329D30056A568 /* ChooseProfessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseProfessionViewController.m; sourceTree = "<group>"; };
+		F1887DC01A332B2D0056A568 /* ChooseTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTimeViewController.h; sourceTree = "<group>"; };
+		F1887DC11A332B2D0056A568 /* ChooseTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTimeViewController.m; sourceTree = "<group>"; };
+		F1887DC31A332CDE0056A568 /* ReigisterNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReigisterNameViewController.h; sourceTree = "<group>"; };
+		F1887DC41A332CDE0056A568 /* ReigisterNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReigisterNameViewController.m; sourceTree = "<group>"; };
+		F1887DC61A336D020056A568 /* RigisterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RigisterDetailViewController.h; sourceTree = "<group>"; };
+		F1887DC71A336D020056A568 /* RigisterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RigisterDetailViewController.m; sourceTree = "<group>"; };
+		F1887DC91A3372700056A568 /* levelTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = levelTableViewCell.h; sourceTree = "<group>"; };
+		F1887DCA1A3372700056A568 /* levelTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = levelTableViewCell.m; sourceTree = "<group>"; };
+		F1887DCB1A3372700056A568 /* levelTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = levelTableViewCell.xib; sourceTree = "<group>"; };
+		F1B875EE1A34B08F003AA3ED /* TagTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewCell.h; sourceTree = "<group>"; };
+		F1B875EF1A34B08F003AA3ED /* TagTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewCell.m; sourceTree = "<group>"; };
+		F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagTableViewCell.xib; sourceTree = "<group>"; };
+		F1B88C271A45AAE2005D601D /* FriendsManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsManagementViewController.h; sourceTree = "<group>"; };
+		F1B88C281A45AAE2005D601D /* FriendsManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsManagementViewController.m; sourceTree = "<group>"; };
+		F1B88C2A1A45B47C005D601D /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendTableViewCell.h; sourceTree = "<group>"; };
+		F1B88C2B1A45B47C005D601D /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendTableViewCell.m; sourceTree = "<group>"; };
+		F1B88C2C1A45B47C005D601D /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendTableViewCell.xib; sourceTree = "<group>"; };
+		F1B88C2F1A45DE60005D601D /* AddFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFriendsViewController.h; sourceTree = "<group>"; };
+		F1B88C301A45DE61005D601D /* AddFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFriendsViewController.m; sourceTree = "<group>"; };
+		F1B88C321A45E18F005D601D /* searchFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = searchFriendTableViewCell.h; sourceTree = "<group>"; };
+		F1B88C331A45E18F005D601D /* searchFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = searchFriendTableViewCell.m; sourceTree = "<group>"; };
+		F1B88C341A45E18F005D601D /* searchFriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = searchFriendTableViewCell.xib; sourceTree = "<group>"; };
+		F1B88C3B1A45E95B005D601D /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		F1B88C3C1A45E95B005D601D /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		F1B88C3E1A45EB09005D601D /* accountTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = accountTableViewCell.h; sourceTree = "<group>"; };
+		F1B88C3F1A45EB09005D601D /* accountTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = accountTableViewCell.m; sourceTree = "<group>"; };
+		F1B88C401A45EB09005D601D /* accountTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = accountTableViewCell.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		78C6C85C1A2B411000D8425E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7EDA3A7252F7A37ADCA65F5 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78C6C8781A2B411200D8425E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A0B6AA458B84670ED31A262 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6D722640D16A2035FDB4981 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50D7D4801470FE2ABA1E277D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */,
+				B6A6B0A91962E9C6FD0C4158 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		781608BD1A53CE70001B50F5 /* localData */ = {
+			isa = PBXGroup;
+			children = (
+				781608BA1A53C8BD001B50F5 /* RegisteData.h */,
+				781608BB1A53C8BD001B50F5 /* RegisteData.m */,
+			);
+			name = localData;
+			sourceTree = "<group>";
+		};
+		781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */ = {
+			isa = PBXGroup;
+			children = (
+				F1B88C401A45EB09005D601D /* accountTableViewCell.xib */,
+				F1887DCB1A3372700056A568 /* levelTableViewCell.xib */,
+				78C6C8741A2B411100D8425E /* LaunchScreen.xib */,
+				F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */,
+				78F792D21A45657F00D14861 /* Images.xcassets */,
+				78C6C86F1A2B411100D8425E /* Registe.storyboard */,
+				781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */,
+			);
+			name = "Storyboard&xib";
+			sourceTree = "<group>";
+		};
+		787C7ED81A2F44C800657691 /* Viewcontroller */ = {
+			isa = PBXGroup;
+			children = (
+				F11581E31A3185FE00420CC3 /* MainLogicVC */,
+				F11581E21A3185F200420CC3 /* RegisteVC */,
+				78BF69A81A4D58070085A867 /* TestViewController.h */,
+				78BF69A91A4D58070085A867 /* TestViewController.m */,
+			);
+			name = Viewcontroller;
+			sourceTree = "<group>";
+		};
+		78C6C8561A2B411000D8425E = {
+			isa = PBXGroup;
+			children = (
+				F10D93011A57C901006770DE /* svprogress */,
+				78C6C8611A2B411100D8425E /* Sportplus */,
+				78C6C87E1A2B411200D8425E /* SportplusTests */,
+				78C6C8601A2B411100D8425E /* Products */,
+				50D7D4801470FE2ABA1E277D /* Pods */,
+				0A0B6AA458B84670ED31A262 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+		78C6C8601A2B411100D8425E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78C6C85F1A2B411100D8425E /* Sportplus.app */,
+				78C6C87B1A2B411200D8425E /* SportplusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78C6C8611A2B411100D8425E /* Sportplus */ = {
+			isa = PBXGroup;
+			children = (
+				781608BD1A53CE70001B50F5 /* localData */,
+				78CA8AE41A4C05AB000C9AEA /* NetWork */,
+				787C7ED81A2F44C800657691 /* Viewcontroller */,
+				781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */,
+				78C6C8661A2B411100D8425E /* AppDelegate.h */,
+				78C6C8671A2B411100D8425E /* AppDelegate.m */,
+				78C6C8691A2B411100D8425E /* Sportplus.xcdatamodeld */,
+				78C6C8621A2B411100D8425E /* Supporting Files */,
+			);
+			path = Sportplus;
+			sourceTree = "<group>";
+		};
+		78C6C8621A2B411100D8425E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78C6C8631A2B411100D8425E /* Info.plist */,
+				78C6C8641A2B411100D8425E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78C6C87E1A2B411200D8425E /* SportplusTests */ = {
+			isa = PBXGroup;
+			children = (
+				78C6C8811A2B411200D8425E /* SportplusTests.m */,
+				78C6C87F1A2B411200D8425E /* Supporting Files */,
+			);
+			path = SportplusTests;
+			sourceTree = "<group>";
+		};
+		78C6C87F1A2B411200D8425E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78C6C8801A2B411200D8425E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78CA8AE41A4C05AB000C9AEA /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				78CA8AE51A4C0649000C9AEA /* AvosCloudNetNetWorkManager.h */,
+				78CA8AE61A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
+		F10D93011A57C901006770DE /* svprogress */ = {
+			isa = PBXGroup;
+			children = (
+				F10D93021A57C91C006770DE /* SVProgressHUD-Prefix.pch */,
+				F10D93031A57C91C006770DE /* SVProgressHUD.bundle */,
+				F10D93041A57C91C006770DE /* SVProgressHUD.h */,
+				F10D93051A57C91C006770DE /* SVProgressHUD.m */,
+			);
+			name = svprogress;
+			sourceTree = "<group>";
+		};
+		F11581E21A3185F200420CC3 /* RegisteVC */ = {
+			isa = PBXGroup;
+			children = (
+				F11581E41A31861D00420CC3 /* testgitViewController.h */,
+				F11581E51A31861D00420CC3 /* testgitViewController.m */,
+				F1887DB71A32D4810056A568 /* RegisterMainViewController.h */,
+				F1887DB81A32D4810056A568 /* RegisterMainViewController.m */,
+				F1887DBA1A32F6E80056A568 /* ChooseSchoolViewController.h */,
+				F1887DBB1A32F6E80056A568 /* ChooseSchoolViewController.m */,
+				F1887DBD1A3329D30056A568 /* ChooseProfessionViewController.h */,
+				F1887DBE1A3329D30056A568 /* ChooseProfessionViewController.m */,
+				F1887DC01A332B2D0056A568 /* ChooseTimeViewController.h */,
+				F1887DC11A332B2D0056A568 /* ChooseTimeViewController.m */,
+				F1887DC31A332CDE0056A568 /* ReigisterNameViewController.h */,
+				F1887DC41A332CDE0056A568 /* ReigisterNameViewController.m */,
+				F1887DC61A336D020056A568 /* RigisterDetailViewController.h */,
+				F1887DC71A336D020056A568 /* RigisterDetailViewController.m */,
+				F1887DC91A3372700056A568 /* levelTableViewCell.h */,
+				F1887DCA1A3372700056A568 /* levelTableViewCell.m */,
+				F1B875EE1A34B08F003AA3ED /* TagTableViewCell.h */,
+				F1B875EF1A34B08F003AA3ED /* TagTableViewCell.m */,
+				F105E9E41A55B8A500DDE19C /* RegistFinshViewController.h */,
+				F105E9E51A55B8A500DDE19C /* RegistFinshViewController.m */,
+			);
+			name = RegisteVC;
+			sourceTree = "<group>";
+		};
+		F11581E31A3185FE00420CC3 /* MainLogicVC */ = {
+			isa = PBXGroup;
+			children = (
+				F1B88C371A45E70D005D601D /* Setting */,
+				F1B88C231A45A73C005D601D /* FriendsManagement */,
+				78F792CF1A45515100D14861 /* MainTabBarController.h */,
+				78F792D01A45515100D14861 /* MainTabBarController.m */,
+			);
+			name = MainLogicVC;
+			sourceTree = "<group>";
+		};
+		F1B88C231A45A73C005D601D /* FriendsManagement */ = {
+			isa = PBXGroup;
+			children = (
+				F1B88C271A45AAE2005D601D /* FriendsManagementViewController.h */,
+				F1B88C281A45AAE2005D601D /* FriendsManagementViewController.m */,
+				F1B88C2A1A45B47C005D601D /* FriendTableViewCell.h */,
+				F1B88C2B1A45B47C005D601D /* FriendTableViewCell.m */,
+				F1B88C2C1A45B47C005D601D /* FriendTableViewCell.xib */,
+				F1B88C2F1A45DE60005D601D /* AddFriendsViewController.h */,
+				F1B88C301A45DE61005D601D /* AddFriendsViewController.m */,
+				F1B88C321A45E18F005D601D /* searchFriendTableViewCell.h */,
+				F1B88C331A45E18F005D601D /* searchFriendTableViewCell.m */,
+				F1B88C341A45E18F005D601D /* searchFriendTableViewCell.xib */,
+				F10D93101A57FAE1006770DE /* SportsCollectionViewCell.h */,
+				F10D93111A57FAE1006770DE /* SportsCollectionViewCell.m */,
+				F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */,
+			);
+			name = FriendsManagement;
+			sourceTree = "<group>";
+		};
+		F1B88C371A45E70D005D601D /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F1B88C3B1A45E95B005D601D /* SettingViewController.h */,
+				F1B88C3C1A45E95B005D601D /* SettingViewController.m */,
+				F1B88C3E1A45EB09005D601D /* accountTableViewCell.h */,
+				F1B88C3F1A45EB09005D601D /* accountTableViewCell.m */,
+			);
+			name = Setting;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		78C6C85E1A2B411000D8425E /* Sportplus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78C6C8851A2B411200D8425E /* Build configuration list for PBXNativeTarget "Sportplus" */;
+			buildPhases = (
+				D43D6EBD4EEA5D7C5A07E76D /* Check Pods Manifest.lock */,
+				78C6C85B1A2B411000D8425E /* Sources */,
+				78C6C85C1A2B411000D8425E /* Frameworks */,
+				78C6C85D1A2B411000D8425E /* Resources */,
+				7594F5DBCF829D30769F35B8 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sportplus;
+			productName = Sportplus;
+			productReference = 78C6C85F1A2B411100D8425E /* Sportplus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		78C6C87A1A2B411200D8425E /* SportplusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78C6C8881A2B411200D8425E /* Build configuration list for PBXNativeTarget "SportplusTests" */;
+			buildPhases = (
+				78C6C8771A2B411200D8425E /* Sources */,
+				78C6C8781A2B411200D8425E /* Frameworks */,
+				78C6C8791A2B411200D8425E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78C6C87D1A2B411200D8425E /* PBXTargetDependency */,
+			);
+			name = SportplusTests;
+			productName = SportplusTests;
+			productReference = 78C6C87B1A2B411200D8425E /* SportplusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		78C6C8571A2B411000D8425E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = JiaZai;
+				TargetAttributes = {
+					78C6C85E1A2B411000D8425E = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = GS9T9X284M;
+					};
+					78C6C87A1A2B411200D8425E = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 78C6C85E1A2B411000D8425E;
+					};
+				};
+			};
+			buildConfigurationList = 78C6C85A1A2B411000D8425E /* Build configuration list for PBXProject "Sportplus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 78C6C8561A2B411000D8425E;
+			productRefGroup = 78C6C8601A2B411100D8425E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				78C6C85E1A2B411000D8425E /* Sportplus */,
+				78C6C87A1A2B411200D8425E /* SportplusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		78C6C85D1A2B411000D8425E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
+				78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */,
+				78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */,
+				F1B88C2E1A45B47C005D601D /* FriendTableViewCell.xib in Resources */,
+				78F792D31A45657F00D14861 /* Images.xcassets in Resources */,
+				F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */,
+				781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */,
+				F1B88C421A45EB09005D601D /* accountTableViewCell.xib in Resources */,
+				F1887DCD1A3372700056A568 /* levelTableViewCell.xib in Resources */,
+				F1B88C361A45E18F005D601D /* searchFriendTableViewCell.xib in Resources */,
+				F10D93141A57FAE1006770DE /* SportsCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78C6C8791A2B411200D8425E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F10D93071A57C91C006770DE /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7594F5DBCF829D30769F35B8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D43D6EBD4EEA5D7C5A07E76D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		78C6C85B1A2B411000D8425E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1887DC81A336D020056A568 /* RigisterDetailViewController.m in Sources */,
+				F1B88C291A45AAE2005D601D /* FriendsManagementViewController.m in Sources */,
+				F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */,
+				F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */,
+				78F792D11A45515100D14861 /* MainTabBarController.m in Sources */,
+				F1887DC51A332CDE0056A568 /* ReigisterNameViewController.m in Sources */,
+				F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */,
+				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
+				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
+				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
+				78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */,
+				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
+				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
+				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
+				F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */,
+				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
+				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
+				781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */,
+				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
+				F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */,
+				F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */,
+				78C6C8651A2B411100D8425E /* main.m in Sources */,
+				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
+				F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */,
+				F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78C6C8771A2B411200D8425E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78C6C8821A2B411200D8425E /* SportplusTests.m in Sources */,
+				F10D93091A57C91C006770DE /* SVProgressHUD.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		78C6C87D1A2B411200D8425E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78C6C85E1A2B411000D8425E /* Sportplus */;
+			targetProxy = 78C6C87C1A2B411200D8425E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				781ECBD31A2EF37C00B14CAF /* Base */,
+			);
+			name = MainLogic.Storyboard;
+			sourceTree = "<group>";
+		};
+		78C6C86F1A2B411100D8425E /* Registe.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78C6C8701A2B411100D8425E /* Base */,
+			);
+			name = Registe.storyboard;
+			sourceTree = "<group>";
+		};
+		78C6C8741A2B411100D8425E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78C6C8751A2B411100D8425E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		78C6C8831A2B411200D8425E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		78C6C8841A2B411200D8425E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		78C6C8861A2B411200D8425E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hongming Zhu (H5SJ56Z88P)";
+				INFOPLIST_FILE = Sportplus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Sportplus;
+				PROVISIONING_PROFILE = "dc6043b8-fd33-4b45-850e-dbf96cc30e47";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		78C6C8871A2B411200D8425E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6A6B0A91962E9C6FD0C4158 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Hongming Zhu (H5SJ56Z88P)";
+				INFOPLIST_FILE = Sportplus/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = Sportplus;
+				PROVISIONING_PROFILE = "dc6043b8-fd33-4b45-850e-dbf96cc30e47";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		78C6C8891A2B411200D8425E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SportplusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = SportplusTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sportplus.app/Sportplus";
+			};
+			name = Debug;
+		};
+		78C6C88A1A2B411200D8425E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SportplusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = SportplusTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sportplus.app/Sportplus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		78C6C85A1A2B411000D8425E /* Build configuration list for PBXProject "Sportplus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C6C8831A2B411200D8425E /* Debug */,
+				78C6C8841A2B411200D8425E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78C6C8851A2B411200D8425E /* Build configuration list for PBXNativeTarget "Sportplus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C6C8861A2B411200D8425E /* Debug */,
+				78C6C8871A2B411200D8425E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78C6C8881A2B411200D8425E /* Build configuration list for PBXNativeTarget "SportplusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78C6C8891A2B411200D8425E /* Debug */,
+				78C6C88A1A2B411200D8425E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		78C6C8691A2B411100D8425E /* Sportplus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				78C6C86A1A2B411100D8425E /* Sportplus.xcdatamodel */,
+			);
+			currentVersion = 78C6C86A1A2B411100D8425E /* Sportplus.xcdatamodel */;
+			path = Sportplus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 78C6C8571A2B411000D8425E /* Project object */;
+}
