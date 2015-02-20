@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */; };
+		192670A41A874B0600895308 /* addFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 192670A31A874B0600895308 /* addFriendRequest.m */; };
+		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
+		192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C051A8E2C0000D81B3A /* test1stVC.m */; };
+		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
 		781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 781608BB1A53C8BD001B50F5 /* RegisteData.m */; };
 		781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */; };
 		78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BF69A91A4D58070085A867 /* TestViewController.m */; };
@@ -60,6 +65,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = testIPAD.storyboard; path = Sportplus/testIPAD.storyboard; sourceTree = "<group>"; };
+		192670A21A874B0600895308 /* addFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFriendRequest.h; sourceTree = "<group>"; };
+		192670A31A874B0600895308 /* addFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendRequest.m; sourceTree = "<group>"; };
+		192A9BFA1A8DCA0700D81B3A /* spUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spUser.h; sourceTree = "<group>"; };
+		192A9BFB1A8DCA0700D81B3A /* spUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spUser.m; sourceTree = "<group>"; };
+		192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spAVModels.h; sourceTree = "<group>"; };
+		192A9C041A8E2C0000D81B3A /* test1stVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test1stVC.h; sourceTree = "<group>"; };
+		192A9C051A8E2C0000D81B3A /* test1stVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1stVC.m; sourceTree = "<group>"; };
+		192A9C071A8E34C100D81B3A /* test2thVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2thVC.h; sourceTree = "<group>"; };
+		192A9C081A8E34C100D81B3A /* test2thVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test2thVC.m; sourceTree = "<group>"; };
 		32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		781608BA1A53C8BD001B50F5 /* RegisteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteData.h; sourceTree = "<group>"; };
 		781608BB1A53C8BD001B50F5 /* RegisteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteData.m; sourceTree = "<group>"; };
@@ -157,6 +172,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1920A9EE1A8CA9F300D13F86 /* test */ = {
+			isa = PBXGroup;
+			children = (
+				1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */,
+				192A9C041A8E2C0000D81B3A /* test1stVC.h */,
+				192A9C051A8E2C0000D81B3A /* test1stVC.m */,
+				192A9C071A8E34C100D81B3A /* test2thVC.h */,
+				192A9C081A8E34C100D81B3A /* test2thVC.m */,
+			);
+			name = test;
+			sourceTree = "<group>";
+		};
+		192670A01A874AB600895308 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				192670A11A874ACA00895308 /* avobject */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		192670A11A874ACA00895308 /* avobject */ = {
+			isa = PBXGroup;
+			children = (
+				192670A21A874B0600895308 /* addFriendRequest.h */,
+				192670A31A874B0600895308 /* addFriendRequest.m */,
+				192A9BFA1A8DCA0700D81B3A /* spUser.h */,
+				192A9BFB1A8DCA0700D81B3A /* spUser.m */,
+				192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */,
+			);
+			name = avobject;
+			sourceTree = "<group>";
+		};
 		50D7D4801470FE2ABA1E277D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +250,7 @@
 		78C6C8561A2B411000D8425E = {
 			isa = PBXGroup;
 			children = (
+				1920A9EE1A8CA9F300D13F86 /* test */,
 				F10D93011A57C901006770DE /* svprogress */,
 				78C6C8611A2B411100D8425E /* Sportplus */,
 				78C6C87E1A2B411200D8425E /* SportplusTests */,
@@ -225,6 +273,7 @@
 		78C6C8611A2B411100D8425E /* Sportplus */ = {
 			isa = PBXGroup;
 			children = (
+				192670A01A874AB600895308 /* models */,
 				781608BD1A53CE70001B50F5 /* localData */,
 				78CA8AE41A4C05AB000C9AEA /* NetWork */,
 				787C7ED81A2F44C800657691 /* Viewcontroller */,
@@ -403,7 +452,7 @@
 				TargetAttributes = {
 					78C6C85E1A2B411000D8425E = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = GS9T9X284M;
+						DevelopmentTeam = TX7PFT8X7E;
 					};
 					78C6C87A1A2B411200D8425E = {
 						CreatedOnToolsVersion = 6.1;
@@ -435,6 +484,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */,
 				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
 				78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */,
 				78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */,
@@ -504,21 +554,25 @@
 				78F792D11A45515100D14861 /* MainTabBarController.m in Sources */,
 				F1887DC51A332CDE0056A568 /* ReigisterNameViewController.m in Sources */,
 				F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */,
+				192670A41A874B0600895308 /* addFriendRequest.m in Sources */,
 				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
 				78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */,
+				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
 				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
 				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
 				F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */,
 				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
 				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
+				192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */,
 				781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */,
 				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
 				F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */,
 				F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */,
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
+				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
 				F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */,
 				F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */,
@@ -653,12 +707,12 @@
 			baseConfigurationReference = 32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hongming Zhu (H5SJ56Z88P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuanzhe Chen (XU23TVR88C)";
 				INFOPLIST_FILE = Sportplus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "dc6043b8-fd33-4b45-850e-dbf96cc30e47";
+				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -668,12 +722,12 @@
 			baseConfigurationReference = B6A6B0A91962E9C6FD0C4158 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Hongming Zhu (H5SJ56Z88P)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuanzhe Chen (XU23TVR88C)";
 				INFOPLIST_FILE = Sportplus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "dc6043b8-fd33-4b45-850e-dbf96cc30e47";
+				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

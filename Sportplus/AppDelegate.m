@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <AVOSCloud/AVOSCloud.h>
+#import "spAVModels.h"
 
 #define _AVOSAPPID @"68y9mskzle3aaj8o3gvbsy5zgrtaq9tobl2t0f8uevvvkkrz"
 #define _AVOSAPPKey @"k3wvj25usdhs8y2j0s4fqdavnr5hvjv3yibzfs6b3zsdyfpp"
@@ -19,6 +20,10 @@
 
 @implementation AppDelegate
 
+- (void)registeMyAVObjevt {
+    [spUser registerSubclass] ;
+    [addFriendRequest registerSubclass] ;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -27,6 +32,7 @@
 //    self.window.rootViewController = [storyBorad instantiateInitialViewController] ;
     
 #warning 测试环境！
+    [self registeMyAVObjevt] ;
     [AVOSCloud setApplicationId:_AVOSAPPID clientKey:_AVOSAPPKey] ;
 #warning 跟踪应用打开情况!
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions] ;
