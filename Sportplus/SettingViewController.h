@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>{
+@interface SettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate>{
     NSMutableArray *titleArray;
     NSMutableArray *cellTitle;
 }

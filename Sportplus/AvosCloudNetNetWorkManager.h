@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <AVOSCloud/AVOSCloud.h>
 
-#warning 无形装B，最为致命！
 typedef NS_OPTIONS(NSUInteger, SportEnum) {
     SportNone       = 0,
     SportPingpang   = 1 << 0 ,

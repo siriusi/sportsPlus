@@ -8,6 +8,9 @@
 
 #import "SettingViewController.h"
 #import "accountTableViewCell.h"
+
+#import "spCommon.h"
+
 @interface SettingViewController ()
 
 @end
@@ -146,6 +149,15 @@
     return 32;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        NSLog(@"头像！！") ;
+        [SPUtils pickImageFromPhotoLibraryAtController:self] ;
+    } else {
+        NSLog(@"fuck") ;
+    }
+}
+
 /*
 #pragma mark - Navigation
 
@@ -155,5 +167,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark － UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSLog(@"已经选择") ;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        UIActivityIndicatorView* indicator=[SPUtils showIndicatorAtView:self.view];
+        UIImage* image=info[UIImagePickerControllerEditedImage];
+        UIImage* rounded=[SPUtils roundImage:image toSize:CGSizeMake(200, 200) radius:20];
+
+//        [CDUserService saveAvatar:rounded callback:^(BOOL succeeded, NSError *error) {
+//            [indicator stopAnimating];
+//            [CDUtils filterError:error callback:^{
+//                self.avatarView.image=rounded;
+//            }];
+//        }];
+    }];
+}
+
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"取消") ;
+}
+
 
 @end

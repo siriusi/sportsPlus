@@ -167,7 +167,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"click %ld",(long)indexPath.row);
-    SportsCollectionViewCell *cell = [self.sportsCollectionView cellForItemAtIndexPath:indexPath];
+//    SportsCollectionViewCell *cell = [self.sportsCollectionView cellForItemAtIndexPath:indexPath];
     
     
 }

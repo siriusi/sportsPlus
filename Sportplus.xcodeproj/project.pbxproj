@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1911EB9A1A9779A20044F04F /* SPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1911EB991A9779A20044F04F /* SPUtils.m */; };
 		1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */; };
 		192670A41A874B0600895308 /* addFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 192670A31A874B0600895308 /* addFriendRequest.m */; };
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
@@ -65,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1911EB961A97792A0044F04F /* spCommonDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spCommonDefine.h; sourceTree = "<group>"; };
+		1911EB971A9779550044F04F /* spCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spCommon.h; sourceTree = "<group>"; };
+		1911EB981A9779A20044F04F /* SPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUtils.h; sourceTree = "<group>"; };
+		1911EB991A9779A20044F04F /* SPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUtils.m; sourceTree = "<group>"; };
 		1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = testIPAD.storyboard; path = Sportplus/testIPAD.storyboard; sourceTree = "<group>"; };
 		192670A21A874B0600895308 /* addFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFriendRequest.h; sourceTree = "<group>"; };
 		192670A31A874B0600895308 /* addFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendRequest.m; sourceTree = "<group>"; };
@@ -172,6 +177,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1911EB921A9773F60044F04F /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				1911EB961A97792A0044F04F /* spCommonDefine.h */,
+				1911EB971A9779550044F04F /* spCommon.h */,
+			);
+			name = setting;
+			sourceTree = "<group>";
+		};
+		1911EB951A9778E30044F04F /* service */ = {
+			isa = PBXGroup;
+			children = (
+				1911EB981A9779A20044F04F /* SPUtils.h */,
+				1911EB991A9779A20044F04F /* SPUtils.m */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
 		1920A9EE1A8CA9F300D13F86 /* test */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +248,6 @@
 		781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */ = {
 			isa = PBXGroup;
 			children = (
-				F1B88C401A45EB09005D601D /* accountTableViewCell.xib */,
 				F1887DCB1A3372700056A568 /* levelTableViewCell.xib */,
 				78C6C8741A2B411100D8425E /* LaunchScreen.xib */,
 				F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */,
@@ -273,13 +295,15 @@
 		78C6C8611A2B411100D8425E /* Sportplus */ = {
 			isa = PBXGroup;
 			children = (
+				1911EB951A9778E30044F04F /* service */,
+				1911EB921A9773F60044F04F /* setting */,
+				78C6C8661A2B411100D8425E /* AppDelegate.h */,
+				78C6C8671A2B411100D8425E /* AppDelegate.m */,
 				192670A01A874AB600895308 /* models */,
 				781608BD1A53CE70001B50F5 /* localData */,
 				78CA8AE41A4C05AB000C9AEA /* NetWork */,
 				787C7ED81A2F44C800657691 /* Viewcontroller */,
 				781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */,
-				78C6C8661A2B411100D8425E /* AppDelegate.h */,
-				78C6C8671A2B411100D8425E /* AppDelegate.m */,
 				78C6C8691A2B411100D8425E /* Sportplus.xcdatamodeld */,
 				78C6C8621A2B411100D8425E /* Supporting Files */,
 			);
@@ -396,6 +420,7 @@
 				F1B88C3B1A45E95B005D601D /* SettingViewController.h */,
 				F1B88C3C1A45E95B005D601D /* SettingViewController.m */,
 				F1B88C3E1A45EB09005D601D /* accountTableViewCell.h */,
+				F1B88C401A45EB09005D601D /* accountTableViewCell.xib */,
 				F1B88C3F1A45EB09005D601D /* accountTableViewCell.m */,
 			);
 			name = Setting;
@@ -547,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1911EB9A1A9779A20044F04F /* SPUtils.m in Sources */,
 				F1887DC81A336D020056A568 /* RigisterDetailViewController.m in Sources */,
 				F1B88C291A45AAE2005D601D /* FriendsManagementViewController.m in Sources */,
 				F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */,
