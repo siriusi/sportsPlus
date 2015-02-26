@@ -31,7 +31,9 @@
 //    UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Registe" bundle:nil] ;
 //    self.window.rootViewController = [storyBorad instantiateInitialViewController] ;
     
-#warning 测试环境！
+#warning 云代码测试环境！
+//    [AVCloud setProductionMode:NO] ;
+    
     [self registeMyAVObjevt] ;
     [AVOSCloud setApplicationId:_AVOSAPPID clientKey:_AVOSAPPKey] ;
 #warning 跟踪应用打开情况!

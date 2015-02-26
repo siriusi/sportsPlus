@@ -54,6 +54,12 @@
 #define COCOAPODS_VERSION_MINOR_AVOSCloud 6
 #define COCOAPODS_VERSION_PATCH_AVOSCloud 7
 
+// MessageDisplayKit
+#define COCOAPODS_POD_AVAILABLE_MessageDisplayKit
+#define COCOAPODS_VERSION_MAJOR_MessageDisplayKit 3
+#define COCOAPODS_VERSION_MINOR_MessageDisplayKit 0
+#define COCOAPODS_VERSION_PATCH_MessageDisplayKit 1
+
 // RBStoryboardLink
 #define COCOAPODS_POD_AVAILABLE_RBStoryboardLink
 #define COCOAPODS_VERSION_MAJOR_RBStoryboardLink 0

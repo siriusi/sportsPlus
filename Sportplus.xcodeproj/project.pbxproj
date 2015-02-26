@@ -13,6 +13,11 @@
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
 		192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C051A8E2C0000D81B3A /* test1stVC.m */; };
 		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
+		193CEE281A9F461F007A0CF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE271A9F461F007A0CF0 /* Images.xcassets */; };
+		193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */; };
+		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
+		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
+		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
 		781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 781608BB1A53C8BD001B50F5 /* RegisteData.m */; };
 		781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */; };
 		78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BF69A91A4D58070085A867 /* TestViewController.m */; };
@@ -24,7 +29,6 @@
 		78C6C8821A2B411200D8425E /* SportplusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 78C6C8811A2B411200D8425E /* SportplusTests.m */; };
 		78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 78CA8AE61A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m */; };
 		78F792D11A45515100D14861 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78F792D01A45515100D14861 /* MainTabBarController.m */; };
-		78F792D31A45657F00D14861 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F792D21A45657F00D14861 /* Images.xcassets */; };
 		D7EDA3A7252F7A37ADCA65F5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6D722640D16A2035FDB4981 /* libPods.a */; };
 		F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F105E9E51A55B8A500DDE19C /* RegistFinshViewController.m */; };
 		F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F10D93031A57C91C006770DE /* SVProgressHUD.bundle */; };
@@ -80,6 +84,14 @@
 		192A9C051A8E2C0000D81B3A /* test1stVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1stVC.m; sourceTree = "<group>"; };
 		192A9C071A8E34C100D81B3A /* test2thVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2thVC.h; sourceTree = "<group>"; };
 		192A9C081A8E34C100D81B3A /* test2thVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test2thVC.m; sourceTree = "<group>"; };
+		193CEE271A9F461F007A0CF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		193CEE2B1A9F7D7A007A0CF0 /* FriendInviteManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInviteManageViewController.h; sourceTree = "<group>"; };
+		193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInviteManageViewController.m; sourceTree = "<group>"; };
+		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
+		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
+		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
+		198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterTableViewCell.m; sourceTree = "<group>"; };
+		198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = spNotificationCenterTableViewCell.xib; sourceTree = "<group>"; };
 		32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		781608BA1A53C8BD001B50F5 /* RegisteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteData.h; sourceTree = "<group>"; };
 		781608BB1A53C8BD001B50F5 /* RegisteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteData.m; sourceTree = "<group>"; };
@@ -101,7 +113,6 @@
 		78CA8AE61A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AvosCloudNetNetWorkManager.m; sourceTree = "<group>"; };
 		78F792CF1A45515100D14861 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		78F792D01A45515100D14861 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
-		78F792D21A45657F00D14861 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		A6D722640D16A2035FDB4981 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A6B0A91962E9C6FD0C4158 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F105E9E41A55B8A500DDE19C /* RegistFinshViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistFinshViewController.h; sourceTree = "<group>"; };
@@ -227,6 +238,36 @@
 			name = avobject;
 			sourceTree = "<group>";
 		};
+		193CEE291A9F7D3A007A0CF0 /* 信息管理二级界面 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE2A1A9F7D47007A0CF0 /* 好友约伴消息 */,
+			);
+			name = "信息管理二级界面";
+			sourceTree = "<group>";
+		};
+		193CEE2A1A9F7D47007A0CF0 /* 好友约伴消息 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE2B1A9F7D7A007A0CF0 /* FriendInviteManageViewController.h */,
+				193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */,
+			);
+			name = "好友约伴消息";
+			sourceTree = "<group>";
+		};
+		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE291A9F7D3A007A0CF0 /* 信息管理二级界面 */,
+				198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */,
+				198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */,
+				198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */,
+				198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */,
+				198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */,
+			);
+			name = "信息管理";
+			sourceTree = "<group>";
+		};
 		50D7D4801470FE2ABA1E277D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,10 +289,10 @@
 		781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */ = {
 			isa = PBXGroup;
 			children = (
+				193CEE271A9F461F007A0CF0 /* Images.xcassets */,
 				F1887DCB1A3372700056A568 /* levelTableViewCell.xib */,
 				78C6C8741A2B411100D8425E /* LaunchScreen.xib */,
 				F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */,
-				78F792D21A45657F00D14861 /* Images.xcassets */,
 				78C6C86F1A2B411100D8425E /* Registe.storyboard */,
 				781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */,
 			);
@@ -386,6 +427,7 @@
 		F11581E31A3185FE00420CC3 /* MainLogicVC */ = {
 			isa = PBXGroup;
 			children = (
+				198520AC1A9DAB7D0098F93D /* 信息管理 */,
 				F1B88C371A45E70D005D601D /* Setting */,
 				F1B88C231A45A73C005D601D /* FriendsManagement */,
 				78F792CF1A45515100D14861 /* MainTabBarController.h */,
@@ -510,11 +552,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */,
+				198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */,
 				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
+				193CEE281A9F461F007A0CF0 /* Images.xcassets in Resources */,
 				78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */,
 				78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */,
 				F1B88C2E1A45B47C005D601D /* FriendTableViewCell.xib in Resources */,
-				78F792D31A45657F00D14861 /* Images.xcassets in Resources */,
 				F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */,
 				781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */,
 				F1B88C421A45EB09005D601D /* accountTableViewCell.xib in Resources */,
@@ -582,7 +625,9 @@
 				F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */,
 				192670A41A874B0600895308 /* addFriendRequest.m in Sources */,
 				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
+				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
+				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
 				78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */,
 				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
@@ -590,6 +635,7 @@
 				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
 				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
 				F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */,
+				193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */,
 				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
 				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
 				192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */,

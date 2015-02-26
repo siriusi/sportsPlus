@@ -28,10 +28,6 @@
 //@property NSArray *SP_picList ;//照片列表
 @property NSArray *SP_sportList ;//运动列表
 
-#warning 头像！
-@property NSNumber *SP_head ;//头像
-
-
-
+@property AVFile *SP_avatar ;//头像
 
 @end

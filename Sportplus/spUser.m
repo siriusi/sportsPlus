@@ -24,8 +24,7 @@
 
 @dynamic SP_tagList ;
 @dynamic SP_sportList ;
-@dynamic SP_head ;
-
+@dynamic SP_avatar ;
 
 +(NSString *)parseClassName {
     return @"_User" ;

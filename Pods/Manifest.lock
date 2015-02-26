@@ -21,18 +21,21 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AVOSCloud (2.6.7)
+  - MessageDisplayKit (3.0.1)
   - RBStoryboardLink (0.1.0)
   - Reachability (3.2)
 
 DEPENDENCIES:
   - AFNetworking
   - AVOSCloud
+  - MessageDisplayKit
   - RBStoryboardLink (~> 0.1.0)
   - Reachability
 
 SPEC CHECKSUMS:
   AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
   AVOSCloud: b9b7123e576d9d4a30d912e52a100a2561f841dd
+  MessageDisplayKit: 63e964f5ade8e1666db16fe0c0c660e2429f2aaf
   RBStoryboardLink: 2abe4697a7dd6137482590b044f6e4f1c2b05837
   Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
 

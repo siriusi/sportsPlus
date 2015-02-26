@@ -6,53 +6,63 @@
 	<dict>
 		<key>Pods-AFNetworking.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-AVOSCloud.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MessageDisplayKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-RBStoryboardLink.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Reachability.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06E9F904C4B933D2196ED7C4</key>
+		<key>09796BDE4758781F555769CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>22C50D6E13F8ADF3B635CD0D</key>
+		<key>3B8B12CEBB0C4C90A96EA36F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6763A26F13936BD1D3BAEC2F</key>
+		<key>702532670E7CCE79C0DBF79D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8365C380FCCB667909C55F1A</key>
+		<key>7A497A35934748DCB7370B1F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6805F1CD553E1A726F9EB4F</key>
+		<key>B2043E16A1714059EAFD8F9A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3703354C3D2071ED5E59C69</key>
 		<dict>
 			<key>primary</key>
 			<true/>
