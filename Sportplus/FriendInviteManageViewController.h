@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InviteInfoTableViewCell.h"
 
-@interface FriendInviteManageViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface FriendInviteManageViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,SWTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *checkSendedInviteBtn;

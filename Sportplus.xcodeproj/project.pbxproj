@@ -15,6 +15,15 @@
 		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
 		193CEE281A9F461F007A0CF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE271A9F461F007A0CF0 /* Images.xcassets */; };
 		193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */; };
+		193CEE301A9FB221007A0CF0 /* InviteInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2F1A9FB221007A0CF0 /* InviteInfoTableViewCell.m */; };
+		193CEE321AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE311AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib */; };
+		193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE351AA0B824007A0CF0 /* friendRequestManageViewController.m */; };
+		193CEE3A1AA0BA19007A0CF0 /* friendRequestTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE381AA0BA19007A0CF0 /* friendRequestTableViewCell.m */; };
+		193CEE3B1AA0BA19007A0CF0 /* friendRequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE391AA0BA19007A0CF0 /* friendRequestTableViewCell.xib */; };
+		193CEE3F1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE3E1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m */; };
+		193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE431AA43311007A0CF0 /* ChatRoomListViewController.m */; };
+		193CEE481AA433F5007A0CF0 /* ChatRoomListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE461AA433F5007A0CF0 /* ChatRoomListTableViewCell.m */; };
+		193CEE491AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE471AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib */; };
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
@@ -87,6 +96,21 @@
 		193CEE271A9F461F007A0CF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		193CEE2B1A9F7D7A007A0CF0 /* FriendInviteManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInviteManageViewController.h; sourceTree = "<group>"; };
 		193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInviteManageViewController.m; sourceTree = "<group>"; };
+		193CEE2E1A9FB221007A0CF0 /* InviteInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteInfoTableViewCell.h; sourceTree = "<group>"; };
+		193CEE2F1A9FB221007A0CF0 /* InviteInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteInfoTableViewCell.m; sourceTree = "<group>"; };
+		193CEE311AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteInfoTableViewCell.xib; sourceTree = "<group>"; };
+		193CEE341AA0B824007A0CF0 /* friendRequestManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = friendRequestManageViewController.h; sourceTree = "<group>"; };
+		193CEE351AA0B824007A0CF0 /* friendRequestManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = friendRequestManageViewController.m; sourceTree = "<group>"; };
+		193CEE371AA0BA19007A0CF0 /* friendRequestTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = friendRequestTableViewCell.h; sourceTree = "<group>"; };
+		193CEE381AA0BA19007A0CF0 /* friendRequestTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = friendRequestTableViewCell.m; sourceTree = "<group>"; };
+		193CEE391AA0BA19007A0CF0 /* friendRequestTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = friendRequestTableViewCell.xib; sourceTree = "<group>"; };
+		193CEE3D1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StrangerInviteManageViewController.h; sourceTree = "<group>"; };
+		193CEE3E1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StrangerInviteManageViewController.m; sourceTree = "<group>"; };
+		193CEE421AA43311007A0CF0 /* ChatRoomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomListViewController.h; sourceTree = "<group>"; };
+		193CEE431AA43311007A0CF0 /* ChatRoomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomListViewController.m; sourceTree = "<group>"; };
+		193CEE451AA433F5007A0CF0 /* ChatRoomListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomListTableViewCell.h; sourceTree = "<group>"; };
+		193CEE461AA433F5007A0CF0 /* ChatRoomListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomListTableViewCell.m; sourceTree = "<group>"; };
+		193CEE471AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatRoomListTableViewCell.xib; sourceTree = "<group>"; };
 		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
 		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -241,6 +265,9 @@
 		193CEE291A9F7D3A007A0CF0 /* 信息管理二级界面 */ = {
 			isa = PBXGroup;
 			children = (
+				193CEE401AA42FB2007A0CF0 /* 即时聊天 */,
+				193CEE3C1AA1CECD007A0CF0 /* 陌生人约伴消息 */,
+				193CEE331AA0B7B3007A0CF0 /* 好友申请 */,
 				193CEE2A1A9F7D47007A0CF0 /* 好友约伴消息 */,
 			);
 			name = "信息管理二级界面";
@@ -251,8 +278,52 @@
 			children = (
 				193CEE2B1A9F7D7A007A0CF0 /* FriendInviteManageViewController.h */,
 				193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */,
+				193CEE2E1A9FB221007A0CF0 /* InviteInfoTableViewCell.h */,
+				193CEE311AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib */,
+				193CEE2F1A9FB221007A0CF0 /* InviteInfoTableViewCell.m */,
 			);
 			name = "好友约伴消息";
+			sourceTree = "<group>";
+		};
+		193CEE331AA0B7B3007A0CF0 /* 好友申请 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE341AA0B824007A0CF0 /* friendRequestManageViewController.h */,
+				193CEE351AA0B824007A0CF0 /* friendRequestManageViewController.m */,
+				193CEE371AA0BA19007A0CF0 /* friendRequestTableViewCell.h */,
+				193CEE381AA0BA19007A0CF0 /* friendRequestTableViewCell.m */,
+				193CEE391AA0BA19007A0CF0 /* friendRequestTableViewCell.xib */,
+			);
+			name = "好友申请";
+			sourceTree = "<group>";
+		};
+		193CEE3C1AA1CECD007A0CF0 /* 陌生人约伴消息 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE3D1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.h */,
+				193CEE3E1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m */,
+			);
+			name = "陌生人约伴消息";
+			sourceTree = "<group>";
+		};
+		193CEE401AA42FB2007A0CF0 /* 即时聊天 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE411AA42FBF007A0CF0 /* 聊天室 */,
+				193CEE421AA43311007A0CF0 /* ChatRoomListViewController.h */,
+				193CEE431AA43311007A0CF0 /* ChatRoomListViewController.m */,
+				193CEE451AA433F5007A0CF0 /* ChatRoomListTableViewCell.h */,
+				193CEE461AA433F5007A0CF0 /* ChatRoomListTableViewCell.m */,
+				193CEE471AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib */,
+			);
+			name = "即时聊天";
+			sourceTree = "<group>";
+		};
+		193CEE411AA42FBF007A0CF0 /* 聊天室 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "聊天室";
 			sourceTree = "<group>";
 		};
 		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
@@ -556,9 +627,12 @@
 				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
 				193CEE281A9F461F007A0CF0 /* Images.xcassets in Resources */,
 				78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */,
+				193CEE3B1AA0BA19007A0CF0 /* friendRequestTableViewCell.xib in Resources */,
 				78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */,
+				193CEE321AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib in Resources */,
 				F1B88C2E1A45B47C005D601D /* FriendTableViewCell.xib in Resources */,
 				F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */,
+				193CEE491AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib in Resources */,
 				781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */,
 				F1B88C421A45EB09005D601D /* accountTableViewCell.xib in Resources */,
 				F1887DCD1A3372700056A568 /* levelTableViewCell.xib in Resources */,
@@ -626,9 +700,11 @@
 				192670A41A874B0600895308 /* addFriendRequest.m in Sources */,
 				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
 				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
+				193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
+				193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */,
 				78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */,
 				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
@@ -637,9 +713,12 @@
 				F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */,
 				193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */,
 				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
+				193CEE3A1AA0BA19007A0CF0 /* friendRequestTableViewCell.m in Sources */,
 				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
 				192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */,
+				193CEE301A9FB221007A0CF0 /* InviteInfoTableViewCell.m in Sources */,
 				781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */,
+				193CEE3F1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m in Sources */,
 				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
 				F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */,
 				F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */,
@@ -648,6 +727,7 @@
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
 				F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */,
 				F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */,
+				193CEE481AA433F5007A0CF0 /* ChatRoomListTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
