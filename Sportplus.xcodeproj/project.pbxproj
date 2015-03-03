@@ -24,6 +24,9 @@
 		193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE431AA43311007A0CF0 /* ChatRoomListViewController.m */; };
 		193CEE481AA433F5007A0CF0 /* ChatRoomListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE461AA433F5007A0CF0 /* ChatRoomListTableViewCell.m */; };
 		193CEE491AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE471AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib */; };
+		193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE4E1AA45BF3007A0CF0 /* InviteStrangerViewController.m */; };
+		193CEE521AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE511AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m */; };
+		193CEE551AA5A5C0007A0CF0 /* InviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */; };
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
@@ -111,6 +114,12 @@
 		193CEE451AA433F5007A0CF0 /* ChatRoomListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatRoomListTableViewCell.h; sourceTree = "<group>"; };
 		193CEE461AA433F5007A0CF0 /* ChatRoomListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatRoomListTableViewCell.m; sourceTree = "<group>"; };
 		193CEE471AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatRoomListTableViewCell.xib; sourceTree = "<group>"; };
+		193CEE4D1AA45BF3007A0CF0 /* InviteStrangerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteStrangerViewController.h; sourceTree = "<group>"; };
+		193CEE4E1AA45BF3007A0CF0 /* InviteStrangerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteStrangerViewController.m; sourceTree = "<group>"; };
+		193CEE501AA4BC24007A0CF0 /* chooseWitchToInviteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chooseWitchToInviteViewController.h; sourceTree = "<group>"; };
+		193CEE511AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chooseWitchToInviteViewController.m; sourceTree = "<group>"; };
+		193CEE531AA5A5C0007A0CF0 /* InviteFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendViewController.h; sourceTree = "<group>"; };
+		193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendViewController.m; sourceTree = "<group>"; };
 		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
 		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -326,6 +335,35 @@
 			name = "聊天室";
 			sourceTree = "<group>";
 		};
+		193CEE4A1AA45B9F007A0CF0 /* 约伴 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE4C1AA45BB1007A0CF0 /* 陌生人约伴 */,
+				193CEE4B1AA45BAB007A0CF0 /* 好友约伴 */,
+				193CEE501AA4BC24007A0CF0 /* chooseWitchToInviteViewController.h */,
+				193CEE511AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m */,
+			);
+			name = "约伴";
+			sourceTree = "<group>";
+		};
+		193CEE4B1AA45BAB007A0CF0 /* 好友约伴 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE531AA5A5C0007A0CF0 /* InviteFriendViewController.h */,
+				193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */,
+			);
+			name = "好友约伴";
+			sourceTree = "<group>";
+		};
+		193CEE4C1AA45BB1007A0CF0 /* 陌生人约伴 */ = {
+			isa = PBXGroup;
+			children = (
+				193CEE4D1AA45BF3007A0CF0 /* InviteStrangerViewController.h */,
+				193CEE4E1AA45BF3007A0CF0 /* InviteStrangerViewController.m */,
+			);
+			name = "陌生人约伴";
+			sourceTree = "<group>";
+		};
 		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +536,7 @@
 		F11581E31A3185FE00420CC3 /* MainLogicVC */ = {
 			isa = PBXGroup;
 			children = (
+				193CEE4A1AA45B9F007A0CF0 /* 约伴 */,
 				198520AC1A9DAB7D0098F93D /* 信息管理 */,
 				F1B88C371A45E70D005D601D /* Setting */,
 				F1B88C231A45A73C005D601D /* FriendsManagement */,
@@ -694,9 +733,11 @@
 				F1B88C291A45AAE2005D601D /* FriendsManagementViewController.m in Sources */,
 				F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */,
 				F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */,
+				193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */,
 				78F792D11A45515100D14861 /* MainTabBarController.m in Sources */,
 				F1887DC51A332CDE0056A568 /* ReigisterNameViewController.m in Sources */,
 				F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */,
+				193CEE551AA5A5C0007A0CF0 /* InviteFriendViewController.m in Sources */,
 				192670A41A874B0600895308 /* addFriendRequest.m in Sources */,
 				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
 				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
@@ -722,6 +763,7 @@
 				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
 				F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */,
 				F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */,
+				193CEE521AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m in Sources */,
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
 				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
