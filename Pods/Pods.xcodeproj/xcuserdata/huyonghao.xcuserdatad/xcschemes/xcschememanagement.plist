@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Pods-MessageDisplayKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-RBStoryboardLink.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -24,6 +29,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Pods-SWTableViewCell.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +43,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>06E9F904C4B933D2196ED7C4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>06EBBBD62231AF06D7683641</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +72,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3B0EF571299CA2FCE25B3987</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>440C46B8B78A1DDFF67824B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>4C0C43A57CD900662162FA60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>53A97528ACB02515FF70078F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>55899C3D62BB80365972AF32</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>59B9AA6AC9F7CCF8618D21DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -88,6 +123,16 @@
 			<true/>
 		</dict>
 		<key>D6805F1CD553E1A726F9EB4F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC21198B1976F20F1D4AC64F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9FD209DE806C012A552E3F3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
