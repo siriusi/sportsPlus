@@ -13,7 +13,6 @@
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
 		192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C051A8E2C0000D81B3A /* test1stVC.m */; };
 		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
-		193CEE281A9F461F007A0CF0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE271A9F461F007A0CF0 /* Images.xcassets */; };
 		193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */; };
 		193CEE301A9FB221007A0CF0 /* InviteInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2F1A9FB221007A0CF0 /* InviteInfoTableViewCell.m */; };
 		193CEE321AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE311AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib */; };
@@ -50,6 +49,7 @@
 		F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F10D93111A57FAE1006770DE /* SportsCollectionViewCell.m */; };
 		F10D93141A57FAE1006770DE /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */; };
 		F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11581E51A31861D00420CC3 /* testgitViewController.m */; };
+		F16DDB031AA617F20080E908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16DDB021AA617F20080E908 /* Images.xcassets */; };
 		F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DB81A32D4810056A568 /* RegisterMainViewController.m */; };
 		F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBB1A32F6E80056A568 /* ChooseSchoolViewController.m */; };
 		F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBE1A3329D30056A568 /* ChooseProfessionViewController.m */; };
@@ -96,7 +96,6 @@
 		192A9C051A8E2C0000D81B3A /* test1stVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1stVC.m; sourceTree = "<group>"; };
 		192A9C071A8E34C100D81B3A /* test2thVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2thVC.h; sourceTree = "<group>"; };
 		192A9C081A8E34C100D81B3A /* test2thVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test2thVC.m; sourceTree = "<group>"; };
-		193CEE271A9F461F007A0CF0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		193CEE2B1A9F7D7A007A0CF0 /* FriendInviteManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInviteManageViewController.h; sourceTree = "<group>"; };
 		193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInviteManageViewController.m; sourceTree = "<group>"; };
 		193CEE2E1A9FB221007A0CF0 /* InviteInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -159,6 +158,7 @@
 		F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportsCollectionViewCell.xib; sourceTree = "<group>"; };
 		F11581E41A31861D00420CC3 /* testgitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testgitViewController.h; sourceTree = "<group>"; };
 		F11581E51A31861D00420CC3 /* testgitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testgitViewController.m; sourceTree = "<group>"; };
+		F16DDB021AA617F20080E908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F1887DB71A32D4810056A568 /* RegisterMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterMainViewController.h; sourceTree = "<group>"; };
 		F1887DB81A32D4810056A568 /* RegisterMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterMainViewController.m; sourceTree = "<group>"; };
 		F1887DBA1A32F6E80056A568 /* ChooseSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSchoolViewController.h; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 		781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */ = {
 			isa = PBXGroup;
 			children = (
-				193CEE271A9F461F007A0CF0 /* Images.xcassets */,
+				F16DDB021AA617F20080E908 /* Images.xcassets */,
 				F1887DCB1A3372700056A568 /* levelTableViewCell.xib */,
 				78C6C8741A2B411100D8425E /* LaunchScreen.xib */,
 				F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */,
@@ -662,9 +662,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */,
+				F16DDB031AA617F20080E908 /* Images.xcassets in Resources */,
 				198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */,
 				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
-				193CEE281A9F461F007A0CF0 /* Images.xcassets in Resources */,
 				78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */,
 				193CEE3B1AA0BA19007A0CF0 /* friendRequestTableViewCell.xib in Resources */,
 				78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */,
