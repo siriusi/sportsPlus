@@ -26,6 +26,7 @@
 		193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE4E1AA45BF3007A0CF0 /* InviteStrangerViewController.m */; };
 		193CEE521AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE511AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m */; };
 		193CEE551AA5A5C0007A0CF0 /* InviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */; };
+		19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19620EA81AA6AB7800D09D03 /* myHomePageViewController.m */; };
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
@@ -119,6 +120,8 @@
 		193CEE511AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chooseWitchToInviteViewController.m; sourceTree = "<group>"; };
 		193CEE531AA5A5C0007A0CF0 /* InviteFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteFriendViewController.h; sourceTree = "<group>"; };
 		193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteFriendViewController.m; sourceTree = "<group>"; };
+		19620EA71AA6AB7800D09D03 /* myHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHomePageViewController.h; sourceTree = "<group>"; };
+		19620EA81AA6AB7800D09D03 /* myHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHomePageViewController.m; sourceTree = "<group>"; };
 		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
 		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -364,6 +367,23 @@
 			name = "陌生人约伴";
 			sourceTree = "<group>";
 		};
+		19620EA21AA6AB0300D09D03 /* 主页 */ = {
+			isa = PBXGroup;
+			children = (
+				19620EA31AA6AB2C00D09D03 /* 个人主页 */,
+			);
+			name = "主页";
+			sourceTree = "<group>";
+		};
+		19620EA31AA6AB2C00D09D03 /* 个人主页 */ = {
+			isa = PBXGroup;
+			children = (
+				19620EA71AA6AB7800D09D03 /* myHomePageViewController.h */,
+				19620EA81AA6AB7800D09D03 /* myHomePageViewController.m */,
+			);
+			name = "个人主页";
+			sourceTree = "<group>";
+		};
 		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +556,7 @@
 		F11581E31A3185FE00420CC3 /* MainLogicVC */ = {
 			isa = PBXGroup;
 			children = (
+				19620EA21AA6AB0300D09D03 /* 主页 */,
 				193CEE4A1AA45B9F007A0CF0 /* 约伴 */,
 				198520AC1A9DAB7D0098F93D /* 信息管理 */,
 				F1B88C371A45E70D005D601D /* Setting */,
@@ -746,6 +767,7 @@
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
 				193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */,
+				19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */,
 				78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */,
 				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
