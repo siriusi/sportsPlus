@@ -24,10 +24,10 @@
     self.navigationController.navigationBar.translucent=YES;
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back)
          forControlEvents:UIControlEventTouchUpInside];
-    backButton.frame = CGRectMake(0, 0, 18, 18);
+    backButton.frame = CGRectMake(0, 0, 9, 18);
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
     

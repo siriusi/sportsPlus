@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ias-5u-qT9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Ias-5u-qT9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -86,7 +86,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XaO-lS-nmu" kind="push" id="RF4-Wa-PzT"/>
+                                    <segue destination="XaO-lS-nmu" kind="push" id="5w3-KX-5Eg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -250,31 +250,31 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wbi-02-dZE">
-                                <rect key="frame" x="128" y="397" width="65" height="65"/>
+                                <rect key="frame" x="50" y="260" width="62" height="62"/>
                                 <state key="normal" title="Button" image="badminton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ra-dZ-4z8">
-                                <rect key="frame" x="227" y="338" width="65" height="65"/>
+                                <rect key="frame" x="129" y="210" width="62" height="62"/>
                                 <state key="normal" title="Button" image="basketball">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Wx-sf-vWK">
-                                <rect key="frame" x="227" y="236" width="65" height="65"/>
+                                <rect key="frame" x="130" y="395" width="62" height="62"/>
                                 <state key="normal" title="Button" image="soccer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IC5-o7-VNx">
-                                <rect key="frame" x="128" y="296" width="65" height="65"/>
+                                <rect key="frame" x="130" y="305" width="62" height="62"/>
                                 <state key="normal" title="Button" image="run">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgX-l3-v73">
-                                <rect key="frame" x="16" y="520" width="289" height="40"/>
+                                <rect key="frame" x="16" y="510" width="289" height="40"/>
                                 <state key="normal" title="下一步" image="NextStep">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -283,7 +283,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inputNameField" translatesAutoresizingMaskIntoConstraints="NO" id="tPs-ys-hWU">
-                                <rect key="frame" x="8" y="81" width="304" height="40"/>
+                                <rect key="frame" x="8" y="81" width="304" height="45"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入真实姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fzm-Ns-zsf">
                                 <rect key="frame" x="99" y="85" width="193" height="35"/>
@@ -291,86 +291,86 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="geder" translatesAutoresizingMaskIntoConstraints="NO" id="CJL-2E-4xR">
-                                <rect key="frame" x="8" y="129" width="74" height="40"/>
+                                <rect key="frame" x="8" y="140" width="75" height="45"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0E-gU-DuO">
-                                <rect key="frame" x="99" y="129" width="85" height="40"/>
+                                <rect key="frame" x="110" y="140" width="75" height="45"/>
                                 <state key="normal" title="Button" image="male">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xXA-Wa-OYl">
-                                <rect key="frame" x="202" y="129" width="85" height="40"/>
+                                <rect key="frame" x="212" y="140" width="75" height="45"/>
                                 <state key="normal" title="Button" image="female">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz5-xd-CNm">
-                                <rect key="frame" x="22" y="236" width="65" height="65"/>
+                                <rect key="frame" x="208" y="260" width="62" height="62"/>
                                 <state key="normal" title="Button" image="tennise">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="羽毛球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NY-uF-sc3">
-                                <rect key="frame" x="139" y="470" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="59" y="322" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＊请至少选择一项喜欢的体育运动" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNN-z1-PrM">
-                                <rect key="frame" x="41" y="492" width="238" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="＊请至少选择一项喜欢的体育项目" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNN-z1-PrM">
+                                <rect key="frame" x="41" y="485" width="238" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="网球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-8m-ndN">
-                                <rect key="frame" x="39" y="306" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="224" y="322" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="跑步" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybi-VM-231">
-                                <rect key="frame" x="146" y="368" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="足球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWM-Rd-nHA">
-                                <rect key="frame" x="244" y="306" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="145" y="367" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="篮球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQF-2U-GT3">
-                                <rect key="frame" x="244" y="412" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="145" y="272" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="健身" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uta-Cy-La6">
-                                <rect key="frame" x="39" y="412" width="31" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="66" y="411" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="乒乓球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqH-hk-21A">
-                                <rect key="frame" x="139" y="267" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <rect key="frame" x="217" y="411" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLd-iT-Q8z">
-                                <rect key="frame" x="22" y="338" width="65" height="65"/>
+                                <rect key="frame" x="50" y="350" width="62" height="62"/>
                                 <state key="normal" title="Button" image="build">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-Dr-wXV">
-                                <rect key="frame" x="128" y="194" width="65" height="65"/>
+                                <rect key="frame" x="208" y="350" width="62" height="62"/>
                                 <state key="normal" title="Button" image="pingpong">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="足球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWM-Rd-nHA">
+                                <rect key="frame" x="146" y="457" width="31" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -537,7 +537,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wn-fb-wOQ">
-                                <rect key="frame" x="16" y="520" width="289" height="40"/>
+                                <rect key="frame" x="16" y="510" width="289" height="40"/>
                                 <state key="normal" image="NextStep">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -579,28 +579,28 @@
                                 <rect key="frame" x="16" y="81" width="289" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1NJ-p2-BsI">
-                                <rect key="frame" x="103" y="87" width="200" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="121" y="87" width="182" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="numText" translatesAutoresizingMaskIntoConstraints="NO" id="w4e-oS-1Ax">
                                 <rect key="frame" x="16" y="128" width="289" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入验证码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NlJ-l0-jcQ">
-                                <rect key="frame" x="103" y="135" width="200" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="121" y="135" width="182" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="passText" translatesAutoresizingMaskIntoConstraints="NO" id="Rrr-BY-dSq">
                                 <rect key="frame" x="16" y="176" width="289" height="42"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="登陆密码/6~16位字符，区分大小写" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUX-zx-XC4">
-                                <rect key="frame" x="103" y="183" width="200" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="121" y="183" width="182" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="registLine" translatesAutoresizingMaskIntoConstraints="NO" id="YfS-34-Faq">
-                                <rect key="frame" x="238" y="242" width="64" height="2"/>
+                                <rect key="frame" x="238" y="242" width="64" height="1"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfZ-q4-Smf">
                                 <rect key="frame" x="237" y="220" width="65" height="30"/>
@@ -640,7 +640,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4By-AT-kzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="876.79999999999995" y="1153.9866666666667"/>
+            <point key="canvasLocation" x="876" y="1153"/>
         </scene>
         <!--Storyboard Link-->
         <scene sceneID="mhi-R5-bWp">
@@ -666,7 +666,7 @@
         <!--登陆-->
         <scene sceneID="30I-aS-rrf">
             <objects>
-                <viewController title="登陆" id="XaO-lS-nmu" sceneMemberID="viewController">
+                <viewController title="登陆" id="XaO-lS-nmu" customClass="LogInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ni8-Yh-UoQ"/>
                         <viewControllerLayoutGuide type="bottom" id="GIy-dK-Ri4"/>
@@ -728,44 +728,43 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="登陆" id="BPU-s4-vHA"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad0-gj-ceF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="323" y="-792"/>
+            <point key="canvasLocation" x="390" y="-1330"/>
         </scene>
     </scenes>
     <resources>
         <image name="InSchoolTime" width="2299" height="346"/>
         <image name="LoginButtonInFirstPage" width="57" height="26"/>
-        <image name="NextStep" width="642" height="88"/>
+        <image name="NextStep" width="552" height="88"/>
         <image name="RegisterBackground" width="640" height="1136"/>
         <image name="SchoolName" width="276" height="44"/>
         <image name="SchoolSystem" width="276" height="44"/>
         <image name="SearchBackground" width="356" height="630"/>
         <image name="SearchBar" width="1334" height="155"/>
-        <image name="badminton" width="498" height="497"/>
-        <image name="basketball" width="498" height="497"/>
-        <image name="build" width="498" height="497"/>
-        <image name="female" width="690" height="348"/>
-        <image name="finishRegist" width="2440" height="334"/>
-        <image name="geder" width="602" height="348"/>
-        <image name="inputNameField" width="2451" height="345"/>
+        <image name="badminton" width="110" height="109"/>
+        <image name="basketball" width="110" height="109"/>
+        <image name="build" width="110" height="109"/>
+        <image name="female" width="137" height="85"/>
+        <image name="finishRegist" width="552" height="88"/>
+        <image name="geder" width="144" height="86"/>
+        <image name="inputNameField" width="589" height="86"/>
         <image name="loginBackground" width="2668" height="4735"/>
         <image name="loginBtn" width="2440" height="334"/>
-        <image name="male" width="690" height="343"/>
-        <image name="numText" width="2451" height="345"/>
-        <image name="passText" width="2451" height="345"/>
-        <image name="pingpong" width="498" height="497"/>
+        <image name="male" width="137" height="86"/>
+        <image name="numText" width="589" height="86"/>
+        <image name="passText" width="589" height="86"/>
+        <image name="pingpong" width="110" height="109"/>
         <image name="qq" width="532" height="531"/>
-        <image name="registLine" width="494" height="7"/>
+        <image name="registLine" width="117" height="1"/>
         <image name="registerButton" width="70" height="39"/>
         <image name="renren" width="532" height="531"/>
-        <image name="run" width="498" height="497"/>
-        <image name="soccer" width="498" height="497"/>
-        <image name="teletext" width="2451" height="345"/>
-        <image name="tennise" width="498" height="497"/>
+        <image name="run" width="110" height="109"/>
+        <image name="soccer" width="110" height="109"/>
+        <image name="teletext" width="589" height="86"/>
+        <image name="tennise" width="111" height="110"/>
         <image name="weibo" width="532" height="531"/>
         <image name="weixin" width="532" height="531"/>
     </resources>

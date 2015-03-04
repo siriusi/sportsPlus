@@ -51,6 +51,7 @@
 		F10D93141A57FAE1006770DE /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */; };
 		F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11581E51A31861D00420CC3 /* testgitViewController.m */; };
 		F16DDB031AA617F20080E908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16DDB021AA617F20080E908 /* Images.xcassets */; };
+		F16DDB061AA722250080E908 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16DDB051AA722250080E908 /* LogInViewController.m */; };
 		F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DB81A32D4810056A568 /* RegisterMainViewController.m */; };
 		F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBB1A32F6E80056A568 /* ChooseSchoolViewController.m */; };
 		F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBE1A3329D30056A568 /* ChooseProfessionViewController.m */; };
@@ -162,6 +163,8 @@
 		F11581E41A31861D00420CC3 /* testgitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testgitViewController.h; sourceTree = "<group>"; };
 		F11581E51A31861D00420CC3 /* testgitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testgitViewController.m; sourceTree = "<group>"; };
 		F16DDB021AA617F20080E908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F16DDB041AA722250080E908 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		F16DDB051AA722250080E908 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		F1887DB71A32D4810056A568 /* RegisterMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterMainViewController.h; sourceTree = "<group>"; };
 		F1887DB81A32D4810056A568 /* RegisterMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterMainViewController.m; sourceTree = "<group>"; };
 		F1887DBA1A32F6E80056A568 /* ChooseSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSchoolViewController.h; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				F1B875EF1A34B08F003AA3ED /* TagTableViewCell.m */,
 				F105E9E41A55B8A500DDE19C /* RegistFinshViewController.h */,
 				F105E9E51A55B8A500DDE19C /* RegistFinshViewController.m */,
+				F16DDB041AA722250080E908 /* LogInViewController.h */,
+				F16DDB051AA722250080E908 /* LogInViewController.m */,
 			);
 			name = RegisteVC;
 			sourceTree = "<group>";
@@ -789,6 +794,7 @@
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
 				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
+				F16DDB061AA722250080E908 /* LogInViewController.m in Sources */,
 				F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */,
 				F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */,
 				193CEE481AA433F5007A0CF0 /* ChatRoomListTableViewCell.m in Sources */,

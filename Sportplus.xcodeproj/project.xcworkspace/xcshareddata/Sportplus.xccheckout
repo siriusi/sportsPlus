@@ -12,20 +12,24 @@
 	<dict>
 		<key>0847D4A0F89FED3776EDB6961D07451B9536C4A0</key>
 		<string>https://github.com/z1995r/sport.git</string>
+		<key>F3DE270E84FFD313F8CE07D14A454DCF8166C30D</key>
+		<string>https://github.com/z1995r/sportsPlus.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Sportplus.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0847D4A0F89FED3776EDB6961D07451B9536C4A0</key>
+		<string>../../../Sportplus</string>
+		<key>F3DE270E84FFD313F8CE07D14A454DCF8166C30D</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/z1995r/sport.git</string>
+	<string>https://github.com/z1995r/sportsPlus.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>0847D4A0F89FED3776EDB6961D07451B9536C4A0</string>
+	<string>F3DE270E84FFD313F8CE07D14A454DCF8166C30D</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>0847D4A0F89FED3776EDB6961D07451B9536C4A0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Sportplus</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F3DE270E84FFD313F8CE07D14A454DCF8166C30D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>sportsPlus</string>
 		</dict>
 	</array>
 </dict>

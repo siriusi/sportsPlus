@@ -27,10 +27,10 @@
 - (void)viewWillAppear:(BOOL)animated{
     self.sectionTwo=NO;
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back)
          forControlEvents:UIControlEventTouchUpInside];
-    backButton.frame = CGRectMake(0, 0, 18, 18);
+    backButton.frame = CGRectMake(0, 0, 9, 18);
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
     
@@ -51,8 +51,10 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UILabel *sectionTitle = [[UILabel alloc]init];
-    sectionTitle.frame = CGRectMake(0, 5, 200, 22);
+    sectionTitle.frame = CGRectMake(10, 5, 200, 22);
     sectionTitle.numberOfLines = 0;
+    sectionTitle.textColor = [UIColor colorWithRed:172.0/255 green:172.0/255 blue:172.0/255 alpha:1.0f];
+    sectionTitle.font = [UIFont italicSystemFontOfSize:12];
     switch (section) {
         case 0:
             sectionTitle.text = [titleArray objectAtIndex:section];
@@ -64,7 +66,7 @@
             break;
     }
     UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 30)];
-    [sectionView setBackgroundColor:[UIColor lightGrayColor]];
+    [sectionView setBackgroundColor:[UIColor colorWithRed:233.0/255 green:233.0/255 blue:234.0/255 alpha:1.0f]];
     [sectionView addSubview:sectionTitle];
     return sectionView;
 }
@@ -424,7 +426,7 @@
         return 80.0;
     }
     else{
-        return 138;
+        return 160;
     }
 }
 
