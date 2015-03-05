@@ -30,6 +30,8 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
     
+    self.hidesBottomBarWhenPushed = YES;
+    
     titleArray = [[NSMutableArray alloc] initWithObjects:@"  个人账户",@"  隐私",@"  通知", nil];
     cellTitle = [[NSMutableArray alloc] initWithObjects:@"头像设置",@"姓名设置",@"密码设置",@"账号绑定",@"黑名单",@"好友验证",@"声音",@"震动",@"通知显示详情", nil];
     // Do any additional setup after loading the view.
@@ -48,8 +50,10 @@
 
 - (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     UILabel *sectionTitle = [[UILabel alloc]init];
-    sectionTitle.frame = CGRectMake(0, 5, 200, 24);
+    sectionTitle.frame = CGRectMake(10, 5, 200, 24);
     sectionTitle.font = [UIFont boldSystemFontOfSize:12];
+    sectionTitle.textColor = [UIColor colorWithRed:172.0/255 green:172.0/255 blue:172.0/255 alpha:1.0f];
+    
     sectionTitle.numberOfLines = 0;
     switch (section) {
         case 0:
@@ -65,7 +69,7 @@
             break;
     }
     UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 24)];
-    [sectionView setBackgroundColor:[UIColor lightGrayColor]];
+    [sectionView setBackgroundColor:[UIColor colorWithRed:233.0/255 green:233.0/255 blue:234.0/255 alpha:1.0f]];
     [sectionView addSubview:sectionTitle];
     return sectionView;
 }
@@ -141,12 +145,12 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 40;
+    return 41;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 32;
+    return 30;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
