@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UILabel *profession;
 @property (weak, nonatomic) IBOutlet UILabel *year;
-- (IBAction)add:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
+
 
 @end

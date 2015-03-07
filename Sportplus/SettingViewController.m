@@ -34,7 +34,7 @@
     
     titleArray = [[NSMutableArray alloc] initWithObjects:@"  个人账户",@"  隐私",@"  通知", nil];
     cellTitle = [[NSMutableArray alloc] initWithObjects:@"头像设置",@"姓名设置",@"密码设置",@"账号绑定",@"黑名单",@"好友验证",@"声音",@"震动",@"通知显示详情", nil];
-    // Do any additional setup after loading the view.
+    
 }
 
 -(void)back{
@@ -115,9 +115,20 @@
         cell.lable.text = cellTitle[indexPath.row];
         switch (indexPath.row) {
             case 0:
+            {
                 cell.img.hidden=NO;
                 cell.gotoButton.hidden=NO;
                 cell.switchButton.hidden=YES;
+                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+                NSString *documentsDirectory = [paths objectAtIndex:0];
+                NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
+                NSLog(@"imageFile->>%@",imageFilePath);
+                UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];
+                
+                cell.img.image = selfPhoto;
+                [cell.img.layer setCornerRadius:CGRectGetHeight([cell.img bounds]) / 2];
+                cell.img.layer.masksToBounds = YES;
+            }
                 break;
             default:
                 cell.img.hidden=YES;
@@ -132,6 +143,7 @@
         cell.img.hidden=YES;
         cell.gotoButton.hidden=YES;
         cell.switchButton.hidden=NO;
+        
     }
     if(section==2)
     {
@@ -155,12 +167,54 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        NSLog(@"头像！！") ;
-        [SPUtils pickImageFromPhotoLibraryAtController:self] ;
+        [self showSheet];
     } else {
         NSLog(@"fuck") ;
     }
 }
+
+-(void) showSheet{
+    self.actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:nil
+                                  delegate:self
+                                  cancelButtonTitle:nil
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"拍照", @"从手机相册中选择",nil];
+    self.actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+    [self.actionSheet showInView:self.view];
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+        {
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            //            [self presentModalViewController:imagePicker animated:YES];
+            [self presentViewController:imagePicker animated:YES completion:nil];
+        }
+            break;
+        case 1:
+        {
+            //[SPUtils pickImageFromPhotoLibraryAtController:self] ;
+            UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+            imagePicker.delegate = self;
+            imagePicker.allowsEditing = YES;
+            imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            //            [self presentModalViewController:imagePicker animated:YES];
+            [self presentViewController:imagePicker animated:YES completion:nil];
+            
+        }
+        default:
+            break;
+    }
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -172,30 +226,114 @@
 }
 */
 
-#pragma mark － UIImagePickerControllerDelegate
+//#pragma mark － UIImagePickerControllerDelegate
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    NSLog(@"已经选择") ;
-    [picker dismissViewControllerAnimated:YES completion:^{
-        UIActivityIndicatorView* indicator=[SPUtils showIndicatorAtView:self.view];
-        UIImage* image=info[UIImagePickerControllerEditedImage];
-        UIImage* rounded=[SPUtils roundImage:image toSize:CGSizeMake(200, 200) radius:20];
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+//    NSLog(@"已经选择") ;
+//    [picker dismissViewControllerAnimated:YES completion:^{
+//        UIActivityIndicatorView* indicator=[SPUtils showIndicatorAtView:self.view];
+//        UIImage* image=info[UIImagePickerControllerEditedImage];
+//        UIImage* rounded=[SPUtils roundImage:image toSize:CGSizeMake(200, 200) radius:20];
+//
+////        [CDUserService saveAvatar:rounded callback:^(BOOL succeeded, NSError *error) {
+////            [indicator stopAnimating];
+////            [CDUtils filterError:error callback:^{
+////                self.avatarView.image=rounded;
+////            }];
+////        }];
+//    }];
+//}
+//
+//
+//- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+//{
+//    [picker dismissViewControllerAnimated:YES completion:nil];
+//    NSLog(@"取消") ;
+//}
 
-//        [CDUserService saveAvatar:rounded callback:^(BOOL succeeded, NSError *error) {
-//            [indicator stopAnimating];
-//            [CDUtils filterError:error callback:^{
-//                self.avatarView.image=rounded;
-//            }];
-//        }];
-    }];
+#pragma mark -
+#pragma UIImagePickerController Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeImage]) {
+        UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+        [self performSelector:@selector(saveImage:)  withObject:img afterDelay:0.5];
+    }
+    //    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
+    //    [picker dismissModalViewControllerAnimated:YES];
     [picker dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"取消") ;
 }
 
+- (void)saveImage:(UIImage *)image {
+    //    NSLog(@"保存头像！");
+    //    [userPhotoButton setImage:image forState:UIControlStateNormal];
+    BOOL success;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
+    NSLog(@"imageFile->>%@",imageFilePath);
+    success = [fileManager fileExistsAtPath:imageFilePath];
+    if(success) {
+        success = [fileManager removeItemAtPath:imageFilePath error:&error];
+    }
+    //    UIImage *smallImage=[self scaleFromImage:image toSize:CGSizeMake(80.0f, 80.0f)];//将图片尺寸改为80*80
+    UIImage *smallImage = [self thumbnailWithImageWithoutScale:image size:CGSizeMake(93, 93)];
+    [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
+    UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
+    //    [userPhotoButton setImage:selfPhoto forState:UIControlStateNormal];
+    //self.img.image = selfPhoto;
+    [self.settingTable reloadData];
+}
+
+// 改变图像的尺寸，方便上传服务器
+- (UIImage *) scaleFromImage: (UIImage *) image toSize: (CGSize) size
+{
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+
+//2.保持原来的长宽比，生成一个缩略图
+- (UIImage *)thumbnailWithImageWithoutScale:(UIImage *)image size:(CGSize)asize
+{
+    UIImage *newimage;
+    if (nil == image) {
+        newimage = nil;
+    }
+    else{
+        CGSize oldsize = image.size;
+        CGRect rect;
+        if (asize.width/asize.height > oldsize.width/oldsize.height) {
+            rect.size.width = asize.height*oldsize.width/oldsize.height;
+            rect.size.height = asize.height;
+            rect.origin.x = (asize.width - rect.size.width)/2;
+            rect.origin.y = 0;
+        }
+        else{
+            rect.size.width = asize.width;
+            rect.size.height = asize.width*oldsize.height/oldsize.width;
+            rect.origin.x = 0;
+            rect.origin.y = (asize.height - rect.size.height)/2;
+        }
+        UIGraphicsBeginImageContext(asize);
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSetFillColorWithColor(context, [[UIColor clearColor] CGColor]);
+        UIRectFill(CGRectMake(0, 0, asize.width, asize.height));//clear background
+        [image drawInRect:rect];
+        newimage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+    }
+    return newimage;
+}
 
 @end

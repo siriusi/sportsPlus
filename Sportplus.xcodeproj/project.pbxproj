@@ -50,6 +50,7 @@
 		F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F10D93111A57FAE1006770DE /* SportsCollectionViewCell.m */; };
 		F10D93141A57FAE1006770DE /* SportsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */; };
 		F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11581E51A31861D00420CC3 /* testgitViewController.m */; };
+		F146DD441AAAB0300089C499 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F146DD431AAAB0300089C499 /* MobileCoreServices.framework */; };
 		F16DDB031AA617F20080E908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16DDB021AA617F20080E908 /* Images.xcassets */; };
 		F16DDB061AA722250080E908 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16DDB051AA722250080E908 /* LogInViewController.m */; };
 		F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DB81A32D4810056A568 /* RegisterMainViewController.m */; };
@@ -162,6 +163,7 @@
 		F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SportsCollectionViewCell.xib; sourceTree = "<group>"; };
 		F11581E41A31861D00420CC3 /* testgitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testgitViewController.h; sourceTree = "<group>"; };
 		F11581E51A31861D00420CC3 /* testgitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testgitViewController.m; sourceTree = "<group>"; };
+		F146DD431AAAB0300089C499 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F16DDB021AA617F20080E908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F16DDB041AA722250080E908 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		F16DDB051AA722250080E908 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F146DD441AAAB0300089C499 /* MobileCoreServices.framework in Frameworks */,
 				D7EDA3A7252F7A37ADCA65F5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,6 +225,7 @@
 		0A0B6AA458B84670ED31A262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F146DD431AAAB0300089C499 /* MobileCoreServices.framework */,
 				A6D722640D16A2035FDB4981 /* libPods.a */,
 			);
 			name = Frameworks;

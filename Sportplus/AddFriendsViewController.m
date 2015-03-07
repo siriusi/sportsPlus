@@ -8,6 +8,9 @@
 
 #import "AddFriendsViewController.h"
 #import "searchFriendTableViewCell.h"
+
+
+
 @interface AddFriendsViewController ()
 
 @end
@@ -19,6 +22,8 @@
     [self.searchFriendTableView setDelegate:self];
     [self.searchFriendTableView setDataSource:self];
     
+
+    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back)
@@ -27,12 +32,15 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
     // Do any additional setup after loading the view.
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 -(void)back{
     NSLog(@"back!");
@@ -43,11 +51,12 @@
     static NSString *FriendCellIdentifier = @"searchFriendCellIdentifier";
     searchFriendTableViewCell *cell = [self.searchFriendTableView dequeueReusableCellWithIdentifier:FriendCellIdentifier];
     if (cell == nil) {
-        //通过xib的名称加载自定义的cell
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"searchFriendTableViewCell" owner:self options:nil] lastObject];
-    }
+            //通过xib的名称加载自定义的cell
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"searchFriendTableViewCell" owner:self options:nil] lastObject];
+        }
+     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
-    
+
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,6 +65,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 3;
+
 }
 
 /*

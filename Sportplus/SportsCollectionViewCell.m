@@ -16,6 +16,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    self.isSelected = NO;
     self = [super initWithFrame:frame];
     if (self)
     {

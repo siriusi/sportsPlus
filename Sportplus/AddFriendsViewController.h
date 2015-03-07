@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AddFriendsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIImageView *searchImg;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak, nonatomic) IBOutlet UITableView *searchFriendTableView;
+
 
 @end

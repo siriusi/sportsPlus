@@ -20,7 +20,4 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)add:(id)sender {
-    NSLog(@"add");
-}
 @end

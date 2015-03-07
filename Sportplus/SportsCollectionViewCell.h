@@ -10,7 +10,7 @@
 
 @interface SportsCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *sportImg;
-
+@property (nonatomic) BOOL isSelected;
 
 
 
