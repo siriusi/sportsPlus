@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import "ChangeNameViewController.h"
+#import "ChangePasswordViewController.h"
 
 @interface SettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>{
     NSMutableArray *titleArray;

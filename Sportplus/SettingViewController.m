@@ -168,7 +168,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0 && indexPath.row == 0) {
         [self showSheet];
-    } else {
+    }
+    else if(indexPath.section == 0 && indexPath.row == 1) {
+        NSLog(@"jump to name") ;
+        ChangeNameViewController *nameView = [[ChangeNameViewController alloc] initWithNibName:@"ChangeNameViewController" bundle:nil];
+        [self.navigationController pushViewController:nameView animated:true];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 2) {
         NSLog(@"fuck") ;
     }
 }
