@@ -8,6 +8,7 @@
 
 #import "InviteStrangerViewController.h"
 #import "spCommon.h"
+#import "ChooseSportItemTableViewCell.h"
 
 #define FRIENDLY_NORMAL_ICON @"FriendlyIconNormal"
 #define FRIENDLY_SELECTED_ICON @"FriendlyIconSelected"
@@ -50,20 +51,40 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self.navigationController.navigationBar setHidden:NO] ;
-//
-//    CGRect fm = CGRectMake(0, 64, 320, 568) ;
-//    [self.view setFrame:fm] ;
-//    CGRect fm2 = CGRectMake(0, 20, 320, 44) ;
-//    [self.navigationController.navigationBar setFrame:fm2] ;
-    
     [self setState:NONE_SELECTED] ;
+    
+    self.tableView.dataSource = self ;
+    self.tableView.delegate = self ;
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
+#pragma mark-UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1 ;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellIdentifier = @"ChooseSportItemTBVCellID" ;
+    ChooseSportItemTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellIdentifier] ;
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportItemTableViewCell" owner:self options:nil] lastObject];
+    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator ;//箭头 ;
+    
+    return cell ;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [self performSegueWithIdentifier:@"createStrangerTochooseSportVCSegueID" sender:self] ;
+}
+
+#pragma mark-IBAction
 
 - (IBAction)CompetitionBtnClicked:(id)sender {
     [self setState:COMPETITION_SELECTED] ;
@@ -73,10 +94,13 @@ typedef enum {
     [self setState:FRIENDLY_SELECTED] ;
 }
 
-
 - (IBAction)backBtnClicked:(id)sender {
     [self.navigationController setNavigationBarHidden:YES] ;
     [self.navigationController popViewControllerAnimated:YES] ;
+}
+
+- (IBAction)ensureBtnClicked:(id)sender {
+    
 }
 
 

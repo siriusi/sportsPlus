@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface myHomePageViewController : UIViewController
+@interface myHomePageViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDataSource,UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITableView *prefererTableView;
+
+@property (weak, nonatomic) IBOutlet UIView *v1;
+@property (weak, nonatomic) IBOutlet UIView *v2;
+@property (weak, nonatomic) IBOutlet UIView *v3;
+
 
 @end

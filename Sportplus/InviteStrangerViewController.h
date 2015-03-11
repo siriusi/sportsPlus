@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InviteStrangerViewController : UIViewController
+@interface InviteStrangerViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIButton *CompetitionButton;

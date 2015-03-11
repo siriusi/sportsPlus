@@ -8,6 +8,7 @@
 
 #import "ChatRoomListViewController.h"
 #import "spCommon.h"
+#import "spMessageTableViewController.h"
 
 @interface ChatRoomListViewController () {
     NSArray *_dataSource ;
@@ -63,12 +64,28 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%ld",(long)indexPath.row) ;
+    static NSString *segueID = @"chatRoomList2chatRoom" ;
+    
+    [self performSegueWithIdentifier:segueID sender:self] ;
+    
+    
+    
 }
 
 #pragma mark - SWTableViewCellDelegate
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index{
     NSLog(@"%ld",(long)index) ;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ( [segue.identifier isEqualToString: @"chatRoomList2chatRoom"] ) {
+        spMessageTableViewController *Vc = (spMessageTableViewController *)segue.destinationViewController ;
+        [Vc getMessage] ;
+    }
+    
 }
 
 @end

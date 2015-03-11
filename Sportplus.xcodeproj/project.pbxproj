@@ -13,6 +13,9 @@
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
 		192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C051A8E2C0000D81B3A /* test1stVC.m */; };
 		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
+		192D7BB71AACA7C900EF9131 /* ChooseSportItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D7BB51AACA7C900EF9131 /* ChooseSportItemTableViewCell.m */; };
+		192D7BB81AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192D7BB61AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib */; };
+		192D7BBF1AACAE1400EF9131 /* ChooseSportItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D7BBE1AACAE1400EF9131 /* ChooseSportItemViewController.m */; };
 		193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */; };
 		193CEE301A9FB221007A0CF0 /* InviteInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE2F1A9FB221007A0CF0 /* InviteInfoTableViewCell.m */; };
 		193CEE321AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 193CEE311AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib */; };
@@ -30,6 +33,30 @@
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
+		19F805651AAD42B800F9071A /* ChooseSportTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */; };
+		19F805691AAD45A500F9071A /* ChooseSportSpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805681AAD45A500F9071A /* ChooseSportSpaceViewController.m */; };
+		19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F8056C1AAD495E00F9071A /* chooseSportFriendViewController.m */; };
+		19F805741AAD4A6400F9071A /* chooseFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805721AAD4A6400F9071A /* chooseFriendTableViewCell.m */; };
+		19F805751AAD4A6400F9071A /* chooseFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F805731AAD4A6400F9071A /* chooseFriendTableViewCell.xib */; };
+		19F805781AAD794E00F9071A /* spMessageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805771AAD794E00F9071A /* spMessageTableViewController.m */; };
+		19F8057D1AADD83700F9071A /* ChoosePlaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F8057B1AADD83700F9071A /* ChoosePlaceTableViewCell.m */; };
+		19F8057E1AADD83700F9071A /* ChoosePlaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F8057C1AADD83700F9071A /* ChoosePlaceTableViewCell.xib */; };
+		19F805821AADDACA00F9071A /* ChooseSportTimeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805801AADDACA00F9071A /* ChooseSportTimeTableViewCell.m */; };
+		19F805831AADDACA00F9071A /* ChooseSportTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F805811AADDACA00F9071A /* ChooseSportTimeTableViewCell.xib */; };
+		19F805871AADDC7100F9071A /* ChooseSportFriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805851AADDC7100F9071A /* ChooseSportFriendTableViewCell.m */; };
+		19F805881AADDC7200F9071A /* ChooseSportFriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F805861AADDC7100F9071A /* ChooseSportFriendTableViewCell.xib */; };
+		19F8058D1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F8058B1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m */; };
+		19F8058E1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F8058C1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.xib */; };
+		19F805951AAED1B700F9071A /* prefererSportTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805931AAED1B700F9071A /* prefererSportTableViewCell.m */; };
+		19F805961AAED1B700F9071A /* prefererSportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F805941AAED1B700F9071A /* prefererSportTableViewCell.xib */; };
+		19F8059A1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805981AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m */; };
+		19F8059B1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F805991AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.xib */; };
+		19F8059F1AAFC33600F9071A /* SPAddRequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F8059E1AAFC33600F9071A /* SPAddRequestService.m */; };
+		19F805A21AAFC56700F9071A /* SPUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805A11AAFC56700F9071A /* SPUserService.m */; };
+		19F805A51AAFCAB200F9071A /* SPCloudSevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805A41AAFCAB200F9071A /* SPCloudSevice.m */; };
+		19F805A81AAFD21B00F9071A /* SPGroupService.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805A71AAFD21B00F9071A /* SPGroupService.m */; };
+		19F805AB1AAFD2D100F9071A /* spChatGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805AA1AAFD2D100F9071A /* spChatGroup.m */; };
+		19F805AE1AAFDB4B00F9071A /* SPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805AD1AAFDB4B00F9071A /* SPSessionManager.m */; };
 		781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */ = {isa = PBXBuildFile; fileRef = 781608BB1A53C8BD001B50F5 /* RegisteData.m */; };
 		781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */; };
 		78BF69AA1A4D58070085A867 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78BF69A91A4D58070085A867 /* TestViewController.m */; };
@@ -103,6 +130,11 @@
 		192A9C051A8E2C0000D81B3A /* test1stVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1stVC.m; sourceTree = "<group>"; };
 		192A9C071A8E34C100D81B3A /* test2thVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2thVC.h; sourceTree = "<group>"; };
 		192A9C081A8E34C100D81B3A /* test2thVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test2thVC.m; sourceTree = "<group>"; };
+		192D7BB41AACA7C900EF9131 /* ChooseSportItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportItemTableViewCell.h; sourceTree = "<group>"; };
+		192D7BB51AACA7C900EF9131 /* ChooseSportItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportItemTableViewCell.m; sourceTree = "<group>"; };
+		192D7BB61AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseSportItemTableViewCell.xib; sourceTree = "<group>"; };
+		192D7BBD1AACAE1400EF9131 /* ChooseSportItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportItemViewController.h; sourceTree = "<group>"; };
+		192D7BBE1AACAE1400EF9131 /* ChooseSportItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportItemViewController.m; sourceTree = "<group>"; };
 		193CEE2B1A9F7D7A007A0CF0 /* FriendInviteManageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInviteManageViewController.h; sourceTree = "<group>"; };
 		193CEE2C1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInviteManageViewController.m; sourceTree = "<group>"; };
 		193CEE2E1A9FB221007A0CF0 /* InviteInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteInfoTableViewCell.h; sourceTree = "<group>"; };
@@ -133,6 +165,47 @@
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
 		198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterTableViewCell.m; sourceTree = "<group>"; };
 		198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = spNotificationCenterTableViewCell.xib; sourceTree = "<group>"; };
+		19F805631AAD42B800F9071A /* ChooseSportTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportTimeViewController.h; sourceTree = "<group>"; };
+		19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportTimeViewController.m; sourceTree = "<group>"; };
+		19F805671AAD45A500F9071A /* ChooseSportSpaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportSpaceViewController.h; sourceTree = "<group>"; };
+		19F805681AAD45A500F9071A /* ChooseSportSpaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportSpaceViewController.m; sourceTree = "<group>"; };
+		19F8056B1AAD495E00F9071A /* chooseSportFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chooseSportFriendViewController.h; sourceTree = "<group>"; };
+		19F8056C1AAD495E00F9071A /* chooseSportFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chooseSportFriendViewController.m; sourceTree = "<group>"; };
+		19F805711AAD4A6400F9071A /* chooseFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chooseFriendTableViewCell.h; sourceTree = "<group>"; };
+		19F805721AAD4A6400F9071A /* chooseFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chooseFriendTableViewCell.m; sourceTree = "<group>"; };
+		19F805731AAD4A6400F9071A /* chooseFriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chooseFriendTableViewCell.xib; sourceTree = "<group>"; };
+		19F805761AAD794E00F9071A /* spMessageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spMessageTableViewController.h; sourceTree = "<group>"; };
+		19F805771AAD794E00F9071A /* spMessageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spMessageTableViewController.m; sourceTree = "<group>"; };
+		19F8057A1AADD83700F9071A /* ChoosePlaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChoosePlaceTableViewCell.h; sourceTree = "<group>"; };
+		19F8057B1AADD83700F9071A /* ChoosePlaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChoosePlaceTableViewCell.m; sourceTree = "<group>"; };
+		19F8057C1AADD83700F9071A /* ChoosePlaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChoosePlaceTableViewCell.xib; sourceTree = "<group>"; };
+		19F8057F1AADDACA00F9071A /* ChooseSportTimeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportTimeTableViewCell.h; sourceTree = "<group>"; };
+		19F805801AADDACA00F9071A /* ChooseSportTimeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportTimeTableViewCell.m; sourceTree = "<group>"; };
+		19F805811AADDACA00F9071A /* ChooseSportTimeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseSportTimeTableViewCell.xib; sourceTree = "<group>"; };
+		19F805841AADDC7100F9071A /* ChooseSportFriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportFriendTableViewCell.h; sourceTree = "<group>"; };
+		19F805851AADDC7100F9071A /* ChooseSportFriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportFriendTableViewCell.m; sourceTree = "<group>"; };
+		19F805861AADDC7100F9071A /* ChooseSportFriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseSportFriendTableViewCell.xib; sourceTree = "<group>"; };
+		19F8058A1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZR_photoLibraryCollectionViewCell.h; sourceTree = "<group>"; };
+		19F8058B1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZR_photoLibraryCollectionViewCell.m; sourceTree = "<group>"; };
+		19F8058C1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZR_photoLibraryCollectionViewCell.xib; sourceTree = "<group>"; };
+		19F805921AAED1B700F9071A /* prefererSportTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefererSportTableViewCell.h; sourceTree = "<group>"; };
+		19F805931AAED1B700F9071A /* prefererSportTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = prefererSportTableViewCell.m; sourceTree = "<group>"; };
+		19F805941AAED1B700F9071A /* prefererSportTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = prefererSportTableViewCell.xib; sourceTree = "<group>"; };
+		19F805971AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = prefererSportSpaceTableViewCell.h; sourceTree = "<group>"; };
+		19F805981AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = prefererSportSpaceTableViewCell.m; sourceTree = "<group>"; };
+		19F805991AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = prefererSportSpaceTableViewCell.xib; sourceTree = "<group>"; };
+		19F8059D1AAFC33600F9071A /* SPAddRequestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPAddRequestService.h; sourceTree = "<group>"; };
+		19F8059E1AAFC33600F9071A /* SPAddRequestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPAddRequestService.m; sourceTree = "<group>"; };
+		19F805A01AAFC56700F9071A /* SPUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUserService.h; sourceTree = "<group>"; };
+		19F805A11AAFC56700F9071A /* SPUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUserService.m; sourceTree = "<group>"; };
+		19F805A31AAFCAB200F9071A /* SPCloudSevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCloudSevice.h; sourceTree = "<group>"; };
+		19F805A41AAFCAB200F9071A /* SPCloudSevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCloudSevice.m; sourceTree = "<group>"; };
+		19F805A61AAFD21B00F9071A /* SPGroupService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPGroupService.h; sourceTree = "<group>"; };
+		19F805A71AAFD21B00F9071A /* SPGroupService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPGroupService.m; sourceTree = "<group>"; };
+		19F805A91AAFD2D100F9071A /* spChatGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spChatGroup.h; sourceTree = "<group>"; };
+		19F805AA1AAFD2D100F9071A /* spChatGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spChatGroup.m; sourceTree = "<group>"; };
+		19F805AC1AAFDB4B00F9071A /* SPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPSessionManager.h; sourceTree = "<group>"; };
+		19F805AD1AAFDB4B00F9071A /* SPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPSessionManager.m; sourceTree = "<group>"; };
 		32E3A11029BD6EE4369FE01C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		781608BA1A53C8BD001B50F5 /* RegisteData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisteData.h; sourceTree = "<group>"; };
 		781608BB1A53C8BD001B50F5 /* RegisteData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisteData.m; sourceTree = "<group>"; };
@@ -256,6 +329,16 @@
 			children = (
 				1911EB981A9779A20044F04F /* SPUtils.h */,
 				1911EB991A9779A20044F04F /* SPUtils.m */,
+				19F8059D1AAFC33600F9071A /* SPAddRequestService.h */,
+				19F8059E1AAFC33600F9071A /* SPAddRequestService.m */,
+				19F805A01AAFC56700F9071A /* SPUserService.h */,
+				19F805A11AAFC56700F9071A /* SPUserService.m */,
+				19F805A31AAFCAB200F9071A /* SPCloudSevice.h */,
+				19F805A41AAFCAB200F9071A /* SPCloudSevice.m */,
+				19F805A61AAFD21B00F9071A /* SPGroupService.h */,
+				19F805A71AAFD21B00F9071A /* SPGroupService.m */,
+				19F805AC1AAFDB4B00F9071A /* SPSessionManager.h */,
+				19F805AD1AAFDB4B00F9071A /* SPSessionManager.m */,
 			);
 			name = service;
 			sourceTree = "<group>";
@@ -288,8 +371,19 @@
 				192A9BFA1A8DCA0700D81B3A /* spUser.h */,
 				192A9BFB1A8DCA0700D81B3A /* spUser.m */,
 				192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */,
+				19F805A91AAFD2D100F9071A /* spChatGroup.h */,
+				19F805AA1AAFD2D100F9071A /* spChatGroup.m */,
 			);
 			name = avobject;
+			sourceTree = "<group>";
+		};
+		192D7BB91AACABA500EF9131 /* 选择运动 */ = {
+			isa = PBXGroup;
+			children = (
+				192D7BBD1AACAE1400EF9131 /* ChooseSportItemViewController.h */,
+				192D7BBE1AACAE1400EF9131 /* ChooseSportItemViewController.m */,
+			);
+			name = "选择运动";
 			sourceTree = "<group>";
 		};
 		193CEE291A9F7D3A007A0CF0 /* 信息管理二级界面 */ = {
@@ -352,6 +446,8 @@
 		193CEE411AA42FBF007A0CF0 /* 聊天室 */ = {
 			isa = PBXGroup;
 			children = (
+				19F805761AAD794E00F9071A /* spMessageTableViewController.h */,
+				19F805771AAD794E00F9071A /* spMessageTableViewController.m */,
 			);
 			name = "聊天室";
 			sourceTree = "<group>";
@@ -359,7 +455,12 @@
 		193CEE4A1AA45B9F007A0CF0 /* 约伴 */ = {
 			isa = PBXGroup;
 			children = (
+				192D7BB91AACABA500EF9131 /* 选择运动 */,
+				19F805661AAD458400F9071A /* 选择场所 */,
+				19F805621AAD429500F9071A /* 选择时间 */,
+				19F8056A1AAD491400F9071A /* 选择好友 */,
 				193CEE4C1AA45BB1007A0CF0 /* 陌生人约伴 */,
+				19F805791AADD76300F9071A /* Cell */,
 				193CEE4B1AA45BAB007A0CF0 /* 好友约伴 */,
 				193CEE501AA4BC24007A0CF0 /* chooseWitchToInviteViewController.h */,
 				193CEE511AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m */,
@@ -396,6 +497,8 @@
 		19620EA31AA6AB2C00D09D03 /* 个人主页 */ = {
 			isa = PBXGroup;
 			children = (
+				19F8058F1AAEC18D00F9071A /* 喜爱项目 */,
+				19F805891AAE8DE100F9071A /* 相册collectionView */,
 				19620EA71AA6AB7800D09D03 /* myHomePageViewController.h */,
 				19620EA81AA6AB7800D09D03 /* myHomePageViewController.m */,
 			);
@@ -413,6 +516,78 @@
 				198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */,
 			);
 			name = "信息管理";
+			sourceTree = "<group>";
+		};
+		19F805621AAD429500F9071A /* 选择时间 */ = {
+			isa = PBXGroup;
+			children = (
+				19F805631AAD42B800F9071A /* ChooseSportTimeViewController.h */,
+				19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */,
+			);
+			name = "选择时间";
+			sourceTree = "<group>";
+		};
+		19F805661AAD458400F9071A /* 选择场所 */ = {
+			isa = PBXGroup;
+			children = (
+				19F805671AAD45A500F9071A /* ChooseSportSpaceViewController.h */,
+				19F805681AAD45A500F9071A /* ChooseSportSpaceViewController.m */,
+			);
+			name = "选择场所";
+			sourceTree = "<group>";
+		};
+		19F8056A1AAD491400F9071A /* 选择好友 */ = {
+			isa = PBXGroup;
+			children = (
+				19F8056B1AAD495E00F9071A /* chooseSportFriendViewController.h */,
+				19F8056C1AAD495E00F9071A /* chooseSportFriendViewController.m */,
+				19F805711AAD4A6400F9071A /* chooseFriendTableViewCell.h */,
+				19F805721AAD4A6400F9071A /* chooseFriendTableViewCell.m */,
+				19F805731AAD4A6400F9071A /* chooseFriendTableViewCell.xib */,
+			);
+			name = "选择好友";
+			sourceTree = "<group>";
+		};
+		19F805791AADD76300F9071A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				192D7BB41AACA7C900EF9131 /* ChooseSportItemTableViewCell.h */,
+				192D7BB51AACA7C900EF9131 /* ChooseSportItemTableViewCell.m */,
+				192D7BB61AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib */,
+				19F8057A1AADD83700F9071A /* ChoosePlaceTableViewCell.h */,
+				19F8057B1AADD83700F9071A /* ChoosePlaceTableViewCell.m */,
+				19F8057C1AADD83700F9071A /* ChoosePlaceTableViewCell.xib */,
+				19F8057F1AADDACA00F9071A /* ChooseSportTimeTableViewCell.h */,
+				19F805801AADDACA00F9071A /* ChooseSportTimeTableViewCell.m */,
+				19F805811AADDACA00F9071A /* ChooseSportTimeTableViewCell.xib */,
+				19F805841AADDC7100F9071A /* ChooseSportFriendTableViewCell.h */,
+				19F805851AADDC7100F9071A /* ChooseSportFriendTableViewCell.m */,
+				19F805861AADDC7100F9071A /* ChooseSportFriendTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		19F805891AAE8DE100F9071A /* 相册collectionView */ = {
+			isa = PBXGroup;
+			children = (
+				19F8058A1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.h */,
+				19F8058B1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m */,
+				19F8058C1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.xib */,
+			);
+			name = "相册collectionView";
+			sourceTree = "<group>";
+		};
+		19F8058F1AAEC18D00F9071A /* 喜爱项目 */ = {
+			isa = PBXGroup;
+			children = (
+				19F805921AAED1B700F9071A /* prefererSportTableViewCell.h */,
+				19F805931AAED1B700F9071A /* prefererSportTableViewCell.m */,
+				19F805941AAED1B700F9071A /* prefererSportTableViewCell.xib */,
+				19F805971AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.h */,
+				19F805981AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m */,
+				19F805991AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.xib */,
+			);
+			name = "喜爱项目";
 			sourceTree = "<group>";
 		};
 		50D7D4801470FE2ABA1E277D /* Pods */ = {
@@ -437,9 +612,7 @@
 			isa = PBXGroup;
 			children = (
 				F16DDB021AA617F20080E908 /* Images.xcassets */,
-				F1887DCB1A3372700056A568 /* levelTableViewCell.xib */,
 				78C6C8741A2B411100D8425E /* LaunchScreen.xib */,
-				F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */,
 				78C6C86F1A2B411100D8425E /* Registe.storyboard */,
 				781ECBD21A2EF37C00B14CAF /* MainLogic.Storyboard */,
 			);
@@ -563,7 +736,9 @@
 				F1887DC71A336D020056A568 /* RigisterDetailViewController.m */,
 				F1887DC91A3372700056A568 /* levelTableViewCell.h */,
 				F1887DCA1A3372700056A568 /* levelTableViewCell.m */,
+				F1887DCB1A3372700056A568 /* levelTableViewCell.xib */,
 				F1B875EE1A34B08F003AA3ED /* TagTableViewCell.h */,
+				F1B875F01A34B08F003AA3ED /* TagTableViewCell.xib */,
 				F1B875EF1A34B08F003AA3ED /* TagTableViewCell.m */,
 				F105E9E41A55B8A500DDE19C /* RegistFinshViewController.h */,
 				F105E9E51A55B8A500DDE19C /* RegistFinshViewController.m */,
@@ -580,14 +755,14 @@
 				193CEE4A1AA45B9F007A0CF0 /* 约伴 */,
 				198520AC1A9DAB7D0098F93D /* 信息管理 */,
 				F1B88C371A45E70D005D601D /* Setting */,
-				F1B88C231A45A73C005D601D /* FriendsManagement */,
+				F1B88C231A45A73C005D601D /* 好友管理 */,
 				78F792CF1A45515100D14861 /* MainTabBarController.h */,
 				78F792D01A45515100D14861 /* MainTabBarController.m */,
 			);
 			name = MainLogicVC;
 			sourceTree = "<group>";
 		};
-		F1B88C231A45A73C005D601D /* FriendsManagement */ = {
+		F1B88C231A45A73C005D601D /* 好友管理 */ = {
 			isa = PBXGroup;
 			children = (
 				F1B88C271A45AAE2005D601D /* FriendsManagementViewController.h */,
@@ -604,7 +779,7 @@
 				F10D93111A57FAE1006770DE /* SportsCollectionViewCell.m */,
 				F10D93121A57FAE1006770DE /* SportsCollectionViewCell.xib */,
 			);
-			name = FriendsManagement;
+			name = "好友管理";
 			sourceTree = "<group>";
 		};
 		F1B88C371A45E70D005D601D /* Setting */ = {
@@ -709,22 +884,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F805831AADDACA00F9071A /* ChooseSportTimeTableViewCell.xib in Resources */,
 				1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */,
 				F16DDB031AA617F20080E908 /* Images.xcassets in Resources */,
 				198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */,
 				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
 				78C6C8711A2B411100D8425E /* Registe.storyboard in Resources */,
+				19F8058E1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.xib in Resources */,
 				F178AF5C1AAC3F72002D3BB8 /* SettingTableViewCell.xib in Resources */,
 				193CEE3B1AA0BA19007A0CF0 /* friendRequestTableViewCell.xib in Resources */,
 				78C6C8761A2B411100D8425E /* LaunchScreen.xib in Resources */,
+				192D7BB81AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib in Resources */,
 				193CEE321AA02F9A007A0CF0 /* InviteInfoTableViewCell.xib in Resources */,
+				19F805751AAD4A6400F9071A /* chooseFriendTableViewCell.xib in Resources */,
+				19F805961AAED1B700F9071A /* prefererSportTableViewCell.xib in Resources */,
 				F1B88C2E1A45B47C005D601D /* FriendTableViewCell.xib in Resources */,
+				19F805881AADDC7200F9071A /* ChooseSportFriendTableViewCell.xib in Resources */,
 				F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */,
+				19F8059B1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.xib in Resources */,
 				193CEE491AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib in Resources */,
 				781ECBD41A2EF37C00B14CAF /* MainLogic.Storyboard in Resources */,
 				F1B88C421A45EB09005D601D /* accountTableViewCell.xib in Resources */,
 				F1887DCD1A3372700056A568 /* levelTableViewCell.xib in Resources */,
 				F1B88C361A45E18F005D601D /* searchFriendTableViewCell.xib in Resources */,
+				19F8057E1AADD83700F9071A /* ChoosePlaceTableViewCell.xib in Resources */,
 				F10D93141A57FAE1006770DE /* SportsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,6 +967,7 @@
 				F178AF471AAC34D1002D3BB8 /* ChangeNameViewController.m in Sources */,
 				F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */,
 				193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */,
+				19F8057D1AADD83700F9071A /* ChoosePlaceTableViewCell.m in Sources */,
 				78F792D11A45515100D14861 /* MainTabBarController.m in Sources */,
 				F1887DC51A332CDE0056A568 /* ReigisterNameViewController.m in Sources */,
 				F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */,
@@ -793,8 +977,11 @@
 				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
 				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
 				193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */,
+				19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
+				19F805871AADDC7100F9071A /* ChooseSportFriendTableViewCell.m in Sources */,
+				19F805951AAED1B700F9071A /* prefererSportTableViewCell.m in Sources */,
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
 				193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */,
 				19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */,
@@ -802,25 +989,40 @@
 				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
 				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
+				19F805A51AAFCAB200F9071A /* SPCloudSevice.m in Sources */,
+				19F805651AAD42B800F9071A /* ChooseSportTimeViewController.m in Sources */,
+				19F8059A1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m in Sources */,
+				192D7BBF1AACAE1400EF9131 /* ChooseSportItemViewController.m in Sources */,
 				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
+				19F8058D1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m in Sources */,
+				19F805AE1AAFDB4B00F9071A /* SPSessionManager.m in Sources */,
 				F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */,
 				193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */,
 				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
+				19F8059F1AAFC33600F9071A /* SPAddRequestService.m in Sources */,
 				193CEE3A1AA0BA19007A0CF0 /* friendRequestTableViewCell.m in Sources */,
 				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
 				192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */,
 				193CEE301A9FB221007A0CF0 /* InviteInfoTableViewCell.m in Sources */,
+				19F805781AAD794E00F9071A /* spMessageTableViewController.m in Sources */,
+				19F805A81AAFD21B00F9071A /* SPGroupService.m in Sources */,
 				781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */,
 				193CEE3F1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m in Sources */,
+				19F805AB1AAFD2D100F9071A /* spChatGroup.m in Sources */,
 				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
+				19F805691AAD45A500F9071A /* ChooseSportSpaceViewController.m in Sources */,
+				192D7BB71AACA7C900EF9131 /* ChooseSportItemTableViewCell.m in Sources */,
 				F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */,
+				19F805A21AAFC56700F9071A /* SPUserService.m in Sources */,
 				F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */,
 				193CEE521AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m in Sources */,
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
 				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
 				F178AF4D1AAC36B9002D3BB8 /* ChangePasswordViewController.m in Sources */,
+				19F805741AAD4A6400F9071A /* chooseFriendTableViewCell.m in Sources */,
 				F16DDB061AA722250080E908 /* LogInViewController.m in Sources */,
+				19F805821AADDACA00F9071A /* ChooseSportTimeTableViewCell.m in Sources */,
 				F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */,
 				F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */,
 				193CEE481AA433F5007A0CF0 /* ChatRoomListTableViewCell.m in Sources */,

@@ -7,6 +7,7 @@
 //
 
 #import "LogInViewController.h"
+#import "AppDelegate.h"
 
 @interface LogInViewController ()
 
@@ -40,6 +41,7 @@
     NSLog(@"back!");
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 
 /*
 #pragma mark - Navigation

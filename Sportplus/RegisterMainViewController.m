@@ -7,6 +7,7 @@
 //
 
 #import "RegisterMainViewController.h"
+#import "AppDelegate.h"
 
 @interface RegisterMainViewController ()
 

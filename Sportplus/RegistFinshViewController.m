@@ -7,6 +7,7 @@
 //
 
 #import "RegistFinshViewController.h"
+#import "AppDelegate.h"
 
 @interface RegistFinshViewController ()
 
@@ -48,8 +49,6 @@
     self.testLabel.hidden = NO;
     self.stopRun = NO;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(progressChange) userInfo:nil repeats:YES];
-    
-    
 }
 
 -(void)progressChange{
@@ -104,10 +103,9 @@
         
         //[SVProgressHUD show];
         
-                
-        [self performSegueWithIdentifier:@"GotoMainPage" sender:self];
+#warning 注意销毁内存
+        [((AppDelegate *)[UIApplication sharedApplication].delegate) toMain] ;
     }
-    
     
 }
 
@@ -115,7 +113,8 @@
     if(successed == true)
     {
         [SVProgressHUD dismiss];
-        [self performSegueWithIdentifier:@"GotoMainPage" sender:self];
+#warning 注意销毁内存        
+        [((AppDelegate *)[UIApplication sharedApplication].delegate) toMain] ;
     }
     else{
         [SVProgressHUD dismiss];

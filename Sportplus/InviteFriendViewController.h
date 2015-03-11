@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface InviteFriendViewController : UIViewController
+@interface InviteFriendViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

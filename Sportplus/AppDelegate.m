@@ -10,6 +10,10 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "spAVModels.h"
 
+#import "RegisterMainViewController.h"
+#import "LogInViewController.h"
+#import "myHomePageViewController.h"
+
 #define _AVOSAPPID @"68y9mskzle3aaj8o3gvbsy5zgrtaq9tobl2t0f8uevvvkkrz"
 #define _AVOSAPPKey @"k3wvj25usdhs8y2j0s4fqdavnr5hvjv3yibzfs6b3zsdyfpp"
 #define IOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
@@ -25,18 +29,34 @@
     [addFriendRequest registerSubclass] ;
 }
 
+- (void)toMain {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainLogic" bundle:nil] ;
+    self.window.rootViewController = [sb instantiateInitialViewController] ;
+}
+
+- (void)toRegiste {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Registe" bundle:nil] ;
+    self.window.rootViewController = [sb instantiateInitialViewController] ;
+//    self.window.rootViewController 
+}
+
+- (void)toLogin {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Registe" bundle:nil] ;
+    self.window.rootViewController = [sb instantiateViewControllerWithIdentifier:@"loginVC"] ;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
 //    UIStoryboard *storyBorad = [UIStoryboard storyboardWithName:@"Registe" bundle:nil] ;
 //    self.window.rootViewController = [storyBorad instantiateInitialViewController] ;
     
-#warning 云代码测试环境！
+//云代码测试环境！
 //    [AVCloud setProductionMode:NO] ;
     
     [self registeMyAVObjevt] ;
     [AVOSCloud setApplicationId:_AVOSAPPID clientKey:_AVOSAPPKey] ;
-#warning 跟踪应用打开情况!
+//跟踪应用打开情况!
     [AVAnalytics trackAppOpenedWithLaunchOptions:launchOptions] ;
 
     if (IOS8) {
@@ -52,6 +72,8 @@
          UIRemoteNotificationTypeAlert |
          UIRemoteNotificationTypeSound];
     }
+    
+//    [self toRegiste] ;
     
     return YES;
 }

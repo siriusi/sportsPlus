@@ -20,6 +20,9 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
+- (void)toMain ;
+- (void)toRegiste ;
+- (void)toLogin ;
 
 @end
 

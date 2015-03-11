@@ -35,10 +35,10 @@
     titleArray = [[NSMutableArray alloc] initWithObjects:@"  个人账户",@"  隐私",@"  通知", nil];
     cellTitle = [[NSMutableArray alloc] initWithObjects:@"头像设置",@"姓名设置",@"密码设置",@"账号绑定",@"黑名单",@"好友验证",@"声音",@"震动",@"通知显示详情", nil];
     
+    //[self performSegueWithIdentifier:@"3444" sender:self];
 }
 
 -(void)back{
-    NSLog(@"back!");
     [self.navigationController popViewControllerAnimated:YES];
 }
 
