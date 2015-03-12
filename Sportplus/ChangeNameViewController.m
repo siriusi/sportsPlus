@@ -14,18 +14,19 @@
 
 @implementation ChangeNameViewController
 
--(void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBarHidden = YES;
-    self.navigationController.navigationBar.translucent=YES;
-    
-    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
-    [backButton addTarget:self action:@selector(back)
-         forControlEvents:UIControlEventTouchUpInside];
-    backButton.frame = CGRectMake(0, 0, 9, 18);
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
-    [self.navigationItem setLeftBarButtonItem:backItem];
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    self.navigationController.navigationBarHidden = YES;
+//    self.navigationController.navigationBar.translucent=YES;
+//    
+//    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+//    [backButton addTarget:self action:@selector(back)
+//         forControlEvents:UIControlEventTouchUpInside];
+//    backButton.frame = CGRectMake(0, 0, 9, 18);
+//    UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+//    [self.navigationItem setLeftBarButtonItem:backItem];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -47,13 +48,14 @@
 }
 */
 
--(void)back{
-    NSLog(@"back!");
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 - (IBAction)submit:(id)sender {
     NSLog(@"修改姓名成功！");
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)backToPreViewBtn:(id)sender {
+    NSLog(@"back!");
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end

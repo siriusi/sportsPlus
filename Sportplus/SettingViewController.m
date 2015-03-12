@@ -172,12 +172,14 @@
     }
     else if(indexPath.section == 0 && indexPath.row == 1) {
         NSLog(@"jump to name") ;
-        ChangeNameViewController *nameView = [[ChangeNameViewController alloc] initWithNibName:@"ChangeNameViewController" bundle:nil];
-        [self.navigationController pushViewController:nameView animated:true];
+        [self performSegueWithIdentifier:@"toChangeNameStoryboardID" sender:self];
+        
     }
     else if(indexPath.section == 0 && indexPath.row == 2) {
-        NSLog(@"fuck") ;
+        NSLog(@"jump to password") ;
+        [self performSegueWithIdentifier:@"toChangePasswordViewID" sender:self];
     }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 -(void) showSheet{

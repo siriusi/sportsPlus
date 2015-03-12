@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="oig-vM-kwq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="oig-vM-kwq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -143,7 +143,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXn-1v-LLA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="904"/>
+            <point key="canvasLocation" x="1426" y="952"/>
         </scene>
         <!--约伴nav-->
         <scene sceneID="Gk7-nI-YyQ">
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Mc-qJ-Kdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="-69"/>
+            <point key="canvasLocation" x="110" y="-69"/>
         </scene>
         <!--通知Nav-->
         <scene sceneID="YdF-FI-9cF">
@@ -520,7 +520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dHt-mz-z9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="2915"/>
+            <point key="canvasLocation" x="690" y="3047"/>
         </scene>
         <!--个人主页Nav-->
         <scene sceneID="j8Y-al-bPB">
@@ -902,7 +902,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4x-RL-acm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="998" y="316"/>
+            <point key="canvasLocation" x="940" y="312"/>
         </scene>
         <!--创建陌生人约伴-->
         <scene sceneID="nFv-1L-rHd">
@@ -998,7 +998,7 @@
             <objects>
                 <viewController id="Z9O-4c-arc" customClass="ChooseSportItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EFS-zT-KfW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EIf-5r-abt" userLabel="羽毛球">
@@ -1168,7 +1168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EU2-QX-oZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="-1001"/>
+            <point key="canvasLocation" x="1535" y="-1011"/>
         </scene>
         <!--奥巴马-->
         <scene sceneID="g0T-rP-VdE">
@@ -1214,7 +1214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzb-uV-dgU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="-320"/>
+            <point key="canvasLocation" x="1457" y="-320"/>
         </scene>
         <!--选择场所-->
         <scene sceneID="YUh-tN-jIE">
@@ -1415,7 +1415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awX-yM-b2K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2138" y="1320"/>
+            <point key="canvasLocation" x="1924" y="1348"/>
         </scene>
         <!--设置-->
         <scene sceneID="7PM-AB-gO5">
@@ -1443,12 +1443,19 @@
                         </subviews>
                         <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="张睿" id="5J2-cZ-sMH"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="张睿" id="5J2-cZ-sMH">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="F5t-se-4FG">
+                            <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="settingTable" destination="MnV-Dn-Izd" id="k53-ty-e5n"/>
-                        <segue destination="GF2-ZL-7Qi" kind="push" identifier="3444" id="qyC-Dl-EBW"/>
+                        <segue destination="GF2-ZL-7Qi" kind="push" identifier="toChangeNameStoryboardID" id="qyC-Dl-EBW"/>
+                        <segue destination="Qyf-Hs-aTr" kind="push" identifier="toChangePasswordViewID" id="CLm-c3-dVO"/>
+                        <segue destination="mXN-ve-pyV" kind="push" identifier="toAccountBindViewID" id="CRy-Lu-ySQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXZ-SC-BTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1458,28 +1465,28 @@
         <!--修改姓名-->
         <scene sceneID="Uah-2Z-l9v">
             <objects>
-                <viewController storyboardIdentifier="ChangeNameViewController" title="修改姓名" hidesBottomBarWhenPushed="YES" id="GF2-ZL-7Qi" customClass="ChangeNameViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeNameViewController" title="修改姓名" id="GF2-ZL-7Qi" customClass="ChangeNameViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fEA-C0-8p3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchBackground" id="oue-bg-Vju">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TzB-nk-rYw">
-                                <rect key="frame" x="0.0" y="20" width="320" height="55"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLine" id="TzB-nk-rYw">
+                                <rect key="frame" x="0.0" y="25" width="320" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="Dbb-EK-S3h">
-                                <rect key="frame" x="16" y="33" width="288" height="30"/>
+                                <rect key="frame" x="16" y="39" width="288" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="iy9-Z3-nN1">
-                                <rect key="frame" x="20" y="100" width="280" height="45"/>
+                                <rect key="frame" x="20" y="105" width="280" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="subMitBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1491,15 +1498,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="修改姓名" id="8kG-Js-5rd"/>
+                    <navigationItem key="navigationItem" title="修改姓名" id="8kG-Js-5rd">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="lsS-zg-qc6">
+                            <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backToPreViewBtn:" destination="GF2-ZL-7Qi" id="rbF-Br-h5F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="nameTextField" destination="Dbb-EK-S3h" id="6rK-Sp-P93"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQB-9p-Iw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="-1719"/>
+            <point key="canvasLocation" x="1102" y="-1719"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="g0V-1H-tQ2">
@@ -1554,16 +1569,12 @@
         <!--修改密码-->
         <scene sceneID="Oke-jn-FvE">
             <objects>
-                <viewController title="修改密码" hidesBottomBarWhenPushed="YES" id="Qyf-Hs-aTr" customClass="ChangePasswordViewController" sceneMemberID="viewController">
+                <viewController title="修改密码" id="Qyf-Hs-aTr" customClass="ChangePasswordViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9jZ-Gg-INZ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchBackground" id="kzq-HB-qMf">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NBh-u9-1gS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLine" id="NBh-u9-1gS">
                                 <rect key="frame" x="0.0" y="20" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1584,18 +1595,30 @@
                                     <action selector="submitBtn:" destination="Qyf-Hs-aTr" eventType="touchUpInside" id="Doj-Ga-8iR"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchBackground" id="kzq-HB-qMf">
+                                <rect key="frame" x="-1" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="修改密码" id="FFl-3k-v0C"/>
+                    <navigationItem key="navigationItem" title="修改密码" id="FFl-3k-v0C">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="sd5-Ca-zcc">
+                            <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backToPreViewBtn:" destination="Qyf-Hs-aTr" id="YZw-oc-plJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="passwordTextFiled" destination="JDN-gX-gSX" id="jqf-9h-V8p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fnz-Zm-obW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="-1719"/>
+            <point key="canvasLocation" x="1476" y="-1723"/>
         </scene>
         <!--账号绑定-->
         <scene sceneID="F9b-Ye-KZU">
@@ -1617,7 +1640,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="账号绑定" id="N5V-PQ-d6s"/>
+                    <navigationItem key="navigationItem" title="账号绑定" id="N5V-PQ-d6s">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="nCF-sv-lO1">
+                            <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgn-bl-edB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1684,6 +1711,7 @@
         <image name="tennise" width="111" height="110"/>
         <image name="testPhotoBig" width="321" height="320"/>
         <image name="upBGD" width="320" height="246"/>
+        <image name="whiteLine" width="1" height="141"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1691,6 +1719,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="A0H-1Z-dip"/>
+        <segue reference="nAQ-rk-rNl"/>
     </inferredMetricsTieBreakers>
 </document>

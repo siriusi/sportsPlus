@@ -11,5 +11,6 @@
 @interface ChangeNameViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 - (IBAction)submit:(id)sender;
+- (IBAction)backToPreViewBtn:(id)sender;
 
 @end

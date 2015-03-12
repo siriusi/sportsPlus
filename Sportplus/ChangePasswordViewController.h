@@ -11,5 +11,6 @@
 @interface ChangePasswordViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextFiled;
 - (IBAction)submitBtn:(id)sender;
+- (IBAction)backToPreViewBtn:(id)sender;
 
 @end
