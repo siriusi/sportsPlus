@@ -10,4 +10,8 @@
 
 @interface LogInViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *psdTextField;
+
+
 @end

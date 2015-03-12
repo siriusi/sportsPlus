@@ -32,14 +32,6 @@ typedef enum : BOOL {
 -(void)registeSuccessed:(BOOL) successed ;
 
 /**
- *  个人信息接口调用后，需要完成次回调函数。用于接受获取的userInfo
- *
- *  @param userInfo  获取到的userInfo
- *  @param successed 状态代码。失败时，userInfo为nil 。
- */
--(void)getSelfInfo:(NSDictionary *)userInfo Successed:(BOOL) successed;
-
-/**
  *  更名接口调用后需完成这个回调函数。用于接受状态码.
  *
  *  @param userName  
@@ -66,12 +58,6 @@ typedef enum : BOOL {
 -(void)logoff:(id)sender ;//退出登录
 
 #pragma mark-个人信息
-/**
- *  获取个人信息，调用者需要完成delegate getSelfInfo方法
- *
- *  @param delegate 接收返回信息的对象。
- */
--(void)getSelfInfo:(id<AVDataDelegate>)delegate ;
 
 -(void)changeNameToName:(NSString *)userName ; // [name]
 -(void)changePsdToPsd:(NSString *)Psd ;// [psd]

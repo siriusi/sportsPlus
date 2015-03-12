@@ -9,6 +9,8 @@
 #import "chooseSportFriendViewController.h"
 #import "chooseFriendTableViewCell.h"
 
+#import "spCommon.h"
+
 @interface chooseSportFriendViewController ()
 
 @end

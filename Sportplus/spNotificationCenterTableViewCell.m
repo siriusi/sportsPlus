@@ -15,7 +15,6 @@
 - (void)configureSelf
 {
     // Initialization code
-    NSLog(@"configureSelf") ;
 //    __badge = [[TDBadgeView alloc] initWithFrame:CGRectZero];
 //    self.badge.parent = self;
     
@@ -42,8 +41,6 @@
 }
 
 - (void)awakeFromNib {
-    // Initialization code
-    NSLog(@"awak from nib") ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

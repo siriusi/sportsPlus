@@ -395,108 +395,6 @@
             </objects>
             <point key="canvasLocation" x="92.799999999999997" y="1153.9866666666667"/>
         </scene>
-        <!--Test View Controller-->
-        <scene sceneID="sUU-yv-Gvj">
-            <objects>
-                <viewController id="IyU-gH-Cze" customClass="TestViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="70a-7i-zkP"/>
-                        <viewControllerLayoutGuide type="bottom" id="UCg-PG-8NS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EaR-R9-ZVW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opN-00-44t">
-                                <rect key="frame" x="137" y="72" width="46" height="30"/>
-                                <state key="normal" title="注册">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="test:" destination="IyU-gH-Cze" eventType="touchUpInside" id="QEh-pY-VtG"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o7V-RY-FSU">
-                                <rect key="frame" x="137" y="148" width="46" height="30"/>
-                                <state key="normal" title="注销">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testLogoff:" destination="IyU-gH-Cze" eventType="touchUpInside" id="J9A-i0-JR4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ob-Yb-hSw">
-                                <rect key="frame" x="219" y="109" width="60" height="30"/>
-                                <state key="normal" title="登录张瑞">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testLoginUser02:" destination="IyU-gH-Cze" eventType="touchUpInside" id="FBz-jt-gTH"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jLg-f3-86n">
-                                <rect key="frame" x="123" y="191" width="75" height="30"/>
-                                <state key="normal" title="改名为张瑞">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changNameTest:" destination="IyU-gH-Cze" eventType="touchUpInside" id="n7n-AP-aCx"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVp-Th-N3r">
-                                <rect key="frame" x="109" y="221" width="103" height="30"/>
-                                <state key="normal" title="改密码为12345">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changPsdTest:" destination="IyU-gH-Cze" eventType="touchUpInside" id="6OO-Oy-3r8"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-p0-XxQ">
-                                <rect key="frame" x="115" y="254" width="90" height="30"/>
-                                <state key="normal" title="获取个人信息">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="getSelfInfo:" destination="IyU-gH-Cze" eventType="touchUpInside" id="syc-m8-JSY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgA-f0-cW5">
-                                <rect key="frame" x="108" y="355" width="105" height="30"/>
-                                <state key="normal" title="添加张睿为好友">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testAddFriends:" destination="IyU-gH-Cze" eventType="touchUpInside" id="YIS-yi-21b"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9p-1a-tSb">
-                                <rect key="frame" x="126" y="311" width="69" height="30"/>
-                                <state key="normal" title="搜索张睿5">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="searchZr:" destination="IyU-gH-Cze" eventType="touchUpInside" id="N35-0x-j49"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivF-DC-cHc">
-                                <rect key="frame" x="36" y="109" width="69" height="30"/>
-                                <state key="normal" title="登录张睿5">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="testLoginUser01:" destination="IyU-gH-Cze" eventType="touchUpInside" id="tiY-Iq-KNg"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EGR-nP-i68" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-96" y="-685.38666666666666"/>
-        </scene>
         <!--注册Nav-->
         <scene sceneID="M2h-bY-GAz">
             <objects>
@@ -683,6 +581,9 @@
                                 <state key="normal" title="233" image="loginBtn">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtnClicked:" destination="XaO-lS-nmu" eventType="touchUpInside" id="wyX-bA-ugN"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="teletext" translatesAutoresizingMaskIntoConstraints="NO" id="Rrv-oP-Bu9">
                                 <rect key="frame" x="16" y="76" width="289" height="42"/>
@@ -727,8 +628,19 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="登陆" id="BPU-s4-vHA"/>
+                    <navigationItem key="navigationItem" title="登陆" id="BPU-s4-vHA">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="TfI-fe-YUh">
+                            <color key="tintColor" red="0.40000000596046448" green="0.36862745881080627" blue="0.36078432202339172" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backBtnClicked:" destination="XaO-lS-nmu" id="QkS-tc-Pm6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="psdTextField" destination="exN-mX-0Rj" id="Lp7-By-zLq"/>
+                        <outlet property="userNameTextField" destination="N9n-vR-xsk" id="JfT-BL-2zY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad0-gj-ceF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -744,6 +656,7 @@
         <image name="SchoolSystem" width="276" height="44"/>
         <image name="SearchBackground" width="356" height="630"/>
         <image name="SearchBar" width="1334" height="155"/>
+        <image name="back" width="10" height="19"/>
         <image name="badminton" width="110" height="109"/>
         <image name="basketball" width="110" height="109"/>
         <image name="build" width="110" height="109"/>

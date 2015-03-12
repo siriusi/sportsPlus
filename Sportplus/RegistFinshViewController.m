@@ -98,13 +98,13 @@
         [regist.info setValue:self.passTxt.text forKey:@"password"];
         [regist.info setValue:self.teleTxt.text forKey:@"userName"];
         NSLog(@"regist info is %@",regist.info);
-        //AvosCloudNetNetWorkManager *manager = [AvosCloudNetNetWorkManager sharedInstace];
-        //[manager registeWithInfo:regist.info delegate:self];
+        AvosCloudNetNetWorkManager *manager = [AvosCloudNetNetWorkManager sharedInstace];
+        [manager registeWithInfo:regist.info delegate:self];
         
-        //[SVProgressHUD show];
+        [SVProgressHUD show];
         
 #warning 注意销毁内存
-        [((AppDelegate *)[UIApplication sharedApplication].delegate) toMain] ;
+//        [((AppDelegate *)[UIApplication sharedApplication].delegate) toMain] ;
     }
     
 }

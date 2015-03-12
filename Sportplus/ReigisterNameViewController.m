@@ -229,8 +229,8 @@
     }
     else{
         RegisteData *registData = [RegisteData shareInstance];
-        [registData.info setValue:self.realName.text forKey:@"userName"];
-        [registData.info setValue:self.sportsContent forKey:@"sportList"];
+        [registData.info setValue:self.realName.text forKey:@"sp_userName"];
+        [registData.info setValue:[self dictionaryToFormatArray:self.sportsContent] forKey:@"sportList"];
         NSString *sex = [[NSString alloc]init];
         if(self.gender == YES)
         {
@@ -244,4 +244,15 @@
         [self performSegueWithIdentifier:@"RegistDetail" sender:self];
     }
 }
+
+- (NSArray *)dictionaryToFormatArray:(NSDictionary *)dic {
+    NSMutableArray *array = [[NSMutableArray alloc] init] ;
+    
+    for (id obj in dic) {
+        [array addObject:obj] ;
+    }
+    
+    return array ;
+}
+
 @end

@@ -11,7 +11,7 @@
 #import "ChangeNameViewController.h"
 #import "ChangePasswordViewController.h"
 
-@interface SettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate>{
+@interface SettingViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UIActionSheetDelegate,UIAlertViewDelegate>{
     NSMutableArray *titleArray;
     NSMutableArray *cellTitle;
 }

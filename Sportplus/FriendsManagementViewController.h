@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FriendsManagementViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>{
-    NSMutableArray *titleArrary;
-}
+@interface FriendsManagementViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *friendsTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addFriendsButton;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
@@ -23,4 +22,8 @@
 @property (nonatomic) NSMutableArray *sportsArrayWhite;
 
 @property (nonatomic) NSIndexPath *oldCellRow;
+
+- (NSMutableArray *)dataSourceOfFriend ;
+- (void)setdataSourceOfFriend:(NSMutableArray *)data ;
+
 @end

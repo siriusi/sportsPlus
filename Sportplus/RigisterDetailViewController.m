@@ -7,6 +7,8 @@
 //
 
 #import "RigisterDetailViewController.h"
+#import "spCommon.h"
+
 
 @interface RigisterDetailViewController ()
 
@@ -21,7 +23,6 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     titleArray = [[NSMutableArray alloc] initWithObjects:@"水平/菜鸟 进阶 高手",@"个性标签/最多三个标签", nil];
     sportsArray = [[NSMutableArray alloc]init];
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -35,13 +36,19 @@
     [self.navigationItem setLeftBarButtonItem:backItem];
     
     RegisteData *regist = [RegisteData shareInstance];
+#warning array is not a dictionary ;
     self.sportsListCell = [regist.info objectForKey:@"sportList"];
     self.tagsList = [[NSMutableArray alloc]init];
+    
+    self.sportListArray = [regist.info objectForKey:@"sportList"] ;
+    self.tempSportListArray = [[NSMutableArray alloc] init] ;
+    for (NSInteger i = 0 ; i < [self.sportListArray count]; i++) {
+        [self.tempSportListArray addObject:@0] ;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)back{
@@ -83,7 +90,7 @@
             
         case 0:
             
-            return  self.sportsListCell.count;
+            return  self.sportListArray.count;
             
             break;
             
@@ -114,21 +121,26 @@
             cell = [[[NSBundle mainBundle] loadNibNamed:@"levelTableViewCell" owner:self options:nil] lastObject];
         }
         self.sectionTwo = NO;
-        NSString *value = [NSString stringWithFormat:@"%@",[self.sportsListCell allValues][indexPath.row ]];
         
-        if([value isEqualToString:@"1"])
-        {
-            [cell.level1 setImage:[UIImage imageNamed:@"levelOneSelected"] forState:UIControlStateNormal];
-        }
-        if([value isEqualToString:@"2"])
-        {
-            [cell.level2 setImage:[UIImage imageNamed:@"levelTwoSelected"] forState:UIControlStateNormal];
-        }
-        if([value isEqualToString:@"3"])
-        {
-            [cell.level3 setImage:[UIImage imageNamed:@"levelThreeSelected"] forState:UIControlStateNormal];
-        }
-        cell.sportImg.image = [UIImage imageNamed:[self.sportsListCell allKeys][indexPath.row]];
+//        NSString *value = [self.sportListArray objectAtIndex:indexPath.row] ;
+//        NSString *value = [NSString stringWithFormat:@"%@",[self.sportsListCell allValues][indexPath.row ]];
+        
+//        if([value isEqualToString:@"1"])
+//        {
+//            [cell.level1 setImage:[UIImage imageNamed:@"levelOneSelected"] forState:UIControlStateNormal];
+//        }
+//        if([value isEqualToString:@"2"])
+//        {
+//            [cell.level2 setImage:[UIImage imageNamed:@"levelTwoSelected"] forState:UIControlStateNormal];
+//        }
+//        if([value isEqualToString:@"3"])
+//        {
+//            [cell.level3 setImage:[UIImage imageNamed:@"levelThreeSelected"] forState:UIControlStateNormal];
+//        }
+        
+        
+        cell.sportImg.image = [UIImage imageNamed:[self.sportListArray objectAtIndex:indexPath.row]] ;
+//        cell.sportImg.image = [UIImage imageNamed:[self.sportsListCell allKeys][indexPath.row]];
         [cell.level1 addTarget:self action:@selector(levelOne:) forControlEvents:UIControlEventTouchUpInside];
         [cell.level2 addTarget:self action:@selector(levelTwo:) forControlEvents:UIControlEventTouchUpInside];
         [cell.level3 addTarget:self action:@selector(levelThree:) forControlEvents:UIControlEventTouchUpInside];
@@ -199,29 +211,58 @@
     return  nil;
 }
 
+- (NSNumber *)getSportTypeBySportName:(NSString *)name {
+    NSArray *array = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
+    
+    for (NSInteger i = 1; i <= [array count]; i++) {
+        if ([[array objectAtIndex:i] isEqualToString:name]) {
+            return [NSNumber numberWithInteger:i] ;
+        }
+    }
+    
+    return @0 ;
+}
+
+- (NSDictionary *)getDictionaryBySportsName:(NSString *)name level:(NSInteger)lv {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init] ;
+    
+    [dic setObject:[NSNumber numberWithInteger:lv] forKey:@"sportLevel"] ;
+    [dic setObject:[self getSportTypeBySportName:name] forKey:@"sportType"] ;
+    
+    return dic ;
+}
+
 -(void)levelOne:(UIButton *)sender{
     
     levelTableViewCell *cell = (levelTableViewCell *)[[sender superview] superview];
     NSIndexPath *path = [self.tableView indexPathForCell:cell];
-    NSString *name =[self.sportsListCell allKeys][path.row];
-    [self.sportsListCell setObject:@1 forKey:name];
+//    NSString *name =[self.sportsListCell allKeys][path.row];
+    NSString *name = [self.sportListArray objectAtIndex:path.row] ;
+    
+    
+    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:1]];
+//    [self.sportsListCell setObject:@1 forKey:name];
 }
 
 -(void)levelTwo:(UIButton *)sender{
     levelTableViewCell *cell = (levelTableViewCell *)[[sender superview] superview];
     NSIndexPath *path = [self.tableView indexPathForCell:cell];
-    NSString *name =[self.sportsListCell allKeys][path.row];
-    [self.sportsListCell setObject:@2 forKey:name];
-
+//    NSString *name =[self.sportsListCell allKeys][path.row];
+//    [self.sportsListCell setObject:@2 forKey:name];
+    NSString *name = [self.sportListArray objectAtIndex:path.row] ;
+    
+    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:1]];
+    
 }
 
 -(void)levelThree:(UIButton *)sender{
     levelTableViewCell *cell = (levelTableViewCell *)[[sender superview] superview];
     NSIndexPath *path = [self.tableView indexPathForCell:cell];
-    NSString *name =[self.sportsListCell allKeys][path.row];
-    [self.sportsListCell setObject:@3 forKey:name];
-    NSLog(@"%@",self.sportsListCell);
-
+//    NSString *name =[self.sportsListCell allKeys][path.row];
+//    [self.sportsListCell setObject:@3 forKey:name];
+    NSString *name = [self.sportListArray objectAtIndex:path.row] ;
+    
+    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:1]];
 }
 
 -(void) tagsAlertView{
@@ -459,18 +500,20 @@
     BOOL jump=YES;
     
     RegisteData *regist = [RegisteData shareInstance];
-    for(int i=0;i<[[self.sportsListCell allValues]count];i++)
+    
+    for(int i=0;i<[self.tempSportListArray count];i++)
     {
-        if([self.sportsListCell allValues][i]==0||self.tagsList.count==0)
-        {
-            [self sportsAlertView];
-            jump = NO;
-            break;
+        
+        if ([NSStringFromClass([[self.tempSportListArray objectAtIndex:i] class]) isEqualToString:@"NSNumber"]) {
+            [self sportsAlertView] ;
+            jump = NO ;
+            break ;
         }
     }
     if(jump == YES)
     {
-        [regist.info setValue:self.sportsListCell forKey:@"sportList"];
+//        [regist.info setValue:self.sportsListCell forKey:@"sportList"];
+        [regist.info setValue:self.tempSportListArray forKey:@"sportList"] ;
         [regist.info setValue:self.tagsList forKey:@"tagList"];
         NSLog(@"all infomation are %@",regist.info);
         [self performSegueWithIdentifier:@"RegistFinish" sender:self];

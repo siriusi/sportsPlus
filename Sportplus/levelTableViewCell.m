@@ -27,8 +27,7 @@
     [self.level1 setImage:[UIImage imageNamed:@"levelOneSelected"] forState:UIControlStateNormal];
     [self.level2 setImage:[UIImage imageNamed:@"levelTwo"] forState:UIControlStateNormal];
     [self.level3 setImage:[UIImage imageNamed:@"levelThree"] forState:UIControlStateNormal];
-    self.level = 1;
-    
+    self.level = 1;    
 }
 
 -(void)levelTwo:(UIButton *)sender{

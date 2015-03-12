@@ -10,21 +10,22 @@
 
 @implementation spUser
 
-@dynamic SP_userName ;
+@dynamic sP_userName ;
 
-@dynamic SP_userTrueName ;
-@dynamic SP_school ;
-@dynamic SP_academy ;
-@dynamic SP_sex ;
-@dynamic SP_enterScYear ;
-@dynamic SP_friendCount ;
-@dynamic SP_validateCount ;
-@dynamic SP_reportedCount ;
-@dynamic SP_successCount ;
+@dynamic sP_userTrueName ;
+@dynamic sP_school ;
+@dynamic sP_academy ;
+@dynamic sP_sex ;
+@dynamic sP_enterScYear ;
+@dynamic sP_friendCount ;
+@dynamic sP_validateCount ;
+@dynamic sP_reportedCount ;
+@dynamic sP_successCount ;
 
-@dynamic SP_tagList ;
-@dynamic SP_sportList ;
-@dynamic SP_avatar ;
+@dynamic sP_tagList ;
+@dynamic sP_sportList ;
+#warning sP_photoList ;
+@dynamic sP_avatar ;
 
 +(NSString *)parseClassName {
     return @"_User" ;

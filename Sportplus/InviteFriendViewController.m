@@ -14,11 +14,34 @@
 #import "ChooseSportTimeTableViewCell.h"
 #import "chooseFriendTableViewCell.h"
 
-@interface InviteFriendViewController ()
+@interface InviteFriendViewController () {
+    NSArray *_typeToSportName ;
+    
+    NSString *_choosedSportName ;
+    NSInteger _chooseSportType ;
+}
 
 @end
 
+//
+//typedef enum {
+//    SPORTSTYPE_pingpong = 1 ,
+//    SPORTSTYPE_tennise ,
+//    SPORTSTYPE_soccer ,
+//    SPORTSTYPE_run ,
+//    SPORTSTYPE_build ,
+//    SPORTSTYPE_basketball ,
+//    SPORTSTYPE_badminton
+//} SPORTSTYPE ;
+
 @implementation InviteFriendViewController
+
+- (void)registeNotificationCenter {
+    NSLog(@"注册 <%@> 观察者",SP_INVITE_UPDATE) ;
+    
+    [sp_notificationCenter removeObserver:self name:SP_INVITE_UPDATE object:nil] ;
+    [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:SP_INVITE_UPDATE object:nil] ;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,12 +49,35 @@
     self.tableView.dataSource = self ;
     self.tableView.delegate = self ;
     
+    _typeToSportName = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
     
+    _chooseSportType = -1 ;
+    _choosedSportName = @"" ;
+    
+    [self registeNotificationCenter] ;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+
+- (void)dealloc {
+    NSLog(@"注销 <%@> 观察者",SP_INVITE_UPDATE) ;
+    [sp_notificationCenter removeObserver:self name:SP_INVITE_UPDATE object:nil] ;
+}
+
+#pragma mark - NSNotification
+
+- (void)phraseData:(NSNotification *)sender {
+    
+    
+    NSLog(@"data = %@",[sender object]) ;
+    _chooseSportType = [(NSNumber *)[((NSArray *)[sender object]) firstObject] integerValue] ;
+    _choosedSportName = [_typeToSportName objectAtIndex:_chooseSportType] ;
+    
+    [self.tableView reloadData] ;
+    
 }
 
 #pragma mark-UITableViewDataSource
@@ -55,19 +101,33 @@
     UITableViewCell *cell ;
     
     if ( section == 0 ) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportItemTableViewCell" owner:self options:nil] lastObject];
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellID1] ;
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportItemTableViewCell" owner:self options:nil] lastObject];
+        }
     
+        //config
+        
+        [((ChooseSportItemTableViewCell *)cell).SportsNameLabel setText:_choosedSportName] ;
+        
     } else
     if ( section == 1 ) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"ChoosePlaceTableViewCell" owner:self options:nil] lastObject];
-            
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellID2] ;
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"ChoosePlaceTableViewCell" owner:self options:nil] lastObject];
+        }
+        
     }else
     if ( section == 2 ) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportTimeTableViewCell" owner:self options:nil] lastObject];
-        
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellID3] ;
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportTimeTableViewCell" owner:self options:nil] lastObject];
+        }
     }else {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportFriendTableViewCell" owner:self options:nil] lastObject];
-        
+        cell = [self.tableView dequeueReusableCellWithIdentifier:cellID4] ;
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportFriendTableViewCell" owner:self options:nil] lastObject];
+        }
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator ;
@@ -110,27 +170,7 @@
     
     
     [self performSegueWithIdentifier:[segueIDs objectAtIndex:indexPath.section] sender:self] ;
-//    if ( section == 0 ) {
-//        [self performSegueWithIdentifier:segueID1 sender:self] ;
-//    } else
-//    if ( section == 1) {
-//    
-//    } else
-//    if ( section == 2 ) {
-//    } else {
-//        
-//    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark-IBAction
 

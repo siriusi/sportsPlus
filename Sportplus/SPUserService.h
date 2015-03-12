@@ -15,6 +15,7 @@
 
 +(void)findFriendsWithCallback:(AVArrayResultBlock)callback;
 
+//搜索用户
 +(void)findUsersByPartname:(NSString*)partName withBlock:(AVArrayResultBlock)block;
 
 +(NSString*)getPeerIdOfUser:(AVUser*)user;

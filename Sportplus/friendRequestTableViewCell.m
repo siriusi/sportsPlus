@@ -18,8 +18,4 @@
     [super setSelected:selected animated:animated];
 }
 
-- (IBAction)acceptBtnClicked:(id)sender {
-    NSLog(@"acceptBtnClicked") ;
-}
-
 @end

@@ -53,5 +53,16 @@
 #warning set NO when release
 #define CD_DEBUG YES
 
+#define sp_notificationCenter [NSNotificationCenter defaultCenter]
+
+typedef enum {
+    SPORTSTYPE_pingpong = 1 ,
+    SPORTSTYPE_tennise ,
+    SPORTSTYPE_soccer ,
+    SPORTSTYPE_run ,
+    SPORTSTYPE_build ,
+    SPORTSTYPE_basketball ,
+    SPORTSTYPE_badminton
+} SPORTSTYPE ;
 
 #endif

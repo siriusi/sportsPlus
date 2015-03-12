@@ -11,7 +11,6 @@
 @implementation prefererSportSpaceTableViewCell
 
 - (void)awakeFromNib {
-    NSLog(@"awake from nib 3") ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

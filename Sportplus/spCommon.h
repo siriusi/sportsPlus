@@ -12,8 +12,9 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "spCommonDefine.h"
 
-//#import "CDUserService.h"
-//#import "CDAddRequest.h"
+#import "spNotificationCenterIDs.h"
+#import "addFriendRequest.h"
+#import "SPUserService.h"
 #import "SPUtils.h"
 
 #endif

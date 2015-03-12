@@ -16,10 +16,13 @@ static NSString *kCDCloudServiceRemoveFriend=@"removeFriend";
 
 +(void)callCloudRelationFnWithFromUser:(AVUser*)fromUser toUser:(AVUser*)toUser action:(NSString*)action callback:(AVIdResultBlock)callback;
 
+//删除好友
 +(void)removeFriend:(AVUser*)friend block:(AVIdResultBlock)block;
 
+//添加好友
 +(void)tryCreateAddRequestWithToUser:(AVUser*)toUser callback:(AVIdResultBlock)callback;
 
+//同意好友申请
 +(void)agreeAddRequestWithId:(NSString*)objectId callback:(AVIdResultBlock)callback;
 
 +(void)saveChatGroupWithId:(NSString*)groupId name:(NSString*)name callback:(AVIdResultBlock)callback;

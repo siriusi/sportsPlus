@@ -11,8 +11,6 @@
 @implementation SportsCollectionViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
-    NSLog(@"awak from nib") ;
 }
 
 - (id)initWithFrame:(CGRect)frame

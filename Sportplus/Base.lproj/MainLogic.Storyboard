@@ -861,7 +861,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="35" sectionFooterHeight="22" id="Iro-qc-iR8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="35" sectionFooterHeight="22" id="Iro-qc-iR8">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="380"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -998,7 +998,7 @@
             <objects>
                 <viewController id="Z9O-4c-arc" customClass="ChooseSportItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EFS-zT-KfW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EIf-5r-abt" userLabel="羽毛球">
@@ -1007,13 +1007,9 @@
                                 <state key="normal" title="Button" image="badminton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T7C-H5-tBJ" userLabel="篮球">
-                                <rect key="frame" x="128" y="90" width="62" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="basketball">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="7kl-TQ-OMG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="VM8-I4-cZf" userLabel="足球">
                                 <rect key="frame" x="129" y="275" width="62" height="62"/>
@@ -1021,6 +1017,9 @@
                                 <state key="normal" title="Button" image="soccer">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="1CO-Vj-bfa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="in9-Qr-9at" userLabel="跑步">
                                 <rect key="frame" x="129" y="185" width="62" height="62"/>
@@ -1028,6 +1027,9 @@
                                 <state key="normal" title="Button" image="run">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="6ki-eX-hXz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="akR-CW-6pY" userLabel="网球">
                                 <rect key="frame" x="207" y="140" width="62" height="62"/>
@@ -1035,6 +1037,9 @@
                                 <state key="normal" title="Button" image="tennise">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="wg1-bt-9Vq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="羽毛球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mDV-7c-Wsx">
                                 <rect key="frame" x="58" y="202" width="45" height="21"/>
@@ -1091,6 +1096,9 @@
                                 <state key="normal" title="Button" image="build">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="9X9-RW-jse"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qQK-l3-Rur" userLabel="乒乓球">
                                 <rect key="frame" x="207" y="230" width="62" height="62"/>
@@ -1098,6 +1106,9 @@
                                 <state key="normal" title="Button" image="pingpong">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="sri-iW-30G"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="足球" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aoc-43-TEa">
                                 <rect key="frame" x="145" y="337" width="31" height="21"/>
@@ -1124,6 +1135,16 @@
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="T7C-H5-tBJ" userLabel="篮球">
+                                <rect key="frame" x="128" y="90" width="62" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="basketball">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnClicked:" destination="Z9O-4c-arc" eventType="touchUpInside" id="f21-Qd-QLU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91372549533843994" green="0.91372549533843994" blue="0.91764706373214722" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -1135,6 +1156,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="badmintonBtn" destination="EIf-5r-abt" id="kGb-Z6-k09"/>
+                        <outlet property="basketBallBtn" destination="T7C-H5-tBJ" id="4bi-Sy-EL5"/>
+                        <outlet property="buildBtn" destination="UjG-k7-Q4d" id="ozt-85-B9w"/>
+                        <outlet property="pingpongBtn" destination="qQK-l3-Rur" id="JGC-cb-CYl"/>
+                        <outlet property="runBtn" destination="in9-Qr-9at" id="ZMR-hV-pPY"/>
+                        <outlet property="soccerBtn" destination="VM8-I4-cZf" id="z2b-e2-lec"/>
+                        <outlet property="tenniseBtn" destination="akR-CW-6pY" id="lQU-HG-fVZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EU2-QX-oZY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1406,6 +1436,9 @@
                                 <state key="normal" title="Button" image="logoutButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOffBtnClicked:" destination="HWW-rZ-Ufn" eventType="touchUpInside" id="3mo-E6-J9Q"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89411764705882357" green="0.89411764705882357" blue="0.89411764705882357" alpha="1" colorSpace="calibratedRGB"/>
@@ -1658,6 +1691,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="nAQ-rk-rNl"/>
+        <segue reference="A0H-1Z-dip"/>
     </inferredMetricsTieBreakers>
 </document>

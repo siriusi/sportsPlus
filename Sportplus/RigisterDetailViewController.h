@@ -18,6 +18,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) BOOL sectionTwo;
 @property (nonatomic) NSMutableDictionary *sportsListCell;
+
+@property (nonatomic) NSMutableArray *sportListArray ;
+@property (nonatomic) NSMutableArray *tempSportListArray ;
+
 @property (nonatomic) NSMutableArray *tagsList;
 - (IBAction)nextStep:(id)sender;
 

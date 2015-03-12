@@ -8,6 +8,7 @@
 
 #import "myHomePageViewController.h"
 #import "spCommon.h"
+#import "AppDelegate.h"
 
 #import "ZR_photoLibraryCollectionViewCell.h"
 #import "prefererSportSpaceTableViewCell.h"
@@ -195,6 +196,5 @@ typedef enum {
     [self.navigationController setNavigationBarHidden:NO animated:NO] ;
     [segue.destinationViewController setHidesBottomBarWhenPushed:YES] ;
 }
-
 
 @end

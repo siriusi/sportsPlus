@@ -241,6 +241,5 @@
     return networkStatus != NotReachable;
 }
 
-
 @end
 

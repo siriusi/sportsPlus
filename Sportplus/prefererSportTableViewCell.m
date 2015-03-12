@@ -11,7 +11,6 @@
 @implementation prefererSportTableViewCell
 
 - (void)awakeFromNib {
-    NSLog(@"awake from nib 2") ;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

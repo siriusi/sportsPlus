@@ -22,6 +22,5 @@ typedef enum {
 @property (weak, nonatomic) IBOutlet UIButton *acceptFriendRequestButton;
 
 @property cellState MycellState;
-- (IBAction)acceptBtnClicked:(id)sender;
 
 @end

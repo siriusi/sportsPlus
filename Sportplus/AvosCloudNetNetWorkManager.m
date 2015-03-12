@@ -7,16 +7,9 @@
 //
 
 #import "AvosCloudNetNetWorkManager.h"
-
-//typedef enum : NSUInteger {
-//    SportPingpang = 1,
-//    SportTennis = 1 << 1,
-//    SportFootball = 1 << 2,
-//    SportRun = 1 << 3 ,
-//    SportBuild = 1 << 4 ,
-//    SportBasketball = 1 << 5 ,
-//    SportBadmintion = 1 << 6 ,
-//} SportEnum ;
+#import "spCommon.h"
+#import "spAVModels.h"
+#import "AppDelegate.h"
 
 static AvosCloudNetNetWorkManager *sharedObj = nil ;
 
@@ -51,58 +44,52 @@ static AvosCloudNetNetWorkManager *sharedObj = nil ;
 #pragma mark-登录注册退出
 //ok!
 -(void)registeWithInfo:(NSDictionary *)Info delegate:(id<AVDataDelegate>)delegate{
-    AVUser *user = [AVUser user] ;
+    spUser *user = [spUser user] ;
     
     user.username = [Info valueForKey:@"userName"] ;
     user.password = [Info valueForKey:@"password"] ;
     
-    AVObject *userInfo = [AVObject objectWithClassName:@"userInfo"] ;
-    
-    [userInfo setObject:user.username forKey:@"name"] ;
-    [userInfo setObject:[Info valueForKey:@"sex"] forKey:@"sex"] ;
+    [user setSP_userName:[Info valueForKey:@"sp_userName"]] ;
+    [user setSP_sex:[Info valueForKey:@"sex"]] ;
     
     //set school
     NSString *school = [Info valueForKey:@"school"] ;
-    [userInfo setObject:school forKey:@"school"] ;
+    [user setSP_school:school] ;
     
     //set academy
     NSString *academy = [Info valueForKey:@"academy"] ;
-    [userInfo setObject:academy forKey:@"academy"] ;
+    [user setSP_academy:academy] ;
+    
     //set enter school year
     NSNumber *enterScYear = [Info valueForKey:@"enterScYear"] ;
-    [userInfo setObject:enterScYear forKey:@"enterScYear"] ;
-    [userInfo setObject:[NSNumber numberWithInt:0]forKey:@"reportedCount"] ;
-    [userInfo setObject:[NSNumber numberWithInt:0] forKey:@"validatedCount"] ;
-    [userInfo setObject:[NSNumber numberWithInt:0] forKey:@"successCount"] ;
-    [userInfo setObject:[NSNumber numberWithInt:0] forKey:@"friendCount"] ;
-    //default head
-    [userInfo setObject:@"default" forKey:@"head"] ;
+    [user setSP_enterScYear:enterScYear] ;
+    
+    [user setSP_reportedCount:@0] ;
+    
+    [user setSP_validateCount:@0] ;
+
+    [user setSP_successCount:@0] ;
+
+    [user setSP_friendCount:@0] ;
+
+#warning default head
+//    [user setSP_avatar:nil] ;
     {
         //set tag
         NSArray *tags = [Info valueForKey:@"tagList"] ;
-        [userInfo addObjectsFromArray:tags forKey:@"tagList"] ;
+        [user setSP_tagList:tags] ;
         //set Pic default
-        [userInfo setObject:nil forKey:@"PicList"] ;
+        //[userInfo setObject:nil forKey:@"PicList"] ;
         //set sportList
         NSArray *sports = [Info valueForKey:@"sportList"] ;
-        [userInfo addObjectsFromArray:sports forKey:@"sportList"] ;
+        [user setSP_sportList:sports] ;
     }
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded , NSError *error){
         if (succeeded){
             NSLog(@"注册成功！") ;
-            [userInfo setObject:user forKey:@"target"] ;
-            [userInfo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    NSLog(@"保存成功") ;
-                    currentUserInfo = userInfo ;
-                    [delegate registeSuccessed:TRUE] ;
-                } else {
-                    NSLog(@"保存失败") ;
-                    currentUserInfo = nil ;
-                    [delegate registeSuccessed:FALSE] ;
-                }
-            }] ;
+            currentUserInfo = nil ;
+            [delegate registeSuccessed:TRUE] ;
         } else {
             NSLog(@"失败！") ;
             [delegate registeSuccessed:FALSE] ;
@@ -112,65 +99,36 @@ static AvosCloudNetNetWorkManager *sharedObj = nil ;
     
 }
 
+//ok
 -(void)loginWithUserName:(NSString *)username andPsd:(NSString *)psd{
-    [AVUser logInWithUsernameInBackground:username password:psd block:^(AVUser *user, NSError *error) {
+    [spUser logInWithUsernameInBackground:username password:psd block:^(AVUser *user, NSError *error) {
         if (user !=nil) {
             //登录成功
             NSLog(@"成功 : %@  %@",user.username,user.password) ;
-            [self getSelfInfo] ;
+            [self toMain] ;
         } else {
             //登录失败
+#warning 失败alertView
             NSLog(@"登录失败") ;
         }
     }] ;
 }
--(void)getSelfInfo {
-    AVQuery *query = [AVQuery queryWithClassName:@"userInfo"] ;
-    [query whereKey:@"target" equalTo:[AVObject objectWithoutDataWithObjectId:[AVUser currentUser].objectId] ];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            if (objects.count == 1 ) {
-                NSLog(@"登录同时获取个人信息成功") ;
-                currentUserInfo = [objects objectAtIndex:0] ;
-            } else {
-                NSLog(@"登录同时获取个人信息失败") ;
-            }
-        } else {
-            NSLog(@"登录同时获取个人信息失败") ;
-        }
-    }] ;
-    
+
+//ok
+- (void)toMain {
+    [((AppDelegate *)[UIApplication sharedApplication].delegate) toMain] ;
 }
 
 //ok!
--(void)logoff:(id)sender{
-    [AVUser logOut] ;
+-(void)logoff:(id<UIAlertViewDelegate>)sender{
+    [spUser logOut] ;
     currentUserInfo = nil ;
+    
     UIAlertView *UIAV = [[UIAlertView alloc] initWithTitle:@"成功注销" message:@"成功注销" delegate:sender cancelButtonTitle:@"知道了" otherButtonTitles:nil] ;
     [UIAV show] ;
 }
 
 #pragma mark-个人信息
-//ok!
--(void)getSelfInfo:(id<AVDataDelegate>)delegate {
-    AVQuery *query = [AVQuery queryWithClassName:@"userInfo"] ;
-    [query whereKey:@"target" equalTo:[AVObject objectWithoutDataWithObjectId:[AVUser currentUser].objectId]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            if (objects.count == 1 ) {
-                NSLog(@"获取个人信息成功") ;
-                currentUserInfo = [objects objectAtIndex:0] ;
-                [delegate getSelfInfo:[self userInfoToDictionary:[objects objectAtIndex:0]] Successed:TRUE] ;
-            } else {
-                NSLog(@"获取个人信息失败") ;
-                [delegate getSelfInfo:nil Successed:FALSE] ;
-            }
-        } else {
-            NSLog(@"获取个人信息出错") ;
-            [delegate getSelfInfo:nil Successed:FALSE] ;
-        }
-    }];
-}
 
 //ok!
 -(void)changeNameToName:(NSString *)userName{

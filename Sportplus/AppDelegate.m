@@ -74,6 +74,7 @@
     }
     
 //    [self toRegiste] ;
+    [self toMain] ;
     
     return YES;
 }

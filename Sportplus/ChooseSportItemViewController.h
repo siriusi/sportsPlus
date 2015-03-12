@@ -10,4 +10,13 @@
 
 @interface ChooseSportItemViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *badmintonBtn;
+@property (weak, nonatomic) IBOutlet UIButton *basketBallBtn;
+@property (weak, nonatomic) IBOutlet UIButton *tenniseBtn;
+@property (weak, nonatomic) IBOutlet UIButton *runBtn;
+@property (weak, nonatomic) IBOutlet UIButton *buildBtn;
+@property (weak, nonatomic) IBOutlet UIButton *soccerBtn;
+@property (weak, nonatomic) IBOutlet UIButton *pingpongBtn;
+
+
 @end
