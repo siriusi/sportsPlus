@@ -17,4 +17,6 @@
 #import "SPUserService.h"
 #import "SPUtils.h"
 
+#import "spAVModels.h"
+
 #endif

@@ -24,8 +24,8 @@
 //#define MainPageNavStateAtSelfInfoOnFrame CGRectMake(0, 289, 320, 231)
 //#define MainPageNavStateAtSelfInfoHiddenFrame CGRectMake(320, 289, 320, 231)
 
-
-#define m
+#define BtnSelectedColor RGBCOLOR(0, 0, 0)
+#define BtnNormalColor RGBCOLOR(234, 234, 234)
 
 typedef enum {
     MainPageNavStateAtPrefereSport = 0 ,
@@ -35,6 +35,8 @@ typedef enum {
 
 @interface myHomePageViewController () {
     MainPageNavState _NavState ;
+    
+    NSArray *_dataSourceOfPrefereSport ;
 }
 
 @end
@@ -43,14 +45,29 @@ typedef enum {
 
 #pragma mark - LifeCycle
 
+- (void)initUIWithCurrentUserInfo {
+    spUser *user = [spUser currentUser] ;
+    
+    [self.nameLabel setText:[user sP_userName] ];
+    [self.validateCountLabel setText:[[user sP_validateCount] stringValue]] ;
+    [self.friendCountLabel setText:[[user sP_friendCount] stringValue]] ;
+    [self.successCountLabel setText:[[user sP_successCount] stringValue]] ;
+    
+    _dataSourceOfPrefereSport = [user sP_sportList] ;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initUIWithCurrentUserInfo] ;
     
     [self.navigationController setNavigationBarHidden:YES] ;
     
     self.collectionView.dataSource = self ;
     self.collectionView.delegate = self ;
     [self.collectionView registerClass:[ZR_photoLibraryCollectionViewCell class] forCellWithReuseIdentifier:@"photoLibraryCellID"] ;
+    
+    _NavState = MainPageNavStateAtPrefereSport ;
     
     
     self.prefererTableView.dataSource = self ;
@@ -97,7 +114,8 @@ typedef enum {
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3 ;
+    NSInteger count = [_dataSourceOfPrefereSport count] ;
+    return ( count * 2 - 1 ) ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -112,6 +130,15 @@ typedef enum {
         cell = [self.prefererTableView dequeueReusableCellWithIdentifier:cellID1] ;
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"prefererSportTableViewCell" owner:self options:nil] lastObject];
+        }
+        
+        {
+            NSInteger index = row / 2 ;
+            
+            NSDictionary *dic = [_dataSourceOfPrefereSport objectAtIndex:index] ;
+            NSInteger sportLevel = [[dic objectForKey:@"sportLevle"] integerValue] ;
+            NSInteger sportType = [[dic objectForKey:@"sportType"] integerValue];
+            
         }
         
     } else {
@@ -157,7 +184,10 @@ typedef enum {
 }
 
 - (IBAction)navBtnClicked:(UIButton *)sender {
+
+#warning 之后重写.
     if ( sender.tag == 1000 ) {
+        
         [self.v1 setHidden:FALSE] ;
         [self.v2 setHidden:TRUE] ;
         [self.v3 setHidden:TRUE] ;
@@ -188,6 +218,11 @@ typedef enum {
         
     }
 
+    [self.prefereSportBtn setTitleColor:BtnNormalColor forState:UIControlStateNormal] ;
+    [self.selfInfoBtn setTitleColor:BtnNormalColor forState:UIControlStateNormal]  ;
+    [self.selfPhotoLibraryBtn setTitleColor:BtnNormalColor forState:UIControlStateNormal] ;
+    
+    [sender setTitleColor:BtnSelectedColor forState:UIControlStateNormal];
 }
 
 #pragma mark - Navigation

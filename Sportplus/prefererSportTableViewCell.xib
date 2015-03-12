@@ -15,7 +15,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="prefererCellRectNormal" translatesAutoresizingMaskIntoConstraints="NO" id="b5M-nn-HNj">
-                        <rect key="frame" x="41" y="0.0" width="260" height="43"/>
+                        <rect key="frame" x="41" y="0.0" width="260" height="44"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cellSportBGDNormal" translatesAutoresizingMaskIntoConstraints="NO" id="23j-XS-buZ">
                         <rect key="frame" x="19" y="0.0" width="44" height="44"/>
@@ -40,7 +40,16 @@
                     </button>
                 </subviews>
                 <color key="backgroundColor" red="0.91372549533843994" green="0.91372549533843994" blue="0.91764706373214722" alpha="1" colorSpace="calibratedRGB"/>
+                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
             </tableViewCellContentView>
+            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+            <connections>
+                <outlet property="backgroundImgView" destination="b5M-nn-HNj" id="xT9-Lf-TRR"/>
+                <outlet property="lv1Btn" destination="o5Z-g5-kMz" id="hOg-2W-x8o"/>
+                <outlet property="lv2Btn" destination="0YT-IJ-3Fj" id="6vG-QY-CSj"/>
+                <outlet property="lv3Btn" destination="fea-t5-c2q" id="xZi-fv-icC"/>
+                <outlet property="sportIconBGDImgView" destination="23j-XS-buZ" id="XiK-az-3eE"/>
+            </connections>
             <point key="canvasLocation" x="154" y="254"/>
         </tableViewCell>
     </objects>

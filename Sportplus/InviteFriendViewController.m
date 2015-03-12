@@ -159,7 +159,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSInteger section = indexPath.section ;
+//    NSInteger section = indexPath.section ;
     
     static NSString *segueID1 = @"FriendVC2SportSegueID" ;
     static NSString *segueID2 = @"FriendVC2PlaceSegueID" ;

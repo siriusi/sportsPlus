@@ -12,4 +12,10 @@
 #import "addFriendRequest.h"
 #import "spUser.h"
 
+#import "spChatGroup.h"
+#import "spEngagement_Stranger.h"
+#import "spStadium.h"
+#import "spNewStadium.h"
+#import "spEngagement_Friend.h"
+
 #endif

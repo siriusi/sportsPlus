@@ -17,4 +17,8 @@
     [super setSelected:selected animated:animated];
 }
 
+- (void)initWithsportLevle:(NSInteger)lv sportType:(NSInteger)type {
+    
+}
+
 @end

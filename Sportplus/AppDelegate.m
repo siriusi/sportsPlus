@@ -27,6 +27,10 @@
 - (void)registeMyAVObjevt {
     [spUser registerSubclass] ;
     [addFriendRequest registerSubclass] ;
+    [spEngagement_Stranger registerSubclass] ;
+    [spStadium registerSubclass] ;
+    [spNewStadium registerSubclass] ;
+    [spEngagement_Friend registerSubclass] ;
 }
 
 - (void)toMain {
