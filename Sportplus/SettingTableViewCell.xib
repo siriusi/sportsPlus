@@ -29,9 +29,9 @@
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="张睿" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URa-XN-fHW">
-                        <rect key="frame" x="69" y="17" width="24" height="15"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        <rect key="frame" x="70" y="12" width="41" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.32156862749999998" green="0.29411764709999999" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -39,6 +39,7 @@
             <connections>
                 <outlet property="btn" destination="5IB-ev-04a" id="YrV-bY-m2e"/>
                 <outlet property="img" destination="fPO-F7-fgi" id="5RJ-T3-Nae"/>
+                <outlet property="nameLable" destination="URa-XN-fHW" id="7lJ-DI-iFB"/>
             </connections>
             <point key="canvasLocation" x="344" y="304"/>
         </tableViewCell>

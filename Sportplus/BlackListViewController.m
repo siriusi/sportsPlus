@@ -41,10 +41,11 @@
     [cell.btn setTitle:@"移除" forState:UIControlStateNormal];
     cell.img.image = [UIImage imageNamed:@"head"];
     cell.nameLable.hidden = NO;
+    [cell.btn addTarget:self action:@selector(removePeople:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
-- (void)bindingBtn:(UIButton *)sender{
+- (void)removePeople:(UIButton *)sender{
     SettingTableViewCell *cell = (SettingTableViewCell *)[[sender superview] superview];
     NSIndexPath *path = [self.blakListTableView indexPathForCell:cell];
     NSLog(@"click btn is %ld",(long)path.row);
@@ -56,4 +57,7 @@
 
 
 
+- (IBAction)backToPreViewBtn:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

@@ -144,6 +144,7 @@
         cell.img.hidden=YES;
         cell.gotoButton.hidden=YES;
         cell.switchButton.hidden=NO;
+        [cell.switchButton addTarget:self action:@selector(switchBtnFun:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     if(section==2)
@@ -152,6 +153,7 @@
         cell.img.hidden=YES;
         cell.gotoButton.hidden=YES;
         cell.switchButton.hidden=NO;
+        [cell.switchButton addTarget:self action:@selector(switchBtnFun:) forControlEvents:UIControlEventTouchUpInside];
     }
         return cell;
 }
@@ -188,6 +190,23 @@
         [self performSegueWithIdentifier:@"toBlackListViewID" sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark -
+#pragma BtnFun
+
+-(void) switchBtnFun:(id)idSender{
+    UISwitch *switchBtn = (UISwitch*)idSender;
+    BOOL isButtonOn = [switchBtn isOn];
+    if(isButtonOn){
+        NSLog(@"is On");
+    }
+    else{
+        NSLog(@"is Off");
+    }
+    accountTableViewCell *cell = (accountTableViewCell *)[[idSender superview] superview];
+    NSIndexPath *path = [self.settingTable indexPathForCell:cell];
+    NSLog(@"click btn is %ld",(long)path.row);
 }
 
 -(void) showSheet{

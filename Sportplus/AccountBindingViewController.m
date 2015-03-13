@@ -39,8 +39,25 @@
         //通过xib的名称加载自定义的cell
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SettingTableViewCell" owner:self options:nil] lastObject];
     }
+    switch (indexPath.row) {
+        case 0:
+            cell.img.image = [UIImage imageNamed:@"微博"];
+            break;
+        case 1:
+            cell.img.image = [UIImage imageNamed:@"微信"];
+            break;
+        case 2:
+            cell.img.image = [UIImage imageNamed:@"腾讯"];
+            break;
+        case 3:
+            cell.img.image = [UIImage imageNamed:@"人人"];
+            break;
+        default:
+            break;
+    }
     cell.nameLable.hidden = YES;
     [cell.btn.titleLabel setText:@"绑定"];
+    [cell.btn addTarget:self action:@selector(bindingBtn:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
 }
 
