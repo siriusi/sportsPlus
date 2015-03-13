@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="oig-vM-kwq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="oig-vM-kwq">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -1492,6 +1492,7 @@
                         <segue destination="GF2-ZL-7Qi" kind="push" identifier="toChangeNameStoryboardID" id="qyC-Dl-EBW"/>
                         <segue destination="Qyf-Hs-aTr" kind="push" identifier="toChangePasswordViewID" id="CLm-c3-dVO"/>
                         <segue destination="mXN-ve-pyV" kind="push" identifier="toAccountBindViewID" id="CRy-Lu-ySQ"/>
+                        <segue destination="llx-c7-nWf" kind="push" identifier="toBlackListViewID" id="OEp-oN-5mK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXZ-SC-BTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1659,17 +1660,29 @@
         <!--账号绑定-->
         <scene sceneID="F9b-Ye-KZU">
             <objects>
-                <viewController title="账号绑定" hidesBottomBarWhenPushed="YES" id="mXN-ve-pyV" sceneMemberID="viewController">
+                <viewController title="账号绑定" hidesBottomBarWhenPushed="YES" id="mXN-ve-pyV" customClass="AccountBindingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Wc-G0-ca3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchBackground" id="Jdf-bC-evQ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLine" id="Jdf-bC-evQ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rhi-1g-hm1">
-                                <rect key="frame" x="16" y="0.0" width="288" height="405"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绑定选择" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hqo-8s-oSv">
+                                <rect key="frame" x="16" y="5" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingGrayLine" id="wXp-fn-U0s">
+                                <rect key="frame" x="14" y="29" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Rhi-1g-hm1">
+                                <rect key="frame" x="14" y="30" width="290" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -1679,9 +1692,15 @@
                     <navigationItem key="navigationItem" title="账号绑定" id="N5V-PQ-d6s">
                         <barButtonItem key="leftBarButtonItem" image="back" id="nCF-sv-lO1">
                             <color key="tintColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backToPreViewBtn:" destination="mXN-ve-pyV" id="tLf-je-foB"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="accountTableView" destination="Rhi-1g-hm1" id="3oE-Zf-YVV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgn-bl-edB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1690,17 +1709,28 @@
         <!--账号绑定-->
         <scene sceneID="xfl-f9-hPq">
             <objects>
-                <viewController title="账号绑定" hidesBottomBarWhenPushed="YES" id="llx-c7-nWf" sceneMemberID="viewController">
+                <viewController title="账号绑定" hidesBottomBarWhenPushed="YES" id="llx-c7-nWf" customClass="BlackListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYY-tc-0Hl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SearchBackground" id="oQd-pf-wNY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whiteLine" id="oQd-pf-wNY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F5e-Ra-Sdm">
-                                <rect key="frame" x="16" y="0.0" width="288" height="405"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑名单列表" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0L0-I7-lLR">
+                                <rect key="frame" x="16" y="6" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingGrayLine" id="vjf-it-cYP">
+                                <rect key="frame" x="14" y="30" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F5e-Ra-Sdm">
+                                <rect key="frame" x="14" y="31" width="288" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -1709,6 +1739,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="黑名单" id="ft1-An-ZyJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="blakListTableView" destination="F5e-Ra-Sdm" id="obl-be-eF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnD-js-A1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1742,6 +1775,7 @@
         <image name="run" width="110" height="109"/>
         <image name="scollerView" width="640" height="102"/>
         <image name="setButton" width="21" height="20"/>
+        <image name="settingGrayLine" width="640" height="1"/>
         <image name="soccer" width="110" height="109"/>
         <image name="subMitBtn" width="552" height="88"/>
         <image name="tennise" width="111" height="110"/>

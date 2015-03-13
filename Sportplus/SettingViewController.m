@@ -105,8 +105,8 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSUInteger section = [indexPath section];
-    static NSString *levelCellIdentifier = @"accountCellIdentifier";
-    accountTableViewCell *cell = [self.settingTable dequeueReusableCellWithIdentifier:levelCellIdentifier];
+    static NSString *settingCellIdentifier = @"accountCellIdentifier";
+    accountTableViewCell *cell = [self.settingTable dequeueReusableCellWithIdentifier:settingCellIdentifier];
     if (cell == nil) {
             //通过xib的名称加载自定义的cell
         cell = [[[NSBundle mainBundle] loadNibNamed:@"accountTableViewCell" owner:self options:nil] lastObject];
@@ -178,6 +178,14 @@
     else if(indexPath.section == 0 && indexPath.row == 2) {
         NSLog(@"jump to password") ;
         [self performSegueWithIdentifier:@"toChangePasswordViewID" sender:self];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 3) {
+        NSLog(@"jump to account") ;
+        [self performSegueWithIdentifier:@"toAccountBindViewID" sender:self];
+    }
+    else if(indexPath.section == 0 && indexPath.row == 4) {
+        NSLog(@"jump to blackList") ;
+        [self performSegueWithIdentifier:@"toBlackListViewID" sender:self];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
