@@ -65,4 +65,24 @@ typedef enum {
     SPORTSTYPE_badminton
 } SPORTSTYPE ;
 
+typedef enum {
+    EngagementTypeStrength = 1 , //实力型
+    EngagementTypeFriendly , //交友型
+}EngagementType;
+
+typedef enum {
+    EngagementStatusDone = -1 , //完成
+    EngagementStatusCreatedByCreaterUser = 0 , //创建还未回应
+    EngagementStatusReceivedUserHasInputInfo = 1 ,//创建，对方用户已经回复信息.
+    EngagementStatusCreaterUserHasChangedInfo = 2 ,//修改，己方用户修改信息并回复.
+}EngagementStatus ;
+
+typedef enum {
+    EngagementFriendAnswerStatusReject = -1 , //拒绝邀约
+    EngagementFriendAnswerStatusWait = 0 , //没回复
+    EngagementFriendAnswerStatusAccept = 1 ,//同意邀约
+} EngagementFriendAnswerStatus;
+
+#define SPNum(s) [NSNumber numberWithInteger:s]
+
 #endif

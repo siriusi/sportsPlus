@@ -9,14 +9,10 @@
 #import "ChooseSportItemViewController.h"
 #import "spCommon.h"
 
-
-
 typedef enum {
     spBtnStateNormal = 0 ,
     spBtnStateSelected ,
 } spBtnState;
-
-#define SPNum(s) [NSNumber numberWithInteger:s]
 
 @interface SportModel : NSObject
 

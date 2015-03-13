@@ -15,12 +15,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-Bq-rNy">
-                        <rect key="frame" x="40" y="0.0" width="2" height="24"/>
+                        <rect key="frame" x="40" y="0.0" width="2" height="25"/>
                         <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" red="0.91372549533843994" green="0.91372549533843994" blue="0.91764706373214722" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
+            <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
+            <point key="canvasLocation" x="139" y="250.5"/>
         </tableViewCell>
     </objects>
 </document>

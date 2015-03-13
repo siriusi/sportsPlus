@@ -31,6 +31,12 @@
 		193CEE551AA5A5C0007A0CF0 /* InviteFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */; };
 		19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19620EA81AA6AB7800D09D03 /* myHomePageViewController.m */; };
 		197DA83F1AB15FBE00F59116 /* SPCacheService.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA83E1AB15FBE00F59116 /* SPCacheService.m */; };
+		197DA8421AB1F45500F59116 /* spEngagement_Stranger.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8411AB1F45500F59116 /* spEngagement_Stranger.m */; };
+		197DA8451AB209A400F59116 /* spStadium.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8441AB209A400F59116 /* spStadium.m */; };
+		197DA8481AB20AA900F59116 /* spNewStadium.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8471AB20AA900F59116 /* spNewStadium.m */; };
+		197DA84B1AB210EA00F59116 /* spEngagement_Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA84A1AB210EA00F59116 /* spEngagement_Friend.m */; };
+		197DA84F1AB2140D00F59116 /* SPInviteService.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA84E1AB2140D00F59116 /* SPInviteService.m */; };
+		197DA8531AB2256C00F59116 /* ChuochuochuoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8521AB2256C00F59116 /* ChuochuochuoViewController.m */; };
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
@@ -165,6 +171,18 @@
 		197DA83C1AB0DF7200F59116 /* spNotificationCenterIDs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterIDs.h; sourceTree = "<group>"; };
 		197DA83D1AB15FBE00F59116 /* SPCacheService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCacheService.h; sourceTree = "<group>"; };
 		197DA83E1AB15FBE00F59116 /* SPCacheService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCacheService.m; sourceTree = "<group>"; };
+		197DA8401AB1F45500F59116 /* spEngagement_Stranger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spEngagement_Stranger.h; sourceTree = "<group>"; };
+		197DA8411AB1F45500F59116 /* spEngagement_Stranger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spEngagement_Stranger.m; sourceTree = "<group>"; };
+		197DA8431AB209A400F59116 /* spStadium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spStadium.h; sourceTree = "<group>"; };
+		197DA8441AB209A400F59116 /* spStadium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spStadium.m; sourceTree = "<group>"; };
+		197DA8461AB20AA900F59116 /* spNewStadium.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNewStadium.h; sourceTree = "<group>"; };
+		197DA8471AB20AA900F59116 /* spNewStadium.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNewStadium.m; sourceTree = "<group>"; };
+		197DA8491AB210EA00F59116 /* spEngagement_Friend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spEngagement_Friend.h; sourceTree = "<group>"; };
+		197DA84A1AB210EA00F59116 /* spEngagement_Friend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spEngagement_Friend.m; sourceTree = "<group>"; };
+		197DA84D1AB2140D00F59116 /* SPInviteService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPInviteService.h; sourceTree = "<group>"; };
+		197DA84E1AB2140D00F59116 /* SPInviteService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPInviteService.m; sourceTree = "<group>"; };
+		197DA8511AB2256C00F59116 /* ChuochuochuoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChuochuochuoViewController.h; sourceTree = "<group>"; };
+		197DA8521AB2256C00F59116 /* ChuochuochuoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChuochuochuoViewController.m; sourceTree = "<group>"; };
 		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
 		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -335,6 +353,7 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				197DA84C1AB213F100F59116 /* InviteService */,
 				1911EB981A9779A20044F04F /* SPUtils.h */,
 				1911EB991A9779A20044F04F /* SPUtils.m */,
 				19F8059D1AAFC33600F9071A /* SPAddRequestService.h */,
@@ -368,6 +387,7 @@
 		192670A01A874AB600895308 /* models */ = {
 			isa = PBXGroup;
 			children = (
+				192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */,
 				192670A11A874ACA00895308 /* avobject */,
 			);
 			name = models;
@@ -380,9 +400,16 @@
 				192670A31A874B0600895308 /* addFriendRequest.m */,
 				192A9BFA1A8DCA0700D81B3A /* spUser.h */,
 				192A9BFB1A8DCA0700D81B3A /* spUser.m */,
-				192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */,
 				19F805A91AAFD2D100F9071A /* spChatGroup.h */,
 				19F805AA1AAFD2D100F9071A /* spChatGroup.m */,
+				197DA8401AB1F45500F59116 /* spEngagement_Stranger.h */,
+				197DA8411AB1F45500F59116 /* spEngagement_Stranger.m */,
+				197DA8431AB209A400F59116 /* spStadium.h */,
+				197DA8441AB209A400F59116 /* spStadium.m */,
+				197DA8461AB20AA900F59116 /* spNewStadium.h */,
+				197DA8471AB20AA900F59116 /* spNewStadium.m */,
+				197DA8491AB210EA00F59116 /* spEngagement_Friend.h */,
+				197DA84A1AB210EA00F59116 /* spEngagement_Friend.m */,
 			);
 			name = avobject;
 			sourceTree = "<group>";
@@ -490,6 +517,7 @@
 		193CEE4C1AA45BB1007A0CF0 /* 陌生人约伴 */ = {
 			isa = PBXGroup;
 			children = (
+				197DA8501AB2254400F59116 /* 戳戳戳二级界面 */,
 				193CEE4D1AA45BF3007A0CF0 /* InviteStrangerViewController.h */,
 				193CEE4E1AA45BF3007A0CF0 /* InviteStrangerViewController.m */,
 			);
@@ -513,6 +541,24 @@
 				19620EA81AA6AB7800D09D03 /* myHomePageViewController.m */,
 			);
 			name = "个人主页";
+			sourceTree = "<group>";
+		};
+		197DA84C1AB213F100F59116 /* InviteService */ = {
+			isa = PBXGroup;
+			children = (
+				197DA84D1AB2140D00F59116 /* SPInviteService.h */,
+				197DA84E1AB2140D00F59116 /* SPInviteService.m */,
+			);
+			name = InviteService;
+			sourceTree = "<group>";
+		};
+		197DA8501AB2254400F59116 /* 戳戳戳二级界面 */ = {
+			isa = PBXGroup;
+			children = (
+				197DA8511AB2256C00F59116 /* ChuochuochuoViewController.h */,
+				197DA8521AB2256C00F59116 /* ChuochuochuoViewController.m */,
+			);
+			name = "戳戳戳二级界面";
 			sourceTree = "<group>";
 		};
 		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
@@ -984,6 +1030,7 @@
 				1911EB9A1A9779A20044F04F /* SPUtils.m in Sources */,
 				F1887DC81A336D020056A568 /* RigisterDetailViewController.m in Sources */,
 				F1B88C291A45AAE2005D601D /* FriendsManagementViewController.m in Sources */,
+				197DA84F1AB2140D00F59116 /* SPInviteService.m in Sources */,
 				197DA83F1AB15FBE00F59116 /* SPCacheService.m in Sources */,
 				F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */,
 				F178AF471AAC34D1002D3BB8 /* ChangeNameViewController.m in Sources */,
@@ -1021,12 +1068,14 @@
 				193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */,
 				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
 				19F8059F1AAFC33600F9071A /* SPAddRequestService.m in Sources */,
+				197DA8451AB209A400F59116 /* spStadium.m in Sources */,
 				193CEE3A1AA0BA19007A0CF0 /* friendRequestTableViewCell.m in Sources */,
 				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
 				192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */,
 				193CEE301A9FB221007A0CF0 /* InviteInfoTableViewCell.m in Sources */,
 				19F805781AAD794E00F9071A /* spMessageTableViewController.m in Sources */,
 				19F805A81AAFD21B00F9071A /* SPGroupService.m in Sources */,
+				197DA84B1AB210EA00F59116 /* spEngagement_Friend.m in Sources */,
 				781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */,
 				193CEE3F1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m in Sources */,
 				19F805AB1AAFD2D100F9071A /* spChatGroup.m in Sources */,
@@ -1035,8 +1084,11 @@
 				192D7BB71AACA7C900EF9131 /* ChooseSportItemTableViewCell.m in Sources */,
 				F1B88C411A45EB09005D601D /* accountTableViewCell.m in Sources */,
 				19F805A21AAFC56700F9071A /* SPUserService.m in Sources */,
+				197DA8421AB1F45500F59116 /* spEngagement_Stranger.m in Sources */,
 				F1B875F11A34B08F003AA3ED /* TagTableViewCell.m in Sources */,
+				197DA8531AB2256C00F59116 /* ChuochuochuoViewController.m in Sources */,
 				193CEE521AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m in Sources */,
+				197DA8481AB20AA900F59116 /* spNewStadium.m in Sources */,
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
 				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
