@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *img;
+@property (weak, nonatomic) IBOutlet UIButton *btn;
 
 @end

@@ -8,7 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="SettingTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -17,8 +17,11 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="微信" translatesAutoresizingMaskIntoConstraints="NO" id="fPO-F7-fgi">
                         <rect key="frame" x="8" y="3" width="46" height="44"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingGrayLine" translatesAutoresizingMaskIntoConstraints="NO" id="NzP-FH-Idy">
+                        <rect key="frame" x="0.0" y="49" width="290" height="1"/>
+                    </imageView>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IB-ev-04a">
-                        <rect key="frame" x="266" y="10" width="46" height="30"/>
+                        <rect key="frame" x="236" y="10" width="46" height="30"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="绑定" backgroundImage="greenBtn">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -27,11 +30,16 @@
                     </button>
                 </subviews>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="334" y="304"/>
+            <connections>
+                <outlet property="btn" destination="5IB-ev-04a" id="YrV-bY-m2e"/>
+                <outlet property="img" destination="fPO-F7-fgi" id="5RJ-T3-Nae"/>
+            </connections>
+            <point key="canvasLocation" x="344" y="304"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="greenBtn" width="102" height="56"/>
+        <image name="settingGrayLine" width="640" height="1"/>
         <image name="微信" width="73" height="73"/>
     </resources>
 </document>

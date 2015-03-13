@@ -84,6 +84,8 @@
 		F178AF4D1AAC36B9002D3BB8 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F178AF4C1AAC36B9002D3BB8 /* ChangePasswordViewController.m */; };
 		F178AF5B1AAC3F72002D3BB8 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F178AF591AAC3F72002D3BB8 /* SettingTableViewCell.m */; };
 		F178AF5C1AAC3F72002D3BB8 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F178AF5A1AAC3F72002D3BB8 /* SettingTableViewCell.xib */; };
+		F17CEE921AB28F570086D4F9 /* AccountBindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CEE911AB28F570086D4F9 /* AccountBindingViewController.m */; };
+		F17CEE951AB29C690086D4F9 /* BlackListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CEE941AB29C690086D4F9 /* BlackListViewController.m */; };
 		F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DB81A32D4810056A568 /* RegisterMainViewController.m */; };
 		F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBB1A32F6E80056A568 /* ChooseSchoolViewController.m */; };
 		F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1887DBE1A3329D30056A568 /* ChooseProfessionViewController.m */; };
@@ -252,6 +254,10 @@
 		F178AF581AAC3F72002D3BB8 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		F178AF591AAC3F72002D3BB8 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		F178AF5A1AAC3F72002D3BB8 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		F17CEE901AB28F570086D4F9 /* AccountBindingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountBindingViewController.h; sourceTree = "<group>"; };
+		F17CEE911AB28F570086D4F9 /* AccountBindingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountBindingViewController.m; sourceTree = "<group>"; };
+		F17CEE931AB29C690086D4F9 /* BlackListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlackListViewController.h; sourceTree = "<group>"; };
+		F17CEE941AB29C690086D4F9 /* BlackListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlackListViewController.m; sourceTree = "<group>"; };
 		F1887DB71A32D4810056A568 /* RegisterMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterMainViewController.h; sourceTree = "<group>"; };
 		F1887DB81A32D4810056A568 /* RegisterMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterMainViewController.m; sourceTree = "<group>"; };
 		F1887DBA1A32F6E80056A568 /* ChooseSchoolViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSchoolViewController.h; sourceTree = "<group>"; };
@@ -807,6 +813,10 @@
 				F178AF581AAC3F72002D3BB8 /* SettingTableViewCell.h */,
 				F178AF591AAC3F72002D3BB8 /* SettingTableViewCell.m */,
 				F178AF5A1AAC3F72002D3BB8 /* SettingTableViewCell.xib */,
+				F17CEE901AB28F570086D4F9 /* AccountBindingViewController.h */,
+				F17CEE911AB28F570086D4F9 /* AccountBindingViewController.m */,
+				F17CEE931AB29C690086D4F9 /* BlackListViewController.h */,
+				F17CEE941AB29C690086D4F9 /* BlackListViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -1010,6 +1020,7 @@
 				193CEE2D1A9F7D7A007A0CF0 /* FriendInviteManageViewController.m in Sources */,
 				F1887DC21A332B2D0056A568 /* ChooseTimeViewController.m in Sources */,
 				19F8059F1AAFC33600F9071A /* SPAddRequestService.m in Sources */,
+				F17CEE921AB28F570086D4F9 /* AccountBindingViewController.m in Sources */,
 				193CEE3A1AA0BA19007A0CF0 /* friendRequestTableViewCell.m in Sources */,
 				F1887DBC1A32F6E80056A568 /* ChooseSchoolViewController.m in Sources */,
 				192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */,
@@ -1029,6 +1040,7 @@
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
 				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
+				F17CEE951AB29C690086D4F9 /* BlackListViewController.m in Sources */,
 				F178AF4D1AAC36B9002D3BB8 /* ChangePasswordViewController.m in Sources */,
 				19F805741AAD4A6400F9071A /* chooseFriendTableViewCell.m in Sources */,
 				F16DDB061AA722250080E908 /* LogInViewController.m in Sources */,
