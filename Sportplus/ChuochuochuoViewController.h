@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *photoImgView;
 @property (weak, nonatomic) IBOutlet UILabel *InfoLabel;
 
+- (void)receiveUsers:(NSArray *)userIds ;
 
 @end

@@ -31,5 +31,14 @@
     return @"_User" ;
 }
 
+- (NSString *)toInfoLabelString {
+    NSString *sex = [self sP_sex] ;
+    NSString *academy = [self sP_academy] ;
+    NSInteger enterSchoolYear = [[self sP_enterScYear] integerValue];
+
+    NSString *info = [NSString stringWithFormat:@"%@，%@，%ld届",sex,academy,(long)enterSchoolYear] ;
+    
+    return info ;
+}
 
 @end

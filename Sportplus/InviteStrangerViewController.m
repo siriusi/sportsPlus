@@ -9,6 +9,8 @@
 #import "InviteStrangerViewController.h"
 #import "spCommon.h"
 #import "ChooseSportItemTableViewCell.h"
+#import "ChuochuochuoViewController.h"
+
 
 #import "SPInviteService.h"
 #import "SVProgressHUD.h"
@@ -32,6 +34,8 @@ typedef enum {
     NSArray *_typeToSportName ;
     NSString *_choosedSportName ;
     SPORTSTYPE _chooseSportType ;
+    
+    NSArray *_findedUserIds ;
 }
 
 @end
@@ -161,12 +165,23 @@ typedef enum {
             [SPUtils alertError:error] ;
         } else {
             NSLog(@"objects = %@",objects) ;
+            _findedUserIds = objects ;
             [self performSegueWithIdentifier:segueId sender:self] ;
         }
     }] ;
-#warning test
-    [self performSegueWithIdentifier:segueId sender:self] ;
+//#warning test
+//    [self performSegueWithIdentifier:segueId sender:self] ;
     
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"createStrangerTo233SegueID"]) {
+        ChuochuochuoViewController *vc = segue.destinationViewController ;
+        [vc receiveUsers:_findedUserIds] ;
+        _findedUserIds = nil ;
+    }
 }
 
 

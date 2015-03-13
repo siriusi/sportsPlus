@@ -13,7 +13,9 @@
 
 @interface ChuochuochuoViewController () {
     SPORTSTYPE _sportType ;
-    NSArray * _strangers ;
+    NSMutableArray *_strangers ;
+    NSArray *_strangerIds ;
+    
     spUser *_currentStrangers ;
     NSInteger _currentStrangerIndex ;
 }
@@ -24,6 +26,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _strangers = [[NSMutableArray alloc] init] ;
+    _currentStrangerIndex = 0 ;
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated] ;
+    
+    [self getUserInfoAtCurrentIndex] ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,20 +59,46 @@
 
 #pragma mark - Other Method
 
+- (void)receiveUsers:(NSArray *)userIds {
+    _strangerIds = userIds ;
+}
+
+- (void)getUserInfoAtCurrentIndex {
+    [self getUserInfoById:[_strangerIds objectAtIndex:_currentStrangerIndex]] ;
+}
+
+- (void)getUserInfoById:(NSString *)userId {
+    [SPUtils showNetworkIndicator] ;
+    [SVProgressHUD show] ;
+    [SPUserService findUsersByIds:@[userId] callback:^(NSArray *objects, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SVProgressHUD dismiss] ;
+        
+        if (!error) {
+            NSLog(@"objects = %@",objects) ;
+            _currentStrangers = [objects lastObject] ;
+            [self setSelfToCurrentUser] ;
+        } else {
+            NSLog(@"error = %@",[error localizedDescription]) ;
+        }
+    }] ;
+}
+
+- (void)setSelfToCurrentUser {
+    assert(_currentStrangers) ;
+    [self.navigationItem setTitle:[_currentStrangers sP_userName]] ;
+    [self.InfoLabel setText:[_currentStrangers toInfoLabelString]] ;
+#warning 照片
+}
+
 - (void)setSelfToNextUser {
     _currentStrangerIndex ++ ;
-    _currentStrangers = [_strangers objectAtIndex:_currentStrangerIndex] ;
-    
-    NSLog(@"换照片啦！") ;
-    NSLog(@"换nav。title啦") ;
-    NSLog(@"换info啦") ;
+    [self getUserInfoAtCurrentIndex] ;
 }
 
 - (void)tryCreageEngagementToStrangerWithUser:(spUser *)stranger {
     [SPUtils showNetworkIndicator] ;
     [SVProgressHUD show] ;
-    
-    
     
     {
         //test

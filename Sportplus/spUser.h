@@ -30,4 +30,6 @@
 
 @property AVFile *sP_avatar ;//头像
 
+- (NSString *)toInfoLabelString ;
+
 @end
