@@ -39,8 +39,9 @@
         //通过xib的名称加载自定义的cell
         cell = [[[NSBundle mainBundle] loadNibNamed:@"SettingTableViewCell" owner:self options:nil] lastObject];
     }
+    cell.nameLable.hidden = YES;
+    [cell.btn.titleLabel setText:@"绑定"];
     return cell;
-
 }
 
 - (void)bindingBtn:(UIButton *)sender{

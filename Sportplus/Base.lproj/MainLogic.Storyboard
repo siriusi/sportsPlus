@@ -1456,6 +1456,7 @@
                         <segue destination="GF2-ZL-7Qi" kind="push" identifier="toChangeNameStoryboardID" id="qyC-Dl-EBW"/>
                         <segue destination="Qyf-Hs-aTr" kind="push" identifier="toChangePasswordViewID" id="CLm-c3-dVO"/>
                         <segue destination="mXN-ve-pyV" kind="push" identifier="toAccountBindViewID" id="CRy-Lu-ySQ"/>
+                        <segue destination="llx-c7-nWf" kind="push" identifier="toBlackListViewID" id="OEp-oN-5mK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DXZ-SC-BTZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1672,7 +1673,7 @@
         <!--账号绑定-->
         <scene sceneID="xfl-f9-hPq">
             <objects>
-                <viewController title="账号绑定" hidesBottomBarWhenPushed="YES" id="llx-c7-nWf" sceneMemberID="viewController">
+                <viewController title="账号绑定" hidesBottomBarWhenPushed="YES" id="llx-c7-nWf" customClass="BlackListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vYY-tc-0Hl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1681,8 +1682,19 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F5e-Ra-Sdm">
-                                <rect key="frame" x="16" y="0.0" width="288" height="405"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="黑名单列表" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0L0-I7-lLR">
+                                <rect key="frame" x="16" y="6" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settingGrayLine" id="vjf-it-cYP">
+                                <rect key="frame" x="14" y="30" width="290" height="1"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F5e-Ra-Sdm">
+                                <rect key="frame" x="14" y="31" width="288" height="374"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -1691,6 +1703,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="黑名单" id="ft1-An-ZyJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="blakListTableView" destination="F5e-Ra-Sdm" id="obl-be-eF1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnD-js-A1f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

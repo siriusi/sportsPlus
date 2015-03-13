@@ -10,5 +10,6 @@
 
 @interface BlackListViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UITableView *blakListTableView;
 
 @end

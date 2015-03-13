@@ -183,6 +183,10 @@
         NSLog(@"jump to account") ;
         [self performSegueWithIdentifier:@"toAccountBindViewID" sender:self];
     }
+    else if(indexPath.section == 0 && indexPath.row == 4) {
+        NSLog(@"jump to blackList") ;
+        [self performSegueWithIdentifier:@"toBlackListViewID" sender:self];
+    }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
