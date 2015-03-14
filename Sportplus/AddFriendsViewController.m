@@ -12,6 +12,7 @@
 #import "spCommon.h"
 #import "spAVModels.h"
 #import "SPCloudSevice.h"
+#import "SVProgressHUD.h"
 
 @interface AddFriendsViewController () {
     NSMutableArray *_dataSourceOfSearchedUser ;
@@ -82,7 +83,13 @@
 }
 
 - (void)doSearchWithName:(NSString *)name {
+    [SPUtils showNetworkIndicator] ;
+    [SVProgressHUD show] ;
+    
     [SPUserService findUsersByPartname:name withBlock:^(NSArray *objects, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SVProgressHUD dismiss] ;
+        
         if (error == nil) {
             _dataSourceOfSearchedUser = [[NSMutableArray alloc] initWithArray:objects] ;
             [self.searchFriendTableView reloadData] ;
@@ -118,5 +125,11 @@
         [alert show] ;
     }] ;
 }
+
+- (IBAction)testAdd:(id)sender {
+    [self.searchTextField resignFirstResponder] ;
+    [self doSearchWithName:self.searchTextField.text] ;
+}
+
 
 @end

@@ -19,6 +19,8 @@
     
     NSString *_choosedSportName ;
     NSInteger _chooseSportType ;
+    
+    NSDate *_choosedDate ;
 }
 
 @end
@@ -37,10 +39,17 @@
 @implementation InviteFriendViewController
 
 - (void)registeNotificationCenter {
-    NSLog(@"注册 <%@> 观察者",SP_INVITE_UPDATE) ;
+    NSLog(@"注册观察者") ;
     
-    [sp_notificationCenter removeObserver:self name:SP_INVITE_UPDATE object:nil] ;
-    [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:SP_INVITE_UPDATE object:nil] ;
+    [sp_notificationCenter removeObserver:self name:NOTIFICATION_SPORTS_CHOOSED object:nil] ;
+    [sp_notificationCenter removeObserver:self name:NOTIFICATION_STADIUM_CHOOSED object:nil] ;
+    [sp_notificationCenter removeObserver:self name:NOTIFICATION_TIME_CHOOSED object:nil] ;
+    [sp_notificationCenter removeObserver:self name:NOTIFICATION_FRIENDS_CHOOSED object:nil] ;
+    
+    [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:NOTIFICATION_SPORTS_CHOOSED object:nil] ;
+    [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:NOTIFICATION_STADIUM_CHOOSED object:nil] ;
+    [sp_notificationCenter addObserver:self selector:@selector(phraseDateData:) name:NOTIFICATION_TIME_CHOOSED object:nil] ;
+    [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:NOTIFICATION_FRIENDS_CHOOSED object:nil] ;
 }
 
 - (void)viewDidLoad {
@@ -53,6 +62,8 @@
     
     _chooseSportType = -1 ;
     _choosedSportName = @"" ;
+    
+    _choosedDate = nil ;
     
     [self registeNotificationCenter] ;
 }
@@ -71,13 +82,18 @@
 
 - (void)phraseData:(NSNotification *)sender {
     
-    
     NSLog(@"data = %@",[sender object]) ;
     _chooseSportType = [(NSNumber *)[((NSArray *)[sender object]) firstObject] integerValue] ;
     _choosedSportName = [_typeToSportName objectAtIndex:_chooseSportType] ;
     
     [self.tableView reloadData] ;
     
+}
+
+- (void)phraseDateData:(NSNotification *)sender {
+    NSLog(@"date = %@",[sender object]) ;
+    _choosedDate = [sender object] ;
+    [self.tableView reloadData] ;
 }
 
 #pragma mark-UITableViewDataSource
@@ -101,6 +117,7 @@
     UITableViewCell *cell ;
     
     if ( section == 0 ) {
+        //sport
         cell = [self.tableView dequeueReusableCellWithIdentifier:cellID1] ;
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportItemTableViewCell" owner:self options:nil] lastObject];
@@ -112,6 +129,7 @@
         
     } else
     if ( section == 1 ) {
+        //stadium
         cell = [self.tableView dequeueReusableCellWithIdentifier:cellID2] ;
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"ChoosePlaceTableViewCell" owner:self options:nil] lastObject];
@@ -119,11 +137,15 @@
         
     }else
     if ( section == 2 ) {
+        //time
         cell = [self.tableView dequeueReusableCellWithIdentifier:cellID3] ;
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportTimeTableViewCell" owner:self options:nil] lastObject];
         }
+        [((ChooseSportTimeTableViewCell *)cell) initWithDate:_choosedDate] ;
+        
     }else {
+        //friends
         cell = [self.tableView dequeueReusableCellWithIdentifier:cellID4] ;
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportFriendTableViewCell" owner:self options:nil] lastObject];

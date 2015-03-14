@@ -42,7 +42,7 @@ static UIImage* defaultAvatar;
 +(void)findUsersByPartname:(NSString *)partName withBlock:(AVArrayResultBlock)block{
     AVQuery *q=[AVUser query];
     [q setCachePolicy:kAVCachePolicyNetworkElseCache];
-    [q whereKey:@"username" containsString:partName];
+    [q whereKey:@"sP_userName" containsString:partName];
     AVUser *curUser=[AVUser currentUser];
     [q whereKey:@"objectId" notEqualTo:curUser.objectId];
     [q orderByDescending:@"updatedAt"];

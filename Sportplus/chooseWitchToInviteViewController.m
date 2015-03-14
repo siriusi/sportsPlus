@@ -16,8 +16,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@",self.navigationController.navigationBar) ;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES] ;
+    [super viewWillAppear:animated] ;
 }
 
 - (void)didReceiveMemoryWarning {

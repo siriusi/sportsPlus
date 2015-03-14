@@ -12,4 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *monthAndDayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hourAndMonthLabel;
 
+- (void)initWithDate:(NSDate *)date ;
+
 @end

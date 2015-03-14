@@ -10,4 +10,6 @@
 
 @interface ChooseSportTimeViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
+
 @end

@@ -104,7 +104,7 @@ typedef enum {
 }
 
 - (IBAction)ensureBtnClicked:(id)sender {
-    [sp_notificationCenter postNotificationName:SP_INVITE_UPDATE object:[self getDataFromSportsBtnState]] ;
+    [sp_notificationCenter postNotificationName:NOTIFICATION_SPORTS_CHOOSED object:[self getDataFromSportsBtnState]] ;
     
     [self.navigationController popViewControllerAnimated:YES] ;
 }

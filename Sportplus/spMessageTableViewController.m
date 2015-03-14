@@ -115,9 +115,10 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated] ;
     
-    NSNotificationCenter* center=[NSNotificationCenter defaultCenter];
-    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter] ;
+    [center removeObserver:self name:NOTIFICATION_MESSAGE_UPDATED object:nil] ;
     [center addObserver:self selector:@selector(messageUpdated:) name:NOTIFICATION_MESSAGE_UPDATED object:nil] ;
+#warning !! 
 //    if(self.type==CDMsgRoomTypeGroup){
 //        [center addObserver:self selector:@selector(initWithCurrentChatGroup) name:NOTIFICATION_GROUP_UPDATED object:nil];
 //        [self initWithCurrentChatGroup];

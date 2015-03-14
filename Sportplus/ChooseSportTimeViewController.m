@@ -7,6 +7,7 @@
 //
 
 #import "ChooseSportTimeViewController.h"
+#import "spCommon.h"
 
 @interface ChooseSportTimeViewController ()
 
@@ -22,15 +23,6 @@
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark - IBAction
 
@@ -39,7 +31,8 @@
 }
 
 - (IBAction)ensureBtnClicked:(id)sender {
-    NSLog(@"确定") ;
+    NSDate *date = [self.datePicker date] ;
+    [sp_notificationCenter postNotificationName:NOTIFICATION_TIME_CHOOSED object:date] ;
     
     [self.navigationController popViewControllerAnimated:YES] ;
 }

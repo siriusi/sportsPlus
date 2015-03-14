@@ -144,7 +144,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-#warning 修改数据源！！！
+//    [self dataSourceOfFriend] ;这是数据源,你的这个号有1个好友。
+//你可以注册新号，然后申请，然后换号，测试密码都给123456.这个号账号是18817870386
+    
+    
+#warning 修改数据源！！！dataSource
     switch (section) {
             
         case 0:

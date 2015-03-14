@@ -523,7 +523,6 @@
 				192D7BB91AACABA500EF9131 /* 选择运动 */,
 				19F805661AAD458400F9071A /* 选择场所 */,
 				19F805621AAD429500F9071A /* 选择时间 */,
-				19F8056A1AAD491400F9071A /* 选择好友 */,
 				193CEE4C1AA45BB1007A0CF0 /* 陌生人约伴 */,
 				19F805791AADD76300F9071A /* Cell */,
 				193CEE4B1AA45BAB007A0CF0 /* 好友约伴 */,
@@ -536,6 +535,7 @@
 		193CEE4B1AA45BAB007A0CF0 /* 好友约伴 */ = {
 			isa = PBXGroup;
 			children = (
+				19F8056A1AAD491400F9071A /* 选择好友 */,
 				193CEE531AA5A5C0007A0CF0 /* InviteFriendViewController.h */,
 				193CEE541AA5A5C0007A0CF0 /* InviteFriendViewController.m */,
 			);
