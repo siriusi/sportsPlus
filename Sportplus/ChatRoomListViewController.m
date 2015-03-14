@@ -10,8 +10,17 @@
 #import "spCommon.h"
 #import "spMessageTableViewController.h"
 
+#import "spUser.h"
+#import "spChatroom.h"
+#import "spChatGroup.h"
+
+#import "SPUserService.h"
+#import "SVProgressHUD.h"
+
 @interface ChatRoomListViewController () {
     NSArray *_dataSource ;
+    
+    spUser *_testUser ;
 }
 
 @end
@@ -38,6 +47,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+#warning charRoom ;
     return [_dataSource count] ;
 }
 
@@ -66,10 +76,25 @@
     NSLog(@"%ld",(long)indexPath.row) ;
     static NSString *segueID = @"chatRoomList2chatRoom" ;
     
-    [self performSegueWithIdentifier:segueID sender:self] ;
+#warning test
+    //张睿  550071bee4b00aa930031b8b
+    //张睿2 5500766be4b00aa930032fd0
     
     
+    if ( _testUser ) {
+        [self performSegueWithIdentifier:segueID sender:self] ;
+        return ;
+    };
     
+    [SPUtils showNetworkIndicator] ;
+    [SPUserService findUsersByIds:@[@"5500766be4b00aa930032fd0"] callback:^(NSArray *objects, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        
+        _testUser = [objects lastObject] ;
+        [self performSegueWithIdentifier:segueID sender:self] ;
+    }] ;
+    
+//    [self performSegueWithIdentifier:segueID sender:self] ;
 }
 
 #pragma mark - SWTableViewCellDelegate
@@ -84,8 +109,8 @@
     if ( [segue.identifier isEqualToString: @"chatRoomList2chatRoom"] ) {
         spMessageTableViewController *Vc = (spMessageTableViewController *)segue.destinationViewController ;
         [Vc getMessage] ;
+        Vc.chatUser = _testUser ;
     }
-    
 }
 
 @end

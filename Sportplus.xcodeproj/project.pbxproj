@@ -42,6 +42,8 @@
 		197DA8611AB43EEF00F59116 /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA85E1AB43EEF00F59116 /* Emoji.m */; };
 		197DA8621AB43EEF00F59116 /* EmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8601AB43EEF00F59116 /* EmojiEmoticons.m */; };
 		197DA8651AB445ED00F59116 /* spChatroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8641AB445ED00F59116 /* spChatroom.m */; };
+		197DA8691AB4656600F59116 /* SPDataBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8681AB4656600F59116 /* SPDataBaseService.m */; };
+		197DA86B1AB4873B00F59116 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 197DA86A1AB4873B00F59116 /* libz.dylib */; };
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
@@ -198,6 +200,9 @@
 		197DA8601AB43EEF00F59116 /* EmojiEmoticons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiEmoticons.m; sourceTree = "<group>"; };
 		197DA8631AB445ED00F59116 /* spChatroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spChatroom.h; sourceTree = "<group>"; };
 		197DA8641AB445ED00F59116 /* spChatroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spChatroom.m; sourceTree = "<group>"; };
+		197DA8671AB4656600F59116 /* SPDataBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPDataBaseService.h; sourceTree = "<group>"; };
+		197DA8681AB4656600F59116 /* SPDataBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPDataBaseService.m; sourceTree = "<group>"; };
+		197DA86A1AB4873B00F59116 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
 		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -331,6 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197DA86B1AB4873B00F59116 /* libz.dylib in Frameworks */,
 				F146DD441AAAB0300089C499 /* MobileCoreServices.framework in Frameworks */,
 				D7EDA3A7252F7A37ADCA65F5 /* libPods.a in Frameworks */,
 			);
@@ -349,6 +355,7 @@
 		0A0B6AA458B84670ED31A262 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				197DA86A1AB4873B00F59116 /* libz.dylib */,
 				F146DD431AAAB0300089C499 /* MobileCoreServices.framework */,
 				A6D722640D16A2035FDB4981 /* libPods.a */,
 			);
@@ -368,6 +375,7 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				197DA8661AB464D100F59116 /* DataBaseService */,
 				197DA8571AB43C7400F59116 /* Emotion */,
 				197DA84C1AB213F100F59116 /* InviteService */,
 				1911EB981A9779A20044F04F /* SPUtils.h */,
@@ -607,6 +615,15 @@
 				197DA8601AB43EEF00F59116 /* EmojiEmoticons.m */,
 			);
 			name = Emoji;
+			sourceTree = "<group>";
+		};
+		197DA8661AB464D100F59116 /* DataBaseService */ = {
+			isa = PBXGroup;
+			children = (
+				197DA8671AB4656600F59116 /* SPDataBaseService.h */,
+				197DA8681AB4656600F59116 /* SPDataBaseService.m */,
+			);
+			name = DataBaseService;
 			sourceTree = "<group>";
 		};
 		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
@@ -1098,6 +1115,7 @@
 				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
 				193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */,
 				19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */,
+				197DA8691AB4656600F59116 /* SPDataBaseService.m in Sources */,
 				197DA8561AB43AA400F59116 /* spMsg.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,

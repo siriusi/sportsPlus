@@ -47,6 +47,7 @@
 
 @property (nonatomic) BOOL isRead;
 
+@property (nonatomic,assign) XHMessageStatus status;
 
 /**
  *  初始化文本消息

@@ -1,7 +1,7 @@
 //
 // RBStoryboardLink.m
 //
-// Copyright (c) 2012-2014 Robert Brown
+// Copyright (c) 2012-2015 Robert Brown
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -79,10 +79,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+
     NSAssert([self.storyboardName length], @"No storyboard name");
 
-    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:self.storyboardName bundle:nil];
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:self.storyboardName bundle:[NSBundle bundleWithIdentifier:self.storyboardBundleIdentifier]];
     UIViewController * scene = nil;
 
     // Creates the linked scene.
@@ -90,7 +90,7 @@
         scene = [storyboard instantiateInitialViewController];
     else
         scene = [storyboard instantiateViewControllerWithIdentifier:self.sceneIdentifier];
-    
+
     NSAssert(scene,
              @"No scene found in storyboard: \"%@\" with optional identifier: \"%@\"",
              self.storyboardName,
@@ -161,7 +161,7 @@
     self.transitioningDelegate = scene.transitioningDelegate;
 }
 
-- (NSString *)vertialConstraintString {
+- (NSString *)verticalConstraintString {
 
     // Defaults to using top and bottom layout guides.
     BOOL needsTopLayoutGuide    = self.needsTopLayoutGuide;
@@ -190,6 +190,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor clearColor];
 
     // Adds the view controller as a child view.
     UIViewController * scene = self.scene;
@@ -209,7 +211,7 @@
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[self vertialConstraintString]
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:[self verticalConstraintString]
                                                                       options:0
                                                                       metrics:nil
                                                                         views:views]];
@@ -282,9 +284,8 @@
 
 // The following methods are important to get unwind segues to work properly.
 
-- (BOOL)respondsToSelector:(SEL)aSelector {
-    return ([super respondsToSelector:aSelector] ||
-            [self.scene respondsToSelector:aSelector]);
+- (BOOL)canPerformUnwindSegueAction:(SEL)action fromViewController:(UIViewController *)fromViewController withSender:(id)sender {
+    return [self.scene canPerformUnwindSegueAction:action fromViewController:fromViewController withSender:sender];
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
@@ -294,7 +295,6 @@
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-
     if ([self.scene respondsToSelector:[anInvocation selector]])
         [anInvocation invokeWithTarget:self.scene];
     else

@@ -76,7 +76,6 @@ static NSString * const kTableViewCellContentView = @"UITableViewCellContentView
 
 - (void)initializer
 {
-    NSLog(@"initializer in!") ;
     layoutUpdating = NO;
     // Set up scroll view that will host our cell content
     self.cellScrollView = [[SWCellScrollView alloc] init];

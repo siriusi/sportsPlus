@@ -13,16 +13,13 @@
 #pragma mark -init method
 
 - (void)configSelf {
-    NSLog(@"2.configSelf") ;
 }
 
 - (void)awakeFromNib {
-    NSLog(@"3.awakeFromNib") ;
     [self.nameLabel setText:@"张睿"] ;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder{
-    NSLog(@"1.init with coder") ;
     self = [super initWithCoder:aDecoder] ;
     if (self) {
         [self configSelf] ;

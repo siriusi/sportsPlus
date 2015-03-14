@@ -1,7 +1,7 @@
 //
 // RBStoryboardModalSegue.m
 //
-// Copyright (c) 2012-2014 Robert Brown
+// Copyright (c) 2012-2015 Robert Brown
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,15 @@
 #import "RBStoryboardModalSegue.h"
 
 @implementation RBStoryboardModalSegue
+
+- (id)initWithIdentifier:(NSString *)identifier source:(UIViewController *)source destination:(UIViewController *)destination {
+    if (self = [super initWithIdentifier:identifier source:source destination:destination]) {
+        self.presentationStyle = destination.modalPresentationStyle;
+        self.transitionStyle = destination.modalTransitionStyle;
+        
+    };
+    return self;
+}
 
 - (void)perform {
 

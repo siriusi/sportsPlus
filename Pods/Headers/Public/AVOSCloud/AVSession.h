@@ -1,1 +1,1 @@
-../../../AVOSCloud/iOS/release-v2.6.7/AVOSCloud.framework/Headers/AVSession.h
+../../../AVOSCloud/iOS/release-v2.6.11.1/AVOSCloud.framework/Headers/AVSession.h

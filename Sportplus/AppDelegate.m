@@ -14,6 +14,9 @@
 #import "LogInViewController.h"
 #import "myHomePageViewController.h"
 
+#import "SPSessionManager.h"
+#import "SPCacheService.h"
+
 #define _AVOSAPPID @"68y9mskzle3aaj8o3gvbsy5zgrtaq9tobl2t0f8uevvvkkrz"
 #define _AVOSAPPKey @"k3wvj25usdhs8y2j0s4fqdavnr5hvjv3yibzfs6b3zsdyfpp"
 #define IOS8 [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0
@@ -34,6 +37,16 @@
 }
 
 - (void)toMain {
+    SPSessionManager* man=[SPSessionManager sharedInstance];
+    //    [spup upgradeWithBlock:^(BOOL upgrade, NSString *oldVersion, NSString *newVersion) {
+    //        NSLog(@"upgrade =%@ oldVersion=%@ newVersion=%@",upgrade? @"YES":@"NO",oldVersion,newVersion);
+    //        if(upgrade && [newVersion isEqualToString:@"1.0.8"]){
+    //            [CDDatabaseService upgradeToAddField];
+    //        }
+    //    }];
+    [SPCacheService registerUser:[AVUser currentUser]];
+    [man openSession];
+    
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"MainLogic" bundle:nil] ;
     self.window.rootViewController = [sb instantiateInitialViewController] ;
 }

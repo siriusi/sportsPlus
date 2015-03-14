@@ -290,6 +290,36 @@ static CGPoint  delayOffset = {0.0};
     }];
 }
 
+- (void)insertOldMessages:(NSArray *)oldMessages completion:(void (^)())completion{
+    WEAKSELF
+    NSLog(@"张睿") ;
+    [self exChangeMessageDataSourceQueue:^{
+        NSMutableArray *messages = [NSMutableArray arrayWithArray:oldMessages];
+        [messages addObjectsFromArray:weakSelf.messages];
+        
+        delayOffset = weakSelf.messageTableView.contentOffset;
+        NSMutableArray *indexPaths = [NSMutableArray arrayWithCapacity:oldMessages.count];
+        [oldMessages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:idx inSection:0];
+            [indexPaths addObject:indexPath];
+            
+            delayOffset.y += [weakSelf calculateCellHeightWithMessage:[messages objectAtIndex:idx] atIndexPath:indexPath];
+        }];
+        
+        [weakSelf exMainQueue:^{
+            [UIView setAnimationsEnabled:NO];
+            [weakSelf.messageTableView beginUpdates];
+            weakSelf.messages = messages;
+            [weakSelf.messageTableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone];
+            
+            [weakSelf.messageTableView setContentOffset:delayOffset animated:NO];
+            [weakSelf.messageTableView endUpdates];
+            [UIView setAnimationsEnabled:YES];
+            completion();
+        }];
+    }];
+}
+
 #pragma mark - Propertys
 
 - (NSMutableArray *)messages {
@@ -1198,7 +1228,6 @@ static CGPoint  delayOffset = {0.0};
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     id <XHMessageModel> message = [self.dataSource messageForRowAtIndexPath:indexPath];
     
     BOOL displayTimestamp = YES;

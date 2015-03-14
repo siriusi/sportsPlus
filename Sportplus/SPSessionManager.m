@@ -9,10 +9,14 @@
 #import "SPSessionManager.h"
 #import "spCommon.h"
 #import <AFNetworking/AFNetworking.h>
+#import "SPDataBaseService.h"
+#import "SPCloudSevice.h"
+#import <Qiniu/QiniuSDK.h>
+
 
 @interface SPSessionManager () {
     AVSession *_session ;
-//    QNUploadManager *upManager;    
+    QNUploadManager *upManager;    
 }
 
 @end
@@ -42,7 +46,7 @@ static BOOL initialized = NO;
 
 - (instancetype)init {
     if ((self = [super init])) {
-//        upManager=[[QNUploadManager alloc] init];
+        upManager=[[QNUploadManager alloc] init];
         _session = [[AVSession alloc] init];
         _session.sessionDelegate = self;
         _session.signatureDelegate = self;
@@ -77,23 +81,21 @@ static BOOL initialized = NO;
 
 - (void)watchPeerId:(NSString *)peerId {
     NSLog(@"unwatch");
-#warning !! ;
-//    [_session watchPeerIds:@[peerId] callback:^(BOOL succeeded, NSError *error) {
-//        [CDUtils logError:error callback:^{
-//            NSLog(@"watch succeed peerId=%@",peerId);
-//        }];
-//    }];
+    [_session watchPeerIds:@[peerId] callback:^(BOOL succeeded, NSError *error) {
+        [SPUtils logError:error callback:^{
+            NSLog(@"watch succeed peerId=%@",peerId);
+        }];
+    }];
 }
 
 -(void)unwatchPeerId:(NSString*)peerId{
     NSLog(@"%s",__PRETTY_FUNCTION__);
-#warning !! ;
-//    [_session unwatchPeerIds:@[peerId] callback:^(BOOL succeeded, NSError *error) {
-//        NSLog(@"unwatch callback");
-//        [CDUtils logError:error callback:^{
-//            NSLog(@"unwatch succeed");
-//        }];
-//    }];
+    [_session unwatchPeerIds:@[peerId] callback:^(BOOL succeeded, NSError *error) {
+        NSLog(@"unwatch callback");
+        [SPUtils logError:error callback:^{
+            NSLog(@"unwatch succeed");
+        }];
+    }];
 }
 
 #pragma mark - conversation
@@ -156,12 +158,11 @@ static BOOL initialized = NO;
 
 -(spMsg*)sendMsg:(spMsg*)msg group:(AVGroup*)group{
     if([_session isOpen]==NO || [_session isPaused]){
-        //[CDUtils alert:@"会话暂停，请检查网络"];
+        [SPUtils alert:@"会话暂停，请检查网络"] ;
     }
     if(!group){
         AVMessage *avMsg=[AVMessage messageForPeerWithSession:_session toPeerId:msg.toPeerId payload:[msg toMessagePayload]];
-#warning 版本问题
-//        [_session sendMessage:avMsg requestReceipt:YES];
+        [_session sendMessage:avMsg requestReceipt:YES];
     }else{
         AVMessage *avMsg=[AVMessage messageForGroup:group payload:[msg toMessagePayload]];
         [group sendMessage:avMsg];
@@ -239,8 +240,7 @@ static BOOL initialized = NO;
             }else{
                 NSString* url=(NSString*)object;
                 msg.content=url;
-#warning !!!
-//                [CDDatabaseService updateMsgWithId:msg.objectId content:url];
+                [SPDataBaseService updateMsgWithId:msg.objectId content:url] ;
                 [self sendMsg:msg group:group];
             }
         }];
@@ -251,8 +251,7 @@ static BOOL initialized = NO;
 
 - (void)sendMessageWithObjectId:(NSString*)objectId content:(NSString *)content type:(CDMsgType)type toPeerId:(NSString *)toPeerId group:(AVGroup*)group{
     spMsg *msg = [self createMsgWithType:type objectId:objectId content:content toPeerId:toPeerId group:group] ;
-#warning !!!
-//    [CDDatabaseService insertMsgToDB:msg];
+    [SPDataBaseService insertMsgToDB:msg] ;
     
     [self postUpdatedMsg:msg];
     [self sendCreatedMsg:msg group:group];
@@ -383,16 +382,13 @@ static BOOL initialized = NO;
     spMsg* msg=[spMsg fromAVMessage:avMsg];
     msg.status=CDMsgStatusSendSucceed;
     [self setRoomTypeAndConvidOfMsg:msg group:group];
-#warning !!
-//    [CDDatabaseService updateMsgWithId:msg.objectId status:msg.status timestamp:msg.timestamp];
+    [SPDataBaseService updateMsgWithId:msg.objectId status:msg.status timestamp:msg.timestamp];
     [self postUpdatedMsg:msg];
 }
 
 -(void)setStatusFailedOfMsg:(spMsg*)msg{
     msg.status=CDMsgStatusSendFailed;
-#warning !!
-//    [CDDatabaseService updateMsgWithId:msg.objectId status:CDMsgStatusSendFailed];
-    // forbid to fast load message
+    [SPDataBaseService updateMsgWithId:msg.objectId status:CDMsgStatusSendFailed];
     [self postUpdatedMsg:msg];
 }
 
@@ -406,8 +402,7 @@ static BOOL initialized = NO;
     spMsg* msg=[spMsg fromAVMessage:avMsg];
     msg.status=CDMsgStatusSendReceived;
     [self setRoomTypeAndConvidOfMsg:msg group:nil];
-#warning !!
-//    [CDDatabaseService updateMsgWithId:msg.objectId status:CDMsgStatusSendReceived];
+    [SPDataBaseService updateMsgWithId:msg.objectId status:CDMsgStatusSendReceived];
     [self postUpdatedMsg:msg];
 }
 
@@ -444,8 +439,7 @@ static BOOL initialized = NO;
             }
         }
         dispatch_async(dispatch_get_main_queue(), ^{
-#warning !!
-//            [CDDatabaseService insertMsgToDB:msg];
+            [SPDataBaseService insertMsgToDB:msg];
             [self postUpdatedMsg:msg];
         });
     });
@@ -535,12 +529,12 @@ static BOOL initialized = NO;
 }
 
 #pragma mark - signature
-
+//
 //- (AVSignature *)signatureForPeerWithPeerId:(NSString *)peerId watchedPeerIds:(NSArray *)watchedPeerIds action:(NSString *)action{
 //    if(watchedPeerIds==nil){
 //        watchedPeerIds=[[NSMutableArray alloc] init];
 //    }
-//    NSDictionary* result=[CDCloudService signWithPeerId:peerId watchedPeerIds:watchedPeerIds];
+//    NSDictionary* result=[SPCloudSevice signWithPeerId:peerId watchedPeerIds:watchedPeerIds];
 //    return [self getAVSignatureWithParams:result peerIds:watchedPeerIds];
 //}
 //
@@ -559,7 +553,7 @@ static BOOL initialized = NO;
 //}
 //
 //-(AVSignature*)signatureForGroupWithPeerId:(NSString *)peerId groupId:(NSString *)groupId groupPeerIds:(NSArray *)groupPeerIds action:(NSString *)action{
-//    NSDictionary* result=[CDCloudService groupSignWithPeerId:peerId groupId:groupId groupPeerIds:groupPeerIds action:action];
+//    NSDictionary* result=[SPCloudSevice groupSignWithPeerId:peerId groupId:groupId groupPeerIds:groupPeerIds action:action];
 //    return [self getAVSignatureWithParams:result peerIds:groupPeerIds];
 //}
 

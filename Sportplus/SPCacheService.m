@@ -8,7 +8,7 @@
 
 #import "SPCacheService.h"
 #import "SPGroupService.h"
-//#import "CDMsg.h"
+#import "spMsg.h"
 
 @implementation SPCacheService
 
@@ -100,25 +100,24 @@ static NSArray* friends;
 }
 
 +(void)cacheMsgs:(NSArray*)msgs withCallback:(AVArrayResultBlock)callback{
-#warning cache msg 
-//    NSMutableSet* userIds=[[NSMutableSet alloc] init];
-//    NSMutableSet* groupIds=[[NSMutableSet alloc] init];
-//    for(CDMsg* msg in msgs){
-//        if(msg.roomType==CDMsgRoomTypeSingle){
-//            [userIds addObject:msg.fromPeerId];
-//            [userIds addObject:msg.toPeerId];
-//        }else{
-//            [userIds addObject:msg.fromPeerId];
-//            [groupIds addObject:msg.convid];
-//        }
-//    }
-//    [self cacheUsersWithIds:userIds callback:^(NSArray *objects, NSError *error) {
-//        if(error){
-//            callback(objects,error);
-//        }else{
-//            [self cacheChatGroupsWithIds:groupIds withCallback:callback];
-//        }
-//    }];
+    NSMutableSet* userIds=[[NSMutableSet alloc] init];
+    NSMutableSet* groupIds=[[NSMutableSet alloc] init];
+    for(spMsg* msg in msgs){
+        if(msg.roomType==CDMsgRoomTypeSingle){
+            [userIds addObject:msg.fromPeerId];
+            [userIds addObject:msg.toPeerId];
+        }else{
+            [userIds addObject:msg.fromPeerId];
+            [groupIds addObject:msg.convid];
+        }
+    }
+    [self cacheUsersWithIds:userIds callback:^(NSArray *objects, NSError *error) {
+        if(error){
+            callback(objects,error);
+        }else{
+            [self cacheChatGroupsWithIds:groupIds withCallback:callback];
+        }
+    }];
 }
 
 #pragma mark - current cache group

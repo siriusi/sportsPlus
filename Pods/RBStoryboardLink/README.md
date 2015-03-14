@@ -2,6 +2,8 @@
 
 ## Summary
 
+`RBStoryboardLink` started out as a proof-of-concept and that is still largely the case. It may not work in all cases. Furthermore, `RBStoryboardLink` should not be used without first understanding storyboards.
+
 `UIStoryboards` are very powerful and useful. However, to make the best use of storyboards, they need to be broken down into natural modules. The problem with having many storyboards is writing the code to transition between them. `RBStoryboardLink` solves this problem by allowing "pseudo-segues" between `UIStoryboards`. These segues can be built without leaving Interface Builder and without writing any extra code.
 
 ## Dependencies
@@ -16,7 +18,7 @@
 
 2. Where ever you want create a transition into a different storyboard, create a `UIViewController` representing the scene to be pushed.
 
-3. Create the desired segue type (Push, Modal, Custom) to these surrogate view controllers. To take advantage of the new linking, set the type to custom and choose one of `RBStoryboardPushSegue`, `RBStoryboardModalSegue`, or `RBStoryboardPopoverSegue`. You may also create subclasses of `RBStoryboardSegue` for custom transitions. 
+3. Create the desired segue type (Push, Modal, Custom) to these surrogate view controllers. To take advantage of the new linking, set the type to custom and choose one of `RBStoryboardPushSegue`, `RBStoryboardModalSegue`, or `RBStoryboardPopoverSegue`. You may also create subclasses of `RBStoryboardSegue` for custom transitions.
 
 4. In the Identity Inspector, change the class type of each surrogate view controller to `RBStoryboardLink`.
 
@@ -41,13 +43,13 @@ There are two demos that are provided to show how to use `RBStoryboardLink`:
 
 ## Contribution
 
-Contributions are welcomed. I'm much more responsive to pull requests rather than issues. The sample apps use [KIF][2] for automated testing. Any pull requests must pass the tests before they will be merged. If new functionality is introduced, the pull requests must also add tests for the new behavior.
+Contributions are welcomed. I'm much more responsive to pull requests rather than issues. The sample apps use [KIF][2] for automated testing. Any pull requests must pass the tests before they will be merged. If new functionality is introduced, the pull requests must also add tests for the new behavior. If you want to contribute and don't know what to tackle, take a look at the issues list.
 
 ## License
 
 `RBStoryboardLink` is licensed under the MIT license, which is reproduced in its entirety here:
 
->Copyright (c) 2012-2014 Robert Brown
+>Copyright (c) 2012-2015 Robert Brown
 >
 >Permission is hereby granted, free of charge, to any person obtaining a copy
 >of this software and associated documentation files (the "Software"), to deal

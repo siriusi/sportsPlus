@@ -81,8 +81,8 @@
 
 }
 
-- (void)doSearch {
-    [SPUserService findUsersByPartname:@"" withBlock:^(NSArray *objects, NSError *error) {
+- (void)doSearchWithName:(NSString *)name {
+    [SPUserService findUsersByPartname:name withBlock:^(NSArray *objects, NSError *error) {
         if (error == nil) {
             _dataSourceOfSearchedUser = [[NSMutableArray alloc] initWithArray:objects] ;
             [self.searchFriendTableView reloadData] ;

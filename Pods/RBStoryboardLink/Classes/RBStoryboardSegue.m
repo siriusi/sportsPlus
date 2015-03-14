@@ -1,7 +1,7 @@
 //
 // RBStoryboardSegue.m
 //
-// Copyright (c) 2012-2014 Robert Brown
+// Copyright (c) 2012-2015 Robert Brown
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,22 +25,27 @@
 #import "RBStoryboardSegue.h"
 #import "RBStoryboardLink.h"
 
+
 @implementation RBStoryboardSegue
-
-
 
 + (UIViewController *)viewControllerFromLink:(RBStoryboardLink *)link {
     
     NSParameterAssert(link);
     
+    if (link.scene)
+    {
+        return link.scene;
+    }
+    
     // Grabs the user-defined runtime attributes.
     NSString * storyboardName = [(RBStoryboardLink *)link storyboardName];
     NSString * storyboardID = [(RBStoryboardLink *)link sceneIdentifier];
+    NSString * storyboardBundleIdentifier = [(RBStoryboardLink *)link storyboardBundleIdentifier];
     
     NSAssert(storyboardName, @"Unable to load linked storyboard. RBStoryboardLink storyboardName is nil. Forgot to set attribute in interface builder?");
     
     // Creates new destination.
-    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    UIStoryboard * storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:[NSBundle bundleWithIdentifier:storyboardBundleIdentifier]];
     
     if ([storyboardID length] == 0) {
         return [storyboard instantiateInitialViewController];
@@ -62,12 +67,5 @@
     
     return self;
 }
-//
-//- (void)perform {
-//    UIViewController * svc = (UIViewController *)self.sourceViewController ;
-//    UIViewController * dvc = (UIViewController *)self.destinationViewController ;
-//    [UIView transitionFromView:svc.view toView:dvc.view duration:0.5 options:UIViewAnimationOptionTransitionCurlDown completion:nil] ;
-//    
-//}
 
 @end

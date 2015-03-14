@@ -1,44 +1,55 @@
 PODS:
-  - AFNetworking (2.5.0):
-    - AFNetworking/NSURLConnection (= 2.5.0)
-    - AFNetworking/NSURLSession (= 2.5.0)
-    - AFNetworking/Reachability (= 2.5.0)
-    - AFNetworking/Security (= 2.5.0)
-    - AFNetworking/Serialization (= 2.5.0)
-    - AFNetworking/UIKit (= 2.5.0)
-  - AFNetworking/NSURLConnection (2.5.0):
+  - AFNetworking (2.5.1):
+    - AFNetworking/NSURLConnection (= 2.5.1)
+    - AFNetworking/NSURLSession (= 2.5.1)
+    - AFNetworking/Reachability (= 2.5.1)
+    - AFNetworking/Security (= 2.5.1)
+    - AFNetworking/Serialization (= 2.5.1)
+    - AFNetworking/UIKit (= 2.5.1)
+  - AFNetworking/NSURLConnection (2.5.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.0):
+  - AFNetworking/NSURLSession (2.5.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.0)
-  - AFNetworking/Security (2.5.0)
-  - AFNetworking/Serialization (2.5.0)
-  - AFNetworking/UIKit (2.5.0):
+  - AFNetworking/Reachability (2.5.1)
+  - AFNetworking/Security (2.5.1)
+  - AFNetworking/Serialization (2.5.1)
+  - AFNetworking/UIKit (2.5.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AVOSCloud (2.6.7)
+  - AVOSCloud (2.6.11.1)
+  - FMDB (2.5):
+    - FMDB/standard (= 2.5)
+  - FMDB/common (2.5)
+  - FMDB/standard (2.5):
+    - FMDB/common
   - MessageDisplayKit (3.0.1)
-  - RBStoryboardLink (0.1.0)
+  - Qiniu (7.0.8):
+    - AFNetworking (~> 2.0)
+  - RBStoryboardLink (0.1.4)
   - Reachability (3.2)
   - SWTableViewCell (0.3.7)
 
 DEPENDENCIES:
   - AFNetworking
   - AVOSCloud
+  - FMDB
   - MessageDisplayKit
+  - Qiniu
   - RBStoryboardLink (~> 0.1.0)
   - Reachability
   - SWTableViewCell
 
 SPEC CHECKSUMS:
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  AVOSCloud: b9b7123e576d9d4a30d912e52a100a2561f841dd
+  AFNetworking: 8bee59492a6ff15d69130efa4d0dc67e0094a52a
+  AVOSCloud: 9e1454429268702bbf49260b8f846b611f33e4cc
+  FMDB: 0efa188cf0dd1ce82c27a478cd5f5fa245308677
   MessageDisplayKit: 63e964f5ade8e1666db16fe0c0c660e2429f2aaf
-  RBStoryboardLink: 2abe4697a7dd6137482590b044f6e4f1c2b05837
+  Qiniu: 928e087bb94f33537e5d0b4cdbf4d4ccd83a4cd3
+  RBStoryboardLink: 3bc5f6a73a18506e2f980bd0ace79d6847b18aa6
   Reachability: 1ef8adf5c4e3d362f96515d4278f68dad3c26930
   SWTableViewCell: 25de71898e3fcd11cf75707ef90245acf990ec03
 
