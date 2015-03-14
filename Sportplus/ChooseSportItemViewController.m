@@ -33,7 +33,6 @@ typedef enum {
         self.normalImgName = normalImgName ;
         self.type = type ;
     }
-    
     return self ;
 }
 

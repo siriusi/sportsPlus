@@ -77,8 +77,11 @@
          UIRemoteNotificationTypeSound];
     }
     
-//    [self toRegiste] ;
-    [self toMain] ;
+    if ( [spUser currentUser] != nil ) {
+        [self toMain] ;
+    } else {
+        [self toRegiste] ;
+    }
     
     return YES;
 }

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 #define kXHEmotionImageViewSize 60
 #define kXHEmotionMinimumLineSpacing 16

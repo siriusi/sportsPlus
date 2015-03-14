@@ -37,6 +37,11 @@
 		197DA84B1AB210EA00F59116 /* spEngagement_Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA84A1AB210EA00F59116 /* spEngagement_Friend.m */; };
 		197DA84F1AB2140D00F59116 /* SPInviteService.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA84E1AB2140D00F59116 /* SPInviteService.m */; };
 		197DA8531AB2256C00F59116 /* ChuochuochuoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8521AB2256C00F59116 /* ChuochuochuoViewController.m */; };
+		197DA8561AB43AA400F59116 /* spMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8551AB43AA400F59116 /* spMsg.m */; };
+		197DA85A1AB43CE400F59116 /* spEmotionUtilis.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8591AB43CE400F59116 /* spEmotionUtilis.m */; };
+		197DA8611AB43EEF00F59116 /* Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA85E1AB43EEF00F59116 /* Emoji.m */; };
+		197DA8621AB43EEF00F59116 /* EmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8601AB43EEF00F59116 /* EmojiEmoticons.m */; };
+		197DA8651AB445ED00F59116 /* spChatroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 197DA8641AB445ED00F59116 /* spChatroom.m */; };
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
@@ -183,6 +188,16 @@
 		197DA84E1AB2140D00F59116 /* SPInviteService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPInviteService.m; sourceTree = "<group>"; };
 		197DA8511AB2256C00F59116 /* ChuochuochuoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChuochuochuoViewController.h; sourceTree = "<group>"; };
 		197DA8521AB2256C00F59116 /* ChuochuochuoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChuochuochuoViewController.m; sourceTree = "<group>"; };
+		197DA8541AB43AA400F59116 /* spMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spMsg.h; sourceTree = "<group>"; };
+		197DA8551AB43AA400F59116 /* spMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spMsg.m; sourceTree = "<group>"; };
+		197DA8581AB43CE400F59116 /* spEmotionUtilis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spEmotionUtilis.h; sourceTree = "<group>"; };
+		197DA8591AB43CE400F59116 /* spEmotionUtilis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spEmotionUtilis.m; sourceTree = "<group>"; };
+		197DA85D1AB43EEF00F59116 /* Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Emoji.h; sourceTree = "<group>"; };
+		197DA85E1AB43EEF00F59116 /* Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Emoji.m; sourceTree = "<group>"; };
+		197DA85F1AB43EEF00F59116 /* EmojiEmoticons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmojiEmoticons.h; sourceTree = "<group>"; };
+		197DA8601AB43EEF00F59116 /* EmojiEmoticons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmojiEmoticons.m; sourceTree = "<group>"; };
+		197DA8631AB445ED00F59116 /* spChatroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spChatroom.h; sourceTree = "<group>"; };
+		197DA8641AB445ED00F59116 /* spChatroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spChatroom.m; sourceTree = "<group>"; };
 		198520B01A9DABEC0098F93D /* spNotificationCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterViewController.h; sourceTree = "<group>"; };
 		198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterViewController.m; sourceTree = "<group>"; };
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
@@ -353,6 +368,7 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				197DA8571AB43C7400F59116 /* Emotion */,
 				197DA84C1AB213F100F59116 /* InviteService */,
 				1911EB981A9779A20044F04F /* SPUtils.h */,
 				1911EB991A9779A20044F04F /* SPUtils.m */,
@@ -389,6 +405,10 @@
 			children = (
 				192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */,
 				192670A11A874ACA00895308 /* avobject */,
+				197DA8541AB43AA400F59116 /* spMsg.h */,
+				197DA8551AB43AA400F59116 /* spMsg.m */,
+				197DA8631AB445ED00F59116 /* spChatroom.h */,
+				197DA8641AB445ED00F59116 /* spChatroom.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -561,6 +581,34 @@
 			name = "戳戳戳二级界面";
 			sourceTree = "<group>";
 		};
+		197DA8571AB43C7400F59116 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				197DA8581AB43CE400F59116 /* spEmotionUtilis.h */,
+				197DA8591AB43CE400F59116 /* spEmotionUtilis.m */,
+			);
+			name = Emotion;
+			sourceTree = "<group>";
+		};
+		197DA85B1AB43E8B00F59116 /* third_party_byHand */ = {
+			isa = PBXGroup;
+			children = (
+				197DA85C1AB43ECF00F59116 /* Emoji */,
+			);
+			name = third_party_byHand;
+			sourceTree = "<group>";
+		};
+		197DA85C1AB43ECF00F59116 /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				197DA85D1AB43EEF00F59116 /* Emoji.h */,
+				197DA85E1AB43EEF00F59116 /* Emoji.m */,
+				197DA85F1AB43EEF00F59116 /* EmojiEmoticons.h */,
+				197DA8601AB43EEF00F59116 /* EmojiEmoticons.m */,
+			);
+			name = Emoji;
+			sourceTree = "<group>";
+		};
 		198520AC1A9DAB7D0098F93D /* 信息管理 */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +770,7 @@
 		78C6C8611A2B411100D8425E /* Sportplus */ = {
 			isa = PBXGroup;
 			children = (
+				197DA85B1AB43E8B00F59116 /* third_party_byHand */,
 				1911EB951A9778E30044F04F /* service */,
 				1911EB921A9773F60044F04F /* setting */,
 				78C6C8661A2B411100D8425E /* AppDelegate.h */,
@@ -1026,6 +1075,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197DA85A1AB43CE400F59116 /* spEmotionUtilis.m in Sources */,
 				F146EB101AB2A50B0011A2D3 /* AccountBindingViewController.m in Sources */,
 				1911EB9A1A9779A20044F04F /* SPUtils.m in Sources */,
 				F1887DC81A336D020056A568 /* RigisterDetailViewController.m in Sources */,
@@ -1037,6 +1087,7 @@
 				F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */,
 				193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */,
 				19F8057D1AADD83700F9071A /* ChoosePlaceTableViewCell.m in Sources */,
+				197DA8611AB43EEF00F59116 /* Emoji.m in Sources */,
 				78F792D11A45515100D14861 /* MainTabBarController.m in Sources */,
 				F1887DC51A332CDE0056A568 /* ReigisterNameViewController.m in Sources */,
 				F1B88C3D1A45E95B005D601D /* SettingViewController.m in Sources */,
@@ -1047,6 +1098,7 @@
 				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
 				193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */,
 				19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */,
+				197DA8561AB43AA400F59116 /* spMsg.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
 				19F805871AADDC7100F9071A /* ChooseSportFriendTableViewCell.m in Sources */,
@@ -1059,6 +1111,7 @@
 				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
 				19F805A51AAFCAB200F9071A /* SPCloudSevice.m in Sources */,
 				19F805651AAD42B800F9071A /* ChooseSportTimeViewController.m in Sources */,
+				197DA8621AB43EEF00F59116 /* EmojiEmoticons.m in Sources */,
 				19F8059A1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m in Sources */,
 				192D7BBF1AACAE1400EF9131 /* ChooseSportItemViewController.m in Sources */,
 				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
@@ -1077,6 +1130,7 @@
 				19F805A81AAFD21B00F9071A /* SPGroupService.m in Sources */,
 				197DA84B1AB210EA00F59116 /* spEngagement_Friend.m in Sources */,
 				781608BC1A53C8BD001B50F5 /* RegisteData.m in Sources */,
+				197DA8651AB445ED00F59116 /* spChatroom.m in Sources */,
 				193CEE3F1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m in Sources */,
 				19F805AB1AAFD2D100F9071A /* spChatGroup.m in Sources */,
 				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
