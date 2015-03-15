@@ -8,7 +8,14 @@
 
 #import "ChooseSchoolViewController.h"
 
-@interface ChooseSchoolViewController ()
+#import "spCommon.h"
+#import "spAVModels.h"
+#import "SPCloudSevice.h"
+#import "SVProgressHUD.h"
+
+@interface ChooseSchoolViewController (){
+    NSMutableArray *_dataSourceOfSearchedSchool ;
+}
 
 @end
 
@@ -22,10 +29,10 @@
     self.navigationController.navigationBar.translucent=YES;
     self.schoolTableView.delegate=self;
     self.schoolTableView.dataSource = self;
-//    UIImage *backButtonImage = [UIImage imageNamed:@"back"];
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-//    //将返回按钮的文字position设置不在屏幕上显示
-//    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(NSIntegerMin, NSIntegerMin) forBarMetrics:UIBarMetricsDefault];
+    
+    self.searchBar.delegate = self;
+    
+    _dataSourceOfSearchedSchool = [[NSMutableArray alloc] init] ;
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
@@ -76,6 +83,43 @@
     regi.chooseSchoolName = self.schoolList[indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.searchBar resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
+    self.searchBar.clearsOnBeginEditing = YES;
+    [self searchStart];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchStart{
+    NSLog(@"search start!!");
+    [self doSearchWithName:self.searchBar.text];
+    
+}
+
+- (void)doSearchWithName:(NSString *)name {
+//    [SPUtils showNetworkIndicator] ;
+//    [SVProgressHUD show] ;
+//    //到这里会报错！
+//    [SPUserService findUsersByPartname:name withBlock:^(NSArray *objects, NSError *error) {
+//        [SPUtils hideNetworkIndicator] ;
+//        [SVProgressHUD dismiss] ;
+//        
+//        if (error == nil) {
+//            _dataSourceOfSearchedSchool = [[NSMutableArray alloc] initWithArray:objects] ;
+//            [self.schoolTableView reloadData] ;
+//        } else {
+//            [SPUtils alertError:error] ;
+//        }
+//    }] ;
+}
+
 /*
 #pragma mark - Navigation
 

@@ -92,6 +92,8 @@
 		F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F11581E51A31861D00420CC3 /* testgitViewController.m */; };
 		F146DD441AAAB0300089C499 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F146DD431AAAB0300089C499 /* MobileCoreServices.framework */; };
 		F146EB101AB2A50B0011A2D3 /* AccountBindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F17CEE911AB28F570086D4F9 /* AccountBindingViewController.m */; };
+		F14CBF1A1AB5433300B66846 /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = F14CBF191AB5433300B66846 /* ChineseString.m */; };
+		F14CBF211AB543F700B66846 /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = F14CBF1F1AB543F700B66846 /* pinyin.c */; };
 		F16DDB031AA617F20080E908 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F16DDB021AA617F20080E908 /* Images.xcassets */; };
 		F16DDB061AA722250080E908 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F16DDB051AA722250080E908 /* LogInViewController.m */; };
 		F178AF471AAC34D1002D3BB8 /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F178AF461AAC34D1002D3BB8 /* ChangeNameViewController.m */; };
@@ -282,6 +284,10 @@
 		F11581E41A31861D00420CC3 /* testgitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testgitViewController.h; sourceTree = "<group>"; };
 		F11581E51A31861D00420CC3 /* testgitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testgitViewController.m; sourceTree = "<group>"; };
 		F146DD431AAAB0300089C499 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		F14CBF181AB5433300B66846 /* ChineseString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChineseString.h; sourceTree = "<group>"; };
+		F14CBF191AB5433300B66846 /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseString.m; sourceTree = "<group>"; };
+		F14CBF1F1AB543F700B66846 /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
+		F14CBF201AB543F700B66846 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		F16DDB021AA617F20080E908 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F16DDB041AA722250080E908 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		F16DDB051AA722250080E908 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
@@ -897,6 +903,10 @@
 		F1B88C231A45A73C005D601D /* 好友管理 */ = {
 			isa = PBXGroup;
 			children = (
+				F14CBF181AB5433300B66846 /* ChineseString.h */,
+				F14CBF191AB5433300B66846 /* ChineseString.m */,
+				F14CBF1F1AB543F700B66846 /* pinyin.c */,
+				F14CBF201AB543F700B66846 /* pinyin.h */,
 				19F805AF1AB0C1C200F9071A /* 二级界面 */,
 				F1B88C271A45AAE2005D601D /* FriendsManagementViewController.h */,
 				F1B88C281A45AAE2005D601D /* FriendsManagementViewController.m */,
@@ -1116,6 +1126,7 @@
 				193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */,
 				19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */,
 				197DA8691AB4656600F59116 /* SPDataBaseService.m in Sources */,
+				F14CBF211AB543F700B66846 /* pinyin.c in Sources */,
 				197DA8561AB43AA400F59116 /* spMsg.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
@@ -1133,6 +1144,7 @@
 				19F8059A1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m in Sources */,
 				192D7BBF1AACAE1400EF9131 /* ChooseSportItemViewController.m in Sources */,
 				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
+				F14CBF1A1AB5433300B66846 /* ChineseString.m in Sources */,
 				19F8058D1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m in Sources */,
 				19F805AE1AAFDB4B00F9071A /* SPSessionManager.m in Sources */,
 				F10D93131A57FAE1006770DE /* SportsCollectionViewCell.m in Sources */,
@@ -1308,7 +1320,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
+				PROVISIONING_PROFILE = "db05fb74-ff54-41bd-98ff-91a78747f0e0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1323,7 +1335,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
+				PROVISIONING_PROFILE = "db05fb74-ff54-41bd-98ff-91a78747f0e0";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

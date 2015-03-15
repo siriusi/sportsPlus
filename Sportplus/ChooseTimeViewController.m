@@ -8,7 +8,14 @@
 
 #import "ChooseTimeViewController.h"
 
-@interface ChooseTimeViewController ()
+#import "spCommon.h"
+#import "spAVModels.h"
+#import "SPCloudSevice.h"
+#import "SVProgressHUD.h"
+
+@interface ChooseTimeViewController (){
+    NSMutableArray *_dataSourceOfSearchedTime ;
+}
 
 @end
 
@@ -25,6 +32,9 @@
     self.navigationController.navigationBar.translucent=YES;
     self.timeTableView.delegate=self;
     self.timeTableView.dataSource=self;
+    self.searchBar.delegate = self;
+    _dataSourceOfSearchedTime = [[NSMutableArray alloc] init] ;
+    
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setBackgroundImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(back)
@@ -70,10 +80,46 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"indexPath is %d",indexPath.row);
+    NSLog(@"indexPath is %ld",(long)indexPath.row);
     RegisterMainViewController *regi = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
     regi.chooseTime = self.timeList[indexPath.row];
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.searchBar resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
+    self.searchBar.clearsOnBeginEditing = YES;
+    [self searchStart];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.searchBar resignFirstResponder];
+}
+
+-(void)searchStart{
+    NSLog(@"search start!!");
+    [self doSearchWithName:self.searchBar.text];
+    
+}
+
+- (void)doSearchWithName:(NSString *)name {
+    [SPUtils showNetworkIndicator] ;
+    [SVProgressHUD show] ;
+    //到这里会报错！
+    [SPUserService findUsersByPartname:name withBlock:^(NSArray *objects, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SVProgressHUD dismiss] ;
+        
+        if (error == nil) {
+            _dataSourceOfSearchedTime = [[NSMutableArray alloc] initWithArray:objects] ;
+            [self.timeTableView reloadData] ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
 }
 
 /*

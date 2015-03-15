@@ -10,7 +10,7 @@
 
 @interface spUser : AVUser<AVSubclassing> 
 
-@property NSString *sP_userName ;//电话 [spUser user].username 相同
+@property NSString *sP_userName ;//姓名 [spUser user].username是电话
 
 
 @property NSString *sP_userTrueName ;//实名

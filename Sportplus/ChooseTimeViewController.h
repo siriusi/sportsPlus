@@ -12,4 +12,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *timeTableView;
 @property ( nonatomic) NSMutableArray *timeList;
 @property ( nonatomic) NSString *time;
+@property (weak, nonatomic) IBOutlet UITextField *searchBar;
 @end

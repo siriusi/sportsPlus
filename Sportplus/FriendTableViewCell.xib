@@ -71,6 +71,9 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settingGrayLine" translatesAutoresizingMaskIntoConstraints="NO" id="LqY-7A-b37">
                         <rect key="frame" x="0.0" y="59" width="320" height="1"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tenniseCell" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-Jz-Ihn">
+                        <rect key="frame" x="262" y="25" width="25" height="25"/>
+                    </imageView>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -81,6 +84,7 @@
                 <outlet property="img4" destination="eLY-pK-KWb" id="qbO-EO-X7D"/>
                 <outlet property="img5" destination="qqG-Jp-LOP" id="tId-Z0-lGg"/>
                 <outlet property="img6" destination="TLA-Qt-5D2" id="xbE-Fb-spn"/>
+                <outlet property="img7" destination="DPr-Jz-Ihn" id="f7M-0x-ZdC"/>
                 <outlet property="name" destination="Jm5-xK-jAF" id="a5l-je-ER4"/>
                 <outlet property="profession" destination="H8t-hr-hJs" id="thG-cs-OuP"/>
                 <outlet property="school" destination="R4D-Ml-ex2" id="DBT-me-0l8"/>

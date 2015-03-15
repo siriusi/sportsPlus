@@ -14,10 +14,20 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>Pods-FMDB.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods-MessageDisplayKit.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>6</integer>
+		</dict>
+		<key>Pods-Qiniu.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>9</integer>
 		</dict>
 		<key>Pods-RBStoryboardLink.xcscheme</key>
 		<dict>
@@ -67,6 +77,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>2E1ADA4B00BB09FEF7CA5683</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>346D120215AB2A6A48C4E572</key>
 		<dict>
 			<key>primary</key>
@@ -92,6 +107,11 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5462431A820422064900A5F0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>55899C3D62BB80365972AF32</key>
 		<dict>
 			<key>primary</key>
@@ -102,7 +122,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5F9EE20500E29BA72780900A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6763A26F13936BD1D3BAEC2F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D5A7C59EF1BC4BCA0808B87</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7024979BC1F4231CDE8F6466</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -117,7 +152,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>945D7B7242B4724982811DD9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9760DC24810D5CA5F63465F5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>99BF0EC867547DD09BD2138D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BFFDEC522ABFA2C21F45A1E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -128,6 +178,11 @@
 			<true/>
 		</dict>
 		<key>DC21198B1976F20F1D4AC64F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6A792487603FE58D5E67A4B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

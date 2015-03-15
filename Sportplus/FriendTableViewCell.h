@@ -20,7 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img4;
 @property (weak, nonatomic) IBOutlet UIImageView *img5;
 @property (weak, nonatomic) IBOutlet UIImageView *img6;
+@property (weak, nonatomic) IBOutlet UIImageView *img7;
 @property (weak, nonatomic) IBOutlet UIButton *head;
 
+- (void)initSportImgsWithSportsTypeArray:(NSArray *)sportsTypeArray ;
 
 @end

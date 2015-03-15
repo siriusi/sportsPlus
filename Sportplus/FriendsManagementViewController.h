@@ -20,6 +20,7 @@
 @property (nonatomic) NSMutableArray *sportsArray;
 @property (nonatomic) NSMutableArray *clickArray;
 @property (nonatomic) NSMutableArray *sportsArrayWhite;
+@property (nonatomic) NSMutableArray *numberIndexArray;
 
 @property (nonatomic) NSIndexPath *oldCellRow;
 

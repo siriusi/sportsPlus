@@ -26,7 +26,8 @@
     [super viewDidLoad];
     [self.searchFriendTableView setDelegate:self];
     [self.searchFriendTableView setDataSource:self];
-
+    self.searchTextField.delegate = self;
+    
     _dataSourceOfSearchedUser = [[NSMutableArray alloc] init] ;
     
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -36,7 +37,7 @@
     backButton.frame = CGRectMake(0, 0, 9, 18);
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
-    
+    self.searchTextField.returnKeyType = UIReturnKeySearch;
 #warning 并不是这样！
 //    [self doSearch] ;
 }
@@ -129,6 +130,26 @@
 - (IBAction)testAdd:(id)sender {
     [self.searchTextField resignFirstResponder] ;
     [self doSearchWithName:self.searchTextField.text] ;
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [self.searchTextField resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
+    self.searchTextField.clearsOnBeginEditing = YES;
+    [self searchStart];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.searchTextField resignFirstResponder];
+}
+
+-(void)searchStart{
+    NSLog(@"search start!!");
+    [self doSearchWithName:self.searchTextField.text];
+    
 }
 
 

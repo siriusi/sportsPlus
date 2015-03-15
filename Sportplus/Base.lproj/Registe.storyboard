@@ -227,6 +227,7 @@
                     <navigationItem key="navigationItem" title="选择时间" id="11Y-j3-xUU"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="searchBar" destination="u2Z-ra-CDd" id="9ka-db-hTe"/>
                         <outlet property="timeTableView" destination="j5u-cL-w23" id="bUV-4U-4hg"/>
                     </connections>
                 </viewController>

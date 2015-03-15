@@ -14,15 +14,21 @@
 #import "SPUserService.h"
 #import "SPCacheService.h"
 
+#import "pinyin.h"
+#import "ChineseString.h"
+
 @interface FriendsManagementViewController () {
     NSMutableArray *_titleArray;
     NSMutableArray *_dataSourceOfFriend ;
+    NSMutableArray *_sortedArrForArrays ;
     UIRefreshControl *_refreshControl ;
 }
 
 @end
 
 @implementation FriendsManagementViewController
+
+#pragma mark - Data Setting
 
 - (NSMutableArray *)dataSourceOfFriend {
     return _dataSourceOfFriend;
@@ -33,11 +39,66 @@
 }
 
 - (void)initData {
-#warning 卧槽，这个！！！干。。。获取用户开头字母。。
-    _titleArray = [[NSMutableArray alloc] initWithObjects:@"A",@"B",@"C", nil];
-    [self refresh:nil] ;
+    _titleArray = [[NSMutableArray alloc] init];
+    //首先要获取用户的数据
+    self.numberIndexArray = [[NSMutableArray alloc]init];
+    for(int i =0;i<self.numberIndexArray.count;i++){
+        [self.numberIndexArray addObject:[NSNumber numberWithInt:i]];
+    }
+    
+    NSLog(@"%@",self.dataSourceOfFriend);
+    _sortedArrForArrays = [self getChineseStringArr];//这里进行数据排序
+    NSLog(@"排列后的结果是:%@",_sortedArrForArrays);
 }
 
+- (NSMutableArray *)getChineseStringArr {
+    NSMutableArray *chineseStringsArray = [NSMutableArray array];
+    
+    for(NSInteger i = 0; i < [self.dataSourceOfFriend count]; i++) {
+        ChineseString *chineseString = [[ChineseString alloc] init] ;
+        spUser *targetUser = [_dataSourceOfFriend objectAtIndex:i] ;
+        [chineseString initChinseseStringWithSPUser:targetUser] ;
+        
+        
+        [chineseStringsArray addObject:chineseString ];
+        
+    }
+    
+    //sort the ChineseStringArr by pinYin
+    NSArray *sortDescriptors = [NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"pinYin" ascending:YES]];
+    [chineseStringsArray sortUsingDescriptors:sortDescriptors];
+    
+    NSMutableArray *arrayForArrays = [NSMutableArray array];
+    BOOL checkValueAtIndex= NO;  //flag to check
+    NSMutableArray *TempArrForGrouping = nil;
+    for(int index = 0; index < [chineseStringsArray count]; index++)
+    {
+        ChineseString *chineseStr = (ChineseString *)[chineseStringsArray objectAtIndex:index];
+        NSMutableString *strchar= [NSMutableString stringWithString:chineseStr.pinYin];
+        NSString *sr= [strchar substringToIndex:1];
+        NSLog(@"%@",sr);        //sr containing here the first character of each string
+        if(![_titleArray containsObject:[sr uppercaseString]])//here I'm checking whether the character already in the selection header keys or not
+        {
+            [_titleArray addObject:[sr uppercaseString]];
+            TempArrForGrouping = [[NSMutableArray alloc] initWithObjects:nil];
+            checkValueAtIndex = NO;
+        }
+        if([_titleArray containsObject:[sr uppercaseString]])
+        {
+            [TempArrForGrouping addObject:[chineseStringsArray objectAtIndex:index]];
+            if(checkValueAtIndex == NO)
+            {
+                [arrayForArrays addObject:TempArrForGrouping];
+                checkValueAtIndex = YES;
+            }
+        }
+    }
+    
+    return arrayForArrays;
+}
+
+
+#pragma mark - View Setting
 - (void)registeNotificationCenter {
     NSLog(@"注册 <%@> 观察者",SP_FRIEND_UPDATE) ;
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter] ;
@@ -93,6 +154,8 @@
         [self.clickArray addObject:click];
     }
     
+    [self refresh:nil] ;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,20 +175,7 @@
     sectionTitle.numberOfLines = 0;
     sectionTitle.textColor = [UIColor whiteColor];
     sectionTitle.font = [UIFont fontWithName:@"Menlo-Bold" size:12];
-    switch (section) {
-        case 0:
-            sectionTitle.text = [_titleArray objectAtIndex:section];
-            break;
-        case 1:
-            sectionTitle.text =  [_titleArray objectAtIndex:section];
-            break;
-        case 2:
-            sectionTitle.text =  [_titleArray objectAtIndex:section];
-            break;
-        default:
-            break;
-    }
-    
+    sectionTitle.text = [_titleArray objectAtIndex:section];
     UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
     UIImage *sectionImg = [UIImage imageNamed:@"sectionBackground"];
     UIImageView *sectionBackground = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 22)];
@@ -137,7 +187,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [_titleArray count];//返回标题数组中元素的个数来确定分区的个数
+    return [_sortedArrForArrays count];//返回标题数组中元素的个数来确定分区的个数
 }
 
 #pragma mark - UITableViewDataSource
@@ -146,37 +196,18 @@
     
 //    [self dataSourceOfFriend] ;这是数据源,你的这个号有1个好友。
 //你可以注册新号，然后申请，然后换号，测试密码都给123456.这个号账号是18817870386
-    
-    
-#warning 修改数据源！！！dataSource
-    switch (section) {
-            
-        case 0:
-            
-            return  3;
-            
-            break;
-            
-        case 1:
-            
-            return  1;
-            
-            break;
-            
-        case 2:
-            
-            return  3;
-            
-            break;
-        default:
-            
-            return 0;
-            
-            break;
-            
-    }
+    return [[_sortedArrForArrays objectAtIndex:section] count];
     
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [_titleArray objectAtIndex:section];
+}
+
+//- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+//    return _titleArray;
+//}
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *FriendCellIdentifier = @"FriendCellIdentifier";
@@ -185,6 +216,24 @@
         //通过xib的名称加载自定义的cell
         cell = [[[NSBundle mainBundle] loadNibNamed:@"FriendTableViewCell" owner:self options:nil] lastObject];
     }
+    
+    spUser *userForCell = [((ChineseString *)_sortedArrForArrays[indexPath.section][indexPath.row]) myUser] ;
+//    cell.head = 
+    cell.name.text = userForCell.sP_userName;
+    cell.profession.text = userForCell.sP_academy;
+    cell.school.text = userForCell.sP_school;
+    cell.year.text = [NSString stringWithFormat:@
+                      "%@",userForCell.sP_enterScYear] ;
+    NSMutableArray *sportTypeArray = [[NSMutableArray alloc]init];
+    for (id obj in [userForCell sP_sportList]) {
+        //obj is a nsdictionary ;
+        NSDictionary *dic = (NSDictionary *)obj ;
+        // NSArray *array = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
+        [sportTypeArray addObject:
+         dic[@"sportType"]] ;
+    }
+    [cell initSportImgsWithSportsTypeArray:sportTypeArray];
+    
     [cell.head addTarget:self action:@selector(jumpToUserPage:) forControlEvents:UIControlEventTouchUpInside];
     return cell;
     
@@ -349,6 +398,7 @@
             [self setdataSourceOfFriend:[objects mutableCopy]] ;
             [SPCacheService registerUsers:self.dataSourceOfFriend] ;
             [SPCacheService setFriends:objects] ;
+            [self initData];
             [self.friendsTableView reloadData] ;
         };
         if(error && (error.code==kAVErrorCacheMiss || error.code==1)){
