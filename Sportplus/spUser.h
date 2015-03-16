@@ -25,11 +25,13 @@
 @property NSNumber *sP_successCount ;//成功运动次数
 
 @property NSArray *sP_tagList ;//tag列表
-//@property NSArray *SP_picList ;//照片列表
+@property NSArray *sP_photoIdList ;//照片列表
 @property NSArray *sP_sportList ;//运动列表
 
 @property AVFile *sP_avatar ;//头像
 
 - (NSString *)toInfoLabelString ;
+
+- (NSString *)toInfoLabelStringOfEnterSchoolJobAndSex ;
 
 @end

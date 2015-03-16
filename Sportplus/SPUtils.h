@@ -34,6 +34,8 @@ typedef void (^Int64Block)(int64_t num);
 
 +(void)pickImageFromPhotoLibraryAtController:(UIViewController*)controller;
 
++(void)pickImageFromCameraAtController:(UIViewController *)controller ;
+
 +(void)filterError:(NSError*)error callback:(CDBlock)callback;
 +(void)logError:(NSError*)error callback:(CDBlock)callbak;
 

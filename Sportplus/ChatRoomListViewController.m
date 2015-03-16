@@ -17,28 +17,93 @@
 #import "SPUserService.h"
 #import "SVProgressHUD.h"
 
+#import "SPSessionManager.h"
+#import "SPDataBaseService.h"
+
 @interface ChatRoomListViewController () {
-    NSArray *_dataSource ;
-    
     spUser *_testUser ;
+    
+    SPSessionManager *sessionManager ;
+    UIRefreshControl *_refreshControl ;
+    
 }
+
+@property (nonatomic) NSMutableArray *dataSourceOfChatRooms ;
 
 @end
 
 @implementation ChatRoomListViewController
 
+- (void)registeNotification {
+    [sp_notificationCenter removeObserver:self name:NOTIFICATION_MESSAGE_UPDATED object:nil] ;
+    [sp_notificationCenter addObserver:self selector:@selector(refresh) name:NOTIFICATION_MESSAGE_UPDATED object:nil] ;
+}
+
+- (void)dealloc {
+    [sp_notificationCenter removeObserver:self name:NOTIFICATION_MESSAGE_UPDATED object:nil] ;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.dataSource = self ;
-    self.tableView.delegate = self ;
     
-    _dataSource = @[@"1",@"2",@"3"] ;
+    {
+        //tableview init
+        self.tableView.dataSource = self ;
+        self.tableView.delegate = self ;
+        
+        _refreshControl = [[UIRefreshControl alloc] init] ;
+        [_refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged] ;
+        [self.tableView addSubview:_refreshControl] ;
+    }
+    _dataSourceOfChatRooms = [[NSMutableArray alloc] init] ;
+    
+    sessionManager = [SPSessionManager sharedInstance] ;
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self refresh:_refreshControl];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - Notification
+
+- (void)refresh {
+    [self refresh:nil] ;
+}
+
+#pragma mark - IBAction
+
+- (void)refresh:(UIRefreshControl *)refreshView {
+    [SPUtils showNetworkIndicator] ;
+    
+    [SPDataBaseService findConversationsWithCallback:^(NSArray *objects, NSError *error) {
+        //objects 是 chatRoom数组
+        if ( refreshView != nil ) {
+            [SPUtils stopRefreshControl:refreshView] ;
+        }
+        [SPUtils hideNetworkIndicator] ;
+        [SPUtils filterError:error callback:^{
+            _dataSourceOfChatRooms = [objects mutableCopy] ;
+            [self.tableView reloadData] ;
+            
+            int totalUnreadCount=0;
+            for(spChatroom* room in _dataSourceOfChatRooms){
+                totalUnreadCount+=room.unreadCount;
+            }
+            
+            if(totalUnreadCount>0){
+                self.tabBarItem.badgeValue=[NSString stringWithFormat:@"%d",totalUnreadCount];
+            }else{
+                self.tabBarItem.badgeValue=nil;
+            }
+        }] ;
+    }] ;
+}
 
 - (IBAction)backBtnClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES] ;
@@ -47,8 +112,7 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-#warning charRoom ;
-    return [_dataSource count] ;
+    return [_dataSourceOfChatRooms count] ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -112,5 +176,6 @@
         Vc.chatUser = _testUser ;
     }
 }
+
 
 @end

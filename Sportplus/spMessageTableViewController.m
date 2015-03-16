@@ -127,6 +127,14 @@
     [self loadMsgsIsLoadMore:NO];
 }
 
+- (void)dealloc {
+    if(self.type==CDMsgRoomTypeSingle){
+        [_sessionManager unwatchPeerId:self.chatUser.objectId];
+    }else{
+        [SPCacheService setCurrentChatGroup:nil] ;
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -245,6 +253,7 @@
         }];
         return;
     }
+    //通知的消息
     spMsg* msg=(spMsg*)notification.object;
     NSString* otherId=[msg getOtherId];
     if(otherId==nil){
@@ -253,7 +262,7 @@
     if([otherId isEqualToString:[self getOtherId]]){
         BOOL found=NO;
         spMsg* foundMsg;
-        
+        //
         for(spMsg* msgItem in _msgs){
             if([msgItem.objectId isEqualToString:msg.objectId]){
                 found=YES;
@@ -262,10 +271,14 @@
             }
         }
         if(!found){
+            //没找到就loadMsg
             [self loadMsgsIsLoadMore:NO];
         }else{
+            //找到了消息
             if(msg.status==CDMsgStatusSendFailed || msg.status==CDMsgStatusSendReceived
                ||msg.status==CDMsgStatusSendSucceed){
+                //如果消息发送失败||或者消息是发送收到||或者消息是发送成功
+                //
                 foundMsg.status=msg.status;
                 if(msg.type==CDMsgTypeAudio || msg.type==CDMsgTypeImage){
                     if([foundMsg.content isEqualToString:@""]){
@@ -273,14 +286,17 @@
                     }
                 }
                 if(msg.status==CDMsgStatusSendSucceed){
+                    //发送成功
                     //timestamp changed;
                     [self loadMsgsIsLoadMore:NO];
                 }else{
+                    //发送失败或者发送收到
                     NSMutableArray* xhMsgs=[self getXHMessages:_msgs];
                     self.messages=xhMsgs;
                     [self.messageTableView reloadData];
                 }
             }else{
+                //消息状态start很奇怪
                 [SPUtils alert:@"receive msg start and no found msg, it's weird"];
             }
         }
@@ -289,6 +305,8 @@
     }
 }
 
+
+//读取更多的
 -(void)loadMsgsIsLoadMore:(BOOL)isLoadMore{
     if(isLoadingMsg){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1*NSEC_PER_SEC), dispatch_get_main_queue(), ^{
@@ -305,6 +323,7 @@
         [dbQueue inDatabase:^(FMDatabase *db) {
             int64_t maxTimestamp=(((int64_t)[[NSDate date] timeIntervalSince1970])+10)*1000;
             if(isLoadMore==NO){
+                //不读取更多
                 int64_t timestamp=maxTimestamp;
                 int limit;
                 int count=[self.messages count];
@@ -313,8 +332,11 @@
                 }else{
                     limit=ONE_PAGE_SIZE;
                 }
+                
+                //读取
                 msgs=[self getDBMsgsWithTimestamp:timestamp limit:limit isLoadMore:isLoadMore db:db];
             }else{
+                //读取更多
                 int64_t timestamp;
                 if([self.messages count]>0){
                     XHMessage* firstMessage=[self.messages objectAtIndex:0];
@@ -333,7 +355,7 @@
     }];
 }
 
-
+//缓存和加载Msg
 - (void)cacheAndLoadMsgs:(NSMutableArray *)msgs isLoadMore:(BOOL)isLoadMore {
     [SPUtils runInMainQueue:^{
         __block NSMutableSet* userIds=[[NSMutableSet alloc] init];
@@ -372,17 +394,19 @@
     }];
 }
 
+//在DB中获取msg
 -(NSMutableArray*)getDBMsgsWithTimestamp:(int64_t)timestamp limit:(int)limit isLoadMore:(BOOL)isLoadMore db:(FMDatabase*)db{
     NSString* convid=[self getConvid];
     NSMutableArray *msgs=[[SPDataBaseService getMsgsWithConvid:convid maxTimestamp:timestamp limit:limit db:db] mutableCopy];
     return msgs;
 }
 
-
+//获取对话Id
 -(NSString*)getConvid{
     return [SPSessionManager getConvidOfRoomType:self.type otherId:self.chatUser.objectId groupId:self.group.groupId];
 }
 
+//从msg数组获取xhmessage数组
 - (NSMutableArray *)getXHMessages:(NSMutableArray *)msgs {
     NSMutableArray* messages=[[NSMutableArray alloc] init];
     for(spMsg* msg in msgs){

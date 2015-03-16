@@ -9,7 +9,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 
 #import "spCommonDefine.h"
-
+#import "spUser.h"
 
 @interface spEngagement_Stranger : AVObject<AVSubclassing>
 
@@ -17,9 +17,9 @@
 @property AVObject *stadium ;
 @property NSString *newstadium ;
 @property SPORTSTYPE sportType ;
-@property NSInteger status ;
-@property AVUser *fromId ;
-@property AVUser *toId ;
+@property EngagementStatus status ;
+@property spUser *fromId ;
+@property spUser *toId ;
 
 
 + (NSString *)parseClassName;

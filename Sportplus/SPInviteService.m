@@ -45,4 +45,20 @@
     [AVCloud callFunctionInBackground:@"engagementWithStrangers" withParameters:Parameters block:block] ;
 }
 
++(void)findEngagementOfStrangerIsNetWorkOnly:(BOOL)networkOnly ToUser:(spUser *)me WithBlock:(AVArrayResultBlock)block{
+    assert(block) ;
+    if (me == nil) {
+        me = [spUser currentUser] ;
+    }
+    spUser *curUser = [spUser currentUser] ;
+    AVQuery *q = [spEngagement_Stranger query] ;
+    
+    [SPUtils setPolicyOfAVQuery:q isNetwokOnly:networkOnly] ;
+    
+    [q setCachePolicy:kAVCachePolicyNetworkElseCache] ;
+    [q includeKey:@"fromId"] ;
+    [q whereKey:@"toId" equalTo:curUser] ;
+    [q findObjectsInBackgroundWithBlock:block] ;
+}
+
 @end

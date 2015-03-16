@@ -16,12 +16,6 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InviteCellBGDGray" translatesAutoresizingMaskIntoConstraints="NO" id="HdJ-cg-sX2">
                         <rect key="frame" x="0.0" y="36" width="320" height="54"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="米歇尔" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1m-IN-Ts6">
-                        <rect key="frame" x="11" y="8" width="56" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="POIIconGray" translatesAutoresizingMaskIntoConstraints="NO" id="Nrn-WT-tHg">
                         <rect key="frame" x="114" y="8" width="14" height="19"/>
                     </imageView>
@@ -64,6 +58,12 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TestAvaratMixier" translatesAutoresizingMaskIntoConstraints="NO" id="Gd9-89-5ug">
                         <rect key="frame" x="254" y="21" width="47" height="47"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="米歇尔" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1m-IN-Ts6">
+                        <rect key="frame" x="14" y="8" width="59" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
@@ -76,7 +76,7 @@
                 <outlet property="provinceLabel" destination="zEV-l2-88d" id="l0G-Bd-ozd"/>
                 <outlet property="sportItem" destination="Sxr-OI-duk" id="7OP-c6-ePk"/>
             </connections>
-            <point key="canvasLocation" x="86" y="304"/>
+            <point key="canvasLocation" x="86" y="302"/>
         </tableViewCell>
     </objects>
     <resources>

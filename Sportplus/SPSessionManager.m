@@ -88,6 +88,7 @@ static BOOL initialized = NO;
     }];
 }
 
+//取消关注
 -(void)unwatchPeerId:(NSString*)peerId{
     NSLog(@"%s",__PRETTY_FUNCTION__);
     [_session unwatchPeerIds:@[peerId] callback:^(BOOL succeeded, NSError *error) {
@@ -100,6 +101,7 @@ static BOOL initialized = NO;
 
 #pragma mark - conversation
 
+//生成一个Id
 +(NSString*)convidOfSelfId:(NSString*)myId andOtherId:(NSString*)otherId{
     NSArray *arr=@[myId,otherId];
     NSArray *sortedArr=[arr sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
@@ -113,6 +115,7 @@ static BOOL initialized = NO;
     return [SPUtils md5OfString:result];
 }
 
+//如果是单人聊天返回生成的Id ，群组就返回GroupId
 +(NSString*)getConvidOfRoomType:(CDMsgRoomType)roomType otherId:(NSString*)otherId groupId:(NSString*)groupId{
     if(roomType==CDMsgRoomTypeSingle){
         NSString* curUserId=[AVUser currentUser].objectId;

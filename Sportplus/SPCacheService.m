@@ -80,6 +80,7 @@ static NSArray* friends;
     }
 }
 
+//通过Id缓存User
 +(void)cacheUsersWithIds:(NSSet*)userIds callback:(AVArrayResultBlock)callback{
     NSMutableSet* uncachedUserIds=[[NSMutableSet alloc] init];
     for(NSString* userId in userIds){

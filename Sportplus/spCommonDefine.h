@@ -67,9 +67,10 @@ typedef enum {
 }EngagementType;
 
 typedef enum {
-    EngagementStatusDone = -1 , //完成
-    EngagementStatusCreatedByCreaterUser = 0 , //创建还未回应
-    EngagementStatusReceivedUserHasInputInfo = 1 ,//创建，对方用户已经回复信息.
+    EngagementStatusDone = -2 ,//拒绝
+    EngagementStatusRejected = -1 , //完成
+    EngagementStatusCreatedByCreaterUser = 0 , //创建还未回应 0->-2 or 1 ;
+    EngagementStatusReceivedUserHasInputInfo = 1 ,//创建，对方用户已经回复信息. 
     EngagementStatusCreaterUserHasChangedInfo = 2 ,//修改，己方用户修改信息并回复.
 }EngagementStatus ;
 

@@ -38,6 +38,7 @@
 
 - (void)toMain {
     SPSessionManager* man=[SPSessionManager sharedInstance];
+#warning 版本管理
     //    [spup upgradeWithBlock:^(BOOL upgrade, NSString *oldVersion, NSString *newVersion) {
     //        NSLog(@"upgrade =%@ oldVersion=%@ newVersion=%@",upgrade? @"YES":@"NO",oldVersion,newVersion);
     //        if(upgrade && [newVersion isEqualToString:@"1.0.8"]){

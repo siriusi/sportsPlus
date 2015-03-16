@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 - (void)getMessage ;
 
+
+@property (nonatomic, strong) spEngagement_Stranger *currentEngageMent ;
 @property (nonatomic, strong) spUser *chatUser;
 @property (nonatomic) CDMsgRoomType type;
 @property (nonatomic,strong) spChatGroup* chatGroup;

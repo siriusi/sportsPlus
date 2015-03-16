@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1911EB9A1A9779A20044F04F /* SPUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1911EB991A9779A20044F04F /* SPUtils.m */; };
+		1912E6F01AB599F800CC070A /* InviteStrangerInfoTableViewcell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6EE1AB599F800CC070A /* InviteStrangerInfoTableViewcell.m */; };
+		1912E6F11AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1912E6EF1AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib */; };
+		1912E6F51AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6F41AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m */; };
+		1912E6F91AB6AE7500CC070A /* SPUpgradeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */; };
 		1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */; };
 		192670A41A874B0600895308 /* addFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 192670A31A874B0600895308 /* addFriendRequest.m */; };
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
@@ -137,6 +141,13 @@
 		1911EB971A9779550044F04F /* spCommon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spCommon.h; sourceTree = "<group>"; };
 		1911EB981A9779A20044F04F /* SPUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUtils.h; sourceTree = "<group>"; };
 		1911EB991A9779A20044F04F /* SPUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUtils.m; sourceTree = "<group>"; };
+		1912E6ED1AB599F800CC070A /* InviteStrangerInfoTableViewcell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InviteStrangerInfoTableViewcell.h; sourceTree = "<group>"; };
+		1912E6EE1AB599F800CC070A /* InviteStrangerInfoTableViewcell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InviteStrangerInfoTableViewcell.m; sourceTree = "<group>"; };
+		1912E6EF1AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InviteStrangerInfoTableViewcell.xib; sourceTree = "<group>"; };
+		1912E6F31AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sendMyInviteStrangerInfoViewController.h; sourceTree = "<group>"; };
+		1912E6F41AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendMyInviteStrangerInfoViewController.m; sourceTree = "<group>"; };
+		1912E6F71AB6AE7500CC070A /* SPUpgradeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUpgradeService.h; sourceTree = "<group>"; };
+		1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUpgradeService.m; sourceTree = "<group>"; };
 		1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = testIPAD.storyboard; path = Sportplus/testIPAD.storyboard; sourceTree = "<group>"; };
 		192670A21A874B0600895308 /* addFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFriendRequest.h; sourceTree = "<group>"; };
 		192670A31A874B0600895308 /* addFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendRequest.m; sourceTree = "<group>"; };
@@ -381,6 +392,7 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				1912E6F61AB6AE0200CC070A /* 版本管理 */,
 				197DA8661AB464D100F59116 /* DataBaseService */,
 				197DA8571AB43C7400F59116 /* Emotion */,
 				197DA84C1AB213F100F59116 /* InviteService */,
@@ -400,6 +412,24 @@
 				197DA83E1AB15FBE00F59116 /* SPCacheService.m */,
 			);
 			name = service;
+			sourceTree = "<group>";
+		};
+		1912E6F21AB5C0A700CC070A /* 回戳 */ = {
+			isa = PBXGroup;
+			children = (
+				1912E6F31AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.h */,
+				1912E6F41AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m */,
+			);
+			name = "回戳";
+			sourceTree = "<group>";
+		};
+		1912E6F61AB6AE0200CC070A /* 版本管理 */ = {
+			isa = PBXGroup;
+			children = (
+				1912E6F71AB6AE7500CC070A /* SPUpgradeService.h */,
+				1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */,
+			);
+			name = "版本管理";
 			sourceTree = "<group>";
 		};
 		1920A9EE1A8CA9F300D13F86 /* test */ = {
@@ -495,8 +525,12 @@
 		193CEE3C1AA1CECD007A0CF0 /* 陌生人约伴消息 */ = {
 			isa = PBXGroup;
 			children = (
+				1912E6F21AB5C0A700CC070A /* 回戳 */,
 				193CEE3D1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.h */,
 				193CEE3E1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m */,
+				1912E6ED1AB599F800CC070A /* InviteStrangerInfoTableViewcell.h */,
+				1912E6EE1AB599F800CC070A /* InviteStrangerInfoTableViewcell.m */,
+				1912E6EF1AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib */,
 			);
 			name = "陌生人约伴消息";
 			sourceTree = "<group>";
@@ -1042,6 +1076,7 @@
 				19F805961AAED1B700F9071A /* prefererSportTableViewCell.xib in Resources */,
 				F1B88C2E1A45B47C005D601D /* FriendTableViewCell.xib in Resources */,
 				19F805881AADDC7200F9071A /* ChooseSportFriendTableViewCell.xib in Resources */,
+				1912E6F11AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib in Resources */,
 				F10D93061A57C91C006770DE /* SVProgressHUD.bundle in Resources */,
 				19F8059B1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.xib in Resources */,
 				193CEE491AA433F5007A0CF0 /* ChatRoomListTableViewCell.xib in Resources */,
@@ -1110,6 +1145,7 @@
 				197DA84F1AB2140D00F59116 /* SPInviteService.m in Sources */,
 				197DA83F1AB15FBE00F59116 /* SPCacheService.m in Sources */,
 				F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */,
+				1912E6F01AB599F800CC070A /* InviteStrangerInfoTableViewcell.m in Sources */,
 				F178AF471AAC34D1002D3BB8 /* ChangeNameViewController.m in Sources */,
 				F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */,
 				193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */,
@@ -1137,6 +1173,7 @@
 				19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */,
 				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
+				1912E6F91AB6AE7500CC070A /* SPUpgradeService.m in Sources */,
 				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
 				19F805A51AAFCAB200F9071A /* SPCloudSevice.m in Sources */,
 				19F805651AAD42B800F9071A /* ChooseSportTimeViewController.m in Sources */,
@@ -1184,6 +1221,7 @@
 				F1B88C2D1A45B47C005D601D /* FriendTableViewCell.m in Sources */,
 				F1887DB91A32D4810056A568 /* RegisterMainViewController.m in Sources */,
 				193CEE481AA433F5007A0CF0 /* ChatRoomListTableViewCell.m in Sources */,
+				1912E6F51AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1320,7 +1358,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "db05fb74-ff54-41bd-98ff-91a78747f0e0";
+				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1335,7 +1373,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "db05fb74-ff54-41bd-98ff-91a78747f0e0";
+				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

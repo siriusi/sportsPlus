@@ -24,7 +24,7 @@
 
 @dynamic sP_tagList ;
 @dynamic sP_sportList ;
-#warning sP_photoList ;
+@dynamic sP_photoIdList ;
 @dynamic sP_avatar ;
 
 +(NSString *)parseClassName {
@@ -32,11 +32,24 @@
 }
 
 - (NSString *)toInfoLabelString {
+    NSString *info ;
+    
     NSString *sex = [self sP_sex] ;
     NSString *academy = [self sP_academy] ;
-    NSInteger enterSchoolYear = [[self sP_enterScYear] integerValue];
+    NSNumber *enterSchoolYear = [self sP_enterScYear] ;
 
-    NSString *info = [NSString stringWithFormat:@"%@，%@，%ld届",sex,academy,(long)enterSchoolYear] ;
+    info = [NSString stringWithFormat:@"%@，%@，%@届",sex,academy,enterSchoolYear] ;
+    
+    return info ;
+}
+
+- (NSString *)toInfoLabelStringOfEnterSchoolJobAndSex {
+    NSString *info ;
+    
+    NSString *sex = [self sP_sex] ;
+    NSNumber *enterSchoolYear = [self sP_enterScYear] ;
+    
+    info = [NSString stringWithFormat:@"%@级 学生 %@",enterSchoolYear,sex] ;
     
     return info ;
 }

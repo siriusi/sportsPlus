@@ -72,6 +72,7 @@ static AvosCloudNetNetWorkManager *sharedObj = nil ;
 
     [user setSP_friendCount:@0] ;
 
+    [user setSP_sportList:nil] ;
 #warning default head
 //    [user setSP_avatar:nil] ;
     {

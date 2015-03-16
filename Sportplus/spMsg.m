@@ -31,6 +31,7 @@
     return @{OBJECT_ID:objectId,CONTENT:content,TYPE:@(type)};
 }
 
+//转换成dataBase字典对象
 -(NSDictionary*)toDatabaseDict{
     NSMutableDictionary *dict=[[self toMessagePayloadDict] mutableCopy];
     [dict setValue:@(status) forKey:STATUS];

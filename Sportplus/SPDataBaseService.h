@@ -15,6 +15,7 @@
 
 +(void)markHaveReadWithConvid:(NSString*)convid;
 
+//插入msg到数据库中
 +(void)insertMsgToDB:(spMsg*)msg;
 
 +(void)findConversationsWithCallback:(AVArrayResultBlock)callback;

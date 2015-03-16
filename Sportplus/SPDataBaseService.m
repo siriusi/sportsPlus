@@ -23,6 +23,7 @@ static NSString *messagesTableSQL=@"create table if not exists messages (id inte
     [self createTable];
 }
 
+//创建message的表
 +(void)createTable{
     [dbQueue inDatabase:^(FMDatabase *db) {
         if (![db tableExists:@"messages"]) {
@@ -31,6 +32,7 @@ static NSString *messagesTableSQL=@"create table if not exists messages (id inte
     }];
 }
 
+//数据库路径
 + (NSString *)databasePath {
     static NSString *databasePath = nil;
     if (!databasePath) {
@@ -40,6 +42,7 @@ static NSString *messagesTableSQL=@"create table if not exists messages (id inte
     return databasePath;
 }
 
+//upGrade
 +(void)upgradeToAddField{
     NSLog(@"%s",__PRETTY_FUNCTION__);
     [dbQueue inDatabase:^(FMDatabase *db) {
@@ -86,11 +89,15 @@ static NSString *messagesTableSQL=@"create table if not exists messages (id inte
 }
 
 +(void)findConversationsWithCallback:(AVArrayResultBlock)callback{
+    //通过找msg来找room？
     [SPUtils runInGlobalQueue:^{
         [dbQueue inDatabase:^(FMDatabase *db) {
-            AVUser* user=[AVUser currentUser];
+            spUser *user = [spUser currentUser] ;
+            //获取数据库里的
             FMResultSet *rs = [db executeQuery:@"select * from messages where ownerId=? group by convid order by timestamp desc" withArgumentsInArray:@[user.objectId]];
+            //取出来处理好
             NSArray *msgs=[self getMsgsByResultSet:rs];
+            //缓存到内存
             [SPCacheService cacheMsgs:msgs withCallback:^(NSArray *objects, NSError *error) {
                 if(error){
                     [SPUtils runInMainQueue:^{
@@ -142,6 +149,7 @@ static NSString *messagesTableSQL=@"create table if not exists messages (id inte
     }];
 }
 
+//通过Convid去数据库查Msg
 +(NSArray*)getMsgsWithConvid:(NSString*)convid maxTimestamp:(int64_t)timestamp limit:(int)limit db:(FMDatabase*)db{
     NSString* timestampStr=[[NSNumber numberWithLongLong:timestamp] stringValue];
     FMResultSet* rs=[db executeQuery:@"select * from messages where convid=? and timestamp<? order by timestamp desc limit ?" withArgumentsInArray:@[convid,timestampStr,@(limit)]];

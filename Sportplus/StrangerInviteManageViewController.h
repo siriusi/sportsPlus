@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InviteInfoTableViewCell.h"
+#import "InviteStrangerInfoTableViewcell.h"
 
 @interface StrangerInviteManageViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,SWTableViewCellDelegate>
 

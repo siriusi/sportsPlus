@@ -58,6 +58,7 @@
     return output;
 }
 
+// 改变图像的尺寸，方便上传服务器
 + (UIImage *)resizeImage:(UIImage *)image toSize:(CGSize)newSize {
     //UIGraphicsBeginImageContext(newSize);
     // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
@@ -69,7 +70,7 @@
     return newImage;
 }
 
-
+//2.保持原来的长宽比，生成一个缩略图
 +(UIImage *)roundImage:(UIImage *) image toSize:(CGSize)size radius: (float) radius;
 {
     
@@ -99,15 +100,23 @@
     UIImagePickerControllerSourceType srcType=UIImagePickerControllerSourceTypePhotoLibrary;
     NSArray* mediaTypes=[UIImagePickerController availableMediaTypesForSourceType:srcType];
     if([UIImagePickerController isSourceTypeAvailable:srcType] && [mediaTypes count]>0){
-        UIImagePickerController* ctrler=[[UIImagePickerController alloc] init];
-        ctrler.mediaTypes=mediaTypes;
-        ctrler.delegate=(id)controller;
-        ctrler.allowsEditing=YES;
-        ctrler.sourceType=srcType;
-        [controller presentViewController:ctrler animated:YES completion:nil];
+        UIImagePickerController* imagePicker=[[UIImagePickerController alloc] init];
+        imagePicker.mediaTypes=mediaTypes;
+        imagePicker.delegate=(id)controller;
+        imagePicker.allowsEditing=YES;
+        imagePicker.sourceType=srcType;
+        [controller presentViewController:imagePicker animated:YES completion:nil];
     }else{
         [SPUtils alert:@"no image picker available"];
     }
+}
+
++(void)pickImageFromCameraAtController:(UIViewController *)controller {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init] ;
+    imagePicker.delegate = (id)controller ;
+    imagePicker.allowsEditing = YES ;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera ;
+    [controller presentViewController:imagePicker animated:YES completion:nil] ;
 }
 
 +(NSArray*)reverseArray:(NSArray*)originArray{

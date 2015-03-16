@@ -8,6 +8,9 @@
 
 #import "StrangerInviteManageViewController.h"
 #import "spCommon.h"
+#import "SPInviteService.h"
+
+#import "sendMyInviteStrangerInfoViewController.h"
 
 #define BtnSelectedColor RGBCOLOR(0, 0, 0)
 #define BtnNormalColor RGBCOLOR(234, 234, 234)
@@ -21,6 +24,10 @@ typedef enum {
     NSArray *_dataSource ;//spEngagement_Stranger
     
     StrangerNavBtnState _BtnState ;
+    
+    UIRefreshControl *_refreshControl ;
+    
+    NSInteger _choosedEngagementId ;
 }
 
 @end
@@ -48,12 +55,19 @@ typedef enum {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.delegate = self ;
-    self.tableView.dataSource = self ;
-    
+    {
+        self.tableView.delegate = self ;
+        self.tableView.dataSource = self ;
+        
+        //refresh Control
+        UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init] ;
+        [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged] ;
+        _refreshControl = refreshControl ;
+        [self.tableView addSubview:refreshControl] ;
+    }
     [self setBtnState:StrangerNavBtnStateLeftBtnSelected] ;
     
-    _dataSource = @[@"1",@"2",@"3"] ;
+    [self refresh:nil] ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,22 +81,25 @@ typedef enum {
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *cellIdentifier = @"InviteInfoTableViewCellID" ;
+    static NSString *cellIdentifier = @"InviteStrangerInfoTableViewCellID" ;
     
-    InviteInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier] ;
+    InviteStrangerInfoTableViewcell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier] ;
     if (!cell) {
-        cell = [[[NSBundle mainBundle] loadNibNamed:@"InviteInfoTableViewCell" owner:self options:nil] lastObject];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"InviteStrangerInfoTableViewcell" owner:self options:nil] lastObject];
     }
     
     /*config cell*/{
         cell.delegate = self ;
         NSMutableArray *leftUtilityButtons = [NSMutableArray new];
         NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-        [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(56, 204, 90) title:@"接受"] ;
-        [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(248, 45 , 64) title:@"拒绝"] ;
+        [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(56, 204, 90) title:@"回戳"] ;
+        [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(248, 45 , 64) title:@"过"] ;
         cell.leftUtilityButtons = leftUtilityButtons ;
         cell.rightUtilityButtons = rightUtilityButtons ;
         [cell setRightUtilityButtons:rightUtilityButtons WithButtonWidth:70] ;
+        
+        [cell setTag:indexPath.row] ;
+        [cell initWithEngagementStranger:(spEngagement_Stranger *)[_dataSource objectAtIndex:indexPath.row]] ;
     }
     
     return cell ;
@@ -91,7 +108,14 @@ typedef enum {
 #pragma mark - SWTableViewCellDelegate
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index{
-    NSLog(@"index = %ld",(long)index) ;
+    
+    if (index == 0) {
+        //回戳 建立聊天室
+        [self acceptEngagementAtIndex:[cell tag]] ;
+    } else {
+        //过 删除
+        [self rejectEngagementAtIndex:[cell tag]] ;
+    }
 }
 
 #pragma mark - IBAction
@@ -114,17 +138,49 @@ typedef enum {
     //本地获取和网络获取新的。
 }
 
-- (void)accpet {
+- (void)acceptEngagementAtIndex:(NSInteger)index {
     //回戳
+    static NSString *segueId = @"backchuoToSendMyInviteInfoVCSegueId" ;
+    _choosedEngagementId = index ;
+    [self performSegueWithIdentifier:segueId sender:self] ;
 }
 
-- (void)reject {
+- (void)rejectEngagementAtIndex:(NSInteger)index {
     //过
+    
 }
 
 - (void)delete {
     //本地删除记录
     
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    BOOL networkOnly = ( refreshControl != nil ) ;
+    NSLog(@"开始刷新邀约") ;
+    [SPUtils showNetworkIndicator];
+    
+    [SPInviteService findEngagementOfStrangerIsNetWorkOnly:networkOnly ToUser:[spUser currentUser] WithBlock:^(NSArray *objects, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SPUtils stopRefreshControl:_refreshControl] ;
+        if (!error) {
+            NSLog(@"objcets") ;
+            _dataSource = objects ;
+            [self.tableView reloadData] ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+        
+    }] ;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ( [segue.identifier isEqualToString:@"backchuoToSendMyInviteInfoVCSegueId"]  ) {
+        ((sendMyInviteStrangerInfoViewController *)segue.destinationViewController).currentEngagement = [_dataSource objectAtIndex:_choosedEngagementId] ;
+    }
 }
 
 

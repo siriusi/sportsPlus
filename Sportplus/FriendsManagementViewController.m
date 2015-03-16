@@ -363,7 +363,6 @@
     }
     [self.allBtn setImage:[UIImage imageNamed:@"allButton"] forState:UIControlStateNormal];
     
-    
 }
 
 #pragma mark - Other Method
@@ -389,7 +388,6 @@
     BOOL networkOnly= refreshControl!=nil;
     NSLog(@"开始刷新朋友") ;
     [SPUtils showNetworkIndicator];
-#warning 未测试 ;
     
     [SPUserService findFriendsIsNetworkOnly:networkOnly callback:^(NSArray *objects, NSError *error) {
         [SPUtils stopRefreshControl:refreshControl];
@@ -409,6 +407,5 @@
         }
     }];
 }
-
 
 @end
