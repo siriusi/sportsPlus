@@ -165,11 +165,10 @@
     
         /*config cell*/{
             cell.delegate = self ;
-        
-            NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+    
             NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-            [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(127, 127, 127) title:@"卧槽"] ;
-            cell.leftUtilityButtons = leftUtilityButtons ;
+            [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(56, 204, 90) title:@"接受"] ;
+            [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(248, 45 , 64) title:@"修改"] ;
             cell.rightUtilityButtons = rightUtilityButtons  ;
         }
     
@@ -291,9 +290,13 @@
                     [self loadMsgsIsLoadMore:NO];
                 }else{
                     //发送失败或者发送收到
-                    NSMutableArray* xhMsgs=[self getXHMessages:_msgs];
-                    self.messages=xhMsgs;
-                    [self.messageTableView reloadData];
+                    
+                    [self beforeMessageTableViewReloadDataWithXHmessageArray:[self getXHMessages:_msgs] andSPmessageArray:_msgs] ;
+                    
+//                    NSMutableArray* xhMsgs=[self getXHMessages:_msgs];
+//                    self.messages=xhMsgs;
+                    
+//                    [self.messageTableView reloadData];
                 }
             }else{
                 //消息状态start很奇怪
@@ -374,9 +377,7 @@
                     [SPUtils runInMainQueue:^{
                         NSMutableArray *messages= [self getXHMessages:msgs];
                         if(isLoadMore==NO){
-                            self.messages=messages;
-                            _msgs=msgs;
-                            [self.messageTableView reloadData];
+                            [self beforeMessageTableViewReloadDataWithXHmessageArray:messages andSPmessageArray:msgs] ;
                             [self scrollToBottomAnimated:NO];
                             isLoadingMsg=NO;
                         }else{
@@ -510,8 +511,22 @@
 #pragma mark - SWTableViewCellDelegate
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index{
-    
+    if ( index == 0 ) {
+        //接受
+        //发送，一条msg过去。说接受了
+    } else {
+        //修改
+        //跳转，选好，message_update发送一条message过去
+    }
 }
 
+#pragma mark - msg数据处理 
+
+- (void)beforeMessageTableViewReloadDataWithXHmessageArray:(NSMutableArray *)XHmsgs andSPmessageArray:(NSMutableArray *)SPmsgs {
+    self.messages=XHmsgs;
+    _msgs=SPmsgs;
+    [self.messageTableView reloadData];
+    
+}
 
 @end

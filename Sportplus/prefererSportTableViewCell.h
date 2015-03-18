@@ -8,16 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SPsportTypeUtils.h"
+
 @interface prefererSportTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *sportIconBGDImgView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImgView;
+@property (weak, nonatomic) IBOutlet UIImageView *sportIconImgView;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *lv1Btn;
 @property (weak, nonatomic) IBOutlet UIButton *lv2Btn;
 @property (weak, nonatomic) IBOutlet UIButton *lv3Btn;
 
-- (void)initWithsportLevle:(NSInteger)lv sportType:(NSInteger)type ;
+- (void)initWithsportLevle:(NSInteger)lv sportType:(SPORTSTYPE)type ;
 
 @end

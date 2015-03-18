@@ -38,6 +38,9 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="羽毛球白" translatesAutoresizingMaskIntoConstraints="NO" id="F8O-xo-ZTB">
+                        <rect key="frame" x="19" y="0.0" width="44" height="44"/>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.91372549533843994" green="0.91372549533843994" blue="0.91764706373214722" alpha="1" colorSpace="calibratedRGB"/>
                 <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
@@ -49,6 +52,7 @@
                 <outlet property="lv2Btn" destination="0YT-IJ-3Fj" id="6vG-QY-CSj"/>
                 <outlet property="lv3Btn" destination="fea-t5-c2q" id="xZi-fv-icC"/>
                 <outlet property="sportIconBGDImgView" destination="23j-XS-buZ" id="XiK-az-3eE"/>
+                <outlet property="sportIconImgView" destination="F8O-xo-ZTB" id="JOu-ES-Ec5"/>
             </connections>
             <point key="canvasLocation" x="154" y="254"/>
         </tableViewCell>
@@ -59,5 +63,6 @@
         <image name="lv2_normal" width="39" height="30"/>
         <image name="lv3_normal" width="39" height="35"/>
         <image name="prefererCellRectNormal" width="260" height="44"/>
+        <image name="羽毛球白" width="85" height="86"/>
     </resources>
 </document>

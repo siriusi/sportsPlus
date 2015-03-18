@@ -31,6 +31,7 @@ typedef enum : NSUInteger{
     CDMsgTypeImage=1,
     CDMsgTypeAudio=2,
     CDMsgTypeLocation=3,
+    CDMsgTypeWithEngagement = 4 ,
 }CDMsgType;
 
 typedef enum : NSUInteger{

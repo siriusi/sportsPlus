@@ -9,20 +9,24 @@
 #import "FriendTableViewCell.h"
 #import "spCommon.h"
 
-@interface getSportImgUtils : NSObject
+#import "SPsportTypeUtils.h"
 
-+ (UIImage *)getImageWithSportType:(SPORTSTYPE)type ;
-
-@end
-
-@implementation getSportImgUtils
-
-+ (UIImage *)getImageWithSportType:(SPORTSTYPE)type {
-    NSArray *sportImgNameList = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
-    return [UIImage imageNamed:sportImgNameList[type]] ;
-}
-
-@end
+#warning 未测试修改
+//
+//@interface getSportImgUtils : NSObject
+//
+//+ (UIImage *)getImageWithSportType:(SPORTSTYPE)type ;
+//
+//@end
+//
+//@implementation getSportImgUtils
+//
+//+ (UIImage *)getImageWithSportType:(SPORTSTYPE)type {
+//    NSArray *sportImgNameList = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
+//    return [UIImage imageNamed:sportImgNameList[type]] ;
+//}
+//
+//@end
 
 
 @implementation FriendTableViewCell
@@ -42,8 +46,7 @@
     
     for(NSInteger i=0;i<sportsTypeArray.count;i++){
         
-        UIImage *img =
-        [getSportImgUtils getImageWithSportType:(SPORTSTYPE)[sportsTypeArray[i] integerValue]] ;
+        UIImage *img = [SPsportTypeUtils getSportImgAtFriendCellWithSportType:(SPORTSTYPE)[sportsTypeArray[i] integerValue]] ;
         [((UIImageView *)imgViews[i]) setImage:img];
         [((UIImageView *)imgViews[i]) setHidden:NO];
         

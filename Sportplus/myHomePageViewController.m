@@ -261,9 +261,9 @@ typedef enum {
             NSInteger index = row / 2 ;
             
             NSDictionary *dic = [_dataSourceOfPrefereSport objectAtIndex:index] ;
-            NSInteger sportLevel = [[dic objectForKey:@"sportLevle"] integerValue] ;
-            NSInteger sportType = [[dic objectForKey:@"sportType"] integerValue];
-            
+            NSInteger sportLevel = [[dic objectForKey:@"sportLevel"] integerValue] ;
+            SPORTSTYPE sportType = (SPORTSTYPE)[[dic objectForKey:@"sportType"] integerValue];
+            [((prefererSportTableViewCell *)cell) initWithsportLevle:sportLevel sportType:sportType] ;
         }
         
     } else {
@@ -278,6 +278,10 @@ typedef enum {
 }
 
 #pragma mark -UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"selected") ;
+}
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIView *footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 40)];

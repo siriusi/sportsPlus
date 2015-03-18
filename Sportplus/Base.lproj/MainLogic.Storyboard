@@ -181,26 +181,61 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HWz-F1-tiG">
-                                <rect key="frame" x="128" y="227" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HWz-F1-tiG" userLabel="toInviteFriendBtn">
+                                <rect key="frame" x="109" y="52" width="103" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="好友约伴">
+                                <state key="normal" image="toInviteFriendField">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="toInviteFriendViewController:" destination="Vns-yD-Lbp" eventType="touchUpInside" id="3se-pV-Rjy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Xy-2p-gdq">
-                                <rect key="frame" x="115" y="336" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8Xy-2p-gdq" userLabel="toInviteStrangerBtn">
+                                <rect key="frame" x="109" y="366" width="103" height="103"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="陌生人约伴">
+                                <state key="normal" image="toInviteStrangerField">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="toInviteStrangerViewController:" destination="Vns-yD-Lbp" eventType="touchUpInside" id="Stu-yz-WMy"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarCycle3" id="ZLB-1y-N0o">
+                                <rect key="frame" x="107" y="212" width="106" height="106"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TestAvaratMixier" id="VZF-yA-kq9">
+                                <rect key="frame" x="122" y="224" width="77" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="iot-fn-KhM" appends="YES" id="yyv-zI-Xvh"/>
+                                </connections>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_up" id="19n-b1-eD0" userLabel="triangle_up1">
+                                <rect key="frame" x="155" y="162" width="9" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_up" id="Fqw-AQ-gj9" userLabel="triangle_up2">
+                                <rect key="frame" x="155" y="182" width="9" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_up" id="LYy-dC-G0S" userLabel="triangle_up3">
+                                <rect key="frame" x="155" y="202" width="9" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_down" id="GQt-dw-sFM" userLabel="triangle_down1">
+                                <rect key="frame" x="155" y="355" width="9" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_down" id="Ipg-aF-Q5a" userLabel="triangle_down2">
+                                <rect key="frame" x="155" y="335" width="9" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle_down" id="FFY-a1-3LD" userLabel="triangle_down3">
+                                <rect key="frame" x="155" y="315" width="9" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -209,11 +244,20 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="InviteFriendBtn" destination="HWz-F1-tiG" id="USs-uo-Bkj"/>
+                        <outlet property="InviteStrangerBtn" destination="8Xy-2p-gdq" id="caw-y0-cf6"/>
+                        <outlet property="avatarCycleImgView" destination="ZLB-1y-N0o" id="8lZ-cb-MaR"/>
+                        <outlet property="avatarImgView" destination="VZF-yA-kq9" id="LRm-NM-raA"/>
                         <segue destination="fjQ-nx-gNc" kind="push" identifier="chooseToFriendSegueID" id="DaI-6d-3FD"/>
                         <segue destination="TeD-x8-7tx" kind="push" identifier="chooseToStrangerSegueID" id="pW4-aa-r1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Mc-qJ-Kdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="iot-fn-KhM">
+                    <connections>
+                        <action selector="handlePanGesture:" destination="Vns-yD-Lbp" id="ojM-j2-E4y"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="110" y="-69"/>
         </scene>
@@ -1104,7 +1148,7 @@
             <objects>
                 <viewController id="Z9O-4c-arc" customClass="ChooseSportItemViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EFS-zT-KfW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="EIf-5r-abt" userLabel="羽毛球">
@@ -1852,9 +1896,11 @@
         <image name="SearchBackground" width="356" height="630"/>
         <image name="SearchBar" width="1334" height="155"/>
         <image name="TagSelected" width="78" height="32"/>
+        <image name="TestAvaratMixier" width="47" height="46"/>
         <image name="addFriends" width="47" height="42"/>
         <image name="addIcon" width="21" height="21"/>
         <image name="allButtonClicked" width="160" height="102"/>
+        <image name="avatarCycle3" width="105" height="105"/>
         <image name="back" width="10" height="19"/>
         <image name="badminton" width="110" height="109"/>
         <image name="basketball" width="110" height="109"/>
@@ -1875,6 +1921,10 @@
         <image name="subMitBtn" width="552" height="88"/>
         <image name="tennise" width="111" height="110"/>
         <image name="testPhotoBig" width="321" height="320"/>
+        <image name="toInviteFriendField" width="103" height="103"/>
+        <image name="toInviteStrangerField" width="103" height="103"/>
+        <image name="triangle_down" width="8" height="7"/>
+        <image name="triangle_up" width="8" height="7"/>
         <image name="upBGD" width="320" height="246"/>
         <image name="whiteLine" width="1" height="141"/>
     </resources>
@@ -1885,6 +1935,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="YDq-cc-wwh"/>
-        <segue reference="Ww7-zx-kX5"/>
+        <segue reference="nAQ-rk-rNl"/>
     </inferredMetricsTieBreakers>
 </document>

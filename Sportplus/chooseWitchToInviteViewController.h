@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface chooseWitchToInviteViewController : UIViewController
+@interface chooseWitchToInviteViewController : UIViewController<UIGestureRecognizerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *InviteFriendBtn;
+@property (weak, nonatomic) IBOutlet UIButton *InviteStrangerBtn;
+
+
+@property (weak, nonatomic) IBOutlet UIImageView *avatarImgView;
 
 @end

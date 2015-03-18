@@ -79,6 +79,7 @@ static BOOL initialized = NO;
 
 #pragma mark - single chat
 
+//关注
 - (void)watchPeerId:(NSString *)peerId {
     NSLog(@"unwatch");
     [_session watchPeerIds:@[peerId] callback:^(BOOL succeeded, NSError *error) {
@@ -252,6 +253,7 @@ static BOOL initialized = NO;
     }
 }
 
+//发送消息
 - (void)sendMessageWithObjectId:(NSString*)objectId content:(NSString *)content type:(CDMsgType)type toPeerId:(NSString *)toPeerId group:(AVGroup*)group{
     spMsg *msg = [self createMsgWithType:type objectId:objectId content:content toPeerId:toPeerId group:group] ;
     [SPDataBaseService insertMsgToDB:msg] ;

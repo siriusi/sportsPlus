@@ -12,6 +12,7 @@
 		1912E6F11AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1912E6EF1AB599F800CC070A /* InviteStrangerInfoTableViewcell.xib */; };
 		1912E6F51AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6F41AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m */; };
 		1912E6F91AB6AE7500CC070A /* SPUpgradeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */; };
+		1912E6FD1AB8165000CC070A /* SPsportTypeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6FC1AB8165000CC070A /* SPsportTypeUtils.m */; };
 		1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */; };
 		192670A41A874B0600895308 /* addFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 192670A31A874B0600895308 /* addFriendRequest.m */; };
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
@@ -148,6 +149,8 @@
 		1912E6F41AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sendMyInviteStrangerInfoViewController.m; sourceTree = "<group>"; };
 		1912E6F71AB6AE7500CC070A /* SPUpgradeService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPUpgradeService.h; sourceTree = "<group>"; };
 		1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUpgradeService.m; sourceTree = "<group>"; };
+		1912E6FB1AB8165000CC070A /* SPsportTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPsportTypeUtils.h; sourceTree = "<group>"; };
+		1912E6FC1AB8165000CC070A /* SPsportTypeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPsportTypeUtils.m; sourceTree = "<group>"; };
 		1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = testIPAD.storyboard; path = Sportplus/testIPAD.storyboard; sourceTree = "<group>"; };
 		192670A21A874B0600895308 /* addFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFriendRequest.h; sourceTree = "<group>"; };
 		192670A31A874B0600895308 /* addFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendRequest.m; sourceTree = "<group>"; };
@@ -392,6 +395,8 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				1912E6FE1AB8429900CC070A /* 会话管理工具 */,
+				1912E6FA1AB8161100CC070A /* 运动类型映射工具 */,
 				1912E6F61AB6AE0200CC070A /* 版本管理 */,
 				197DA8661AB464D100F59116 /* DataBaseService */,
 				197DA8571AB43C7400F59116 /* Emotion */,
@@ -406,8 +411,6 @@
 				19F805A41AAFCAB200F9071A /* SPCloudSevice.m */,
 				19F805A61AAFD21B00F9071A /* SPGroupService.h */,
 				19F805A71AAFD21B00F9071A /* SPGroupService.m */,
-				19F805AC1AAFDB4B00F9071A /* SPSessionManager.h */,
-				19F805AD1AAFDB4B00F9071A /* SPSessionManager.m */,
 				197DA83D1AB15FBE00F59116 /* SPCacheService.h */,
 				197DA83E1AB15FBE00F59116 /* SPCacheService.m */,
 			);
@@ -430,6 +433,24 @@
 				1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */,
 			);
 			name = "版本管理";
+			sourceTree = "<group>";
+		};
+		1912E6FA1AB8161100CC070A /* 运动类型映射工具 */ = {
+			isa = PBXGroup;
+			children = (
+				1912E6FB1AB8165000CC070A /* SPsportTypeUtils.h */,
+				1912E6FC1AB8165000CC070A /* SPsportTypeUtils.m */,
+			);
+			name = "运动类型映射工具";
+			sourceTree = "<group>";
+		};
+		1912E6FE1AB8429900CC070A /* 会话管理工具 */ = {
+			isa = PBXGroup;
+			children = (
+				19F805AC1AAFDB4B00F9071A /* SPSessionManager.h */,
+				19F805AD1AAFDB4B00F9071A /* SPSessionManager.m */,
+			);
+			name = "会话管理工具";
 			sourceTree = "<group>";
 		};
 		1920A9EE1A8CA9F300D13F86 /* test */ = {
@@ -1166,6 +1187,7 @@
 				197DA8561AB43AA400F59116 /* spMsg.m in Sources */,
 				78CA8AE71A4C0649000C9AEA /* AvosCloudNetNetWorkManager.m in Sources */,
 				198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */,
+				1912E6FD1AB8165000CC070A /* SPsportTypeUtils.m in Sources */,
 				19F805871AADDC7100F9071A /* ChooseSportFriendTableViewCell.m in Sources */,
 				19F805951AAED1B700F9071A /* prefererSportTableViewCell.m in Sources */,
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
