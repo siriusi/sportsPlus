@@ -1231,6 +1231,7 @@ static CGPoint  delayOffset = {0.0};
     id <XHMessageModel> message = [self.dataSource messageForRowAtIndexPath:indexPath];
     
     BOOL displayTimestamp = YES;
+    
     if ([self.delegate respondsToSelector:@selector(shouldDisplayTimestampForRowAtIndexPath:)]) {
         displayTimestamp = [self.delegate shouldDisplayTimestampForRowAtIndexPath:indexPath];
     }

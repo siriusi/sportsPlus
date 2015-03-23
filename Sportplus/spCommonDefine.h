@@ -52,6 +52,7 @@
 #define sp_notificationCenter [NSNotificationCenter defaultCenter]
 
 typedef enum {
+    SPORTSTYPE_none = 0 ,
     SPORTSTYPE_pingpong = 1 ,
     SPORTSTYPE_tennise ,
     SPORTSTYPE_soccer ,

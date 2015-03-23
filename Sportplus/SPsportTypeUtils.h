@@ -12,6 +12,8 @@
 
 @interface SPsportTypeUtils : NSObject
 
++ (NSString *)getSPortNameBySportType:(SPORTSTYPE)type ;
+
 + (UIImage *)getSportImgAtFriendCellWithSportType:(SPORTSTYPE)type ;
 
 + (UIImage *)getSportImgAtMainPageWithSportType:(SPORTSTYPE)type Selected:(BOOL)selected ;

@@ -8,6 +8,8 @@
 
 #import "sendMyInviteStrangerInfoViewController.h"
 #import "ChoosePlaceTableViewCell.h"
+#import "spMsg.h"
+#import "SPSessionManager.h"
 
 @interface sendMyInviteStrangerInfoViewController () {
 //    AVObject *_choosedStadium ;
@@ -53,8 +55,6 @@
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ChoosePlaceTableViewCell" owner:self options:nil] lastObject];
     }
     
-    
-    
     return cell ;
 }
 
@@ -73,8 +73,47 @@
 }
 
 - (IBAction)ensureBtnClicked:(id)sender {
+    //设置Engagement
+    //发送msg过去
     //建立聊天室并发送。
+//    _currentEngagement
+    {
+        NSDate *date = [self.datePicker date] ;
+        [_currentEngagement setWhen:date] ;
+        
+#warning Stadium为空 ;
+        [_currentEngagement setStadium:nil] ;
+        
+        EngagementStatus Status = [_currentEngagement status] ;
+        
+        if (Status == EngagementStatusCreatedByCreaterUser) {
+            //接受
+            [_currentEngagement setStatus:EngagementStatusReceivedUserHasInputInfo] ;
+        } else
+            if (Status == EngagementStatusReceivedUserHasInputInfo) {
+                //修改
+                [_currentEngagement setStatus:EngagementStatusCreaterUserHasChangedInfo] ;
+            } else
+                if (Status == EngagementStatusCreaterUserHasChangedInfo) {
+                    //再次修改
+                    [_currentEngagement setStatus:EngagementStatusReceivedUserHasInputInfo] ;
+                }
+    }
     
+#warning 通知所有VC修改currentEngagement
+    [SPUtils showNetworkIndicator] ;
+    [_currentEngagement saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        
+        if (!error) {
+            //send Msg ;
+#warning ！！！！！！！！！！！！！send Msg ;
+            [[SPSessionManager sharedInstance] sendMessageWithObjectId:nil content:[_currentEngagement objectId] type:CDMsgTypeWithEngagement toPeerId:[_currentEngagement getOtherId] group:nil] ;
+            [self.navigationController popViewControllerAnimated:YES] ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
     
 }
 
@@ -83,6 +122,7 @@
 - (void)phraseStadium:(NSNotification *)sender {
 #warning bug!!数据无法对应
 //    [self.tableView reloadData] ;
+    
 }
 
 @end

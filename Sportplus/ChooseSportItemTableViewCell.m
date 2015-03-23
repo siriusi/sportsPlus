@@ -7,6 +7,7 @@
 //
 
 #import "ChooseSportItemTableViewCell.h"
+#import "SPsportTypeUtils.h"
 
 @implementation ChooseSportItemTableViewCell
 
@@ -15,7 +16,11 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
+- (void)initWithSportType:(SPORTSTYPE)type {
+    [self.SportsNameLabel setText:[SPsportTypeUtils getSPortNameBySportType:type]] ;
+    [self.SportsIMGView setImage:[SPsportTypeUtils getSportImgAtFriendCellWithSportType:type]] ;
 }
 
 @end

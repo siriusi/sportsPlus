@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "spCommon.h"
 
 @interface ChooseSportItemTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *SportsIMGView;
 @property (weak, nonatomic) IBOutlet UILabel *SportsNameLabel;
+
+- (void)initWithSportType:(SPORTSTYPE)type ;
 
 @end

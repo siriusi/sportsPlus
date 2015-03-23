@@ -17,7 +17,6 @@
 @interface spMessageTableViewController : XHMessageTableViewController<XHMessageTableViewControllerDataSource,XHMessageTableViewControllerDelegate,SWTableViewCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (void)getMessage ;
 
 
 @property (nonatomic, strong) spEngagement_Stranger *currentEngageMent ;

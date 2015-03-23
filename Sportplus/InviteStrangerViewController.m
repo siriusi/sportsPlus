@@ -71,7 +71,7 @@ typedef enum {
     
     _typeToSportName = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
     
-    _chooseSportType = -1 ;
+    _chooseSportType = 0 ;
     _choosedSportName = @"" ;
     
 }
@@ -94,7 +94,7 @@ typedef enum {
     
     NSInteger index = [(NSNumber *)[((NSArray *)[sender object]) firstObject] integerValue]  ;
     _chooseSportType = (SPORTSTYPE)index;
-    _choosedSportName = [_typeToSportName objectAtIndex:index] ;
+//    _choosedSportName = [_typeToSportName objectAtIndex:index] ;
     [self.tableView reloadData] ;
 }
 
@@ -111,8 +111,8 @@ typedef enum {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportItemTableViewCell" owner:self options:nil] lastObject];
     }
     
-    [((ChooseSportItemTableViewCell *)cell).SportsNameLabel setText:_choosedSportName] ;
-    
+    [((ChooseSportItemTableViewCell *)cell) initWithSportType:_chooseSportType] ;
+
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator ;//箭头 ;
     
     return cell ;
@@ -183,6 +183,5 @@ typedef enum {
         _findedUserIds = nil ;
     }
 }
-
 
 @end

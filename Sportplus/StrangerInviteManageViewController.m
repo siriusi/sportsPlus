@@ -177,7 +177,7 @@ typedef enum {
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    
+    //耦合_choosedEngagementId
     if ( [segue.identifier isEqualToString:@"backchuoToSendMyInviteInfoVCSegueId"]  ) {
         ((sendMyInviteStrangerInfoViewController *)segue.destinationViewController).currentEngagement = [_dataSource objectAtIndex:_choosedEngagementId] ;
     }

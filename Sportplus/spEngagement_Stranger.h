@@ -24,4 +24,6 @@
 
 + (NSString *)parseClassName;
 
+- (NSString *)getOtherId ;
+
 @end

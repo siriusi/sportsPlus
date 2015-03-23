@@ -13,7 +13,6 @@
 #import "SPCloudSevice.h"
 #import <Qiniu/QiniuSDK.h>
 
-
 @interface SPSessionManager () {
     AVSession *_session ;
     QNUploadManager *upManager;    
@@ -41,6 +40,7 @@ static BOOL initialized = NO;
 }
 
 - (id)copyWithZone:(NSZone *)zone {
+    
     return self;
 }
 
@@ -129,6 +129,7 @@ static BOOL initialized = NO;
 #pragma mark - send message
 
 -(spMsg*)createMsgWithType:(CDMsgType)type objectId:(NSString*)objectId content:(NSString*)content toPeerId:(NSString*)toPeerId group:(AVGroup*)group{
+    
     spMsg* msg=[[spMsg alloc] init];
     msg.toPeerId=toPeerId;
     int64_t currentTime=[[NSDate date] timeIntervalSince1970]*1000;

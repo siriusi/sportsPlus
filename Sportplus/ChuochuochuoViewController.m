@@ -101,8 +101,7 @@
     [SVProgressHUD show] ;
     
     {
-        //test
-        stranger = [spUser objectWithoutDataWithObjectId:@"55007a48e4b00aa930033f72"] ;
+#warning test代码
         _sportType = SPORTSTYPE_badminton ;
     }
         

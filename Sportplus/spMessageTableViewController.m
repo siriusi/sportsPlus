@@ -13,7 +13,9 @@
 #import "spEmotionUtilis.h"
 #import "SPCacheService.h"
 #import "SPDataBaseService.h"
+#import "systemInfoTableViewCell.h"
 
+#import "SVProgressHUD.h"
 #import <FMDB/FMDB.h>
 #import <MessageDisplayKit/XHMessage.h>
 
@@ -152,7 +154,27 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (tableView.tag == 1 ) {
-        return [super tableView:tableView cellForRowAtIndexPath:indexPath] ;
+        spMsg *msg = [_msgs objectAtIndex:indexPath.row] ;
+        if (msg.type != CDMsgTypeWithEngagement) {
+            return [super tableView:tableView cellForRowAtIndexPath:indexPath] ;
+        } else {
+            static NSString *cellIdentifier = @"systemInfoTableViewCellId";
+            
+            systemInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier] ;
+            
+            if (!cell) {
+#warning mark - 修改接口,无用参数info
+                cell = [[systemInfoTableViewCell alloc] initWithInfo:@"test" reuserIdentifier:cellIdentifier] ;
+            }
+            
+            NSString *message = @"A向B发起邀请" ;
+            
+            [cell configureCellWithInfo:message] ;
+            [cell setBackgroundColor:tableView.backgroundColor] ;
+            
+            return cell ;
+        }
+    
     } else {
         
         static NSString *cellID = @"InviteInfoTableViewCellID" ;
@@ -169,7 +191,7 @@
             NSMutableArray *rightUtilityButtons = [NSMutableArray new];
             [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(56, 204, 90) title:@"接受"] ;
             [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(248, 45 , 64) title:@"修改"] ;
-            cell.rightUtilityButtons = rightUtilityButtons  ;
+            [cell setRightUtilityButtons:rightUtilityButtons WithButtonWidth:70] ;
         }
     
         return cell ;
@@ -182,7 +204,14 @@
     NSInteger tag = tableView.tag ;
     
     if ( tag == 1) {
-        return [super tableView:tableView heightForRowAtIndexPath:indexPath] ;
+        
+        spMsg *msg = [_msgs objectAtIndex:indexPath.row] ;
+        if (msg.type != CDMsgTypeWithEngagement) {
+            return [super tableView:tableView heightForRowAtIndexPath:indexPath] ;
+        } else {
+#warning 无用参数
+            return [systemInfoTableViewCell calculateCellHeightWithInfo:@"喔了个大槽"] ;
+        }
     } else {
         return 90 ;
     }
@@ -224,9 +253,44 @@
     }
 }
 
-- (void)getMessage {
-    _VcMessage = @"张睿" ;
+/**
+ *  是否显示时间轴Label的回调方法
+ *
+ *  @param indexPath 目标消息的位置IndexPath
+ *
+ *  @return 根据indexPath获取消息的Model的对象，从而判断返回YES or NO来控制是否显示时间轴Label
+ */
+- (BOOL)shouldDisplayTimestampForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(indexPath.row==0){
+        return YES;
+    }else{
+        XHMessage* msg=[self.messages objectAtIndex:indexPath.row];
+        XHMessage* lastMsg=[self.messages objectAtIndex:indexPath.row-1];
+        int interval=[msg.timestamp timeIntervalSinceDate:lastMsg.timestamp];
+        if(interval>60*3){
+            return YES;
+        }else{
+            return NO;
+        }
+    }
 }
+/**
+ *  配置Cell的样式或者字体
+ *
+ *  @param cell      目标Cell
+ *  @param indexPath 目标Cell所在位置IndexPath
+ */
+- (void)configureCell:(XHMessageTableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath{
+    XHMessage *message = [self.messages objectAtIndex:indexPath.row] ;
+    spMsg *msg = [_msgs objectAtIndex:indexPath.row] ;
+    
+    if (msg.type == CDMsgTypeWithEngagement) {
+        NSString *info = [NSString stringWithFormat:@"%@给%@发送一条约伴消息",[[spUser currentUser] sP_userName],[self.chatUser sP_userName]] ;
+        [cell.timestampLabel setHeightMode:LKBadgeViewHeightModeLarge] ;
+        cell.timestampLabel.text = info ;
+    }
+}
+
 
 #pragma mark -IBAction
 
@@ -413,6 +477,7 @@
     for(spMsg* msg in msgs){
         [messages addObject:[self getXHMessageByMsg:msg]];
     }
+    [self getCurrentEngagementFromServices] ;
     return messages;
 }
 
@@ -453,6 +518,9 @@
         xhMessage=[[XHMessage alloc] initWithLocalPositionPhoto:[UIImage imageNamed:@"Fav_Cell_Loc"] geolocations:[parts objectAtIndex:0] location:[[CLLocation alloc] initWithLatitude:latitude longitude:longitude] sender:fromUser.username timestamp:[msg getTimestampDate]];
     }else if(msg.type==CDMsgTypeImage){
         xhMessage=[[XHMessage alloc] initWithPhoto:[self getImageByMsg:msg] thumbnailUrl:nil originPhotoUrl:nil sender:fromUser.username timestamp:[msg getTimestampDate]];
+    }else if(msg.type==CDMsgTypeWithEngagement){
+        xhMessage = [[XHMessage alloc] initWithText:@"这个不显示！" sender:fromUser.username timestamp:[msg getTimestampDate]] ;
+        _currentEngageMent = [spEngagement_Stranger objectWithoutDataWithObjectId:msg.content] ;
     }
     xhMessage.avatar = [_loadedData objectForKey:msg.fromPeerId] ;
     xhMessage.avatarUrl = nil ;
@@ -510,11 +578,35 @@
 
 #pragma mark - SWTableViewCellDelegate
 
+- (void)acceptStrangerEngagement {
+    void (^sendMsgBlock) () = ^() {
+        NSLog(@"开发发送") ;
+        [[SPSessionManager sharedInstance] sendMessageWithObjectId:nil content:_currentEngageMent.objectId type:CDMsgTypeWithEngagement toPeerId:_chatUser.objectId group:nil] ;
+    } ;
+    
+    _currentEngageMent.status = EngagementStatusDone ;
+    [SPUtils showNetworkIndicator] ;
+    [SVProgressHUD show] ;
+    [_currentEngageMent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SVProgressHUD dismiss] ;
+        if (succeeded) {
+            NSLog(@"保存成功") ;
+            sendMsgBlock() ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
+    
+}
+
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index{
     if ( index == 0 ) {
+        [self acceptStrangerEngagement] ;
         //接受
         //发送，一条msg过去。说接受了
     } else {
+        [self performSegueWithIdentifier:@"chatRoomToSendMyInviteInfoVCSegueId" sender:self] ;
         //修改
         //跳转，选好，message_update发送一条message过去
     }
@@ -527,6 +619,19 @@
     _msgs=SPmsgs;
     [self.messageTableView reloadData];
     
+}
+
+- (void)getCurrentEngagementFromServices {
+#warning 最好食把数据丢进msg的content里，转化出来。以上。不然会请求两次。
+    [SPUtils showNetworkIndicator] ;
+    [_currentEngageMent fetchIfNeededInBackgroundWithBlock:^(AVObject *object, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        if (!error) {
+            _currentEngageMent = (spEngagement_Stranger *)object ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
 }
 
 @end

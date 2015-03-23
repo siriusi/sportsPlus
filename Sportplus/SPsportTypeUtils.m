@@ -10,6 +10,11 @@
 
 @implementation SPsportTypeUtils
 
++ (NSString *)getSPortNameBySportType:(SPORTSTYPE)type {
+    NSArray *sportImgNameList = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
+    return sportImgNameList[type] ;
+}
+
 + (UIImage *)getSportImgAtFriendCellWithSportType:(SPORTSTYPE)type {
     NSArray *sportImgNameList = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
     return [UIImage imageNamed:sportImgNameList[type]] ;

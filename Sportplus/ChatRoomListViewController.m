@@ -140,23 +140,21 @@
     NSLog(@"%ld",(long)indexPath.row) ;
     static NSString *segueID = @"chatRoomList2chatRoom" ;
     
-#warning test
-    //张睿  550071bee4b00aa930031b8b
-    //张睿2 5500766be4b00aa930032fd0
-    
-    
+    spChatroom *chatRoom = [_dataSourceOfChatRooms objectAtIndex:indexPath.row] ;
+    _testUser = (spUser *)chatRoom.chatUser ;
+
     if ( _testUser ) {
         [self performSegueWithIdentifier:segueID sender:self] ;
         return ;
     };
     
-    [SPUtils showNetworkIndicator] ;
-    [SPUserService findUsersByIds:@[@"5500766be4b00aa930032fd0"] callback:^(NSArray *objects, NSError *error) {
-        [SPUtils hideNetworkIndicator] ;
-        
-        _testUser = [objects lastObject] ;
-        [self performSegueWithIdentifier:segueID sender:self] ;
-    }] ;
+//    [SPUtils showNetworkIndicator] ;
+//    [SPUserService findUsersByIds:@[@"5500766be4b00aa930032fd0"] callback:^(NSArray *objects, NSError *error) {
+//        [SPUtils hideNetworkIndicator] ;
+//        
+//        _testUser = [objects lastObject] ;
+//        [self performSegueWithIdentifier:segueID sender:self] ;
+//    }] ;
     
 //    [self performSegueWithIdentifier:segueID sender:self] ;
 }
@@ -172,7 +170,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ( [segue.identifier isEqualToString: @"chatRoomList2chatRoom"] ) {
         spMessageTableViewController *Vc = (spMessageTableViewController *)segue.destinationViewController ;
-        [Vc getMessage] ;
         Vc.chatUser = _testUser ;
     }
 }

@@ -55,7 +55,6 @@
 - (void)toRegiste {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Registe" bundle:nil] ;
     self.window.rootViewController = [sb instantiateInitialViewController] ;
-//    self.window.rootViewController 
 }
 
 - (void)toLogin {

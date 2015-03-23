@@ -52,6 +52,7 @@
 		198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B11A9DABEC0098F93D /* spNotificationCenterViewController.m */; };
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
+		19CF5E391AC0987800BF3094 /* systemInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CF5E381AC0987800BF3094 /* systemInfoTableViewCell.m */; };
 		19F805651AAD42B800F9071A /* ChooseSportTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */; };
 		19F805691AAD45A500F9071A /* ChooseSportSpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805681AAD45A500F9071A /* ChooseSportSpaceViewController.m */; };
 		19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F8056C1AAD495E00F9071A /* chooseSportFriendViewController.m */; };
@@ -224,6 +225,8 @@
 		198520B31A9DAF7B0098F93D /* spNotificationCenterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spNotificationCenterTableViewCell.h; sourceTree = "<group>"; };
 		198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spNotificationCenterTableViewCell.m; sourceTree = "<group>"; };
 		198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = spNotificationCenterTableViewCell.xib; sourceTree = "<group>"; };
+		19CF5E371AC0987800BF3094 /* systemInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = systemInfoTableViewCell.h; sourceTree = "<group>"; };
+		19CF5E381AC0987800BF3094 /* systemInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = systemInfoTableViewCell.m; sourceTree = "<group>"; };
 		19F805631AAD42B800F9071A /* ChooseSportTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportTimeViewController.h; sourceTree = "<group>"; };
 		19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportTimeViewController.m; sourceTree = "<group>"; };
 		19F805671AAD45A500F9071A /* ChooseSportSpaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportSpaceViewController.h; sourceTree = "<group>"; };
@@ -572,6 +575,7 @@
 		193CEE411AA42FBF007A0CF0 /* 聊天室 */ = {
 			isa = PBXGroup;
 			children = (
+				19CF5E361AC0983800BF3094 /* cell */,
 				19F805761AAD794E00F9071A /* spMessageTableViewController.h */,
 				19F805771AAD794E00F9071A /* spMessageTableViewController.m */,
 			);
@@ -698,6 +702,15 @@
 				198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */,
 			);
 			name = "信息管理";
+			sourceTree = "<group>";
+		};
+		19CF5E361AC0983800BF3094 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				19CF5E371AC0987800BF3094 /* systemInfoTableViewCell.h */,
+				19CF5E381AC0987800BF3094 /* systemInfoTableViewCell.m */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 		19F805621AAD429500F9071A /* 选择时间 */ = {
@@ -1178,6 +1191,7 @@
 				F178AF5B1AAC3F72002D3BB8 /* SettingTableViewCell.m in Sources */,
 				193CEE551AA5A5C0007A0CF0 /* InviteFriendViewController.m in Sources */,
 				192670A41A874B0600895308 /* addFriendRequest.m in Sources */,
+				19CF5E391AC0987800BF3094 /* systemInfoTableViewCell.m in Sources */,
 				78C6C8681A2B411100D8425E /* AppDelegate.m in Sources */,
 				198520B21A9DABEC0098F93D /* spNotificationCenterViewController.m in Sources */,
 				193CEE361AA0B824007A0CF0 /* friendRequestManageViewController.m in Sources */,

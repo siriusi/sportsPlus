@@ -186,6 +186,7 @@ typedef enum {
 }
 
 - (void)toInviteFriend {
+    
     [self performSegueWithIdentifier:@"chooseToStrangerSegueID" sender:self] ;
 }
 

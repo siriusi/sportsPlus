@@ -15,10 +15,9 @@
 #import "chooseFriendTableViewCell.h"
 
 @interface InviteFriendViewController () {
-    NSArray *_typeToSportName ;
     
     NSString *_choosedSportName ;
-    NSInteger _chooseSportType ;
+    SPORTSTYPE _chooseSportType ;
     
     NSDate *_choosedDate ;
 }
@@ -58,9 +57,7 @@
     self.tableView.dataSource = self ;
     self.tableView.delegate = self ;
     
-    _typeToSportName = @[@"",@"乒乓球",@"网球",@"足球",@"跑步",@"健身",@"篮球",@"羽毛球"] ;
-    
-    _chooseSportType = -1 ;
+    _chooseSportType = 0 ;
     _choosedSportName = @"" ;
     
     _choosedDate = nil ;
@@ -83,8 +80,7 @@
 - (void)phraseData:(NSNotification *)sender {
     
     NSLog(@"data = %@",[sender object]) ;
-    _chooseSportType = [(NSNumber *)[((NSArray *)[sender object]) firstObject] integerValue] ;
-    _choosedSportName = [_typeToSportName objectAtIndex:_chooseSportType] ;
+    _chooseSportType = (SPORTSTYPE)[(NSNumber *)[((NSArray *)[sender object]) firstObject] integerValue] ;
     
     [self.tableView reloadData] ;
     
@@ -122,10 +118,8 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportItemTableViewCell" owner:self options:nil] lastObject];
         }
-    
-        //config
         
-        [((ChooseSportItemTableViewCell *)cell).SportsNameLabel setText:_choosedSportName] ;
+        [((ChooseSportItemTableViewCell *)cell) initWithSportType:_chooseSportType] ;
         
     } else
     if ( section == 1 ) {

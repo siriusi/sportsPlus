@@ -22,4 +22,15 @@
     return @"EngagementStrangers" ;
 }
 
+- (NSString *)getOtherId {
+    NSString *Id ;
+    spUser *curUser = [spUser currentUser] ;
+    if ( [curUser.objectId isEqualToString:self.fromId.objectId] ) {
+        Id = self.toId.objectId ;
+    }else{
+        Id = self.fromId.objectId ;
+    }
+    return Id ;
+}
+
 @end

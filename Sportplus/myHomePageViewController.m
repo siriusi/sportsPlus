@@ -20,11 +20,12 @@
 #define MainPageNavStateAtPhotoLibraryOnFrame CGRectMake(2, 289, 315, 231)
 #define MainPageNavStateAtPhotoLibraryHiddenFrame CGRectMake(322, 289, 315, 231)
 
+#define MainPageNavStateAtSelfInfoOnFrame CGRectMake(0, 289, 320, 231)
+#define MainPageNavStateAtSelfInfoHiddenFrame CGRectMake(320, 289, 320, 231)
+
 #define MainPageNavStateAtPrefereSportOnFrame CGRectMake(0, 289, 320, 231)
 #define MainPageNavStateAtPrefereSportHiddenFrame CGRectMake(320, 289, 320, 231)
 
-//#define MainPageNavStateAtSelfInfoOnFrame CGRectMake(0, 289, 320, 231)
-//#define MainPageNavStateAtSelfInfoHiddenFrame CGRectMake(320, 289, 320, 231)
 
 #define BtnSelectedColor RGBCOLOR(0, 0, 0)
 #define BtnNormalColor RGBCOLOR(234, 234, 234)
@@ -43,6 +44,18 @@ typedef enum {
     UIActionSheet *_actionSheet ;
 }
 
+
+//self info UI property
+@property (weak, nonatomic) IBOutlet UILabel *sexLabel;
+@property (weak, nonatomic) IBOutlet UILabel *schoolLabel;
+@property (weak, nonatomic) IBOutlet UILabel *academyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *enterSchoolYearLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *tag1Btn;
+@property (weak, nonatomic) IBOutlet UIButton *tag2Btn;
+@property (weak, nonatomic) IBOutlet UIButton *tag3Btn;
+
+
 @end
 
 @implementation myHomePageViewController
@@ -58,6 +71,23 @@ typedef enum {
     [self.successCountLabel setText:[[user sP_successCount] stringValue]] ;
     
     _dataSourceOfPrefereSport = [user sP_sportList] ;
+    
+    [self.sexLabel setText:[user sP_sex]] ;
+    [self.schoolLabel setText:[user sP_school]] ;
+    [self.academyLabel setText:[user sP_academy]] ;
+    [self.enterSchoolYearLabel setText:[[[user sP_enterScYear] stringValue] stringByAppendingString:@"级"]] ;
+    
+    NSArray *tagBtnArray = @[_tag1Btn,_tag2Btn,_tag3Btn] ;
+    NSArray *tagArray = [user sP_tagList] ;
+    
+    for (NSInteger i = 0 ; i < [tagArray count]; i++) {
+        [tagBtnArray[i] setHidden:FALSE] ;
+        [((UIButton *)tagBtnArray[i]) setTitle:tagArray[i] forState:UIControlStateNormal] ;
+    }
+    
+    for (NSInteger i = [tagArray count]; i < [tagBtnArray count]; i++) {
+        [tagBtnArray[i] setHidden:TRUE] ;
+    }
     
 }
 
@@ -108,7 +138,7 @@ typedef enum {
     NSInteger numberOfSection = ( numberOfItem + 2 )/ 3 ;//16 17 18 是一样的个数
     
     if (numberOfSection - 1 ==  section) {
-        return numberOfItem % 3 ;
+        return ( numberOfItem - 1 ) % 3 + 1 ;
     } else {
         return 3 ;//每行3个
     }
@@ -141,15 +171,15 @@ typedef enum {
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *error;
         
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.png"];
+        NSLog(@"path = %@",imageFilePath) ;
         
         UIImage *cellImage = [UIImage imageWithContentsOfFile:imageFilePath] ;
+        
         [cell.photoImageView setImage:cellImage] ;
     }
-    //不是最后一个就加载图片
-//    [cell.photoImageView setImage:[UIImage imageNamed:@""]] ;
     
     return cell ;
 }
@@ -307,6 +337,9 @@ typedef enum {
 }
 
 #pragma mark - IBAction
+- (IBAction)toChooseTagVc:(id)sender {
+#warning 卧槽
+}
 
 - (void)toEditSportVC{
     [self performSegueWithIdentifier:@"mainPageToChooseSport" sender:self] ;
@@ -324,6 +357,7 @@ typedef enum {
         _NavState = MainPageNavStateAtPrefereSport ;
         
         [self.prefererTableView setFrame:MainPageNavStateAtPrefereSportOnFrame] ;
+        [self.selfInfoScrollView setFrame:MainPageNavStateAtSelfInfoHiddenFrame] ;
         [self.collectionView setFrame:MainPageNavStateAtPhotoLibraryHiddenFrame] ;
         
     } else
@@ -334,6 +368,11 @@ typedef enum {
         
         _NavState = MainPageNavStateAtSelfInfo ;
         
+        [self.prefererTableView setFrame:MainPageNavStateAtPrefereSportHiddenFrame] ;
+        [self.selfInfoScrollView setFrame:MainPageNavStateAtSelfInfoOnFrame] ;
+        [self.collectionView setFrame:MainPageNavStateAtPhotoLibraryHiddenFrame] ;
+        
+        
     } else
     if ( sender.tag == 1002 ) {
         [self.v1 setHidden:TRUE] ;
@@ -343,6 +382,7 @@ typedef enum {
         _NavState = MainPageNavStateAtPhotoLibrary ;
         
         [self.prefererTableView setFrame:MainPageNavStateAtPrefereSportHiddenFrame] ;
+        [self.selfInfoScrollView setFrame:MainPageNavStateAtSelfInfoHiddenFrame] ;
         [self.collectionView setFrame:MainPageNavStateAtPhotoLibraryOnFrame] ;
         
     }
@@ -373,7 +413,7 @@ typedef enum {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) ;
         
         NSString *documentsDirectory = [paths objectAtIndex:0] ;
-        NSString *imageFilePath = [documentsDirectory stringByAppendingString:@"test.png"] ;
+        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.png"] ;
         NSLog(@"imageFile->>%@",imageFilePath) ;
         
         if ([fileManger fileExistsAtPath:imageFilePath]) {
@@ -381,9 +421,14 @@ typedef enum {
         }
         //缩略图
         UIImage *smallImage = [self thumbnailWithImageWithoutScale:savedImage size:CGSizeMake(104, 104)] ;
-        [UIImagePNGRepresentation(smallImage) writeToFile:imageFilePath atomically:YES] ;
+        BOOL result = [UIImagePNGRepresentation(smallImage) writeToFile:imageFilePath atomically:YES] ;
         
-        NSLog(@"本地保存缩略图完毕") ;
+        if ( result == TRUE ) {
+            NSLog(@"图片保存成功") ;
+        } else {
+            NSLog(@"图片保存失败") ;
+        }
+
         [self.collectionView reloadData] ;
 
     } ;
@@ -409,6 +454,7 @@ typedef enum {
     //step 1 ;
     NSData *imgData = UIImagePNGRepresentation(image) ;
     AVFile *imageFile = [AVFile fileWithName:@"test.png" data:imgData] ;
+    
     [SPUtils showNetworkIndicator] ;
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         [SPUtils hideNetworkIndicator] ;
@@ -425,20 +471,37 @@ typedef enum {
 
 - (void)deleteImage {
     NSLog(@"删除图片") ;
-#warning 删除图片
-//    NSFileManager *fileManger = [NSFileManager defaultManager] ;
-//    NSError *error ;
-//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) ;
-//    
-//    NSString *documentsDirectory = [paths objectAtIndex:0] ;
-//    NSString *imageFilePath = [documentsDirectory stringByAppendingString:@"test.png"] ;
-//    NSLog(@"imageFile->>%@",imageFilePath) ;
-//    
-//    if ([fileManger fileExistsAtPath:imageFilePath]) {
-//        [fileManger removeItemAtPath:imageFilePath error:&error] ;
-//    }
-//
-//    
+#warning UUID
+    //修改User，删除本地数据，删除
+    spUser *curUser = [spUser currentUser] ;
+    AVFile *targetPhoto = curUser.sP_photoIdList[0] ;
+    [targetPhoto deleteInBackground] ;
+    curUser.sP_photoIdList = @[] ;
+    [curUser saveInBackground] ;
+    
+//#warning 删除图片
+    NSFileManager *fileManger = [NSFileManager defaultManager] ;
+    NSError *error ;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) ;
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0] ;
+    
+    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.png"] ;
+#warning test
+    imageFilePath = [documentsDirectory stringByAppendingString:@"test.png"] ;
+    
+    NSLog(@"imageFile->>%@",imageFilePath) ;
+    
+    if ([fileManger fileExistsAtPath:imageFilePath]) {
+        [fileManger removeItemAtPath:imageFilePath error:&error] ;
+    }
+    
+    if (error) {
+        [SPUtils alertError:error] ;
+    }
+    
+    [self.collectionView reloadData] ;
+
 }
 
 // 改变图像的尺寸，方便上传服务器
