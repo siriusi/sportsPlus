@@ -58,6 +58,8 @@
     [q setCachePolicy:kAVCachePolicyNetworkElseCache] ;
     [q includeKey:@"fromId"] ;
     [q whereKey:@"toId" equalTo:curUser] ;
+    //状态不为拒绝－1
+    [q whereKey:@"status" notEqualTo:[NSNumber numberWithInteger:EngagementStatusRejected]] ;
     [q findObjectsInBackgroundWithBlock:block] ;
 }
 

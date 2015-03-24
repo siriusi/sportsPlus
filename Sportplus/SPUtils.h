@@ -73,4 +73,6 @@ typedef void (^Int64Block)(int64_t num);
 
 + (BOOL)connected;
 
+#pragma mark - UIImage修改图片
+
 @end

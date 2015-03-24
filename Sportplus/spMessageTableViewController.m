@@ -151,6 +151,65 @@
     }
 }
 
+- (NSString *)getSystemMessageByRulesForMessageAtIndex:(NSInteger)index {
+    NSString *jsonString = ((spMsg *)[_msgs objectAtIndex:index]).content ;
+    
+    NSDictionary *dic = [[SPSessionManager sharedInstance] getObjWithJsonString:jsonString] ;
+    
+    NSString *message ;
+    
+    EngagementStatus status = (EngagementStatus)[[dic objectForKey:@"StatusChangeTo"] integerValue] ;
+    
+    if (![_currentEngageMent isDataAvailable]) {
+        NSLog(@"fuck me") ;
+        [_currentEngageMent fetch] ;
+    }
+    
+    if ([[_currentEngageMent fromId].objectId isEqualToString:[spUser currentUser].objectId]) {
+        //fromId : A
+        
+        switch (status) {
+            case EngagementStatusReceivedUserHasInputInfo:
+                //能改 而且消息是B给A发。
+                message = [NSString stringWithFormat:@"%@向你发起邀请",[_chatUser sP_userName]] ;
+                break;
+            case EngagementStatusCreaterUserHasChangedInfo:
+                //不能改 而且消息是A给B发。
+                message = [NSString stringWithFormat:@"你向%@发起邀请",[_chatUser sP_userName]] ;
+                break ;
+            case EngagementStatusDone:
+                //消息完成，不能改，邀约达成
+                message = @"邀约达成，开始运动吧！" ;
+                break ;
+            default:
+                message = @"未知错误请联系管理员" ;
+                break;
+        }
+        
+    } else {
+        //toId : B
+        switch (status) {
+            case EngagementStatusReceivedUserHasInputInfo:
+                //不能改 而且消息是B给A发
+                message = [NSString stringWithFormat:@"你向%@发起邀请",[_chatUser sP_userName]] ;
+                break;
+            case EngagementStatusCreaterUserHasChangedInfo:
+                //能改 而且消息是A给B发
+                message = [NSString stringWithFormat:@"%@向你发起邀请",[_chatUser sP_userName]] ;
+                break ;
+            case EngagementStatusDone:
+                //消息完成，不能改，邀约达成
+                message = @"邀约达成，开始运动吧！" ;
+                break ;
+            default:
+                message = @"未知错误请联系管理员" ;
+                break;
+        }
+    }
+    
+    return message ;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     if (tableView.tag == 1 ) {
@@ -167,7 +226,7 @@
                 cell = [[systemInfoTableViewCell alloc] initWithInfo:@"test" reuserIdentifier:cellIdentifier] ;
             }
             
-            NSString *message = @"A向B发起邀请" ;
+            NSString * message = [self getSystemMessageByRulesForMessageAtIndex:indexPath.row] ;
             
             [cell configureCellWithInfo:message] ;
             [cell setBackgroundColor:tableView.backgroundColor] ;
@@ -188,6 +247,8 @@
         /*config cell*/{
             cell.delegate = self ;
     
+            
+            
             NSMutableArray *rightUtilityButtons = [NSMutableArray new];
             [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(56, 204, 90) title:@"接受"] ;
             [rightUtilityButtons sw_addUtilityButtonWithColor:RGBCOLOR(248, 45 , 64) title:@"修改"] ;
@@ -519,8 +580,15 @@
     }else if(msg.type==CDMsgTypeImage){
         xhMessage=[[XHMessage alloc] initWithPhoto:[self getImageByMsg:msg] thumbnailUrl:nil originPhotoUrl:nil sender:fromUser.username timestamp:[msg getTimestampDate]];
     }else if(msg.type==CDMsgTypeWithEngagement){
-        xhMessage = [[XHMessage alloc] initWithText:@"这个不显示！" sender:fromUser.username timestamp:[msg getTimestampDate]] ;
-        _currentEngageMent = [spEngagement_Stranger objectWithoutDataWithObjectId:msg.content] ;
+        
+        NSString *jsonString = msg.content ;
+        NSLog(@"jsonString = %@",jsonString) ;
+        xhMessage = [[XHMessage alloc] initWithText:jsonString sender:fromUser.username timestamp:[msg getTimestampDate]] ;
+        
+        NSDictionary *dic = [[SPSessionManager sharedInstance] getObjWithJsonString:jsonString] ;
+        NSLog(@"obj = %@",dic) ;
+        
+        _currentEngageMent = [spEngagement_Stranger objectWithoutDataWithObjectId:[dic objectForKey:@"EngagementId"]] ;
     }
     xhMessage.avatar = [_loadedData objectForKey:msg.fromPeerId] ;
     xhMessage.avatarUrl = nil ;
@@ -581,7 +649,15 @@
 - (void)acceptStrangerEngagement {
     void (^sendMsgBlock) () = ^() {
         NSLog(@"开发发送") ;
-        [[SPSessionManager sharedInstance] sendMessageWithObjectId:nil content:_currentEngageMent.objectId type:CDMsgTypeWithEngagement toPeerId:_chatUser.objectId group:nil] ;
+        
+        NSMutableDictionary *dic = [[NSMutableDictionary alloc] init] ;
+        [dic setObject:[_currentEngageMent objectId] forKey:@"EngagementId"] ;
+        NSNumber *status = [NSNumber numberWithInteger:[_currentEngageMent status]] ;
+        [dic setObject:status forKey:@"StatusChangeTo"] ;
+        SPSessionManager *manager = [SPSessionManager sharedInstance] ;
+        NSString *content = [manager getJsonStringWithJsonObject:dic] ;
+        
+        [[SPSessionManager sharedInstance] sendMessageWithObjectId:nil content:content type:CDMsgTypeWithEngagement toPeerId:_chatUser.objectId group:nil] ;
     } ;
     
     _currentEngageMent.status = EngagementStatusDone ;

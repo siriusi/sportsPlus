@@ -93,7 +93,11 @@
 
 - (void)setSelfToNextUser {
     _currentStrangerIndex ++ ;
-    [self getUserInfoAtCurrentIndex] ;
+    if ( _currentStrangerIndex + 1 <= [_strangerIds count] ) {
+        [self getUserInfoAtCurrentIndex] ;
+    } else {
+        [SPUtils alert:@"已经没有下一个了！"] ;
+    }
 }
 
 - (void)tryCreageEngagementToStrangerWithUser:(spUser *)stranger {

@@ -35,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sportplus/SettingViewController.m"
-            timestampString = "448205309.130959"
+            filePath = "Sportplus/spMessageTableViewController.m"
+            timestampString = "448896682.829258"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
+            landmarkName = "-getSystemMessageByRulesForMessageAtIndex:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,29 +51,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Sportplus/SettingViewController.m"
-            timestampString = "448205318.674674"
+            filePath = "Sportplus/RegistFinshViewController.m"
+            timestampString = "448903723.474379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Sportplus/myHomePageViewController.m"
-            timestampString = "448527033.951546"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "181"
-            endingLineNumber = "181"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-finish:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

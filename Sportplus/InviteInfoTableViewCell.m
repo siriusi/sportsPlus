@@ -16,7 +16,6 @@
 }
 
 - (void)awakeFromNib {
-//    [self.nameLabel setText:@"张睿"] ;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder{

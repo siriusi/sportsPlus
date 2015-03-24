@@ -110,9 +110,12 @@ typedef enum {
 
 }
 
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated] ;
     [self.navigationController setNavigationBarHidden:YES animated:NO] ;
+    
+    [SPUserService displayCycleAvatarOfUser:[spUser currentUser] avatarView:self.avatarImgView] ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -168,12 +171,13 @@ typedef enum {
         [cell.photoImageView setImage:[UIImage imageNamed:@"cameraIcon"]] ;
         return cell ;
     } else {
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSError *error;
+        NSInteger index = indexPath.section * 3 + indexPath.row ;
         
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES);
+        NSString *imgName = [((AVFile *)[[[spUser currentUser] sP_photoIdList] objectAtIndex:index]).objectId stringByAppendingString:@".jpg"];
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.png"];
+        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:imgName];
         NSLog(@"path = %@",imageFilePath) ;
         
         UIImage *cellImage = [UIImage imageWithContentsOfFile:imageFilePath] ;
@@ -408,12 +412,16 @@ typedef enum {
     //step 3 ;
     void (^saveImageAtCurrentVcAndRefreshBlock) (UIImage *) = ^(UIImage *savedImage) {
         NSLog(@"开始本地保存") ;
+        
+        //objectId.jpg
+        NSString *imgName = [((AVFile *)[[[spUser currentUser] sP_photoIdList] lastObject]).objectId stringByAppendingString:@".jpg"];
+        
         NSFileManager *fileManger = [NSFileManager defaultManager] ;
         NSError *error ;
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) ;
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) ;
         
         NSString *documentsDirectory = [paths objectAtIndex:0] ;
-        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.png"] ;
+        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:imgName] ;
         NSLog(@"imageFile->>%@",imageFilePath) ;
         
         if ([fileManger fileExistsAtPath:imageFilePath]) {
@@ -421,7 +429,7 @@ typedef enum {
         }
         //缩略图
         UIImage *smallImage = [self thumbnailWithImageWithoutScale:savedImage size:CGSizeMake(104, 104)] ;
-        BOOL result = [UIImagePNGRepresentation(smallImage) writeToFile:imageFilePath atomically:YES] ;
+        BOOL result = [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES] ;
         
         if ( result == TRUE ) {
             NSLog(@"图片保存成功") ;
@@ -438,8 +446,12 @@ typedef enum {
         NSLog(@"开始关联AvUser") ;
         spUser *curuser = [spUser currentUser] ;
         NSMutableArray *photoList = [NSMutableArray arrayWithArray:[curuser sP_photoIdList]] ;
+        
+        
         [photoList addObject:SavedAVFile] ;
+        
         [curuser setSP_photoIdList:photoList] ;
+        
         [curuser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"关联保存成功") ;
@@ -452,8 +464,9 @@ typedef enum {
     } ;
     
     //step 1 ;
-    NSData *imgData = UIImagePNGRepresentation(image) ;
-    AVFile *imageFile = [AVFile fileWithName:@"test.png" data:imgData] ;
+    NSData *imgData = UIImageJPEGRepresentation(image, 1.0f) ;
+    
+    AVFile *imageFile = [AVFile fileWithName:@"test.jpg" data:imgData] ;
     
     [SPUtils showNetworkIndicator] ;
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -486,9 +499,7 @@ typedef enum {
     
     NSString *documentsDirectory = [paths objectAtIndex:0] ;
     
-    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.png"] ;
-#warning test
-    imageFilePath = [documentsDirectory stringByAppendingString:@"test.png"] ;
+    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.jpg"] ;
     
     NSLog(@"imageFile->>%@",imageFilePath) ;
     

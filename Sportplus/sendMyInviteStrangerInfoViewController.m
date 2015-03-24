@@ -107,8 +107,16 @@
         
         if (!error) {
             //send Msg ;
-#warning ！！！！！！！！！！！！！send Msg ;
-            [[SPSessionManager sharedInstance] sendMessageWithObjectId:nil content:[_currentEngagement objectId] type:CDMsgTypeWithEngagement toPeerId:[_currentEngagement getOtherId] group:nil] ;
+            
+            SPSessionManager *manager = [SPSessionManager sharedInstance] ;
+            
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc] init] ;
+            [dic setObject:[_currentEngagement objectId] forKey:@"EngagementId"] ;
+            NSNumber *status = [NSNumber numberWithInteger:[_currentEngagement status]] ;
+            [dic setObject:status forKey:@"StatusChangeTo"] ;
+            
+            NSString *content = [manager getJsonStringWithJsonObject:dic] ;
+            [[SPSessionManager sharedInstance] sendMessageWithObjectId:nil content:content type:CDMsgTypeWithEngagement toPeerId:[_currentEngagement getOtherId] group:nil] ;
             [self.navigationController popViewControllerAnimated:YES] ;
         } else {
             [SPUtils alertError:error] ;

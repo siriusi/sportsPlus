@@ -10,6 +10,8 @@
 
 #import "spEngagement_Stranger.h"
 #import "spUser.h"
+#import "SPUserService.h"
+#import "SPsportTypeUtils.h"
 
 @implementation InviteStrangerInfoTableViewcell
 
@@ -36,10 +38,13 @@
     spUser *user = [engagement fromId] ;
     
     self.nameLabel.text = [user sP_userName] ;
-//    [engagement sportType]
+    self.sportItem.image = [SPsportTypeUtils getSportImgAtMainPageWithSportType:[engagement sportType] Selected:NO] ;
+    
     self.academyLabel.text = [user sP_academy] ;
     self.schoolLabel.text = [user sP_school] ;
     self.userInfoLabel.text = [user toInfoLabelStringOfEnterSchoolJobAndSex] ;
+    
+    [SPUserService displayCycleAvatarOfUser:user avatarView:self.avatar] ;
     
 }
 

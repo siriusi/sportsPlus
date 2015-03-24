@@ -11,6 +11,7 @@
 #import "AvosCloudNetNetWorkManager.h"
 #import "AppDelegate.h"
 
+#import "SPUserService.h"
 #import "spCommon.h"
 
 @interface SettingViewController ()
@@ -120,13 +121,11 @@
                 cell.img.hidden=NO;
                 cell.gotoButton.hidden=NO;
                 cell.switchButton.hidden=YES;
-                NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-                NSString *documentsDirectory = [paths objectAtIndex:0];
-                NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
-                NSLog(@"imageFile->>%@",imageFilePath);
-                UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];
+
+                cell.img.image = [SPUserService getAvatarOfUser:[spUser currentUser]] ;
                 
-                cell.img.image = selfPhoto;
+                [SPUserService displayCycleAvatarOfUser:[spUser currentUser] avatarView:cell.img] ;
+                
                 [cell.img.layer setCornerRadius:CGRectGetHeight([cell.img bounds]) / 2];
                 cell.img.layer.masksToBounds = YES;
             }
@@ -308,25 +307,39 @@
 - (void)saveImage:(UIImage *)image {
     //    NSLog(@"保存头像！");
     //    [userPhotoButton setImage:image forState:UIControlStateNormal];
-    BOOL success;
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
-    NSLog(@"imageFile->>%@",imageFilePath);
-    success = [fileManager fileExistsAtPath:imageFilePath];
-    if(success) {
-        success = [fileManager removeItemAtPath:imageFilePath error:&error];
-    }
-    //    UIImage *smallImage=[self scaleFromImage:image toSize:CGSizeMake(80.0f, 80.0f)];//将图片尺寸改为80*80
     UIImage *smallImage = [self thumbnailWithImageWithoutScale:image size:CGSizeMake(93, 93)];
-    [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
-    UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
-    //    [userPhotoButton setImage:selfPhoto forState:UIControlStateNormal];
-    //self.img.image = selfPhoto;
-    [self.settingTable reloadData];
+    [SPUtils showNetworkIndicator] ;
+    [SPUserService saveAvatar:smallImage callback:^(BOOL succeeded, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        if (succeeded) {
+            NSLog(@"保存成功") ;
+            [self.settingTable reloadData] ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+        
+    }] ;
+    
+//    
+//    BOOL success;
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError *error;
+//    
+//    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"selfPhoto.jpg"];
+//    NSLog(@"imageFile->>%@",imageFilePath);
+//    success = [fileManager fileExistsAtPath:imageFilePath];
+//    if(success) {
+//        success = [fileManager removeItemAtPath:imageFilePath error:&error];
+//    }
+//    //    UIImage *smallImage=[self scaleFromImage:image toSize:CGSizeMake(80.0f, 80.0f)];//将图片尺寸改为80*80
+//
+//    [UIImageJPEGRepresentation(smallImage, 1.0f) writeToFile:imageFilePath atomically:YES];//写入文件
+////    UIImage *selfPhoto = [UIImage imageWithContentsOfFile:imageFilePath];//读取图片文件
+//    //    [userPhotoButton setImage:selfPhoto forState:UIControlStateNormal];
+//    //self.img.image = selfPhoto;
+//    [self.settingTable reloadData];
 }
 
 // 改变图像的尺寸，方便上传服务器

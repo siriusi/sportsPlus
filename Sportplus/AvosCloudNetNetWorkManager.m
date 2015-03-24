@@ -11,6 +11,8 @@
 #import "spAVModels.h"
 #import "AppDelegate.h"
 
+#import "SPSessionManager.h"
+
 static AvosCloudNetNetWorkManager *sharedObj = nil ;
 
 @implementation AvosCloudNetNetWorkManager{
@@ -110,6 +112,7 @@ static AvosCloudNetNetWorkManager *sharedObj = nil ;
         } else {
             //登录失败
 #warning 失败alertView
+            [SPUtils alertError:error] ;
             NSLog(@"登录失败") ;
         }
     }] ;
@@ -124,6 +127,8 @@ static AvosCloudNetNetWorkManager *sharedObj = nil ;
 -(void)logoff:(id<UIAlertViewDelegate>)sender{
     [spUser logOut] ;
     currentUserInfo = nil ;
+    
+    [[SPSessionManager sharedInstance] closeSession] ;
     
     UIAlertView *UIAV = [[UIAlertView alloc] initWithTitle:@"成功注销" message:@"成功注销" delegate:sender cancelButtonTitle:@"知道了" otherButtonTitles:nil] ;
     [UIAV show] ;

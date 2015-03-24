@@ -7,6 +7,7 @@
 //
 
 #import "chooseWitchToInviteViewController.h"
+#import "SPUserService.h"
 
 typedef enum {
     GestureEndedAtFieldInviteFriend = -1 ,
@@ -30,6 +31,9 @@ typedef enum {
     [self.navigationController setNavigationBarHidden:YES] ;
     [super viewWillAppear:animated] ;
     
+    
+    //avatar
+    [SPUserService displayCycleAvatarOfUser:[spUser currentUser] avatarView:self.avatarImgView] ;
     [self resetAvatarImgView] ;
 }
 

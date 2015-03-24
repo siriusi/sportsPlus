@@ -21,7 +21,7 @@ typedef enum {
 } StrangerNavBtnState;
 
 @interface StrangerInviteManageViewController () {
-    NSArray *_dataSource ;//spEngagement_Stranger
+    NSMutableArray *_dataSource ;//spEngagement_Stranger
     
     StrangerNavBtnState _BtnState ;
     
@@ -147,12 +147,27 @@ typedef enum {
 
 - (void)rejectEngagementAtIndex:(NSInteger)index {
     //过
+    spEngagement_Stranger *rejectedEngagement = [_dataSource objectAtIndex:index] ;
+    [rejectedEngagement setStatus:EngagementStatusRejected] ;
     
+    [SPUtils showNetworkIndicator] ;
+    [SVProgressHUD show] ;
+    [rejectedEngagement saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SVProgressHUD dismiss] ;
+        if (succeeded) {
+            NSLog(@"成功拒绝") ;
+            [_dataSource removeObjectAtIndex:index] ;
+            [self.tableView reloadData] ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
 }
 
 - (void)delete {
     //本地删除记录
-    
+    [SPUtils alert:@"还么有！"] ;
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
@@ -164,8 +179,7 @@ typedef enum {
         [SPUtils hideNetworkIndicator] ;
         [SPUtils stopRefreshControl:_refreshControl] ;
         if (!error) {
-            NSLog(@"objcets") ;
-            _dataSource = objects ;
+            _dataSource = [objects mutableCopy];
             [self.tableView reloadData] ;
         } else {
             [SPUtils alertError:error] ;

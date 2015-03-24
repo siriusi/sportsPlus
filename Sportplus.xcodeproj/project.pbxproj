@@ -53,6 +53,8 @@
 		198520B61A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 198520B41A9DAF7B0098F93D /* spNotificationCenterTableViewCell.m */; };
 		198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */; };
 		19CF5E391AC0987800BF3094 /* systemInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CF5E381AC0987800BF3094 /* systemInfoTableViewCell.m */; };
+		19CF5E3D1AC1C2D400BF3094 /* SPCampusService.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CF5E3C1AC1C2D400BF3094 /* SPCampusService.m */; };
+		19CF5E401AC1C36600BF3094 /* spCampus.m in Sources */ = {isa = PBXBuildFile; fileRef = 19CF5E3F1AC1C36600BF3094 /* spCampus.m */; };
 		19F805651AAD42B800F9071A /* ChooseSportTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */; };
 		19F805691AAD45A500F9071A /* ChooseSportSpaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F805681AAD45A500F9071A /* ChooseSportSpaceViewController.m */; };
 		19F8056D1AAD495E00F9071A /* chooseSportFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19F8056C1AAD495E00F9071A /* chooseSportFriendViewController.m */; };
@@ -227,6 +229,10 @@
 		198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = spNotificationCenterTableViewCell.xib; sourceTree = "<group>"; };
 		19CF5E371AC0987800BF3094 /* systemInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = systemInfoTableViewCell.h; sourceTree = "<group>"; };
 		19CF5E381AC0987800BF3094 /* systemInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = systemInfoTableViewCell.m; sourceTree = "<group>"; };
+		19CF5E3B1AC1C2D400BF3094 /* SPCampusService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPCampusService.h; sourceTree = "<group>"; };
+		19CF5E3C1AC1C2D400BF3094 /* SPCampusService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPCampusService.m; sourceTree = "<group>"; };
+		19CF5E3E1AC1C36600BF3094 /* spCampus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spCampus.h; sourceTree = "<group>"; };
+		19CF5E3F1AC1C36600BF3094 /* spCampus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spCampus.m; sourceTree = "<group>"; };
 		19F805631AAD42B800F9071A /* ChooseSportTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportTimeViewController.h; sourceTree = "<group>"; };
 		19F805641AAD42B800F9071A /* ChooseSportTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportTimeViewController.m; sourceTree = "<group>"; };
 		19F805671AAD45A500F9071A /* ChooseSportSpaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportSpaceViewController.h; sourceTree = "<group>"; };
@@ -398,6 +404,7 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				19CF5E3A1AC1C29F00BF3094 /* 校区查询 */,
 				1912E6FE1AB8429900CC070A /* 会话管理工具 */,
 				1912E6FA1AB8161100CC070A /* 运动类型映射工具 */,
 				1912E6F61AB6AE0200CC070A /* 版本管理 */,
@@ -498,6 +505,8 @@
 				197DA8471AB20AA900F59116 /* spNewStadium.m */,
 				197DA8491AB210EA00F59116 /* spEngagement_Friend.h */,
 				197DA84A1AB210EA00F59116 /* spEngagement_Friend.m */,
+				19CF5E3E1AC1C36600BF3094 /* spCampus.h */,
+				19CF5E3F1AC1C36600BF3094 /* spCampus.m */,
 			);
 			name = avobject;
 			sourceTree = "<group>";
@@ -711,6 +720,15 @@
 				19CF5E381AC0987800BF3094 /* systemInfoTableViewCell.m */,
 			);
 			name = cell;
+			sourceTree = "<group>";
+		};
+		19CF5E3A1AC1C29F00BF3094 /* 校区查询 */ = {
+			isa = PBXGroup;
+			children = (
+				19CF5E3B1AC1C2D400BF3094 /* SPCampusService.h */,
+				19CF5E3C1AC1C2D400BF3094 /* SPCampusService.m */,
+			);
+			name = "校区查询";
 			sourceTree = "<group>";
 		};
 		19F805621AAD429500F9071A /* 选择时间 */ = {
@@ -1207,6 +1225,7 @@
 				F11581E61A31861D00420CC3 /* testgitViewController.m in Sources */,
 				193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */,
 				19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */,
+				19CF5E401AC1C36600BF3094 /* spCampus.m in Sources */,
 				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
 				1912E6F91AB6AE7500CC070A /* SPUpgradeService.m in Sources */,
@@ -1236,6 +1255,7 @@
 				197DA8651AB445ED00F59116 /* spChatroom.m in Sources */,
 				193CEE3F1AA1CF2D007A0CF0 /* StrangerInviteManageViewController.m in Sources */,
 				19F805AB1AAFD2D100F9071A /* spChatGroup.m in Sources */,
+				19CF5E3D1AC1C2D400BF3094 /* SPCampusService.m in Sources */,
 				F10D93081A57C91C006770DE /* SVProgressHUD.m in Sources */,
 				19F805691AAD45A500F9071A /* ChooseSportSpaceViewController.m in Sources */,
 				192D7BB71AACA7C900EF9131 /* ChooseSportItemTableViewCell.m in Sources */,

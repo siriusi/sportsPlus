@@ -45,4 +45,16 @@
 
 -(AVSession*)getSession;
 
+#pragma mark - Json Phrase
+
+- (NSString *)getJsonStringWithJsonObject:(id)obj ;
+
+//-(NSString *)getJsonStringWithJsonData:(NSData *)jsonData ;
+
+//-(NSData *)getJsonDataWithObject:(id)obj ;
+
+//-(id)getObjWithJsonData:(NSData *)jsonData ;
+
+-(id)getObjWithJsonString:(NSString *)jsonString ;
+
 @end

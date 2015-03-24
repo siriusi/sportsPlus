@@ -16,6 +16,7 @@
 #import "addFriendRequest.h"
 #import "SPUserService.h"
 #import "SPUtils.h"
+#import "SVProgressHUD.h"
 
 #import "spAVModels.h"
 

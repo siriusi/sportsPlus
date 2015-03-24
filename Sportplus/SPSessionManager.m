@@ -563,6 +563,48 @@ static BOOL initialized = NO;
 //    return [self getAVSignatureWithParams:result peerIds:groupPeerIds];
 //}
 
+#pragma mark - Json Phrase
+
+//public
+- (NSString *)getJsonStringWithJsonObject:(id)obj {
+    
+    return [self getJsonStringWithJsonData:[self getJsonDataWithObject:obj]] ;
+}
+
+-(id)getObjWithJsonString:(NSString *)jsonString {
+    NSData *jsonData = [jsonString dataUsingEncoding:NSASCIIStringEncoding] ;
+    return [self getObjWithJsonData:jsonData] ;
+}
+
+//private
+
+-(NSString *)getJsonStringWithJsonData:(NSData *)jsonData {
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding] ;
+    return jsonString ;
+}
+
+-(NSData *)getJsonDataWithObject:(id)obj {
+    NSError *error ;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:obj options:NSJSONWritingPrettyPrinted error:&error] ;
+    
+    if ([jsonData length] != 0 && error == nil ) {
+        return jsonData ;
+    }
+    //转换失败
+    return nil ;
+}
+
+-(id)getObjWithJsonData:(NSData *)jsonData {
+    NSError *error ;
+    id JsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error] ;
+    
+    if (JsonObject != nil && error == nil ) {
+        return JsonObject ;
+    }
+    //解析错误
+    NSLog(@"json解析错误") ;
+    return nil ;
+}
 
 
 @end

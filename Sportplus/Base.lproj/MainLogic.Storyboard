@@ -398,10 +398,10 @@
             </objects>
             <point key="canvasLocation" x="690" y="1551"/>
         </scene>
-        <!--陌生人约伴-->
+        <!--陌生人约伴信息-->
         <scene sceneID="R6A-Fi-zWX">
             <objects>
-                <viewController title="陌生人约伴" id="EQ4-Fv-cg6" customClass="StrangerInviteManageViewController" sceneMemberID="viewController">
+                <viewController title="陌生人约伴信息" id="EQ4-Fv-cg6" customClass="StrangerInviteManageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sIj-wx-Rj7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -450,7 +450,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" id="EuW-bU-aRq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" sectionHeaderHeight="1" sectionFooterHeight="1" id="EuW-bU-aRq">
                                 <rect key="frame" x="0.0" y="34" width="320" height="470"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2084,7 +2084,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="nAQ-rk-rNl"/>
-        <segue reference="rmv-gV-Cda"/>
+        <segue reference="Tr6-Yz-pcw"/>
         <segue reference="YDq-cc-wwh"/>
     </inferredMetricsTieBreakers>
 </document>
