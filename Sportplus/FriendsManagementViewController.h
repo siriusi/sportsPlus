@@ -21,7 +21,7 @@
 @property (nonatomic) NSMutableArray *clickArray;
 @property (nonatomic) NSMutableArray *sportsArrayWhite;
 @property (nonatomic) NSMutableArray *numberIndexArray;
-
+@property (nonatomic) NSMutableArray *classifiedFriendArray;
 @property (nonatomic) NSIndexPath *oldCellRow;
 
 - (NSMutableArray *)dataSourceOfFriend ;

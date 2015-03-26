@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Sportplus/FriendsManagementViewController.m"
-            timestampString = "448104266.820374"
+            timestampString = "449081949.37131"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "-tableView:titleForHeaderInSection:"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
+            landmarkName = "-tableView:numberOfRowsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

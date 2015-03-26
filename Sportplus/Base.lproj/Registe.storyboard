@@ -665,7 +665,7 @@
         <image name="finishRegist" width="552" height="88"/>
         <image name="geder" width="144" height="86"/>
         <image name="inputNameField" width="589" height="86"/>
-        <image name="loginBackground" width="2668" height="4735"/>
+        <image name="loginBackground" width="320" height="568"/>
         <image name="loginBtn" width="2440" height="334"/>
         <image name="male" width="137" height="86"/>
         <image name="numText" width="589" height="86"/>

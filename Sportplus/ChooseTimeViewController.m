@@ -31,7 +31,6 @@
     self.navigationController.navigationBar.translucent=YES;
     self.timeTableView.delegate=self;
     self.timeTableView.dataSource=self;
-    self.timeTableView.hidden = YES;
     self.searchBar.delegate = self;
     _dataSourceOfSearchedTime = [[NSMutableArray alloc] init] ;
     
@@ -102,7 +101,7 @@
 -(void)searchStart{
     NSLog(@"search start!!");
     [self doSearchWithName:self.searchBar.text];
-    self.timeTableView.hidden = NO;
+    
     
 }
 

@@ -47,14 +47,33 @@
     }
     
     NSLog(@"%@",self.dataSourceOfFriend);
-    _sortedArrForArrays = [self getChineseStringArr];//这里进行数据排序
+    _sortedArrForArrays = [self getChineseStringArr:self.dataSourceOfFriend];//这里进行数据排序
     NSLog(@"排列后的结果是:%@",_sortedArrForArrays);
 }
 
-- (NSMutableArray *)getChineseStringArr {
+- (void) classifyFriendBySport:(int)sportType{
+    self.classifiedFriendArray = [[NSMutableArray alloc]init];
+    for(int i=0;i<self.dataSourceOfFriend.count;i++) //遍历好友
+    {
+        spUser *targetUser = [self.dataSourceOfFriend objectAtIndex:i];
+        for(int j=0;j<targetUser.sP_sportList.count;j++) //遍历sportlist
+        {
+            if([[targetUser.sP_sportList[i] objectForKey:@"SportType"] intValue] == sportType)
+            {
+                [self.classifiedFriendArray addObject:targetUser];
+            }
+        }
+    }
+    //找完之后再排序，调用按字母排序
+    _sortedArrForArrays = [self getChineseStringArr:self.classifiedFriendArray];//这里进行数据排序
+    NSLog(@"排列后的结果是:%@",_sortedArrForArrays);
+    [self.friendsTableView reloadData];
+}
+
+- (NSMutableArray *)getChineseStringArr:(NSMutableArray *)datasource {
     NSMutableArray *chineseStringsArray = [NSMutableArray array];
     
-    for(NSInteger i = 0; i < [self.dataSourceOfFriend count]; i++) {
+    for(NSInteger i = 0; i < [datasource count]; i++) {
         ChineseString *chineseString = [[ChineseString alloc] init] ;
         spUser *targetUser = [_dataSourceOfFriend objectAtIndex:i] ;
         [chineseString initChinseseStringWithSPUser:targetUser] ;
@@ -104,6 +123,9 @@
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter] ;
     [center removeObserver:self name:SP_FRIEND_UPDATE object:nil] ;
     [center addObserver:self selector:@selector(refresh:) name:SP_FRIEND_UPDATE object:nil] ;
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [self.searchTextField resignFirstResponder];
 }
 
 - (void)viewDidLoad {
@@ -155,9 +177,12 @@
     }
     
     [self refresh:nil] ;
-    
+    self.searchTextField.delegate = self;
     self.searchTextField.returnKeyType = UIReturnKeySearch ;
     self.searchTextField.clearsOnBeginEditing = YES ;
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(dismissKeyBoard)];
+    [self.friendsTableView addGestureRecognizer:tapGesture];
+    tapGesture.cancelsTouchesInView =NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -172,9 +197,19 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder] ;
-#warning !!!搜索代码
-    return YES ;
+    [self.searchTextField resignFirstResponder];    //主要是[receiver resignFirstResponder]在哪调用就能把receiver对应的键盘往下收
+    self.searchTextField.clearsOnBeginEditing = YES;
+    //搜索
+    return YES;
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.searchTextField resignFirstResponder];
+}
+
+-(void)dismissKeyBoard{
+    [self.searchTextField resignFirstResponder];
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate
@@ -245,6 +280,9 @@
     [cell initSportImgsWithSportsTypeArray:sportTypeArray];
     
     [cell.head addTarget:self action:@selector(jumpToUserPage:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
     return cell;
     
 }
@@ -371,6 +409,33 @@
         self.oldCellRow = indexPath;
         NSLog(@"old row is %@",self.oldCellRow);
     }
+    int sportTypeInteger;
+    switch ((int)indexPath.row) {
+        case 0:
+            sportTypeInteger = 6;
+            break;
+        case 1:
+            sportTypeInteger = 3;
+            break;
+        case 2:
+            sportTypeInteger = 4;
+            break;
+        case 3:
+            sportTypeInteger = 2;
+            break;
+        case 4:
+            sportTypeInteger = 7;
+            break;
+        case 5:
+            sportTypeInteger = 1;
+            break;
+        case 6:
+            sportTypeInteger = 5;
+            break;
+        default:
+            break;
+    }
+    [self classifyFriendBySport:sportTypeInteger];
     [self.allBtn setImage:[UIImage imageNamed:@"allButton"] forState:UIControlStateNormal];
     
 }
@@ -386,6 +451,8 @@
         [self.clickArray replaceObjectAtIndex:i withObject:click];
     }
     [self.sportsCollectionView reloadData];
+    [self initData];
+    [self.friendsTableView reloadData];
 }
 
 #pragma mark - IBAction
