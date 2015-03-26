@@ -34,6 +34,8 @@
     [spStadium registerSubclass] ;
     [spNewStadium registerSubclass] ;
     [spEngagement_Friend registerSubclass] ;
+    [spCampus registerSubclass] ;
+    [spAcademy registerSubclass] ;
 }
 
 - (void)toMain {

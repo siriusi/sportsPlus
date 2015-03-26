@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface chooseSportFriendViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface chooseSportFriendViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

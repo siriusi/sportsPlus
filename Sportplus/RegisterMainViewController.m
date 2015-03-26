@@ -15,9 +15,10 @@
 
 @implementation RegisterMainViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
     self.navigationController.navigationBarHidden = YES;
@@ -49,21 +50,13 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - IBAction
 
 - (void)back{
     NSLog(@"back!");
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void) sportsAlertView{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"抱歉" message:@"信息不完整" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
@@ -78,6 +71,9 @@
     
     RegisteData *regiData = [RegisteData shareInstance];
     [regiData.info setValue:self.chooseSchoolName forKey:@"school"];
+    
+    [regiData.info setObject:_choosedCampus forKey:@"campus"] ;
+    
     [regiData.info setValue:self.chooseProfessionName forKey:@"academy"];
     [regiData.info setValue:[NSNumber numberWithInt:[self.chooseTime intValue]] forKey:@"enterScYear"];
     

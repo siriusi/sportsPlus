@@ -125,7 +125,7 @@
         UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init] ;
         [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged] ;
         _refreshControl = refreshControl ;
-        [self.friendsTableView addSubview:refreshControl] ;
+        [self.friendsTableView addSubview:_refreshControl] ;
     }
     
     {
@@ -156,6 +156,8 @@
     
     [self refresh:nil] ;
     
+    self.searchTextField.returnKeyType = UIReturnKeySearch ;
+    self.searchTextField.clearsOnBeginEditing = YES ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -165,6 +167,14 @@
 - (void)dealloc {
     NSLog(@"注销 <%@> 观察者",SP_FRIEND_UPDATE) ;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:SP_FRIEND_UPDATE object:nil] ;
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder] ;
+#warning !!!搜索代码
+    return YES ;
 }
 
 #pragma mark - UITableViewDataSource & UITableViewDelegate

@@ -29,6 +29,7 @@
 
 #define BtnSelectedColor RGBCOLOR(0, 0, 0)
 #define BtnNormalColor RGBCOLOR(234, 234, 234)
+#define ShowGetPhotoActionSheetTag 10000
 
 typedef enum {
     MainPageNavStateAtPrefereSport = 0 ,
@@ -205,7 +206,7 @@ typedef enum {
     if ([self isLastCollectionIndexPath:indexPath]) {
         [self showgetPhotoActionSheet] ;
     } else {
-        [self showDeletePhotoActionSheet] ;
+        [self showDeletePhotoActionSheetWithIndexPath:indexPath] ;
     }
 }
 
@@ -215,19 +216,24 @@ typedef enum {
     _actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"从手机相册中选择", nil] ;
     _actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque ;
     [_actionSheet showInView:self.view] ;
-    [_actionSheet setTag:1001] ;
+    [_actionSheet setTag:ShowGetPhotoActionSheetTag] ;
 }
 
-- (void)showDeletePhotoActionSheet {
+- (void)showDeletePhotoActionSheetWithIndexPath:(NSIndexPath *)indexPath {
+    NSInteger index = indexPath.section * 3 + indexPath.row ;
+    [self showDeletePhotoActionSheetAtIndex:index] ;
+}
+
+- (void)showDeletePhotoActionSheetAtIndex:(NSInteger)index {
     _actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"删除照片", nil] ;
     _actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque ;
     [_actionSheet showInView:self.view] ;
-    [_actionSheet setTag:1002] ;
+    [_actionSheet setTag:index] ;
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     NSInteger tag = actionSheet.tag ;
-    if (tag == 1001) {
+    if (tag == ShowGetPhotoActionSheetTag) {
         //getPhoto
         switch (buttonIndex) {
             case 0:{
@@ -245,14 +251,12 @@ typedef enum {
         switch (buttonIndex) {
             case 0:{
                 NSLog(@"删除照片") ;
-#warning 还没写
-                [self deleteImage] ;
+                [self deleteImageAtIndexPath:[_actionSheet tag]] ;
                 break;
             }
             default:
                 break;
         }
-        NSLog(@"buttonIndex = %d",buttonIndex) ;
     }
 }
 
@@ -458,7 +462,8 @@ typedef enum {
                 saveImageAtCurrentVcAndRefreshBlock(savedImage) ;
             } else {
                 NSLog(@"关联保存失败") ;
-                [SPUtils alertError:error] ;
+                [SPUtils alert:@"不知名错误，重新登录后可传图片"] ;
+//                [SPUtils alertError:error] ;
             }
         }] ;
     } ;
@@ -482,37 +487,48 @@ typedef enum {
     
 }
 
-- (void)deleteImage {
+- (void)deleteImageAtIndexPath:(NSInteger)index {
+#warning 未测试
     NSLog(@"删除图片") ;
-#warning UUID
     //修改User，删除本地数据，删除
     spUser *curUser = [spUser currentUser] ;
-    AVFile *targetPhoto = curUser.sP_photoIdList[0] ;
+    AVFile *targetPhoto = curUser.sP_photoIdList[index] ;
+    NSMutableArray *photoList = [curUser.sP_photoIdList mutableCopy] ;
+    [photoList removeObjectAtIndex:index] ;
     [targetPhoto deleteInBackground] ;
-    curUser.sP_photoIdList = @[] ;
-    [curUser saveInBackground] ;
+    curUser.sP_photoIdList = photoList ;
     
-//#warning 删除图片
-    NSFileManager *fileManger = [NSFileManager defaultManager] ;
-    NSError *error ;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) ;
+    void (^deleteImgAtLocalBlock) () = ^() {
+        //#warning 删除本地图片
+        NSString *imgName = [targetPhoto.objectId stringByAppendingString:@".jpg"];
+        
+        NSFileManager *fileManger = [NSFileManager defaultManager] ;
+        NSError *error ;
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) ;
+        
+        NSString *documentsDirectory = [paths objectAtIndex:0] ;
+        
+        NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:imgName] ;
+        
+        NSLog(@"imageFile->>%@",imageFilePath) ;
+        
+        if ([fileManger fileExistsAtPath:imageFilePath]) {
+            [fileManger removeItemAtPath:imageFilePath error:&error] ;
+        }
+        
+        if (error) {
+            [SPUtils alertError:error] ;
+        }
+        [self.collectionView reloadData] ;
+    } ;
     
-    NSString *documentsDirectory = [paths objectAtIndex:0] ;
-    
-    NSString *imageFilePath = [documentsDirectory stringByAppendingPathComponent:@"test.jpg"] ;
-    
-    NSLog(@"imageFile->>%@",imageFilePath) ;
-    
-    if ([fileManger fileExistsAtPath:imageFilePath]) {
-        [fileManger removeItemAtPath:imageFilePath error:&error] ;
-    }
-    
-    if (error) {
-        [SPUtils alertError:error] ;
-    }
-    
-    [self.collectionView reloadData] ;
-
+    [curUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            deleteImgAtLocalBlock() ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
 }
 
 // 改变图像的尺寸，方便上传服务器

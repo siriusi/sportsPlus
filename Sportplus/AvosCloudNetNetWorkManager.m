@@ -58,6 +58,10 @@ static AvosCloudNetNetWorkManager *sharedObj = nil ;
     NSString *school = [Info valueForKey:@"school"] ;
     [user setSP_school:school] ;
     
+    //set campus
+    spCampus *campus = [Info valueForKey:@"campus"] ;
+    [user setSP_campus:campus] ;
+    
     //set academy
     NSString *academy = [Info valueForKey:@"academy"] ;
     [user setSP_academy:academy] ;

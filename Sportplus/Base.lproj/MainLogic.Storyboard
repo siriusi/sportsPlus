@@ -9,7 +9,7 @@
         <scene sceneID="KfX-3O-kg0">
             <objects>
                 <navigationController title="好友管理Nav" id="AKR-k8-1bW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="好友管理" id="klu-Md-KoV"/>
+                    <tabBarItem key="tabBarItem" title="" id="klu-Md-KoV"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="b9h-bh-IiB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -48,7 +48,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="yZL-fH-5Jn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="yZL-fH-5Jn">
                                 <rect key="frame" x="0.0" y="159" width="320" height="364"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,7 +155,7 @@
         <scene sceneID="Gk7-nI-YyQ">
             <objects>
                 <navigationController id="xUT-6h-vYW" userLabel="约伴nav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="约伴" id="uJd-kT-uSd"/>
+                    <tabBarItem key="tabBarItem" title="" id="uJd-kT-uSd"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="T0g-rX-jjy">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -265,7 +265,7 @@
         <scene sceneID="YdF-FI-9cF">
             <objects>
                 <navigationController title="通知Nav" id="cXh-wy-66C" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="通知" id="ef7-Qa-UXY"/>
+                    <tabBarItem key="tabBarItem" title="" id="ef7-Qa-UXY"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="kXp-9f-jMc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -301,7 +301,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="通知" image="BtnMoreNormal" id="eHx-Gz-rGn"/>
+                    <tabBarItem key="tabBarItem" title="" id="eHx-Gz-rGn"/>
                     <navigationItem key="navigationItem" title="信息管理" id="zac-GS-pcp"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
@@ -666,7 +666,7 @@
         <scene sceneID="j8Y-al-bPB">
             <objects>
                 <navigationController id="1rz-Ph-RIT" userLabel="个人主页Nav" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主页" id="bs2-iF-291"/>
+                    <tabBarItem key="tabBarItem" title="" id="bs2-iF-291"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LFT-fc-5U0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1695,7 +1695,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="NZg-X5-GhG">
-                                <rect key="frame" x="-28" y="2" width="243" height="30"/>
+                                <rect key="frame" x="45" y="6" width="243" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1722,6 +1722,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchTextField" destination="NZg-X5-GhG" id="FLq-hg-Xhr"/>
                         <outlet property="tableView" destination="Pgr-tx-NY2" id="2X4-cX-TLL"/>
                     </connections>
                 </viewController>
@@ -1829,10 +1830,10 @@
             </objects>
             <point key="canvasLocation" x="1102" y="-1719"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="g0V-1H-tQ2">
             <objects>
-                <tabBarController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="oig-vM-kwq" sceneMemberID="viewController">
+                <tabBarController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="oig-vM-kwq" customClass="MainTabBarController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W9a-Ch-58w">
@@ -1841,10 +1842,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="1rz-Ph-RIT" kind="relationship" relationship="viewControllers" id="Fd7-BF-m3d"/>
-                        <segue destination="AKR-k8-1bW" kind="relationship" relationship="viewControllers" id="nTw-tm-Tl0"/>
-                        <segue destination="cXh-wy-66C" kind="relationship" relationship="viewControllers" id="ijV-7H-vta"/>
-                        <segue destination="xUT-6h-vYW" kind="relationship" relationship="viewControllers" id="hiZ-JR-2tG"/>
+                        <segue destination="1rz-Ph-RIT" kind="relationship" relationship="viewControllers" id="Q9d-SJ-bhS"/>
+                        <segue destination="xUT-6h-vYW" kind="relationship" relationship="viewControllers" id="Fj4-VM-F33"/>
+                        <segue destination="AKR-k8-1bW" kind="relationship" relationship="viewControllers" id="2A8-2U-2sW"/>
+                        <segue destination="cXh-wy-66C" kind="relationship" relationship="viewControllers" id="yRs-uo-zME"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y5P-UF-fo6" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,4 +10,12 @@
 
 @implementation SPCampusService
 
++ (void)findCampusByPartname:(NSString *)partname withBlock:(AVArrayResultBlock)block {
+    AVQuery *q = [spCampus query] ;
+    
+    [q setCachePolicy:kAVCachePolicyNetworkElseCache];
+    [q whereKey:@"schoolFullName" containsString:partname];
+    [q findObjectsInBackgroundWithBlock:block];
+}
+
 @end

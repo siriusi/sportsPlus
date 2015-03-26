@@ -12,6 +12,7 @@
 #import "spAVModels.h"
 #import "SPCloudSevice.h"
 #import "SVProgressHUD.h"
+#import "SPCampusService.h"
 
 @interface ChooseSchoolViewController (){
     NSMutableArray *_dataSourceOfSearchedSchool ;
@@ -29,7 +30,7 @@
     self.navigationController.navigationBar.translucent=YES;
     self.schoolTableView.delegate=self;
     self.schoolTableView.dataSource = self;
-    
+    self.schoolTableView.hidden = YES;
     self.searchBar.delegate = self;
     
     _dataSourceOfSearchedSchool = [[NSMutableArray alloc] init] ;
@@ -48,6 +49,8 @@
         NSString *schoolName = [NSString stringWithFormat:@"学校%d",i];
         [self.schoolList addObject:schoolName];
     }
+    
+    self.searchBar.returnKeyType = UIReturnKeySearch ;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -59,6 +62,13 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - UITableViewDataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+//    return self.schoolList.count;
+    return [_dataSourceOfSearchedSchool count] ;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *schoolCellIdentifier = @"schoolCellIdentifier";
     UITableViewCell *cell = [self.schoolTableView dequeueReusableCellWithIdentifier:schoolCellIdentifier];
@@ -67,20 +77,21 @@
                 initWithStyle:UITableViewCellStyleValue1
                 reuseIdentifier:schoolCellIdentifier];
     }
-    cell.textLabel.text = self.schoolList[indexPath.row];
+    cell.textLabel.text = [((spCampus *)[_dataSourceOfSearchedSchool objectAtIndex:indexPath.row]) schoolFullName] ;
+    
     return cell;
 }
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return self.schoolList.count;
-}
+#pragma mark - UITableViewDelegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"indexPath is %ld",(long)indexPath.row);
     RegisterMainViewController *regi = [self.navigationController.viewControllers objectAtIndex:self.navigationController.viewControllers.count-2];
-    regi.chooseSchoolName = self.schoolList[indexPath.row];
+    
+    regi.choosedCampus = [_dataSourceOfSearchedSchool objectAtIndex:indexPath.row] ;
+    regi.chooseSchoolName = [((spCampus *)[_dataSourceOfSearchedSchool objectAtIndex:indexPath.row]) schoolFullName] ;
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -100,34 +111,24 @@
 -(void)searchStart{
     NSLog(@"search start!!");
     [self doSearchWithName:self.searchBar.text];
-    
+    self.schoolTableView.hidden = NO;
 }
 
 - (void)doSearchWithName:(NSString *)name {
-//    [SPUtils showNetworkIndicator] ;
-//    [SVProgressHUD show] ;
-//    //到这里会报错！
-//    [SPUserService findUsersByPartname:name withBlock:^(NSArray *objects, NSError *error) {
-//        [SPUtils hideNetworkIndicator] ;
-//        [SVProgressHUD dismiss] ;
-//        
-//        if (error == nil) {
-//            _dataSourceOfSearchedSchool = [[NSMutableArray alloc] initWithArray:objects] ;
-//            [self.schoolTableView reloadData] ;
-//        } else {
-//            [SPUtils alertError:error] ;
-//        }
-//    }] ;
+    [SPUtils showNetworkIndicator] ;
+    [SVProgressHUD show] ;
+    [SPCampusService findCampusByPartname:name withBlock:^(NSArray *objects, NSError *error) {
+        [SPUtils hideNetworkIndicator] ;
+        [SVProgressHUD dismiss] ;
+        if (!error) {
+            _dataSourceOfSearchedSchool = [objects mutableCopy] ;
+            NSLog(@"data = %@",_dataSourceOfSearchedSchool) ;
+            [self.schoolTableView reloadData] ;
+            
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

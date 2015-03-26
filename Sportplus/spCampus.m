@@ -12,7 +12,7 @@
 
 @dynamic campus ;
 @dynamic school ;
-@dynamic sP_schoolFullName ;
+@dynamic schoolFullName ;
 
 + (NSString *)parseClassName{
     return @"Campus" ;

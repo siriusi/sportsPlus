@@ -24,7 +24,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    // Do any additional setup after loading the view.
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,6 +31,7 @@
     self.navigationController.navigationBar.translucent=YES;
     self.timeTableView.delegate=self;
     self.timeTableView.dataSource=self;
+    self.timeTableView.hidden = YES;
     self.searchBar.delegate = self;
     _dataSourceOfSearchedTime = [[NSMutableArray alloc] init] ;
     
@@ -46,7 +46,7 @@
     self.timeList = [[NSMutableArray alloc]init];
     for(int i=0;i<10;i++)
     {
-        NSString *timeName = [NSString stringWithFormat:@"%d",i];
+        NSString *timeName = [NSString stringWithFormat:@"%d",i + 2000 ];
         [self.timeList addObject:timeName];
     }
 }
@@ -102,6 +102,7 @@
 -(void)searchStart{
     NSLog(@"search start!!");
     [self doSearchWithName:self.searchBar.text];
+    self.timeTableView.hidden = NO;
     
 }
 

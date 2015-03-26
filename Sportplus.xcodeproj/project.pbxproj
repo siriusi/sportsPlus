@@ -15,6 +15,7 @@
 		1912E6FD1AB8165000CC070A /* SPsportTypeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6FC1AB8165000CC070A /* SPsportTypeUtils.m */; };
 		1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */; };
 		192670A41A874B0600895308 /* addFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 192670A31A874B0600895308 /* addFriendRequest.m */; };
+		19295F641AC3B71B00E34B5D /* spAcademy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295F631AC3B71B00E34B5D /* spAcademy.m */; };
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
 		192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C051A8E2C0000D81B3A /* test1stVC.m */; };
 		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
@@ -157,6 +158,8 @@
 		1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = testIPAD.storyboard; path = Sportplus/testIPAD.storyboard; sourceTree = "<group>"; };
 		192670A21A874B0600895308 /* addFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFriendRequest.h; sourceTree = "<group>"; };
 		192670A31A874B0600895308 /* addFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendRequest.m; sourceTree = "<group>"; };
+		19295F621AC3B71B00E34B5D /* spAcademy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spAcademy.h; sourceTree = "<group>"; };
+		19295F631AC3B71B00E34B5D /* spAcademy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spAcademy.m; sourceTree = "<group>"; };
 		192A9BFA1A8DCA0700D81B3A /* spUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spUser.h; sourceTree = "<group>"; };
 		192A9BFB1A8DCA0700D81B3A /* spUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spUser.m; sourceTree = "<group>"; };
 		192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spAVModels.h; sourceTree = "<group>"; };
@@ -507,6 +510,8 @@
 				197DA84A1AB210EA00F59116 /* spEngagement_Friend.m */,
 				19CF5E3E1AC1C36600BF3094 /* spCampus.h */,
 				19CF5E3F1AC1C36600BF3094 /* spCampus.m */,
+				19295F621AC3B71B00E34B5D /* spAcademy.h */,
+				19295F631AC3B71B00E34B5D /* spAcademy.m */,
 			);
 			name = avobject;
 			sourceTree = "<group>";
@@ -885,7 +890,6 @@
 				78C6C8661A2B411100D8425E /* AppDelegate.h */,
 				78C6C8671A2B411100D8425E /* AppDelegate.m */,
 				192670A01A874AB600895308 /* models */,
-				781608BD1A53CE70001B50F5 /* localData */,
 				78CA8AE41A4C05AB000C9AEA /* NetWork */,
 				787C7ED81A2F44C800657691 /* Viewcontroller */,
 				781ECBD11A2EF2DD00B14CAF /* Storyboard&xib */,
@@ -944,6 +948,7 @@
 		F11581E21A3185F200420CC3 /* RegisteVC */ = {
 			isa = PBXGroup;
 			children = (
+				781608BD1A53CE70001B50F5 /* localData */,
 				F11581E41A31861D00420CC3 /* testgitViewController.h */,
 				F11581E51A31861D00420CC3 /* testgitViewController.m */,
 				F1887DB71A32D4810056A568 /* RegisterMainViewController.h */,
@@ -1198,6 +1203,7 @@
 				197DA83F1AB15FBE00F59116 /* SPCacheService.m in Sources */,
 				F1B88C351A45E18F005D601D /* searchFriendTableViewCell.m in Sources */,
 				1912E6F01AB599F800CC070A /* InviteStrangerInfoTableViewcell.m in Sources */,
+				19295F641AC3B71B00E34B5D /* spAcademy.m in Sources */,
 				F178AF471AAC34D1002D3BB8 /* ChangeNameViewController.m in Sources */,
 				F105E9E61A55B8A500DDE19C /* RegistFinshViewController.m in Sources */,
 				193CEE4F1AA45BF3007A0CF0 /* InviteStrangerViewController.m in Sources */,
@@ -1362,7 +1368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1397,7 +1403,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1414,7 +1420,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
+				PROVISIONING_PROFILE = "27014d55-2c66-48fa-a44d-e679e6a188eb";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1429,7 +1435,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = Sportplus;
-				PROVISIONING_PROFILE = "e2862615-940c-4fcb-b8d1-663ffe68ced1";
+				PROVISIONING_PROFILE = "27014d55-2c66-48fa-a44d-e679e6a188eb";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

@@ -251,7 +251,7 @@
 //    [self.sportsListCell setObject:@2 forKey:name];
     NSString *name = [self.sportListArray objectAtIndex:path.row] ;
     
-    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:1]];
+    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:2]];
     
 }
 
@@ -262,7 +262,7 @@
 //    [self.sportsListCell setObject:@3 forKey:name];
     NSString *name = [self.sportListArray objectAtIndex:path.row] ;
     
-    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:1]];
+    [self.tempSportListArray replaceObjectAtIndex:path.row withObject:[self getDictionaryBySportsName:name level:3]];
 }
 
 -(void) tagsAlertView{

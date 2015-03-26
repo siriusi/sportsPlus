@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "RegisteData.h"
 
+#import "spCommon.h"
+
 @interface RegisterMainViewController : UIViewController
 - (IBAction)rigister:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *schoolName;
@@ -18,4 +20,7 @@
 @property(nonatomic) NSString *chooseSchoolName;
 @property(nonatomic) NSString *chooseProfessionName;
 @property(nonatomic) NSString *chooseTime;
+
+@property(nonatomic) spCampus *choosedCampus ;
+
 @end

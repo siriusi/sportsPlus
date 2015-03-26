@@ -10,10 +10,9 @@
 
 @interface spCampus : AVObject<AVSubclassing>
 
-
 @property NSString *campus ;
 @property NSString *school ;
-@property NSString *sP_schoolFullName ;
+@property NSString *schoolFullName ;
 
 + (NSString *)parseClassName;
 

@@ -8,17 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainTabBarController : UITabBarController {
-    NSMutableArray *_buttons ;
-    NSInteger _currentSelectedIndex ;
-    UIImageView *slideBg ;
+@interface MainTabBarController : UITabBarController<UITabBarDelegate> {
 }
 
-@property (nonatomic , assign) NSInteger currentSelectedIndex ;
-@property (nonatomic , retain) NSMutableArray *buttons ;
+- (id)initWithTabBarBackgroundImage:(UIImage *)barBackgroundImage unSelectedImageArray:(NSMutableArray *)unImageArray selectedImageArray:(NSMutableArray *)imageArray;
 
-- (void)hideRealTabBar ;
-- (void)customTabBar ;
-- (void)selectedTab:(UIButton *)button ;
+//隐藏某个tabBarItem的图片
+-(void)hiddeItemImageView:(int)index;
+
+//显示某个tabBarItem的图片
+-(void)showItemImageView:(int)index;
 
 @end

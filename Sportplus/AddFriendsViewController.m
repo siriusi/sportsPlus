@@ -38,8 +38,6 @@
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     [self.navigationItem setLeftBarButtonItem:backItem];
     self.searchTextField.returnKeyType = UIReturnKeySearch;
-#warning 并不是这样！
-//    [self doSearch] ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -132,6 +130,7 @@
     [self doSearchWithName:self.searchTextField.text] ;
 }
 
+#pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -149,7 +148,6 @@
 -(void)searchStart{
     NSLog(@"search start!!");
     [self doSearchWithName:self.searchTextField.text];
-    
 }
 
 

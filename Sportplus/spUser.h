@@ -7,6 +7,7 @@
 //
 
 #import <AVOSCloud/AVOSCloud.h>
+#import "spCampus.h"
 
 @interface spUser : AVUser<AVSubclassing> 
 
@@ -16,6 +17,9 @@
 @property NSString *sP_userTrueName ;//实名
 @property NSString *sP_school ;//学校
 @property NSString *sP_academy ;//学院
+
+@property spCampus *sP_campus ;
+
 @property NSString *sP_sex ; //{男,女}
 @property NSNumber *sP_enterScYear ;//入学年份
 

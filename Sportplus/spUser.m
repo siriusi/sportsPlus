@@ -14,6 +14,9 @@
 
 @dynamic sP_userTrueName ;
 @dynamic sP_school ;
+
+@dynamic sP_campus ;
+
 @dynamic sP_academy ;
 @dynamic sP_sex ;
 @dynamic sP_enterScYear ;

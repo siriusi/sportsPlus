@@ -17,5 +17,7 @@
 #import "spStadium.h"
 #import "spNewStadium.h"
 #import "spEngagement_Friend.h"
+#import "spCampus.h"
+#import "spAcademy.h"
 
 #endif

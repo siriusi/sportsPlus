@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "spCommon.h"
 
 @interface SPCampusService : NSObject
+
++ (void)findCampusByPartname:(NSString *)partname withBlock:(AVArrayResultBlock)block ;
+
+#warning 查找学院没写
++ (void)findAcademyBySchoolName:(NSString *)schoolName withBlock:(AVArrayResultBlock)block ;
 
 @end
