@@ -25,6 +25,9 @@
                     </label>
                 </subviews>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="friendNameLabel" destination="FV2-kR-cYc" id="Hm0-dw-dft"/>
+            </connections>
             <point key="canvasLocation" x="169" y="295"/>
         </tableViewCell>
     </objects>

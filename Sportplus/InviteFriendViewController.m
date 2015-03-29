@@ -12,12 +12,15 @@
 #import "ChooseSportItemTableViewCell.h"
 #import "ChoosePlaceTableViewCell.h"
 #import "ChooseSportTimeTableViewCell.h"
-#import "chooseFriendTableViewCell.h"
+#import "ChooseSportFriendTableViewCell.h"
+
+#import "SPInviteService.h"
 
 @interface InviteFriendViewController () {
     
     NSString *_choosedSportName ;
     SPORTSTYPE _chooseSportType ;
+    NSArray *_choosedFriendList ;
     
     NSDate *_choosedDate ;
 }
@@ -48,7 +51,7 @@
     [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:NOTIFICATION_SPORTS_CHOOSED object:nil] ;
     [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:NOTIFICATION_STADIUM_CHOOSED object:nil] ;
     [sp_notificationCenter addObserver:self selector:@selector(phraseDateData:) name:NOTIFICATION_TIME_CHOOSED object:nil] ;
-    [sp_notificationCenter addObserver:self selector:@selector(phraseData:) name:NOTIFICATION_FRIENDS_CHOOSED object:nil] ;
+    [sp_notificationCenter addObserver:self selector:@selector(phraseFriendsData:) name:NOTIFICATION_FRIENDS_CHOOSED object:nil] ;
 }
 
 - (void)viewDidLoad {
@@ -89,6 +92,13 @@
 - (void)phraseDateData:(NSNotification *)sender {
     NSLog(@"date = %@",[sender object]) ;
     _choosedDate = [sender object] ;
+    [self.tableView reloadData] ;
+}
+
+- (void)phraseFriendsData:(NSNotification *)sender {
+    NSLog(@"user = %@",[sender object]) ;
+    _choosedFriendList = [sender object] ;
+    
     [self.tableView reloadData] ;
 }
 
@@ -144,6 +154,8 @@
         if (!cell) {
             cell = [[[NSBundle mainBundle] loadNibNamed:@"ChooseSportFriendTableViewCell" owner:self options:nil] lastObject];
         }
+        
+        [(ChooseSportFriendTableViewCell *)cell initWithUserArray:_choosedFriendList] ;
     }
     
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator ;
@@ -175,7 +187,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSInteger section = indexPath.section ;
     
     static NSString *segueID1 = @"FriendVC2SportSegueID" ;
     static NSString *segueID2 = @"FriendVC2PlaceSegueID" ;

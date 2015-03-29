@@ -10,4 +10,8 @@
 
 @interface ChooseSportFriendTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *friendNameLabel;
+
+- (void)initWithUserArray:(NSArray *)userArray ;
+
 @end

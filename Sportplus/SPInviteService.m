@@ -63,4 +63,34 @@
     [q findObjectsInBackgroundWithBlock:block] ;
 }
 
++(void)tryCreateEngagementToFriends:(NSArray *)friendList sportType:(SPORTSTYPE)sportType date:(NSDate *)date stadium:(spStadium *)stadium WithBlock:(AVObjectResultBlock)block{
+    assert(friendList) ;
+    assert(sportType) ;
+    assert(date) ;
+    assert(block) ;
+    
+    NSMutableDictionary *Parameters = [NSMutableDictionary dictionary] ;
+    
+    spUser *curUser = [spUser currentUser] ;
+    
+    [Parameters setObject:curUser.objectId forKey:@"fromId"] ;
+    [Parameters setObject:SPNum(sportType) forKey:@"type"] ;
+    
+    NSString *dateString ;
+    /*getDateString*/{
+        NSDateFormatter *fmt = [[NSDateFormatter alloc] init] ;
+        fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"] ;
+        fmt.dateFormat = @"yyyy-MM-dd HH:mm" ;
+        
+        dateString = [fmt stringFromDate:date] ;
+    }
+    
+    [Parameters setObject:dateString forKey:@"when"] ;
+    [Parameters setObject:@"测试啊" forKey:@"newstadium"] ;
+    
+    [AVCloud callFunctionInBackground:@"engagementWithFriends" withParameters:Parameters block:^(id object, NSError *error) {
+        block(object ,error) ;
+    }] ;
+}
+
 @end

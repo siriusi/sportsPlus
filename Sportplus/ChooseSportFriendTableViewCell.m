@@ -8,16 +8,26 @@
 
 #import "ChooseSportFriendTableViewCell.h"
 
+#import "spUser.h"
+
 @implementation ChooseSportFriendTableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
+}
 
-    // Configure the view for the selected state
+- (void)initWithUserArray:(NSArray *)userArray {
+    NSMutableString *nameString = [NSMutableString string];
+    
+    for (spUser *user in userArray) {
+        [nameString appendString:[user sP_userName]] ;
+    }
+    
+    self.friendNameLabel.text = nameString ;
+    
 }
 
 @end

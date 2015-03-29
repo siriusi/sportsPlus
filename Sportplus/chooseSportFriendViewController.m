@@ -12,22 +12,78 @@
 #import "spCommon.h"
 #import "SPCacheService.h"
 
+#import "SPChineseStringUtils.h"
+
 @interface chooseSportFriendViewController () {
-    NSMutableArray *_choosedState ;
-    NSMutableArray *_dataSourceOfFriendList ;//朋友列表
+    NSMutableDictionary *_choosedState ;
+    //请调用Set方法赋值
+    NSMutableArray *_dataSourceOfFriendList ;
+    
+    NSString *_searchText ;//搜索的姓名
     NSMutableArray *_dataSourceOfDisplayFriendList ;//要显示的朋友列表 ;
-    NSMutableArray *_choosedStateOfDisplayFriendList ;//要显示的选中状态 ;
+//    NSMutableDictionary *_choosedStateOfDisplayFriendList ;//要显示的选中状态 ;
+    
+    NSMutableArray *_chineseArray ;//排序后的chineseString数组
+    NSMutableArray *_sectionTitleArray ;//sectionTitle
     
     UIRefreshControl *_refreshControl ;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 
+- (NSString *)searchText ;
+
 @end
 
 @implementation chooseSportFriendViewController
 
-#pragma mark - Life Cycle
+- (void)setDataSourceOfFriendList:(NSArray *)FriendList {
+    _dataSourceOfFriendList = [FriendList mutableCopy] ;
+    
+    for (spUser *user in _dataSourceOfFriendList) {
+        NSString *key = user.objectId ;
+        if ([_choosedState valueForKey:key] == nil) {
+            NSNumber *value = [NSNumber numberWithBool:FALSE] ;
+            [_choosedState setValue:value forKey:key] ;
+        }
+    }
+    
+    [self setDataSourceOfDisplayFriendListWithSearchText] ;
+}
+
+- (NSString *)searchText {
+    if (_searchText == nil) {
+        _searchText = self.searchTextField.text ;
+    }
+    
+    return _searchText ;
+}
+
+- (NSMutableArray *)searchFriendListWithName:(NSString *)name {
+    NSMutableArray *searchedFriendList = [NSMutableArray array];
+    
+    for (spUser *user in _dataSourceOfFriendList) {
+        BOOL res = [user.sP_userName containsString:name] ;
+        
+        if (res) {
+            [searchedFriendList addObject:user] ;
+        }
+    }
+    return searchedFriendList ;
+}
+
+/**
+ *  搜索用户的方法并设置数据源的方法，调用此方法后应当调用reloadData方法。
+ */
+- (void)setDataSourceOfDisplayFriendListWithSearchText {
+    NSString *searchText = self.searchText ;
+    
+    _dataSourceOfDisplayFriendList = [self searchFriendListWithName:searchText] ;
+    
+    _chineseArray =
+    [SPChineseStringUtils getChineseStringArrWithSpUserArray:_dataSourceOfDisplayFriendList] ;
+    _sectionTitleArray = [SPChineseStringUtils getTitleArray] ;
+}
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
     BOOL networkOnly ;
@@ -41,7 +97,7 @@
         [SPUtils stopRefreshControl:refreshControl] ;
         
         CDBlock callback = ^ {
-            _dataSourceOfFriendList = [objects mutableCopy] ;
+            [self setDataSourceOfFriendList:objects] ;
             [SPCacheService registerUsers:_dataSourceOfFriendList] ;
             [SPCacheService setFriends:_dataSourceOfFriendList] ;
             [self.tableView reloadData] ;
@@ -53,11 +109,10 @@
         } else {
             [SPUtils filterError:error callback:callback] ;
         }
-        
     }] ;
-    
-    
 }
+
+#pragma mark - Life Cycle
 
 - (void)initTableView {
     self.tableView.delegate = self ;
@@ -90,21 +145,19 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [self.searchTextField resignFirstResponder] ;
-    [self searchFriendWithName:textField.text] ;
+    [self setDataSourceOfDisplayFriendListWithSearchText] ;
+    [self.tableView reloadData] ;
     return YES ;
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.searchTextField resignFirstResponder];
-    [self searchFriendWithName:self.searchTextField.text] ;
+    [self setDataSourceOfDisplayFriendListWithSearchText] ;
+    [self.tableView reloadData] ;
 }
 
 #pragma mark - IBAction
-
-- (void)searchFriendWithName:(NSString *)name {
-    NSLog(@"search name = %@",name) ;
-}
 
 - (IBAction)backBtnClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES] ;
@@ -112,27 +165,71 @@
 
 - (IBAction)ensureBtnClicked:(id)sender {
     NSLog(@"确定") ;
-    [self.navigationController popViewControllerAnimated:YES] ;
+    
+    NSMutableArray *choosedUserIds = [NSMutableArray array] ;
+    
+    for (NSString* key in _choosedState) {
+        BOOL res = [_choosedState[key] boolValue] ;
+        
+        if (res) {
+            [choosedUserIds addObject:key] ;
+        }
+    }
+    
+    [SPUserService findUsersByIds:choosedUserIds callback:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            [sp_notificationCenter postNotificationName:NOTIFICATION_FRIENDS_CHOOSED object:objects] ;
+            [self.navigationController popViewControllerAnimated:YES] ;
+        } else {
+            [SPUtils alertError:error] ;
+        }
+    }] ;
+
+}
+
+#pragma mark - UITableViewDelegate
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UILabel *sectionTitle = [[UILabel alloc]init];
+    sectionTitle.frame = CGRectMake(20, 2, 200, 22);
+    sectionTitle.numberOfLines = 0;
+    sectionTitle.textColor = [UIColor whiteColor];
+    sectionTitle.font = [UIFont fontWithName:@"Menlo-Bold" size:12];
+    sectionTitle.text = [_sectionTitleArray objectAtIndex:section];
+    UIView *sectionView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 22)];
+    UIImage *sectionImg = [UIImage imageNamed:@"sectionBackground"];
+    UIImageView *sectionBackground = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 22)];
+    sectionBackground.image=sectionImg;
+    [sectionView addSubview:sectionBackground];
+    [sectionView addSubview:sectionTitle];
+    
+    return sectionView;
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3 ;
+    return [_chineseArray[section] count] ;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1 ;
+    return [_sectionTitleArray count] ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellID = @"chooseFriendTableViewCellID" ;
     
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellID] ;
+    chooseFriendTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:cellID] ;
     
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"chooseFriendTableViewCell" owner:self options:nil] lastObject];
     }
+    
+    spUser *userForCell = [((ChineseString *)_chineseArray[indexPath.section][indexPath.row]) myUser] ;
+    
+    BOOL state = [[_choosedState valueForKey:userForCell.objectId] boolValue] ;
+    
+    [cell initWithSpUser:userForCell andState:state] ;
     
     return cell ;
 }

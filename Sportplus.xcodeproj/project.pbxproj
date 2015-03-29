@@ -13,12 +13,10 @@
 		1912E6F51AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6F41AB5C34600CC070A /* sendMyInviteStrangerInfoViewController.m */; };
 		1912E6F91AB6AE7500CC070A /* SPUpgradeService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */; };
 		1912E6FD1AB8165000CC070A /* SPsportTypeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1912E6FC1AB8165000CC070A /* SPsportTypeUtils.m */; };
-		1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */; };
 		192670A41A874B0600895308 /* addFriendRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 192670A31A874B0600895308 /* addFriendRequest.m */; };
 		19295F641AC3B71B00E34B5D /* spAcademy.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295F631AC3B71B00E34B5D /* spAcademy.m */; };
+		19295F6D1AC6DA6600E34B5D /* SPChineseStringUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19295F6C1AC6DA6600E34B5D /* SPChineseStringUtils.m */; };
 		192A9BFC1A8DCA0700D81B3A /* spUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9BFB1A8DCA0700D81B3A /* spUser.m */; };
-		192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C051A8E2C0000D81B3A /* test1stVC.m */; };
-		192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 192A9C081A8E34C100D81B3A /* test2thVC.m */; };
 		192D7BB71AACA7C900EF9131 /* ChooseSportItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D7BB51AACA7C900EF9131 /* ChooseSportItemTableViewCell.m */; };
 		192D7BB81AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 192D7BB61AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib */; };
 		192D7BBF1AACAE1400EF9131 /* ChooseSportItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 192D7BBE1AACAE1400EF9131 /* ChooseSportItemViewController.m */; };
@@ -155,18 +153,15 @@
 		1912E6F81AB6AE7500CC070A /* SPUpgradeService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPUpgradeService.m; sourceTree = "<group>"; };
 		1912E6FB1AB8165000CC070A /* SPsportTypeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPsportTypeUtils.h; sourceTree = "<group>"; };
 		1912E6FC1AB8165000CC070A /* SPsportTypeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPsportTypeUtils.m; sourceTree = "<group>"; };
-		1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = testIPAD.storyboard; path = Sportplus/testIPAD.storyboard; sourceTree = "<group>"; };
 		192670A21A874B0600895308 /* addFriendRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addFriendRequest.h; sourceTree = "<group>"; };
 		192670A31A874B0600895308 /* addFriendRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addFriendRequest.m; sourceTree = "<group>"; };
 		19295F621AC3B71B00E34B5D /* spAcademy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spAcademy.h; sourceTree = "<group>"; };
 		19295F631AC3B71B00E34B5D /* spAcademy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spAcademy.m; sourceTree = "<group>"; };
+		19295F6B1AC6DA6600E34B5D /* SPChineseStringUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPChineseStringUtils.h; sourceTree = "<group>"; };
+		19295F6C1AC6DA6600E34B5D /* SPChineseStringUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPChineseStringUtils.m; sourceTree = "<group>"; };
 		192A9BFA1A8DCA0700D81B3A /* spUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = spUser.h; sourceTree = "<group>"; };
 		192A9BFB1A8DCA0700D81B3A /* spUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = spUser.m; sourceTree = "<group>"; };
 		192A9BFD1A8DE5CD00D81B3A /* spAVModels.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = spAVModels.h; sourceTree = "<group>"; };
-		192A9C041A8E2C0000D81B3A /* test1stVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test1stVC.h; sourceTree = "<group>"; };
-		192A9C051A8E2C0000D81B3A /* test1stVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test1stVC.m; sourceTree = "<group>"; };
-		192A9C071A8E34C100D81B3A /* test2thVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = test2thVC.h; sourceTree = "<group>"; };
-		192A9C081A8E34C100D81B3A /* test2thVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test2thVC.m; sourceTree = "<group>"; };
 		192D7BB41AACA7C900EF9131 /* ChooseSportItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseSportItemTableViewCell.h; sourceTree = "<group>"; };
 		192D7BB51AACA7C900EF9131 /* ChooseSportItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseSportItemTableViewCell.m; sourceTree = "<group>"; };
 		192D7BB61AACA7C900EF9131 /* ChooseSportItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChooseSportItemTableViewCell.xib; sourceTree = "<group>"; };
@@ -407,6 +402,7 @@
 		1911EB951A9778E30044F04F /* service */ = {
 			isa = PBXGroup;
 			children = (
+				19295F6A1AC6DA4F00E34B5D /* 中文字符串工具 */,
 				19CF5E3A1AC1C29F00BF3094 /* 校区查询 */,
 				1912E6FE1AB8429900CC070A /* 会话管理工具 */,
 				1912E6FA1AB8161100CC070A /* 运动类型映射工具 */,
@@ -466,18 +462,6 @@
 			name = "会话管理工具";
 			sourceTree = "<group>";
 		};
-		1920A9EE1A8CA9F300D13F86 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				1920A9EC1A8CA9E100D13F86 /* testIPAD.storyboard */,
-				192A9C041A8E2C0000D81B3A /* test1stVC.h */,
-				192A9C051A8E2C0000D81B3A /* test1stVC.m */,
-				192A9C071A8E34C100D81B3A /* test2thVC.h */,
-				192A9C081A8E34C100D81B3A /* test2thVC.m */,
-			);
-			name = test;
-			sourceTree = "<group>";
-		};
 		192670A01A874AB600895308 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +498,19 @@
 				19295F631AC3B71B00E34B5D /* spAcademy.m */,
 			);
 			name = avobject;
+			sourceTree = "<group>";
+		};
+		19295F6A1AC6DA4F00E34B5D /* 中文字符串工具 */ = {
+			isa = PBXGroup;
+			children = (
+				F14CBF181AB5433300B66846 /* ChineseString.h */,
+				F14CBF191AB5433300B66846 /* ChineseString.m */,
+				F14CBF1F1AB543F700B66846 /* pinyin.c */,
+				F14CBF201AB543F700B66846 /* pinyin.h */,
+				19295F6B1AC6DA6600E34B5D /* SPChineseStringUtils.h */,
+				19295F6C1AC6DA6600E34B5D /* SPChineseStringUtils.m */,
+			);
+			name = "中文字符串工具";
 			sourceTree = "<group>";
 		};
 		192D7BB91AACABA500EF9131 /* 选择运动 */ = {
@@ -680,6 +677,7 @@
 		197DA85B1AB43E8B00F59116 /* third_party_byHand */ = {
 			isa = PBXGroup;
 			children = (
+				F10D93011A57C901006770DE /* svprogress */,
 				197DA85C1AB43ECF00F59116 /* Emoji */,
 			);
 			name = third_party_byHand;
@@ -716,6 +714,13 @@
 				198520B51A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib */,
 			);
 			name = "信息管理";
+			sourceTree = "<group>";
+		};
+		19AD29881AC6FE3B0079D82E /* 版本信息 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "版本信息";
 			sourceTree = "<group>";
 		};
 		19CF5E361AC0983800BF3094 /* cell */ = {
@@ -861,8 +866,6 @@
 		78C6C8561A2B411000D8425E = {
 			isa = PBXGroup;
 			children = (
-				1920A9EE1A8CA9F300D13F86 /* test */,
-				F10D93011A57C901006770DE /* svprogress */,
 				78C6C8611A2B411100D8425E /* Sportplus */,
 				78C6C87E1A2B411200D8425E /* SportplusTests */,
 				78C6C8601A2B411100D8425E /* Products */,
@@ -884,6 +887,7 @@
 		78C6C8611A2B411100D8425E /* Sportplus */ = {
 			isa = PBXGroup;
 			children = (
+				19AD29881AC6FE3B0079D82E /* 版本信息 */,
 				197DA85B1AB43E8B00F59116 /* third_party_byHand */,
 				1911EB951A9778E30044F04F /* service */,
 				1911EB921A9773F60044F04F /* setting */,
@@ -943,6 +947,7 @@
 				F10D93051A57C91C006770DE /* SVProgressHUD.m */,
 			);
 			name = svprogress;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F11581E21A3185F200420CC3 /* RegisteVC */ = {
@@ -994,10 +999,6 @@
 		F1B88C231A45A73C005D601D /* 好友管理 */ = {
 			isa = PBXGroup;
 			children = (
-				F14CBF181AB5433300B66846 /* ChineseString.h */,
-				F14CBF191AB5433300B66846 /* ChineseString.m */,
-				F14CBF1F1AB543F700B66846 /* pinyin.c */,
-				F14CBF201AB543F700B66846 /* pinyin.h */,
 				19F805AF1AB0C1C200F9071A /* 二级界面 */,
 				F1B88C271A45AAE2005D601D /* FriendsManagementViewController.h */,
 				F1B88C281A45AAE2005D601D /* FriendsManagementViewController.m */,
@@ -1118,7 +1119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F805831AADDACA00F9071A /* ChooseSportTimeTableViewCell.xib in Resources */,
-				1920A9ED1A8CA9E100D13F86 /* testIPAD.storyboard in Resources */,
 				F16DDB031AA617F20080E908 /* Images.xcassets in Resources */,
 				198520B71A9DAF7B0098F93D /* spNotificationCenterTableViewCell.xib in Resources */,
 				F1B875F21A34B08F003AA3ED /* TagTableViewCell.xib in Resources */,
@@ -1232,7 +1232,6 @@
 				193CEE441AA43311007A0CF0 /* ChatRoomListViewController.m in Sources */,
 				19620EA91AA6AB7800D09D03 /* myHomePageViewController.m in Sources */,
 				19CF5E401AC1C36600BF3094 /* spCampus.m in Sources */,
-				192A9C061A8E2C0000D81B3A /* test1stVC.m in Sources */,
 				F1887DBF1A3329D30056A568 /* ChooseProfessionViewController.m in Sources */,
 				1912E6F91AB6AE7500CC070A /* SPUpgradeService.m in Sources */,
 				78C6C86B1A2B411100D8425E /* Sportplus.xcdatamodeld in Sources */,
@@ -1241,6 +1240,7 @@
 				197DA8621AB43EEF00F59116 /* EmojiEmoticons.m in Sources */,
 				19F8059A1AAEDDFE00F9071A /* prefererSportSpaceTableViewCell.m in Sources */,
 				192D7BBF1AACAE1400EF9131 /* ChooseSportItemViewController.m in Sources */,
+				19295F6D1AC6DA6600E34B5D /* SPChineseStringUtils.m in Sources */,
 				F1B88C311A45DE61005D601D /* AddFriendsViewController.m in Sources */,
 				F14CBF1A1AB5433300B66846 /* ChineseString.m in Sources */,
 				19F8058D1AAE8E1F00F9071A /* ZR_photoLibraryCollectionViewCell.m in Sources */,
@@ -1273,7 +1273,6 @@
 				193CEE521AA4BC24007A0CF0 /* chooseWitchToInviteViewController.m in Sources */,
 				197DA8481AB20AA900F59116 /* spNewStadium.m in Sources */,
 				78C6C8651A2B411100D8425E /* main.m in Sources */,
-				192A9C091A8E34C100D81B3A /* test2thVC.m in Sources */,
 				F1887DCC1A3372700056A568 /* levelTableViewCell.m in Sources */,
 				F17CEE951AB29C690086D4F9 /* BlackListViewController.m in Sources */,
 				F178AF4D1AAC36B9002D3BB8 /* ChangePasswordViewController.m in Sources */,

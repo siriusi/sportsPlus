@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "spUser.h"
+
 @interface chooseFriendTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
@@ -19,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectedBtn;
 
 
-
 - (IBAction)btnClicked:(id)sender;
+
+- (void)initWithSpUser:(spUser *)user andState:(BOOL)selected ;
 
 @end

@@ -19,7 +19,10 @@ typedef enum {
 
 
 @interface FriendInviteManageViewController () {
-    NSArray *dataSource ;
+    NSMutableArray *_dataSourceOfFriendEngagement ;//别人发来的邀请。
+    NSMutableArray *_dataSourceOfMySendedEngagement ;//自己发送的邀约。
+    
+    NSMutableArray *_dataSourceToDisplay ;//要显示的数据,以上两种之一。更具BtnState判断。
     
     FriendNavBtnState _BtnState ;
 }
@@ -31,12 +34,16 @@ typedef enum {
 - (void)setBtnState:(FriendNavBtnState)state {
     _BtnState = state ;
     if (_BtnState == FriendNavBtnStateLeftBtnSelected) {
+        _dataSourceToDisplay = _dataSourceOfMySendedEngagement ;
+        
         [self.LeftBtnHignLightLine setHidden:FALSE] ;
         [self.checkSendedInviteBtn setTitleColor:BtnSelectedColor forState:UIControlStateNormal] ;
         
         [self.RightBtnHighLightLine setHidden:TRUE] ;
         [self.checkReceivedInviteBtn setTitleColor:BtnNormalColor forState:UIControlStateNormal] ;
     } else {
+        _dataSourceToDisplay = _dataSourceOfFriendEngagement ;
+        
         [self.RightBtnHighLightLine setHidden:FALSE] ;
         [self.checkSendedInviteBtn setTitleColor:BtnNormalColor forState:UIControlStateNormal] ;
         
@@ -63,7 +70,7 @@ typedef enum {
 #pragma mark- UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3 ;
+    return [_dataSourceToDisplay count] ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

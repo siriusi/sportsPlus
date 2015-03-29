@@ -13,7 +13,7 @@
 
 @property NSString *sP_userName ;//姓名 [spUser user].username是电话
 
-
+#warning 不用字段
 @property NSString *sP_userTrueName ;//实名
 @property NSString *sP_school ;//学校
 @property NSString *sP_academy ;//学院
